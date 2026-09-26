@@ -1,0 +1,12 @@
+{
+  "name": "@noisemap/configs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Built-in framework configs (JSON) and the shared schema. A noisemap.config.json in a target repo uses the same schema.",
+  "exports": "./index.ts",
+  "types": "./index.ts",
+  "dependencies": {
+    "@noisemap/core": "workspace:*"
+  }
+}

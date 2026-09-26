@@ -1,0 +1,53 @@
+{
+  "name": "noisemap",
+  "version": "0.1.0",
+  "description": "Codebase noise analyzer: classifies every token as View, Behavior, Logic, or Content, and reports mixing, consistency, and drift per module, as a terminal table, a JSON file, and a single-file HTML map.",
+  "license": "MIT",
+  "author": "Frank Batista",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relevantcontext/noisemap.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/relevantcontext/noisemap#readme",
+  "bugs": "https://github.com/relevantcontext/noisemap/issues",
+  "keywords": [
+    "frontend",
+    "code-analysis",
+    "separation-of-concerns",
+    "architecture",
+    "react",
+    "spynejs",
+    "metrics",
+    "visualization"
+  ],
+  "type": "module",
+  "bin": {
+    "noisemap": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "commander": "^15.0.0"
+  },
+  "devDependencies": {
+    "@noisemap/adapter-content": "workspace:*",
+    "@noisemap/adapter-react": "workspace:*",
+    "@noisemap/adapter-spynejs": "workspace:*",
+    "@noisemap/configs": "workspace:*",
+    "@noisemap/core": "workspace:*",
+    "@noisemap/render": "workspace:*",
+    "tsup": "^8.5.0"
+  }
+}

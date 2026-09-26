@@ -1,0 +1,17 @@
+app/traits/invoices/invoices-item-status-traits.js  spynejs  role SpyneTrait
+tokens 49  LLLLLLLLLLLLLLLLLLLL  V 0 B 0 L 49 C 0  excluded 111  mixing 0.00  drift 0.00
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { SpyneTrait } from 'spyne'; import { withClass } from 'utils/svg-icons.js'; import { getInvoiceStatusClass } from 'utils/acme-invoice-utils.js'
+[- comment] // Built once at module load, exactly like the table's ROW_ICONS — the same two // strings for the life of the app, referenced by every repaint.
+[L default] const STATUS_ICONS = { svgClock: withClass('clock', 'ml-1 w-4 text-gray-500'), svgCheck: withClass('check', 'ml-1 w-4 text-white'
+[- comment] /** * The status pill of one invoice row. * * The pill is a broadcast-declared toggle button; clicking it never touches * this trait. The click rides CHANNEL...
+[- scaffolding:exportKeywords] export
+[- scaffolding:classSignatures] class InvoicesItemStatusTraits extends SpyneTrait
+[- scaffolding:functionSignatures] constructor(context
+[L method:constructor] let traitPrefix = 'invoicesItemStatus$'
+[- scaffolding:superCalls] super(context, traitPrefix
+[- scaffolding:functionSignatures] static invoicesItemStatus$OnStatus(e
+[L role:SpyneTrait] const status = e?.payload?.invoiceStatus; if (status !== 'paid' && status !== 'pending') return; const btn = this.props.el$('.ii-status button').el; if (btn ...
+[- comment] // Same markup the template's isPaid/isPending sections render, so a // repainted pill and a freshly minted one are indistinguishable.
+[L role:SpyneTrait] btn.className = getInvoiceStatusClass(status); btn.innerHTML = status === 'paid' ? `Paid${STATUS_ICONS.svgCheck}` : `Pending${STATUS_ICONS.svgClock

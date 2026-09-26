@@ -1,0 +1,211 @@
+file                                                                          tokens  V B L C                  V     B     L     C  mixing  role        drift
+----------------------------------------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
+app/components/shell/app-loading-view.js                                          17  VVVVVVVVVVBBBBBBBBLL   47%   41%   12%    0%    0.53  ViewStream   0.00
+app/components/page-items/dashboard-stats-container.js                            61  VVVVVVVVVBBBBBLLLLLL   48%   23%   30%    0%    0.52  ViewStream   0.30
+app/components/search/quick-search-customer-item-view.js                          54  VVVVVVVVVVBBBBBBBBBB   48%   52%    0%    0%    0.48  ViewStream   0.00
+app/components/page-items/invoices-table-view.js                                  63  VVVVVVVVVVVBBBBBBBBL   54%   43%    3%    0%    0.46  ViewStream   0.00
+app/components/elements/invoices-item-view.js                                    113  VVVVVVVVVBBBBBBBBBBB   46%   54%    0%    0%    0.46  ViewStream   0.00
+app/components/search/quick-search-invoice-item-view.js                           73  VVVVVVVVVBBBBBBBBBBB   44%   56%    0%    0%    0.44  ViewStream   0.00
+app/components/shell/null-views/acme-query-params-null-view.js                    16  VVVVVVVVVVVBBBBBBBBB   56%   44%    0%    0%    0.44  ViewStream   0.00
+app/components/shell/null-views/acme-requester-null-view.js                       12  VVVVVVVVVVVVBBBBBBBB   58%   42%    0%    0%    0.42  ViewStream   0.00
+app/components/page-items/invoices-save-bar-view.js                               31  VVVVVVVVVVVVBBBBBBBB   61%   39%    0%    0%    0.39  ViewStream   0.00
+app/components/shell/ui-container.js                                              20  VVVVVVVVVVVVVBBBBBLL   65%   25%   10%    0%    0.35  ViewStream   0.00
+app/components/elements/invoices-cell-editor-view.js                              92  VVVVVVVVVVVVVBBBBBBL   66%   32%    2%    0%    0.34  ViewStream   0.00
+app/components/shell/stage-container.js                                           21  VVVVVVVVVVVVVBBBBBLL   67%   24%   10%    0%    0.33  ViewStream   0.00
+app/components/shell/app-container.js                                             28  VVVVVVVVVVVVVVBBBBBL   68%   25%    7%    0%    0.32  ViewStream   0.00
+app/channels/channel-acme-search.js                                               16  BBBBBBBBBBBBBBLLLLLL    0%   69%   31%    0%    0.31  Channel      0.00
+app/channels/channel-app.js                                                       20  BBBBBBBBBBBBBBLLLLLL    0%   70%   30%    0%    0.30  Channel      0.00
+app/components/shell/null-views/local-storage-null-view.js                        10  VVVVVVVVVVVVVVBBLLLL   70%   10%   20%    0%    0.30  ViewStream   0.00
+app/components/page-items/dashboard-invoices-latest-view.js                       54  VVVVVVVVVVVVVVBBBBBL   70%   26%    4%    0%    0.30  ViewStream   0.00
+app/channels/channel-local-storage.js                                             17  BBBBBBBBBBBBBBLLLLLL    0%   71%   29%    0%    0.29  Channel      0.00
+app/components/pages/page-acme-view.js                                            41  VVVVVVVVVVVVVVBBBBBB   71%   29%    0%    0%    0.29  ViewStream   0.00
+app/components/page-items/ui-search-view.js                                       77  VVVVVVVVVVVVVVVBBBLL   74%   16%   10%    0%    0.26  ViewStream   0.10
+app/components/page-items/dashboard-activity-feed-view.js                         48  VVVVVVVVVVVVVVVBBBBL   75%   21%    4%    0%    0.25  ViewStream   0.00
+app/components/elements/invoices-pagination-items-view.js                         21  VVVVVVVVVVVVVVVBBBBB   76%   24%    0%    0%    0.24  ViewStream   0.00
+app/components/search/quick-search-overlay-view.js                                38  VVVVVVVVVVVVVVVBBBBL   76%   18%    5%    0%    0.24  ViewStream   0.00
+app/components/nav/nav-breadcrumb-item.js                                         23  VVVVVVVVVVVVVVVVBBLL   78%   13%    9%    0%    0.22  ViewStream   0.00
+app/components/pages/page-404-view.js                                             14  VVVVVVVVVVVVVVVVBBBB   79%   21%    0%    0%    0.21  ViewStream   0.00
+app/channels/channel-acme-invoices.js                                             24  BBBBBBBBBBBBBBBBLLLL    0%   79%   21%    0%    0.21  Channel      0.00
+app/components/elements/ui-nav-link-view.js                                       24  VVVVVVVVVVVVVVVVBBBB   79%   21%    0%    0%    0.21  ViewStream   0.00
+app/channels/channel-acme-edit-session.js                                         16  BBBBBBBBBBBBBBBBLLLL    0%   81%   19%    0%    0.19  Channel      0.00
+app/components/search/quick-search-host-view.js                                   16  VVVVVVVVVVVVVVVVBBBB   81%   19%    0%    0%    0.19  ViewStream   0.00
+app/components/pages/page-guest-view.js                                           27  VVVVVVVVVVVVVVVVBBLL   81%   11%    7%    0%    0.19  ViewStream   0.00
+app/components/elements/invoices-customer-option-view.js                          42  VVVVVVVVVVVVVVVVVLLL   83%    2%   14%    0%    0.17  ViewStream   0.14
+app/components/elements/customers-pagination-items-view.js                        19  VVVVVVVVVVVVVVVVVBBB   84%   16%    0%    0%    0.16  ViewStream   0.00
+app/components/page-items/invoices-create-form-view.js                            85  VVVVVVVVVVVVVVVVVBBL   85%    8%    7%    0%    0.15  ViewStream   0.07
+app/components/page-items/invoices-edit-form-view.js                              85  VVVVVVVVVVVVVVVVVBBL   85%    8%    7%    0%    0.15  ViewStream   0.07
+app/utils/page-template-lookup.js                                                 54  LLLLLLLLLLLLLLLLLCCC    0%    0%   85%   15%    0.15
+app/channels/channel-acme-data.js                                                 49  BBBBBBBBBBBBBBBBBLLL    0%   86%   14%    0%    0.14  Channel      0.00
+app/channels/channel-acme-customers.js                                            15  BBBBBBBBBBBBBBBBBLLL    0%   87%   13%    0%    0.13  Channel      0.00
+app/utils/svg-icons.js                                                            53  LLLLLLLLLLLLLLLLLCCC    0%    0%   87%   13%    0.13
+app/components/nav/nav-breadcrumb-view.js                                         23  VVVVVVVVVVVVVVVVVBBB   87%   13%    0%    0%    0.13  ViewStream   0.00
+app/components/page-items/customers-table-view.js                                 40  VVVVVVVVVVVVVVVVVVBL   88%    8%    5%    0%    0.13  ViewStream   0.00
+app/channels/channel-acme-auth.js                                                 19  BBBBBBBBBBBBBBBBBBLL    0%   89%   11%    0%    0.11  Channel      0.00
+app/components/page-items/invoices-pagination-container.js                        54  VVVVVVVVVVVVVVVVVVBB   91%    9%    0%    0%    0.09  ViewStream   0.00
+app/components/page-items/login-form-view.js                                      69  VVVVVVVVVVVVVVVVVVBL   91%    4%    4%    0%    0.09  ViewStream   0.04
+dev-tools.js                                                                      39  LLLLLLLLLLLLLLLLLLCC    0%    0%   92%    8%    0.08
+index.js                                                                         166  VLLLLLLLLLLLLLLLLLLL    7%    0%   93%    0%    0.07
+app/components/page-items/customers-pagination-container.js                       52  VVVVVVVVVVVVVVVVVVVB   94%    6%    0%    0%    0.06  ViewStream   0.00
+app/components/shell/ui-sidenav-view.js                                           54  VVVVVVVVVVVVVVVVVVVB   94%    6%    0%    0%    0.06  ViewStream   0.00
+app/components/page-items/home-hero-view.js                                       21  VVVVVVVVVVVVVVVVVVVB   95%    5%    0%    0%    0.05  ViewStream   0.00
+app/components/page-items/ui-acme-logo-view.js                                    25  VVVVVVVVVVVVVVVVVVVB   96%    4%    0%    0%    0.04  ViewStream   0.00
+app/components/page-items/dashboard-revenue-chart-view.js                         38  VVVVVVVVVVVVVVVVVVVB   97%    3%    0%    0%    0.03  ViewStream   0.00
+app/components/page-items/invoices-create-button-view.js                          40  VVVVVVVVVVVVVVVVVVVV   98%    3%    0%    0%    0.03  ViewStream   0.00
+app/utils/acme-utils.js                                                          263  LLLLLLLLLLLLLLLLLLLL    0%    0%   98%    2%    0.02
+app/components/page-items/home-intro-view.js                                      44  VVVVVVVVVVVVVVVVVVVV   98%    2%    0%    0%    0.02  ViewStream   0.00
+app/utils/acme-invoice-utils.js                                                  882  LLLLLLLLLLLLLLLLLLLL    0%    0%   99%    1%    0.01
+app/components/elements/templates/customers-pagination-items-view.tmpl.html       95  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/invoices-cell-editor-view.tmpl.html             62  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/invoices-customer-option-view.tmpl.html          1  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/invoices-item-view.tmpl.html                   139  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/invoices-pagination-items-view.tmpl.html        95  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/ui-nav-link-view.tmpl.html                      26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-breadcrumb-item.tmpl.html                        17  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-breadcrumb-view.tmpl.html                         8  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/customers-pagination-container.tmpl.html       4  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/customers-table-view.tmpl.html               207  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-activity-feed-rows.tmpl.html        42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-activity-feed-view.tmpl.html        32  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-invoices-latest-rows.tmpl.html      40  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-invoices-latest-view.tmpl.html      25  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-revenue-chart-view.tmpl.html        50  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-stats-container.tmpl.html           23  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/home-hero-view.tmpl.html                      11  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/home-intro-view.tmpl.html                     32  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-create-button-view.tmpl.html          6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-form-view.tmpl.html                 201  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-pagination-container.tmpl.html        4  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-save-bar-view.tmpl.html             107  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-table-view.tmpl.html                134  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/login-form-view.tmpl.html                     94  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/ui-acme-logo-view.tmpl.html                    6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/ui-search-view.tmpl.html                      21  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/dashboard-customers.page.tmpl.html                 14  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/dashboard-invoices-form.page.tmpl.html              8  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/dashboard-invoices.page.tmpl.html                  24  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/dashboard.page.tmpl.html                           14  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/home.page.tmpl.html                                26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/login.page.tmpl.html                               22  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/page-404.tmpl.html                                 31  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/page.tmpl.html                                     12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/search/templates/quick-search-customer-item-view.tmpl.html         42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/search/templates/quick-search-invoice-item-view.tmpl.html          71  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/search/templates/quick-search-overlay-view.tmpl.html              152  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/shell/templates/ui-sidenav-view.tmpl.html                          75  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/traits/customers/customers-pagination-view-traits.js                          55  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/customers/customers-table-traits.js                                    87  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/dashboard/dashboard-activity-feed-traits.js                            62  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/dashboard/dashboard-latest-traits.js                                   48  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/dashboard/dashboard-stats-traits.js                                    30  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-auth-channel-traits.js                                          185  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-connections-traits.js                                            39  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-customers-channel-traits.js                                     208  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-data-channel-traits.js                                          796  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-edit-session-channel-traits.js                                   22  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-edits-channel-traits.js                                         523  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-endpoints-traits.js                                             112  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-invoices-channel-traits.js                                      617  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-requester-traits.js                                              20  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/db/db-search-channel-traits.js                                        335  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-cell-editor-traits.js                               166  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-form-traits.js                                      157  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-item-edit-traits.js                                 155  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-item-status-traits.js                                49  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-pagination-view-traits.js                            80  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-save-bar-traits.js                                  134  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-table-edit-traits.js                                448  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/invoices/invoices-table-rows-traits.js                                231  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/acme-nav-traits.js                                                 94  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/nav-breadcrumb-item-traits.js                                     271  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/nav-breadcrumb-view-traits.js                                     118  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/pages/page-item-core-traits.js                                        339  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/search/quick-search-host-traits.js                                      4  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/search/quick-search-overlay-traits.js                                 390  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/acme-auth-state-traits.js                                        60  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/app-container-traits.js                                          63  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/app-loading-traits.js                                            57  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/app-local-storage-traits.js                                     175  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/app-redirect-traits.js                                           78  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/app-settings-traits.js                                           38  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/app-status-traits.js                                            146  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/stage-container-traits.js                                        55  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/shell/ui-container-traits.js                                           26  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/ui/acme-query-params-traits.js                                         59  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/ui/form-login-traits.js                                                37  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/ui/pagination-traits.js                                               424  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/ui/ui-search-traits.js                                                 28  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/util-traits.js                                                        177  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/utils/acme-pagination-controls.js                                            152  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+app/utils/page-item-template-lookup.js                                            26  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+index.tmpl.html                                                                  212  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/_index.scss                                        113  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/core/_base.scss                                     60  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/core/_globals.scss                                  35  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/core/_reset.scss                                    15  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_buttons.scss                             200  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_forms.scss                               166  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_links.scss                               157  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_lists.scss                                83  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_tables.scss                              104  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_typography.scss                          156  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/_dark.scss                                    47  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/_index.scss                                    2  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/_light.scss                                   45  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/theme-utils.scss                              36  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_colors.scss                                356  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_elevation.scss                             122  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_index.scss                                  44  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_inject-css-vars.scss                        26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_motion.scss                                 69  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_radius.scss                                 40  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_spacing.scss                               232  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_typography.scss                            156  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_containers.scss                          37  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_flex-utils.scss                         156  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_grid-utils.scss                         121  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_responsive.scss                          58  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_spacing-utils.scss                      207  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/01-vendors/normalize.css                                                    204  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_base.scss                                                     118  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_grid.scss                                                     250  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_palette-vars.scss                                              34  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_palette.scss                                                  266  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_theme-semantic.scss                                            88  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_type.scss                                                     155  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_variables.scss                                                237  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/fonts.scss                                                      19  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/globals.scss                                                    12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/mixins.scss                                                     95  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/acme/invoices-table.scss                                      353  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/acme/quick-search.scss                                        201  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/cards/_cards-grid.scss                                         78  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/cards/_cards.scss                                             143  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/cards/cards-features.scss                                      66  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_checkboxes.scss                        240  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_inputs.scss                            359  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_radio.scss                             138  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_select.scss                            206  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_textarea.scss                          220  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/sections/_hero.scss                           215  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-404.scss                                            82  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_cards.scss                                   21  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_gallery.scss                                 34  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_hero.scss                                   118  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_page-item.scss                               75  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_section-title.scss                           42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/pages.scss                                               90  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/_codeblock.scss                                            101  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/_containers.scss                                           219  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/breadcrumbs.scss                                            90  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/footer.scss                                                 43  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/header.scss                                                210  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/menu-drawer.scss                                           152  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/menu-hamburger.scss                                        170  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/app.scss                                                                     26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/tailwind.scss                                                                29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+
+codebase  203 modules  20921 tokens  VLLLLLLLLLCCCCCCCCCC  V   6% B   2% L  43% C  49%
+          consistency 0.05  mean mixing 0.06 (by module) 0.02 (by token)  median V   0% B   0% L   0% C 100%
+          families: V 37 ( 79%  16%   2%   0%)  B 11 (  0%  71%  14%   0%)  L 51 (  0%   0% 100%   0%)  C 104 (  0%   0%   0% 100%)
+          detected: spynejs  adapters: content, spynejs  skipped: 37  tests: 8
+

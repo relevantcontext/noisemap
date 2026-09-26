@@ -1,0 +1,23 @@
+app/components/page-items/ui-search-view.js  spynejs  role ViewStream
+tokens 77  VVVVVVVVVVVVVVVBBBLL  V 57 B 12 L 8 C 0  excluded 188  mixing 0.26  drift 0.10
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { ViewStream } from 'spyne'; import { withClass } from 'utils/svg-icons.js'; import UISearchTmpl from './templates/ui-search-view.tmpl.html'; import {...
+[- comment] // Which domain channel resolves this instance's query, by what it filters. // The LIST payload of either carries the resolved `query` the input mirrors.
+[L default] const LIST_ACTION_BY_BTN_TYPE = { 'filter-invoices': [ 'CHANNEL_ACME_INVOICES', 'CHANNEL_ACME_INVOICES_LIST_EVENT', ], 'filter-customers': [ 'CHANNEL_ACME_CU...
+[- comment] /** * Converted from app/ui/search.tsx. * * The source is a Next.js client component: it debounces with use-debounce and * pushes the term into the URL with ...
+[- scaffolding:exportKeywords] export
+[- scaffolding:classSignatures] class UISearchView extends ViewStream
+[- scaffolding:functionSignatures] constructor(props
+[V method:constructor] const { inputId = 'search', labelText = 'Search', placeholder = '', query = new URLSearchParams(window.location.search).get('query') || '', btnType = 'filter...
+[- comment] // The domain channel whose LIST resolves this instance's query — the // input mirrors its payload so a query written WITHOUT a keystroke here // (quick-sear...
+[V method:constructor] props.channels = LIST_ACTION_BY_BTN_TYPE[btnType] ? [LIST_ACTION_BY_BTN_TYPE[btnType][0]] : []; props.traits = [UISearchTraits]; props.data = { ...props.data...
+[- scaffolding:superCalls] super(props
+[- scaffolding:functionSignatures] addActionListeners
+[B method:addActionListeners] const mapping = LIST_ACTION_BY_BTN_TYPE[this.props.data?.btnType]; return
+[B conditional] mapping
+[B method:addActionListeners] mapping[1], 'uiSearch$OnList'
+[- scaffolding:functionSignatures] broadcastEvents
+[- comment] // Bound to the input itself. Spyne does not delegate, so a dynamically // replaced input would need its container bound instead.
+[V method:broadcastEvents] return [['input', 'keyup'
+[- scaffolding:functionSignatures] onRendered

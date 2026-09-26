@@ -1,0 +1,35 @@
+app/channels/channel-acme-data.js  spynejs  role Channel
+tokens 49  BBBBBBBBBBBBBBBBBLLL  V 0 B 42 L 7 C 0  excluded 191  mixing 0.14  drift 0.00
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { Channel } from 'spyne'; import { AcmeDataChannelTraits } from 'traits/db/db-data-channel-traits.js'; import { AcmeEditsChannelTraits } from 'traits/...
+[- comment] /** * Every read and write of Acme business data. * * The second of the two Acme channels a view subscribes to. It emits only when * it has data or a data ou...
+[- scaffolding:exportKeywords] export
+[- scaffolding:classSignatures] class ChannelAcmeData extends Channel
+[- scaffolding:functionSignatures] constructor(name, props
+[B method:constructor] name = 'CHANNEL_ACME_DATA'; props.replay = true; props.traits = [AcmeDataChannelTraits, AcmeEditsChannelTraits
+[- comment] // Reconciliation state for optimistic mutations, owned here because the // channel is the designed home for durable state. [state-machine-in-channel] // // ...
+[B method:constructor] props.acmePendingMutations = 0; props.acmeStatusIntents
+[- comment] // Live payment activity, owned here for the same reason. The API tier // simulates continuous events while a user is signed in; this channel // polls it, pa...
+[B method:constructor] props.acmeLiveTickSub = null; props.acmeLiveTickInFlight = false; props.acmeLiveFeed = []; props.acmeLiveJournal
+[- comment] // Bulk-edit state, owned here for the same reason as the two blocks // above: a draft's meaning is "differs from the held dump", so the dump's // owner is t...
+[B method:constructor] props.acmeEditDrafts = {}; props.acmeEditUndo = []; props.acmeEditRedo = []; props.acmeEditSaving = null
+[- scaffolding:superCalls] super(name, props
+[- scaffolding:functionSignatures] onRegistered
+[L Channel:call] this.acmeData$OnRegistered(); this.acmeEdits$OnRegistered
+[- scaffolding:functionSignatures] addRegisteredActions
+[B method:addRegisteredActions] return
+[- comment] // Consumed by AcmeRequesterNullView. Views do not listen for this.
+[B method:addRegisteredActions] 'CHANNEL_ACME_DATA_REQUEST_EVENT', 'CHANNEL_ACME_DATA_INVOICE_SUBMIT_EVENT'
+[- comment] // Transmitted by table-side views: one user gesture's worth of in-place // edits (a cell commit, or a bulk range-status set). Recorded as ONE // undo entry;...
+[B method:addRegisteredActions] 'CHANNEL_ACME_DATA_EDIT_COMMIT_EVENT'
+[- comment] // The unsaved-edit overlay changed — commit, bulk, undo, redo, discard, // or a save starting/settling. Full-state like every other action; the // `edits` s...
+[B method:addRegisteredActions] 'CHANNEL_ACME_DATA_EDITS_EVENT'
+[- comment] // The dump landed. LOADED is the first one after authentication; UPDATED // is every refresh after a mutation AND every live-tick merge (external // payment...
+[B method:addRegisteredActions] 'CHANNEL_ACME_DATA_LOADED_EVENT', 'CHANNEL_ACME_DATA_UPDATED_EVENT'
+[- comment] // A create / update / delete returned, carrying the API's own message for // form-level feedback. DATA_UPDATED follows once the refreshed dump lands.
+[B method:addRegisteredActions] 'CHANNEL_ACME_DATA_MUTATION_EVENT'
+[- comment] // Any failed request. Carries the url that failed — error payloads are // built from real request metadata, unlike success payloads, which all // report the...
+[B method:addRegisteredActions] 'CHANNEL_ACME_DATA_ERROR_EVENT'
+[- scaffolding:functionSignatures] onViewStreamInfo(e
+[L Channel:call] this.acmeData$OnViewStreamInfo(e

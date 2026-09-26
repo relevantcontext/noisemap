@@ -1,0 +1,18 @@
+app/components/elements/invoices-customer-option-view.js  spynejs  role ViewStream
+tokens 42  VVVVVVVVVVVVVVVVVLLL  V 35 B 1 L 6 C 0  excluded 106  mixing 0.17  drift 0.14
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { ViewStream } from 'spyne'; import InvoicesCustomerOptionTmpl from './templates/invoices-customer-option-view.tmpl.html'
+[- comment] /** * One <option> of the customer <select> in the create/edit invoice forms. * * The source loops customers into <option value={id}>{name}</option>. A <sele...
+[- scaffolding:exportKeywords] export
+[- scaffolding:classSignatures] class InvoicesCustomerOptionView extends ViewStream
+[- scaffolding:functionSignatures] constructor(props
+[V method:constructor] const { value = '', name = '', selected = false } = props.data || {}; props.tagName = 'option'; props.value = value; if (selected) props.selected = 'selected...
+[- scaffolding:superCalls] super(props
+[- scaffolding:functionSignatures] addActionListeners
+[B method:addActionListeners] return
+[- scaffolding:functionSignatures] broadcastEvents
+[V method:broadcastEvents] return
+[- scaffolding:functionSignatures] onRendered
+[L conditional] if (this.props.data?.selected === true
+[V role:ViewStream] this.props.el$().el.selected = true

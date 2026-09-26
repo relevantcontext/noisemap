@@ -1,0 +1,26 @@
+app/components/search/quick-search-invoice-item-view.js  spynejs  role ViewStream
+tokens 73  VVVVVVVVVBBBBBBBBBBB  V 32 B 41 L 0 C 0  excluded 178  mixing 0.44  drift 0.00
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { ViewStream, ChannelPayloadFilter } from 'spyne'; import QuickSearchInvoiceItemTmpl from './templates/quick-search-invoice-item-view.tmpl.html'; impo...
+[- comment] /** * One matched invoice in the quick-search overlay. * * The row's two controls are the SAME datasets the invoices table's rows * carry, so both ride the p...
+[- scaffolding:exportKeywords] export
+[- scaffolding:classSignatures] class QuickSearchInvoiceItemView extends ViewStream
+[- scaffolding:functionSignatures] constructor(props
+[V method:constructor] props.tagName = 'div'; props.class = 'qs-item qs-invoice-item'; props.dataset = { qsKey: `invoice-${props.data?.attrInvoiceId}`, invoiceId: props.data?.attrI...
+[- scaffolding:superCalls] super(props
+[- scaffolding:functionSignatures] addActionListeners
+[B method:addActionListeners] const matchesExcludeMe
+[B payload-filter] new ChannelPayloadFilter({ payload
+[- scaffolding:functionSignatures] payload
+[B payload-filter] const matches = payload?.invoiceMatches; return
+[B conditional] Array.isArray(matches) === true
+[B payload-filter] matches.some
+[- scaffolding:functionSignatures] id
+[B payload-filter] String(id) === String(this.props.data?.attrInvoiceId), ) === false
+[B method:addActionListeners] const statusIsMine
+[B payload-filter] new ChannelPayloadFilter({ invoiceId: String(this.props.data?.attrInvoiceId
+[B method:addActionListeners] return [ [ 'CHANNEL_ACME_SEARCH_RESULTS_EVENT', 'disposeViewStream', matchesExcludeMe, ], [ 'CHANNEL_ACME_INVOICES_STATUS_EVENT', 'invoicesItemStatus$OnStatu...
+[- scaffolding:functionSignatures] broadcastEvents
+[V method:broadcastEvents] return [ ['a', 'click'], ['button', 'click'
+[- scaffolding:functionSignatures] onRendered

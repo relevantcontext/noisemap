@@ -1,0 +1,13 @@
+file                    tokens  V B L C                  V     B     L     C  mixing
+----------------------  ------  --------------------  ----  ----  ----  ----  ------
+components/Counter.tsx      82  VVVVVVBBBBLLLLLCCCCC   30%   20%   23%   27%    0.70
+components/Legacy.jsx       36  VVVVVVVVVBBBBBLLLCCC   44%   28%   14%   14%    0.56
+components/Styled.tsx       21  VVVVVLLLLCCCCCCCCCCC   24%    0%   19%   57%    0.43
+Guide.mdx                   16  VVVVVCCCCCCCCCCCCCCC   25%    0%    0%   75%    0.25
+lib/api.ts                  31  LLLLLLLLLLLLLLLLCCCC    0%    0%   81%   19%    0.19
+
+codebase  5 modules  186 tokens  VVVVVBBBLLLLLLCCCCCC  V  27% B  14% L  28% C  31%
+          consistency 0.10  mean mixing 0.42 (by module) 0.52 (by token)  median V  25% B   0% L  19% C  27%
+          families: V 2 ( 37%  24%  19%  20%)  L 1 (  0%   0%  81%  19%)  C 2 ( 24%   0%  10%  66%)
+          detected: react  adapters: react  skipped: 0  tests: 2  failed: 1
+

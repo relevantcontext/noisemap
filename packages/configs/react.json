@@ -1,0 +1,235 @@
+{
+  "$schema": "./schema.json",
+  "framework": "react",
+  "detect": {
+    "dependencies": [
+      "react"
+    ],
+    "extensions": [
+      ".jsx",
+      ".tsx",
+      ".mdx"
+    ],
+    "plainExtensions": [
+      ".js",
+      ".ts",
+      ".mjs",
+      ".cjs",
+      ".mts",
+      ".cts"
+    ]
+  },
+  "default": "L",
+  "scaffolding": [
+    "imports",
+    "exportKeywords",
+    "functionSignatures",
+    "classSignatures",
+    "constructors",
+    "superCalls",
+    "decorators",
+    "typeAnnotations",
+    "directives"
+  ],
+  "classifiers": [
+    {
+      "id": "jsx",
+      "kind": "jsx",
+      "bucket": "V"
+    },
+    {
+      "id": "handler-prop",
+      "kind": "jsxAttribute",
+      "match": "^on[A-Z]",
+      "bucket": "V",
+      "resolve": true,
+      "resolveBucket": "B"
+    },
+    {
+      "id": "jsx-text",
+      "kind": "jsxText",
+      "bucket": "C"
+    },
+    {
+      "id": "copy-attribute",
+      "kind": "copyAttribute",
+      "match": "^(placeholder|title|alt|label|aria-label|aria-description|aria-placeholder|aria-roledescription|aria-valuetext)$",
+      "bucket": "C"
+    },
+    {
+      "id": "style-attribute",
+      "kind": "styleAttribute",
+      "match": "^style$",
+      "bucket": "C"
+    },
+    {
+      "id": "copy-string",
+      "kind": "copyString",
+      "bucket": "C",
+      "minWords": 3,
+      "notWithin": [
+        "className",
+        "class",
+        "cn",
+        "clsx",
+        "classnames",
+        "classNames",
+        "twMerge",
+        "cva",
+        "tw"
+      ]
+    },
+    {
+      "id": "markup-template",
+      "kind": "markupTemplate",
+      "bucket": "C"
+    },
+    {
+      "id": "css-in-js",
+      "kind": "taggedTemplate",
+      "match": "^(css|styled(\\.[A-Za-z]+)?(\\([^)]*\\))?|keyframes|createGlobalStyle|injectGlobal)$",
+      "bucket": "C"
+    },
+    {
+      "id": "jsx-expression-call",
+      "kind": "jsxExpressionCall",
+      "bucket": "L"
+    },
+    {
+      "id": "effect",
+      "kind": "call",
+      "match": "^(React\\.)?use(Layout|Insertion)?Effect$",
+      "bucket": "B",
+      "resolve": true
+    },
+    {
+      "id": "memo",
+      "kind": "call",
+      "match": "^(React\\.)?use(Memo|Callback)$",
+      "bucket": "L"
+    },
+    {
+      "id": "listener",
+      "kind": "call",
+      "match": "(^|\\.)(add|remove)EventListener$",
+      "bucket": "V",
+      "resolve": true,
+      "resolveBucket": "B"
+    },
+    {
+      "id": "dom",
+      "kind": "call",
+      "match": "^(document|window\\.document)\\.|(^|\\.)(querySelector|querySelectorAll|getElementById|getElementsByClassName|getElementsByTagName|closest|matches|classList\\.(add|remove|toggle|replace|contains)|setAttribute|removeAttribute|getAttribute|appendChild|removeChild|insertBefore|replaceChild|insertAdjacentHTML|insertAdjacentElement|scrollIntoView|focus|blur)$",
+      "bucket": "V"
+    },
+    {
+      "id": "dom-write",
+      "kind": "assignment",
+      "match": "\\.(innerHTML|outerHTML|textContent|innerText|className|style(\\.[A-Za-z]+)?|dataset\\.[A-Za-z]+)$",
+      "bucket": "V"
+    },
+    {
+      "id": "subscribe",
+      "kind": "call",
+      "match": "(^|\\.)(subscribe|unsubscribe)$",
+      "bucket": "B",
+      "resolve": true
+    },
+    {
+      "id": "fetch",
+      "kind": "call",
+      "match": "^(fetch|(axios|api|http|client)\\.(get|post|put|patch|delete|request))$",
+      "bucket": "L"
+    },
+    {
+      "id": "lifecycle",
+      "kind": "classMethod",
+      "match": "^(componentDidMount|componentDidUpdate|componentWillUnmount|componentDidCatch|shouldComponentUpdate|getSnapshotBeforeUpdate|UNSAFE_\\w+)$",
+      "bucket": "B"
+    },
+    {
+      "id": "conditional",
+      "kind": "conditional",
+      "bucket": "L",
+      "allow": [],
+      "defaults": {
+        "operators": [
+          "??",
+          "||"
+        ]
+      }
+    }
+  ],
+  "openQuestions": [
+    {
+      "rule": "effect",
+      "call": "useEffect → B",
+      "reason": "an effect responds to a change; it is the closest thing React has to a listener"
+    },
+    {
+      "rule": "memo",
+      "call": "useMemo/useCallback → L",
+      "reason": "both compute a value; a useCallback whose function is then passed as an event-handler prop gets B for the function body because the handler rule is innermost, and the hook call itself stays L"
+    },
+    {
+      "rule": "handler-prop",
+      "call": "onX props → V (registration is configuration); the handler body, inline or a local function the prop names → B (2026-09-22, fairness with addEventListener and SpyneJS broadcastEvents)",
+      "reason": "the same act must get the same bucket in every config: wiring a listener declares; the body that runs on the event responds"
+    },
+    {
+      "rule": "listener",
+      "call": "addEventListener/removeEventListener calls → V; a local function passed to one gets B for its body (ratified 2026-09-22)",
+      "reason": "registering is configuration; responding is behavior"
+    },
+    {
+      "rule": "useState",
+      "call": "useState/useRef/useContext/custom hooks → L (default)",
+      "reason": "declaring state computes nothing and renders nothing; it falls to the module default. A case can be made for V (state drives the view)"
+    },
+    {
+      "rule": "jsx-expression-call",
+      "call": "a non-JSX call inside a JSX expression container → L",
+      "reason": "items.map(...) transforms; the JSX it returns is still V because it is innermost. A plain {user.name} stays V"
+    },
+    {
+      "rule": "conditional",
+      "call": "if/else, ?:, &&, ||, ??, switch → L; only the keyword and the test, branches keep their own bucket",
+      "reason": "ruling 5: a conditional is Logic wherever it appears; React has no allow-list because nothing in React is declarative event routing"
+    },
+    {
+      "rule": "copy-string",
+      "call": "a string literal of three or more words, more than half of them plain alphabetic, → C unless inside a class-list attribute or helper",
+      "reason": "prose is Content wherever it lives; class lists and CSS values look like prose by word count and are not, so words with digits or hyphens do not count as prose"
+    },
+    {
+      "rule": "jsx-text",
+      "call": "JSX text and copy strings are counted by word, not as one token",
+      "reason": "an HTML file's prose counts by word under the Content adapter; inline prose must count the same way or moving markup into a .html file would change the score"
+    },
+    {
+      "rule": "fetch",
+      "call": "fetch and axios/api/http/client.verb calls → L",
+      "reason": "a fetch computes a payload; the brief says so. Only the call is classified, so a fetch inside a handler leaves the rest of the handler B"
+    },
+    {
+      "rule": "typeAnnotations",
+      "call": "TypeScript types, interfaces, generics, and annotations → excluded",
+      "reason": "types do nothing at runtime; they are scaffolding by the ruling's definition"
+    },
+    {
+      "rule": "subscribe",
+      "call": "observable.subscribe(cb) and unsubscribe → B, and a local function passed as the callback gets B for its body",
+      "reason": "subscribing is registering a listener, which is Behavior in every config (ruling 3); RxJS is the substrate of SpyneJS channels and common in React apps. Not yet moved with addEventListener: is subscribe registration (V) or behavior (B)?"
+    },
+    {
+      "rule": "conditional.defaults",
+      "call": "`a ?? b` is not a conditional unless an operand calls something (ratified 2026-09-22 for every config); `||` is treated the same (ratified 2026-09-22)",
+      "reason": "a nullish default reads a value; React has no trait methods, so any call inside it is local"
+    },
+    {
+      "rule": "dom",
+      "call": "DOM access (document.*, querySelector, classList, appendChild, setAttribute, focus…) and DOM writes (innerHTML, textContent, className, style.*, dataset.*) → V wherever they appear (ratified 2026-09-22)",
+      "reason": "the stricter mixing is type mixing: a Channel, hook, or trait that manages the DOM is doing View work. Reads from a payload are not DOM access. Inside a uniform role (SpyneTrait) the role wins"
+    }
+  ]
+}

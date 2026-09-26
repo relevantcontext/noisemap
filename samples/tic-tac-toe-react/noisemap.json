@@ -1,0 +1,1267 @@
+{
+  "version": 2,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.1.0"
+  },
+  "generatedAt": "2026-09-26T05:45:56.951Z",
+  "root": "/private/tmp/noisemap-samples/tic-tac-toe-react/src",
+  "frameworks": {
+    "detected": [
+      "react"
+    ],
+    "override": null,
+    "adapters": [
+      "content",
+      "react"
+    ],
+    "userConfig": null
+  },
+  "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
+  "scores": {
+    "consistency": 0,
+    "median": {
+      "V": 0.18727272727272729,
+      "B": 0.06181818181818182,
+      "L": 0.2381818181818182,
+      "C": 0.5127272727272727
+    },
+    "families": {
+      "L": {
+        "modules": 1,
+        "median": {
+          "V": 0.37454545454545457,
+          "B": 0.12363636363636364,
+          "L": 0.4763636363636364,
+          "C": 0.025454545454545455
+        }
+      },
+      "C": {
+        "modules": 1,
+        "median": {
+          "V": 0,
+          "B": 0,
+          "L": 0,
+          "C": 1
+        }
+      }
+    },
+    "totals": {
+      "V": 103,
+      "B": 34,
+      "L": 131,
+      "C": 62,
+      "excluded": 602,
+      "counted": 330
+    },
+    "shares": {
+      "V": 0.31212121212121213,
+      "B": 0.10303030303030303,
+      "L": 0.396969696969697,
+      "C": 0.18787878787878787
+    },
+    "meanMixing": 0.26181818181818184,
+    "meanMixingTokenWeighted": 0.43636363636363634
+  },
+  "modules": [
+    {
+      "path": "App.js",
+      "framework": "react",
+      "tokens": {
+        "V": 103,
+        "B": 34,
+        "L": 131,
+        "C": 7,
+        "excluded": 540
+      },
+      "shares": {
+        "V": 0.37454545454545457,
+        "B": 0.12363636363636364,
+        "L": 0.4763636363636364,
+        "C": 0.025454545454545455
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 32,
+          "bucket": "excluded",
+          "rule": "scaffolding:imports",
+          "tokens": 4,
+          "punctuation": 2
+        },
+        {
+          "start": 32,
+          "end": 33,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 35,
+          "end": 73,
+          "bucket": "excluded",
+          "rule": "scaffolding:functionSignatures",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 74,
+          "end": 78,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 81,
+          "end": 120,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 121,
+          "end": 143,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 2,
+          "punctuation": 2
+        },
+        {
+          "start": 143,
+          "end": 153,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 153,
+          "end": 172,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 2,
+          "punctuation": 3
+        },
+        {
+          "start": 172,
+          "end": 180,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 182,
+          "end": 253,
+          "bucket": "excluded",
+          "rule": "scaffolding:functionSignatures",
+          "tokens": 8,
+          "punctuation": 8
+        },
+        {
+          "start": 253,
+          "end": 256,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 261,
+          "end": 302,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 5,
+          "punctuation": 5
+        },
+        {
+          "start": 302,
+          "end": 306,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 313,
+          "end": 364,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 364,
+          "end": 367,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 372,
+          "end": 383,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 383,
+          "end": 386,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 393,
+          "end": 413,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 3,
+          "punctuation": 3
+        },
+        {
+          "start": 413,
+          "end": 420,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 421,
+          "end": 425,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 426,
+          "end": 427,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 434,
+          "end": 547,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 11,
+          "punctuation": 13
+        },
+        {
+          "start": 547,
+          "end": 548,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 551,
+          "end": 561,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 561,
+          "end": 564,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 569,
+          "end": 597,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 597,
+          "end": 602,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 603,
+          "end": 607,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 608,
+          "end": 609,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 614,
+          "end": 638,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 639,
+          "end": 642,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 642,
+          "end": 649,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 650,
+          "end": 651,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 652,
+          "end": 661,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 661,
+          "end": 667,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 671,
+          "end": 798,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 13,
+          "punctuation": 18
+        },
+        {
+          "start": 798,
+          "end": 800,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 801,
+          "end": 814,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 814,
+          "end": 821,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 822,
+          "end": 835,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 835,
+          "end": 850,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 850,
+          "end": 873,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 873,
+          "end": 875,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 876,
+          "end": 889,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 889,
+          "end": 896,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 897,
+          "end": 910,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 910,
+          "end": 925,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 925,
+          "end": 948,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 948,
+          "end": 950,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 951,
+          "end": 964,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 964,
+          "end": 971,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 972,
+          "end": 985,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 985,
+          "end": 999,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 6,
+          "punctuation": 0
+        },
+        {
+          "start": 999,
+          "end": 1070,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 8,
+          "punctuation": 8
+        },
+        {
+          "start": 1070,
+          "end": 1072,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1073,
+          "end": 1086,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1086,
+          "end": 1093,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1094,
+          "end": 1107,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 1107,
+          "end": 1122,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1122,
+          "end": 1145,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 1145,
+          "end": 1147,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1148,
+          "end": 1161,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1161,
+          "end": 1168,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1169,
+          "end": 1182,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 1182,
+          "end": 1197,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1197,
+          "end": 1220,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 1220,
+          "end": 1222,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1223,
+          "end": 1236,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1236,
+          "end": 1243,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1244,
+          "end": 1257,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 1257,
+          "end": 1271,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 6,
+          "punctuation": 0
+        },
+        {
+          "start": 1271,
+          "end": 1342,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 8,
+          "punctuation": 8
+        },
+        {
+          "start": 1342,
+          "end": 1344,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1345,
+          "end": 1358,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1358,
+          "end": 1365,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1366,
+          "end": 1379,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 1379,
+          "end": 1394,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1394,
+          "end": 1417,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 1417,
+          "end": 1419,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1420,
+          "end": 1433,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1433,
+          "end": 1440,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1441,
+          "end": 1454,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 1454,
+          "end": 1469,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1469,
+          "end": 1492,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 1492,
+          "end": 1494,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1495,
+          "end": 1508,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1508,
+          "end": 1515,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1516,
+          "end": 1529,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 1529,
+          "end": 1543,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 6,
+          "punctuation": 0
+        },
+        {
+          "start": 1543,
+          "end": 1546,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1546,
+          "end": 1562,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 7,
+          "punctuation": 0
+        },
+        {
+          "start": 1564,
+          "end": 1578,
+          "bucket": "excluded",
+          "rule": "scaffolding:exportKeywords",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1579,
+          "end": 1592,
+          "bucket": "excluded",
+          "rule": "scaffolding:functionSignatures",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1592,
+          "end": 1596,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 1599,
+          "end": 1800,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 22,
+          "punctuation": 27
+        },
+        {
+          "start": 1800,
+          "end": 1802,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1806,
+          "end": 1837,
+          "bucket": "excluded",
+          "rule": "scaffolding:functionSignatures",
+          "tokens": 3,
+          "punctuation": 1
+        },
+        {
+          "start": 1837,
+          "end": 1840,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1845,
+          "end": 1988,
+          "bucket": "B",
+          "rule": "handler-prop:resolved",
+          "tokens": 14,
+          "punctuation": 17
+        },
+        {
+          "start": 1988,
+          "end": 1994,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 1998,
+          "end": 2022,
+          "bucket": "excluded",
+          "rule": "scaffolding:functionSignatures",
+          "tokens": 3,
+          "punctuation": 1
+        },
+        {
+          "start": 2022,
+          "end": 2025,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2030,
+          "end": 2088,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 6,
+          "punctuation": 6
+        },
+        {
+          "start": 2088,
+          "end": 2090,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2090,
+          "end": 2103,
+          "bucket": "excluded",
+          "rule": "scaffolding:functionSignatures",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 2103,
+          "end": 2109,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 2114,
+          "end": 2129,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2129,
+          "end": 2130,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2135,
+          "end": 2147,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 2147,
+          "end": 2150,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2157,
+          "end": 2168,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2169,
+          "end": 2170,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2172,
+          "end": 2182,
+          "bucket": "C",
+          "rule": "copy-string",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 2183,
+          "end": 2187,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2188,
+          "end": 2192,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2192,
+          "end": 2199,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2200,
+          "end": 2204,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2205,
+          "end": 2206,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2213,
+          "end": 2224,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2225,
+          "end": 2226,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2228,
+          "end": 2244,
+          "bucket": "C",
+          "rule": "copy-string",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 2245,
+          "end": 2252,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2257,
+          "end": 2303,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 5,
+          "punctuation": 7
+        },
+        {
+          "start": 2304,
+          "end": 2311,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2311,
+          "end": 2318,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 2319,
+          "end": 2330,
+          "bucket": "B",
+          "rule": "handler-prop:body",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 2330,
+          "end": 2334,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 2334,
+          "end": 2511,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 15,
+          "punctuation": 25
+        },
+        {
+          "start": 2511,
+          "end": 2512,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2513,
+          "end": 2531,
+          "bucket": "V",
+          "rule": "handler-prop",
+          "tokens": 2,
+          "punctuation": 2
+        },
+        {
+          "start": 2531,
+          "end": 2544,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 2544,
+          "end": 2630,
+          "bucket": "V",
+          "rule": "jsx",
+          "tokens": 9,
+          "punctuation": 16
+        },
+        {
+          "start": 2630,
+          "end": 2638,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 2640,
+          "end": 2672,
+          "bucket": "excluded",
+          "rule": "scaffolding:functionSignatures",
+          "tokens": 3,
+          "punctuation": 1
+        },
+        {
+          "start": 2672,
+          "end": 2675,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2678,
+          "end": 2891,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 40,
+          "punctuation": 59
+        },
+        {
+          "start": 2891,
+          "end": 2893,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2898,
+          "end": 2969,
+          "bucket": "L",
+          "rule": "conditional",
+          "tokens": 11,
+          "punctuation": 14
+        },
+        {
+          "start": 2969,
+          "end": 2973,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 2980,
+          "end": 3022,
+          "bucket": "L",
+          "rule": "default",
+          "tokens": 5,
+          "punctuation": 5
+        },
+        {
+          "start": 3022,
+          "end": 3025,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0.5236363636363637
+    },
+    {
+      "path": "styles.css",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 55,
+        "excluded": 62
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 6,
+          "end": 532,
+          "bucket": "C",
+          "rule": "content:css",
+          "tokens": 55,
+          "punctuation": 58
+        },
+        {
+          "start": 532,
+          "end": 535,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0
+    }
+  ],
+  "empty": [],
+  "skipped": {
+    "count": 0,
+    "byExtension": {},
+    "tests": 0
+  },
+  "failed": []
+}

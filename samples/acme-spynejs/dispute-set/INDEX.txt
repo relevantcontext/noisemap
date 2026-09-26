@@ -1,0 +1,9 @@
+viewstream-drift        app/components/elements/invoices-customer-option-view.js
+viewstream-drift        app/components/page-items/ui-search-view.js
+viewstream-drift        app/components/page-items/dashboard-stats-container.js
+viewstream-clean-large  app/components/search/quick-search-invoice-item-view.js
+viewstream-trait-calls  app/components/page-items/customers-pagination-container.js
+channel                 app/channels/channel-acme-data.js
+trait-nonzero           app/traits/invoices/invoices-item-status-traits.js
+trait-clean             app/traits/db/db-data-channel-traits.js
+no-role                 app/utils/acme-invoice-utils.js

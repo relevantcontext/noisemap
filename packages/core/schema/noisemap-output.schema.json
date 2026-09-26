@@ -1,0 +1,427 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/relevantcontext/noisemap/packages/core/schema/noisemap-output.schema.json",
+  "title": "noisemap output, version 2",
+  "description": "The JSON written by `noisemap <dir>` and printed by `noisemap <dir> --json`. This is the contract renderers depend on; the analyzer bumps `version` on any incompatible change.",
+  "type": "object",
+  "required": [
+    "version",
+    "tool",
+    "generatedAt",
+    "root",
+    "frameworks",
+    "tokenizer",
+    "scores",
+    "modules",
+    "empty",
+    "skipped",
+    "failed"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 2
+    },
+    "tool": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "const": "noisemap"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "root": {
+      "type": "string",
+      "description": "Absolute path of the analyzed directory. Module paths are relative to it, POSIX separators."
+    },
+    "frameworks": {
+      "type": "object",
+      "required": [
+        "detected",
+        "override",
+        "adapters",
+        "userConfig"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "detected": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Frameworks named in the nearest package.json's dependencies."
+        },
+        "override": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The --framework flag, if given."
+        },
+        "adapters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Adapter ids that produced at least one module."
+        },
+        "userConfig": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Absolute path of the noisemap.config.json that was applied, or null."
+        }
+      }
+    },
+    "tokenizer": {
+      "type": "string",
+      "description": "Plain-language statement of the counting unit."
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "consistency",
+        "median",
+        "families",
+        "totals",
+        "shares",
+        "meanMixing",
+        "meanMixingTokenWeighted"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "consistency": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Mean Euclidean distance of each module's share vector from the median shape of its family (its dominant bucket). 0 = every kind of module has one shape, whether four clean shapes or one shared mixed shape; max √2."
+        },
+        "median": {
+          "$ref": "#/$defs/shares",
+          "description": "Component-wise median of every module's share vector, for reference. Consistency is not measured against it."
+        },
+        "totals": {
+          "type": "object",
+          "required": [
+            "V",
+            "B",
+            "L",
+            "C",
+            "excluded",
+            "counted"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "V": {
+              "$ref": "#/$defs/count"
+            },
+            "B": {
+              "$ref": "#/$defs/count"
+            },
+            "L": {
+              "$ref": "#/$defs/count"
+            },
+            "C": {
+              "$ref": "#/$defs/count"
+            },
+            "excluded": {
+              "$ref": "#/$defs/count"
+            },
+            "counted": {
+              "$ref": "#/$defs/count",
+              "description": "V + B + L + C."
+            }
+          }
+        },
+        "shares": {
+          "$ref": "#/$defs/shares",
+          "description": "Bucket share of all counted tokens in the codebase."
+        },
+        "meanMixing": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.75,
+          "description": "Unweighted mean of module mixing: every module counts once."
+        },
+        "families": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "One entry per dominant bucket that has at least one module.",
+          "properties": {
+            "V": {
+              "$ref": "#/$defs/family"
+            },
+            "B": {
+              "$ref": "#/$defs/family"
+            },
+            "L": {
+              "$ref": "#/$defs/family"
+            },
+            "C": {
+              "$ref": "#/$defs/family"
+            }
+          }
+        },
+        "meanMixingTokenWeighted": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.75,
+          "description": "Token-weighted mean of module mixing: every counted token counts once, so large modules dominate."
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/module"
+      },
+      "description": "One entry per accepted file with at least one counted token, sorted by path."
+    },
+    "empty": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Accepted files with zero counted tokens. Excluded from every score."
+    },
+    "skipped": {
+      "type": "object",
+      "required": [
+        "count",
+        "byExtension",
+        "tests"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "$ref": "#/$defs/count"
+        },
+        "byExtension": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/count"
+          },
+          "description": "Keyed by lower-cased extension with dot, or `(none)`."
+        },
+        "tests": {
+          "$ref": "#/$defs/count",
+          "description": "Test files left out (directories test, tests, __tests__, __mocks__, __snapshots__; files *.test.* and *.spec.*). 0 when --include-tests was given. Not part of `count`."
+        }
+      }
+    },
+    "failed": {
+      "type": "array",
+      "description": "Accepted files the adapter could not analyze (parse errors). In no score.",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "error"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "share": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "bucket": {
+      "enum": [
+        "V",
+        "B",
+        "L",
+        "C"
+      ]
+    },
+    "shares": {
+      "type": "object",
+      "required": [
+        "V",
+        "B",
+        "L",
+        "C"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "V": {
+          "$ref": "#/$defs/share"
+        },
+        "B": {
+          "$ref": "#/$defs/share"
+        },
+        "L": {
+          "$ref": "#/$defs/share"
+        },
+        "C": {
+          "$ref": "#/$defs/share"
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "required": [
+        "V",
+        "B",
+        "L",
+        "C",
+        "excluded"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "V": {
+          "$ref": "#/$defs/count"
+        },
+        "B": {
+          "$ref": "#/$defs/count"
+        },
+        "L": {
+          "$ref": "#/$defs/count"
+        },
+        "C": {
+          "$ref": "#/$defs/count"
+        },
+        "excluded": {
+          "$ref": "#/$defs/count",
+          "description": "Scaffolding and comments. Not part of any share."
+        }
+      }
+    },
+    "span": {
+      "type": "object",
+      "required": [
+        "start",
+        "end",
+        "bucket",
+        "rule",
+        "tokens",
+        "punctuation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/count",
+          "description": "Character offset into the file, inclusive."
+        },
+        "end": {
+          "$ref": "#/$defs/count",
+          "description": "Character offset, exclusive."
+        },
+        "bucket": {
+          "enum": [
+            "V",
+            "B",
+            "L",
+            "C",
+            "excluded"
+          ]
+        },
+        "rule": {
+          "type": "string",
+          "description": "The rule that assigned this span, e.g. `scaffolding`, `comment`, `method:addActionListeners`, `content:scss`."
+        },
+        "tokens": {
+          "$ref": "#/$defs/count",
+          "description": "Tokens in the span that carry its bucket and rule."
+        },
+        "punctuation": {
+          "$ref": "#/$defs/count",
+          "description": "Punctuation tokens absorbed into the span. Always excluded; never in a share."
+        }
+      }
+    },
+    "module": {
+      "type": "object",
+      "required": [
+        "path",
+        "framework",
+        "tokens",
+        "shares",
+        "spans",
+        "mixing"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "framework": {
+          "type": "string",
+          "description": "Adapter id that analyzed the file: react, spynejs, content."
+        },
+        "role": {
+          "type": "string",
+          "description": "Declared role from a config match rule, e.g. ViewStream. Absent when none."
+        },
+        "tokens": {
+          "$ref": "#/$defs/tokens"
+        },
+        "shares": {
+          "$ref": "#/$defs/shares",
+          "description": "tokens[b] / (V+B+L+C). Sums to 1."
+        },
+        "spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          },
+          "description": "Adjacent same-bucket, same-rule tokens merged, absorbing punctuation between them. Covers every token in source order; whitespace gaps are not covered. Sum of tokens + punctuation over spans = every token in the file."
+        },
+        "mixing": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.75,
+          "description": "1 − largest bucket share. 0 = one bucket."
+        },
+        "drift": {
+          "$ref": "#/$defs/share",
+          "description": "Share of counted tokens outside the role's expected shape, less permitted tokens. Present only when `role` is."
+        }
+      }
+    },
+    "family": {
+      "type": "object",
+      "required": [
+        "modules",
+        "median"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "modules": {
+          "$ref": "#/$defs/count",
+          "description": "Modules whose largest share is this bucket."
+        },
+        "median": {
+          "$ref": "#/$defs/shares",
+          "description": "Component-wise median shape of those modules."
+        }
+      }
+    }
+  }
+}

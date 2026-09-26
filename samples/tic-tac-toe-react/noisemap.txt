@@ -1,0 +1,10 @@
+file        tokens  V B L C                  V     B     L     C  mixing
+----------  ------  --------------------  ----  ----  ----  ----  ------
+App.js         275  VVVVVVVBBLLLLLLLLLLC   37%   12%   48%    3%    0.52
+styles.css      55  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+
+codebase  2 modules  330 tokens  VVVVVVBBLLLLLLLLCCCC  V  31% B  10% L  40% C  19%
+          consistency 0.00  mean mixing 0.26 (by module) 0.44 (by token)  median V  19% B   6% L  24% C  51%
+          families: L 1 ( 37%  12%  48%   3%)  C 1 (  0%   0%   0% 100%)
+          detected: react  adapters: content, react  skipped: 0
+

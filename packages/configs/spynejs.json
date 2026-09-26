@@ -1,0 +1,321 @@
+{
+  "$schema": "./schema.json",
+  "framework": "spynejs",
+  "detect": {
+    "dependencies": [
+      "spyne",
+      "spynejs",
+      "@spynejs/"
+    ],
+    "plainExtensions": [
+      ".js",
+      ".ts",
+      ".mjs",
+      ".cjs",
+      ".mts",
+      ".cts"
+    ],
+    "extends": [
+      "ViewStream",
+      "DomElement",
+      "DomItem",
+      "Channel",
+      "SpyneTrait"
+    ]
+  },
+  "default": "L",
+  "scaffolding": [
+    "imports",
+    "exportKeywords",
+    "functionSignatures",
+    "classSignatures",
+    "superCalls",
+    "decorators",
+    "typeAnnotations",
+    "directives"
+  ],
+  "roles": [
+    {
+      "name": "ViewStream",
+      "match": {
+        "extends": "ViewStream"
+      },
+      "expected": [
+        "V",
+        "B",
+        "C"
+      ],
+      "default": "V",
+      "methods": {
+        "constructor": {
+          "bucket": "V",
+          "uniform": true
+        },
+        "addActionListeners": "B",
+        "broadcastEvents": {
+          "bucket": "V",
+          "uniform": true
+        }
+      },
+      "calls": {
+        "(^|\\.)[A-Za-z_]+\\$[A-Za-z_]+$": {
+          "bucket": "L",
+          "permitted": true
+        }
+      }
+    },
+    {
+      "name": "DomElement",
+      "match": {
+        "extends": "DomElement|DomItem"
+      },
+      "expected": [
+        "V",
+        "C"
+      ],
+      "default": "V",
+      "methods": {
+        "constructor": {
+          "bucket": "V",
+          "uniform": true
+        }
+      }
+    },
+    {
+      "name": "Channel",
+      "match": {
+        "extends": "Channel|ChannelFetch"
+      },
+      "expected": [
+        "B"
+      ],
+      "default": "B",
+      "methods": {
+        "constructor": {
+          "bucket": "B",
+          "uniform": true
+        },
+        "onRegistered": "B",
+        "addRegisteredActions": "B",
+        "onViewStreamInfo": "B"
+      },
+      "calls": {
+        "(^|\\.)[A-Za-z_]+\\$[A-Za-z_]+$": {
+          "bucket": "L",
+          "permitted": true
+        }
+      }
+    },
+    {
+      "name": "SpyneTrait",
+      "match": {
+        "extends": "SpyneTrait"
+      },
+      "expected": [
+        "L"
+      ],
+      "default": "L",
+      "methods": {
+        "constructor": "L"
+      },
+      "uniform": true
+    }
+  ],
+  "classifiers": [
+    {
+      "id": "compose-view",
+      "kind": "call",
+      "match": "(^|\\.)(appendView|appendViewAfter|prependView|appendToDom|appendToDomAfter|prependToDom|appendToNull)$",
+      "bucket": "V"
+    },
+    {
+      "id": "new-view",
+      "kind": "call",
+      "match": "^new (ViewStream|DomElement|DomItem|DomElementTemplate)$",
+      "bucket": "V"
+    },
+    {
+      "id": "payload-filter",
+      "kind": "call",
+      "match": "^new ChannelPayloadFilter$",
+      "bucket": "B"
+    },
+    {
+      "id": "channel-io",
+      "kind": "call",
+      "match": "(^|\\.)(sendInfoToChannel|sendChannelPayload|getChannel|disposeViewStream)$",
+      "bucket": "B"
+    },
+    {
+      "id": "listener",
+      "kind": "call",
+      "match": "(^|\\.)(add|remove)EventListener$",
+      "bucket": "V",
+      "resolve": true,
+      "resolveBucket": "B"
+    },
+    {
+      "id": "dom",
+      "kind": "call",
+      "match": "^(document|window\\.document)\\.|(^|\\.)(querySelector|querySelectorAll|getElementById|getElementsByClassName|getElementsByTagName|closest|matches|classList\\.(add|remove|toggle|replace|contains)|setAttribute|removeAttribute|getAttribute|appendChild|removeChild|insertBefore|replaceChild|insertAdjacentHTML|insertAdjacentElement|scrollIntoView|focus|blur)$",
+      "bucket": "V"
+    },
+    {
+      "id": "dom-write",
+      "kind": "assignment",
+      "match": "\\.(innerHTML|outerHTML|textContent|innerText|className|style(\\.[A-Za-z]+)?|dataset\\.[A-Za-z]+)$",
+      "bucket": "V"
+    },
+    {
+      "id": "subscribe",
+      "kind": "call",
+      "match": "(^|\\.)(subscribe|unsubscribe)$",
+      "bucket": "B",
+      "resolve": true
+    },
+    {
+      "id": "fetch",
+      "kind": "call",
+      "match": "^(fetch|(axios|api|http|client)\\.(get|post|put|patch|delete|request))$",
+      "bucket": "L"
+    },
+    {
+      "id": "copy-string",
+      "kind": "copyString",
+      "bucket": "C",
+      "minWords": 3,
+      "notWithin": [
+        "class",
+        "className",
+        "classList.add",
+        "classList.remove",
+        "classList.toggle"
+      ]
+    },
+    {
+      "id": "markup-template",
+      "kind": "markupTemplate",
+      "bucket": "C"
+    },
+    {
+      "id": "css-in-js",
+      "kind": "taggedTemplate",
+      "match": "^(css|styled(\\.[A-Za-z]+)?|keyframes)$",
+      "bucket": "C"
+    },
+    {
+      "id": "conditional",
+      "kind": "conditional",
+      "bucket": "L",
+      "allow": [
+        {
+          "within": "^addActionListeners$",
+          "bucket": "B"
+        },
+        {
+          "within": "^broadcastEvents$",
+          "bucket": "B"
+        }
+      ],
+      "defaults": {
+        "operators": [
+          "??",
+          "||"
+        ],
+        "allowCalls": "(^|\\.)[A-Za-z_]+\\$[A-Za-z_]+$"
+      }
+    }
+  ],
+  "openQuestions": [
+    {
+      "rule": "config = View",
+      "call": "a role's constructor body is uniformly its config bucket, props.data included; broadcastEvents is uniformly View (ratified 2026-09-22, after tag preliminary-criteria)",
+      "reason": "configuration values are the view's declaration, whatever they hold; the stricter question is type mixing — a method in HTML, a listener in HTML, a Channel managing the DOM"
+    },
+    {
+      "rule": "listener",
+      "call": "addEventListener/removeEventListener calls → V; the callback body → B (ratified 2026-09-22)",
+      "reason": "registering is configuration; responding is behavior"
+    },
+    {
+      "rule": "ViewStream.calls",
+      "call": "a prefix$Method call in a ViewStream → L, permitted (ratified 2026-09-22)",
+      "reason": "calling a trait keeps the logic in the trait; that is the separation, so it is reported and not drift"
+    },
+    {
+      "rule": "SpyneTrait",
+      "call": "SpyneTrait is a uniform role: everything counted in a trait is L, drift 0 by definition (ratified 2026-09-22)",
+      "reason": "a trait is the logic module of the ViewStream or Channel it is bound to; that is its purpose. Not checked: that the trait is actually bound to a host somewhere in the codebase"
+    },
+    {
+      "rule": "inline templates",
+      "call": "Content is in the expected shape of ViewStream and DomElement (ratified 2026-09-22)",
+      "reason": "an inline template is the data part of the view and is clearly separated; it stays Content by ruling 6 and is not drift"
+    },
+    {
+      "rule": "conditional.defaults",
+      "call": "`a ?? b` is not a conditional unless an operand calls a local non-trait method (ratified 2026-09-22); `||` is treated the same (ratified 2026-09-22)",
+      "reason": "a nullish default reads a value; a trait call inside it is still logic-in-traits"
+    },
+    {
+      "rule": "constructor",
+      "call": "a role's constructor body is its config object → the role default (V for ViewStream/DomElement, B for Channel); only the signature and super() are scaffolding",
+      "reason": "ruling 9 says the config object is View; in SpyneJS the config is the props assignments in the constructor, so excluding the whole constructor (as React does) would leave a bare view with nothing to count"
+    },
+    {
+      "rule": "onRendered",
+      "call": "onRendered has no method rule; its body is the role default (V) with calls classified by what they do",
+      "reason": "the reference says nested child ViewStreams are added here, which is composition (V); a SpyneTrait call inside it is L and shows as drift, which is what the brief expects to see"
+    },
+    {
+      "rule": "Channel.calls",
+      "call": "a prefix$Method call in a Channel → L, permitted",
+      "reason": "ruling 9: trait calls in a Channel are expected; report them, do not count them as drift"
+    },
+    {
+      "rule": "DomElement",
+      "call": "the brief's DomItem is matched as DomElement|DomItem",
+      "reason": "the reference documents DomElement; DomItem does not appear"
+    },
+    {
+      "rule": "compose-view",
+      "call": "appendView/prependView/appendToDom/appendToNull and `new ViewStream(...)` → V wherever they appear",
+      "reason": "composing the view tree is View by what it does, including inside a trait or a Channel"
+    },
+    {
+      "rule": "channel-io",
+      "call": "sendInfoToChannel, sendChannelPayload, getChannel, disposeViewStream → B; `new ChannelPayloadFilter` → B",
+      "reason": "routing payloads and subscribing are behavior; a payload filter is declarative event routing"
+    },
+    {
+      "rule": "conditional",
+      "call": "a conditional inside addActionListeners or broadcastEvents → B; anywhere else → L",
+      "reason": "ruling 5's allow-list: a filter in a listener table is event routing, not logic"
+    },
+    {
+      "rule": "plain modules",
+      "call": "a .js file with no role in a SpyneJS codebase → default L, no drift",
+      "reason": "same as React's utility modules; drift needs a declared shape"
+    },
+    {
+      "rule": "el access",
+      "call": "this.el / el.querySelector / classList calls are unclassified and take their context's bucket",
+      "reason": "DOM access could be argued as View; no rule yet so the count stays honest to context"
+    },
+    {
+      "rule": "subscribe",
+      "call": "observable.subscribe(cb) and unsubscribe → B, and a local function passed as the callback gets B for its body",
+      "reason": "subscribing is registering a listener, which is Behavior in every config (ruling 3); RxJS is the substrate of SpyneJS channels and common in React apps. Not yet moved with addEventListener: is subscribe registration (V) or behavior (B)?"
+    },
+    {
+      "rule": "copy-string",
+      "call": "a string literal of three or more words, more than half of them plain alphabetic, → C unless inside a class-list attribute or helper",
+      "reason": "prose is Content wherever it lives; class lists and CSS values look like prose by word count and are not"
+    },
+    {
+      "rule": "dom",
+      "call": "DOM access (document.*, querySelector, classList, appendChild, setAttribute, focus…) and DOM writes (innerHTML, textContent, className, style.*, dataset.*) → V wherever they appear (ratified 2026-09-22)",
+      "reason": "the stricter mixing is type mixing: a Channel, hook, or trait that manages the DOM is doing View work. Reads from a payload are not DOM access. Inside a uniform role (SpyneTrait) the role wins"
+    }
+  ]
+}

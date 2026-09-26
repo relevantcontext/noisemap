@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>noisemap — tic-tac-toe-spynejs/src</title>
+<style>
+:root {
+  --surface-0: #ffffff; --surface-1: #fcfcfb; --surface-2: #f0efec; --border: #d9d8d4;
+  --ink: #1f1f1e; --ink-2: #4a4a48; --ink-3: #7a7a77;
+  --V: #2a78d6; --B: #eb6834; --L: #1baf7a; --C: #eda100; --X: #c9c8c4;
+  --accent: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-0: #111110; --surface-1: #1a1a19; --surface-2: #262624; --border: #3a3a37;
+    --ink: #ececea; --ink-2: #bdbdb9; --ink-3: #8a8a86;
+    --V: #3987e5; --B: #d95926; --L: #199e70; --C: #c98500; --X: #4a4a47;
+    --accent: #3987e5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-0: #111110; --surface-1: #1a1a19; --surface-2: #262624; --border: #3a3a37;
+  --ink: #ececea; --ink-2: #bdbdb9; --ink-3: #8a8a86;
+  --V: #3987e5; --B: #d95926; --L: #199e70; --C: #c98500; --X: #4a4a47;
+  --accent: #3987e5;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--surface-0); color: var(--ink); font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; padding: 0 16px 48px; max-width: 1400px; margin: 0 auto; }
+.hdr { padding: 20px 0 8px; border-bottom: 1px solid var(--border); }
+.hdr-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+h1 { font-size: 22px; margin: 0; font-weight: 650; letter-spacing: -0.01em; }
+h1 .root { font-weight: 400; color: var(--ink-2); margin-left: 8px; }
+.meta { color: var(--ink-3); font-size: 12px; }
+.explainer { max-width: 900px; color: var(--ink-2); margin: 10px 0 4px; }
+.explainer.small { font-size: 12.5px; color: var(--ink-3); }
+.k { font-weight: 650; }
+.k-V { color: var(--V); } .k-B { color: var(--B); } .k-L { color: var(--L); } .k-C { color: var(--C); }
+.scores { display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.tile-big { display: flex; gap: 16px; align-items: center; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, max-content)); gap: 8px 20px; align-content: center; }
+.stat .n { font-size: 22px; font-weight: 650; letter-spacing: -0.01em; }
+.stat .l { font-size: 12px; color: var(--ink-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: 12.5px; color: var(--ink-2); }
+.legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -2px; margin-right: 5px; }
+.sharebar { display: flex; height: 10px; border-radius: 4px; overflow: hidden; background: var(--surface-2); gap: 2px; margin: 6px 0; min-width: 240px; }
+.sharebar i { display: block; height: 100%; }
+.frameworks { font-size: 12px; color: var(--ink-3); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 12px 0; position: sticky; top: 0; background: var(--surface-0); z-index: 2; border-bottom: 1px solid var(--border); }
+.controls label { font-size: 12.5px; color: var(--ink-2); }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface-1); color: var(--ink-2); padding: 5px 10px; font: inherit; font-size: 12.5px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.controls input[type="search"] { font: inherit; font-size: 12.5px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-1); color: var(--ink); min-width: 200px; }
+.count { font-size: 12px; color: var(--ink-3); margin-left: auto; }
+.map { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 6px; padding: 14px 0; }
+.tile { display: flex; flex-direction: column; align-items: center; cursor: pointer; border-radius: 3px; }
+.tile svg { display: block; border-radius: 2px; }
+.tile:hover svg, .tile:focus svg { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tile.sel svg { outline: 2px solid var(--ink); outline-offset: 1px; }
+.tile .name { font-size: 9.5px; line-height: 1.2; color: var(--ink-3); margin-top: 3px; white-space: nowrap; max-width: 100%; text-align: center; font-variant-numeric: tabular-nums; }
+.tile:hover .name { color: var(--ink); }
+.controls .legend { gap: 10px; }
+.controls label.chk { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+.tip { position: fixed; pointer-events: none; background: var(--surface-1); color: var(--ink); border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.15); max-width: 360px; z-index: 5; }
+.tip .p { font-weight: 600; word-break: break-all; }
+.tip .row { display: flex; gap: 10px; color: var(--ink-2); margin-top: 3px; flex-wrap: wrap; }
+.detail[hidden], .tip[hidden] { display: none; }
+.detail { position: fixed; top: 0; right: 0; bottom: 0; width: min(720px, 100%); background: var(--surface-1); border-left: 1px solid var(--border); box-shadow: -8px 0 24px rgba(0,0,0,.15); z-index: 6; display: flex; flex-direction: column; }
+.detail .dh { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+.detail .dh .p { font-weight: 650; word-break: break-all; padding-right: 32px; }
+.detail .dh .row { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--ink-2); }
+.detail .close { position: absolute; top: 8px; right: 8px; border: 0; background: transparent; color: var(--ink-2); font-size: 20px; cursor: pointer; padding: 4px 8px; }
+.detail .dtabs { display: flex; gap: 4px; }
+.detail .db { overflow: auto; flex: 1; padding: 12px 16px; }
+.detail pre { margin: 0; font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap; word-break: break-word; color: var(--ink-3); }
+.detail pre .b0 { color: var(--V); } .detail pre .b1 { color: var(--B); } .detail pre .b2 { color: var(--L); } .detail pre .b3 { color: var(--C); }
+.detail pre .b4 { color: var(--ink-3); opacity: .75; }
+.detail pre span[title] { border-bottom: 1px dotted currentColor; }
+.detail table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+.detail th, .detail td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--border); }
+.detail td.n, .detail th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.tableview { padding: 8px 0; }
+.tableview summary { cursor: pointer; color: var(--ink-2); font-size: 13px; }
+.tableview table { border-collapse: collapse; width: 100%; font-size: 12.5px; margin-top: 8px; }
+.tableview th, .tableview td { text-align: left; padding: 3px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.tableview td.n, .tableview th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.tableview td.p { white-space: normal; word-break: break-all; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; vertical-align: 0; margin-right: 4px; }
+@media (max-width: 720px) { .detail { width: 100%; } .controls .count { margin-left: 0; } }
+</style>
+</head>
+<body data-palette="#2a78d6,#eb6834,#1baf7a,#eda100">
+<header class="hdr">
+  <div class="hdr-row">
+    <h1>noisemap <span class="root" title="/private/tmp/noisemap-samples/tic-tac-toe-spynejs/src">tic-tac-toe-spynejs/src</span></h1>
+    <div class="meta">noisemap 0.1.0 · 2026-09-26 · JSON v2</div>
+  </div>
+  <p class="explainer">Every module is a brick with four faces. <b class="k k-V">View</b> is what it draws, <b class="k k-B">Behavior</b> is what it listens to, <b class="k k-L">Logic</b> is what it computes, <b class="k k-C">Content</b> is what it says. Each tile below is one module: its size is the module's token count, and its 100 blocks are the module's tokens by percentage, laid out in the order they appear in the file. A clean brick is one color. A codebase of same-shaped bricks is easy to build with, even when the shape is mixed; a pile of random shapes is not.</p>
+  <p class="explainer small"><b>Mixing</b> (per module, 0 to 0.75) = 1 − largest share. <b>Consistency</b> (per codebase, 0 to √2) = mean distance of each module's shape from the median shape of its family, a family being the modules that share a dominant color; low means each kind of module has one shape to learn. <b>Drift</b> (declared roles only) = share of tokens outside the shape the role promises, less what the config permits there. Punctuation, comments, and scaffolding are excluded from every count.</p>
+</header>
+<section class="scores" id="scores"></section>
+<section class="controls" id="controls"></section>
+<main class="map" id="map" aria-label="Module map"></main>
+<section class="tableview"><details><summary>Table view</summary><div id="table"></div></details></section>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<aside class="detail" id="detail" hidden aria-label="Module detail"></aside>
+<script id="nm-data" type="application/json">{"v":2,"tool":{"name":"noisemap","version":"0.1.0"},"generatedAt":"2026-09-26T05:45:57.074Z","root":"/private/tmp/noisemap-samples/tic-tac-toe-spynejs/src","frameworks":{"detected":["spynejs"],"override":null,"adapters":["content","spynejs"],"userConfig":null},"tokenizer":"Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.","scores":{"consistency":0.07949211785254613,"median":{"V":0,"B":0,"L":0,"C":0.5},"families":{"V":{"modules":3,"median":{"V":0.6428571428571429,"B":0.35714285714285715,"L":0,"C":0}},"L":{"modules":3,"median":{"V":0,"B":0,"L":1,"C":0}},"C":{"modules":6,"median":{"V":0,"B":0,"L":0,"C":1}}},"totals":{"V":54,"B":24,"L":134,"C":489,"excluded":1213,"counted":701},"shares":{"V":0.07703281027104136,"B":0.034236804564907276,"L":0.19115549215406563,"C":0.6975748930099858},"meanMixing":0.09638798701298701,"meanMixingTokenWeighted":0.042796005706134094},"modules":[{"p":"app/app-view.js","f":"spynejs","t":[15,1,0,0,74],"m":0.0625,"s":[[0,95,4,0,8,5],[95,96,4,1,1,0],[98,104,4,2,1,0],[105,137,4,3,4,0],[138,139,4,1,1,0],[142,159,4,4,2,1],[160,167,4,1,5,0],[172,265,0,5,9,9],[265,267,4,1,2,0],[272,283,4,6,2,1],[283,289,4,1,3,0],[293,311,4,4,1,0],[311,315,4,1,3,0],[320,326,1,7,1,0],[327,334,4,1,4,0],[338,353,4,4,1,0],[353,357,4,1,3,0],[362,368,0,8,1,0],[369,376,4,1,4,0],[380,390,4,4,1,0],[390,394,4,1,3,0],[399,446,0,9,5,5],[446,454,4,1,4,0]],"r":"ViewStream","d":0},{"p":"app/components/templates/todo-item.tmpl.html","f":"content","t":[0,0,0,41,45],"m":0,"s":[[0,1,4,1,1,0],[1,509,3,10,41,43],[509,510,4,1,1,0]]},{"p":"app/components/templates/todo-list-view.html","f":"content","t":[0,0,0,26,31],"m":0,"s":[[0,1,4,1,1,0],[1,208,3,10,21,19],[208,209,4,1,1,0],[212,240,4,11,1,0],[243,244,4,1,1,0],[244,274,3,10,5,7],[274,275,4,1,1,0]]},{"p":"app/components/todo-item-view.js","f":"spynejs","t":[15,13,0,0,94],"m":0.4642857142857143,"s":[[0,168,4,0,13,7],[168,169,4,1,1,0],[171,177,4,2,1,0],[178,215,4,3,4,0],[216,217,4,1,1,0],[220,237,4,4,2,1],[238,245,4,1,5,0],[250,380,0,5,12,15],[380,381,4,1,1,0],[386,397,4,6,2,1],[397,403,4,1,3,0],[407,422,4,4,1,0],[422,426,4,1,3,0],[431,461,4,11,1,0],[466,492,0,8,3,3],[492,499,4,1,4,0],[503,521,4,4,1,0],[521,525,4,1,3,0],[530,596,4,11,1,0],[601,617,1,7,2,0],[618,619,4,1,1,0],[620,683,1,12,7,6],[683,692,4,1,4,0],[697,763,1,7,4,4],[763,772,4,1,5,0]],"r":"ViewStream","d":0},{"p":"app/components/todo-list-view.js","f":"spynejs","t":[18,10,0,0,93],"m":0.3571428571428571,"s":[[0,168,4,0,13,7],[168,169,4,1,1,0],[171,177,4,2,1,0],[178,215,4,3,4,0],[216,217,4,1,1,0],[220,237,4,4,2,1],[238,245,4,1,5,0],[250,402,0,5,15,18],[402,403,4,1,1,0],[408,419,4,6,2,1],[419,425,4,1,3,0],[429,444,4,4,1,0],[444,448,4,1,3,0],[453,477,4,11,1,0],[482,511,0,8,3,3],[511,518,4,1,4,0],[522,585,4,11,1,0],[588,606,4,4,1,0],[606,610,4,1,3,0],[615,636,1,7,2,0],[637,638,4,1,1,0],[639,679,1,12,4,3],[680,683,4,1,3,0],[688,757,1,7,4,4],[757,766,4,1,5,0]],"r":"ViewStream","d":0},{"p":"app/traits/todo-traits.js","f":"spynejs","t":[0,0,109,0,205],"m":0,"s":[[0,95,4,0,8,5],[95,96,4,1,1,0],[98,104,4,2,1,0],[105,140,4,3,4,0],[141,142,4,1,1,0],[145,164,4,4,2,1],[164,167,4,1,2,0],[172,198,2,5,3,1],[198,199,4,1,1,0],[204,230,4,6,3,2],[230,236,4,1,3,0],[240,262,4,4,2,0],[262,266,4,1,3,0],[271,293,4,11,1,0],[298,406,2,13,15,16],[406,407,4,1,1,0],[413,440,4,11,1,0],[445,546,2,13,10,13],[546,554,4,1,3,0],[560,588,4,11,1,0],[593,654,2,13,7,8],[654,656,4,1,2,0],[662,680,4,11,1,0],[685,703,2,13,3,2],[703,708,4,1,2,0],[712,738,4,4,3,1],[738,741,4,1,2,0],[746,991,2,13,24,26],[991,997,4,1,3,0],[1001,1027,4,4,2,0],[1027,1031,4,1,3,0],[1036,1094,4,11,1,0],[1099,1144,2,13,6,5],[1144,1146,4,1,2,0],[1152,1185,4,11,1,0],[1190,1251,2,13,10,10],[1251,1256,4,1,2,0],[1260,1284,4,4,2,0],[1284,1288,4,1,3,0],[1293,1339,2,13,6,5],[1339,1341,4,1,2,0],[1347,1386,4,11,1,0],[1391,1564,2,13,23,26],[1564,1575,4,1,3,0],[1579,1602,4,4,2,0],[1602,1606,4,1,3,0],[1611,1633,2,13,2,1],[1633,1642,4,1,5,0]],"r":"SpyneTrait","d":0},{"p":"dev-tools.js","f":"spynejs","t":[0,0,9,0,30],"m":0,"s":[[0,91,4,0,8,5],[91,92,4,1,1,0],[94,120,4,11,1,0],[121,219,2,14,9,10],[220,226,4,1,5,0]]},{"p":"index.js","f":"spynejs","t":[6,0,16,0,48],"m":0.2727272727272727,"s":[[0,104,4,0,10,6],[104,105,4,1,1,0],[107,179,2,14,9,10],[179,181,4,1,2,0],[183,225,2,15,5,4],[225,228,4,1,2,0],[231,254,2,14,2,1],[254,258,4,1,3,0],[260,285,0,9,3,3],[285,286,4,1,1,0],[286,315,0,16,3,2],[315,318,4,1,3,0]]},{"p":"index.tmpl.html","f":"content","t":[0,0,0,44,56],"m":0,"s":[[0,2,4,1,2,0],[2,179,3,10,19,18],[180,182,4,1,2,0],[188,211,4,11,1,0],[216,217,4,1,1,0],[217,380,3,10,10,7],[381,383,4,1,2,0],[389,1187,4,11,6,0],[1190,1192,4,1,2,0],[1192,1205,3,10,2,2],[1205,1206,4,1,1,0],[1211,1237,4,11,1,0],[1242,1243,4,1,1,0],[1243,1328,3,10,13,9],[1328,1329,4,1,1,0]]},{"p":"scss/01-vendors/normalize.css","f":"content","t":[0,0,0,204,345],"m":0,"s":[[0,299,4,11,3,0],[301,327,3,17,3,2],[327,328,4,1,1,0],[329,336,4,11,1,0],[339,369,3,17,2,1],[369,370,4,1,1,0],[371,521,4,11,3,1],[523,541,3,17,3,2],[541,544,4,1,2,0],[546,602,4,11,1,0],[604,627,3,17,3,2],[627,630,4,1,2,0],[632,767,4,11,1,0],[769,810,3,17,6,4],[810,813,4,1,2,0],[815,1009,4,11,2,0],[1011,1041,3,17,3,2],[1041,1042,4,1,1,0],[1043,1050,4,11,1,0],[1053,1062,3,17,2,1],[1062,1063,4,1,1,0],[1064,1071,4,11,1,0],[1074,1091,3,17,2,1],[1091,1092,4,1,1,0],[1093,1239,4,11,2,1],[1241,1282,3,17,4,3],[1282,1283,4,1,1,0],[1284,1291,4,11,1,0],[1294,1308,3,17,2,1],[1308,1309,4,1,1,0],[1310,1490,4,11,3,1],[1492,1527,3,17,3,2],[1527,1530,4,1,2,0],[1532,1662,4,11,1,0],[1664,1699,3,17,4,4],[1699,1700,4,1,1,0],[1701,1708,4,11,1,0],[1711,1737,3,17,2,1],[1737,1738,4,1,1,0],[1739,1746,4,11,1,0],[1749,1782,3,17,3,1],[1782,1783,4,1,1,0],[1784,1862,4,11,2,1],[1864,1897,3,17,4,3],[1897,1900,4,1,2,0],[1902,2037,4,11,1,0],[2039,2092,3,17,6,5],[2092,2093,4,1,1,0],[2094,2101,4,11,1,0],[2104,2118,3,17,2,1],[2118,2119,4,1,1,0],[2120,2184,4,11,2,1],[2186,2210,3,17,3,2],[2210,2213,4,1,2,0],[2215,2309,4,11,1,0],[2311,2458,3,17,16,17],[2458,2461,4,1,2,0],[2463,2626,4,11,2,0],[2628,2654,3,17,3,2],[2654,2657,4,1,2,0],[2659,2850,4,11,2,0],[2852,2918,3,17,7,6],[2918,2919,4,1,1,0],[2920,2927,4,11,1,0],[2930,2945,3,17,2,1],[2945,2946,4,1,1,0],[2947,2954,4,11,1,0],[2957,2974,3,17,2,1],[2974,2975,4,1,1,0],[2976,2983,4,11,1,0],[2986,2995,3,17,2,1],[2995,2996,4,1,1,0],[2997,3076,4,11,2,1],[3078,3091,3,17,2,1],[3092,3093,4,1,1,0],[3096,3103,4,11,1,0],[3106,3123,3,17,2,1],[3123,3126,4,1,2,0],[3128,3264,4,11,1,0],[3266,3280,3,17,2,1],[3281,3282,4,1,1,0],[3285,3292,4,11,1,0],[3295,3315,3,17,2,1],[3315,3318,4,1,2,0],[3320,3396,4,11,1,0],[3398,3485,3,17,9,14],[3485,3488,4,1,2,0],[3490,3548,4,11,1,0],[3550,3715,3,17,15,24],[3715,3718,4,1,2,0],[3720,3783,4,11,1,0],[3785,3936,3,17,15,18],[3936,3939,4,1,2,0],[3941,3983,4,11,1,0],[3985,4028,3,17,5,2],[4028,4031,4,1,2,0],[4033,4276,4,11,1,0],[4278,4311,3,17,3,2],[4311,4312,4,1,1,0],[4313,4320,4,11,1,0],[4323,4337,3,17,2,1],[4337,4338,4,1,1,0],[4339,4346,4,11,1,0],[4349,4363,3,17,2,1],[4363,4364,4,1,1,0],[4365,4372,4,11,1,0],[4375,4390,3,17,2,1],[4390,4391,4,1,1,0],[4392,4399,4,11,1,0],[4402,4412,3,17,2,1],[4412,4413,4,1,1,0],[4414,4421,4,11,1,0],[4424,4443,3,17,2,1],[4443,4444,4,1,1,0],[4445,4532,4,11,2,1],[4534,4571,3,17,3,2],[4571,4574,4,1,2,0],[4576,4635,4,11,1,0],[4637,4664,3,17,3,2],[4664,4667,4,1,2,0],[4669,4754,4,11,1,0],[4756,4757,4,1,1,0],[4757,4816,3,17,6,8],[4816,4817,4,1,1,0],[4818,4825,4,11,1,0],[4828,4838,3,17,2,1],[4838,4839,4,1,1,0],[4840,4932,4,11,2,1],[4934,4935,4,1,1,0],[4935,5037,3,17,8,12],[5037,5040,4,1,2,0],[5042,5147,4,11,1,0],[5149,5150,4,1,1,0],[5150,5198,3,17,4,4],[5198,5199,4,1,1,0],[5200,5207,4,11,1,0],[5210,5230,3,17,2,1],[5230,5231,4,1,1,0],[5232,5309,4,11,2,1],[5311,5312,4,1,1,0],[5312,5382,3,17,5,6],[5382,5385,4,1,2,0],[5387,5519,4,11,1,0],[5521,5523,4,1,2,0],[5523,5580,3,17,3,2],[5580,5581,4,1,1,0],[5582,5589,4,11,1,0],[5592,5605,3,17,2,1],[5605,5606,4,1,1,0],[5607,5778,4,11,3,1],[5780,5806,3,17,3,2],[5806,5809,4,1,2,0],[5811,5861,4,11,1,0],[5863,5893,3,17,3,2],[5893,5896,4,1,2,0],[5898,6033,4,11,2,0],[6035,6061,3,17,3,2],[6061,6064,4,1,2,0],[6066,6110,4,11,1,0],[6112,6113,4,1,1,0],[6113,6138,3,17,3,3],[6138,6141,4,1,2,0]]},{"p":"scss/03-components/todo-app.scss","f":"content","t":[0,0,0,141,147],"m":0,"s":[[0,53,4,11,1,0],[54,222,3,18,14,13],[222,223,4,1,1,0],[225,268,4,11,1,0],[269,645,3,18,36,31],[645,646,4,1,1,0],[652,710,4,11,1,0],[715,892,3,18,14,10],[892,899,4,1,2,0],[905,963,4,11,1,0],[968,1202,3,18,17,15],[1202,1217,4,1,3,0],[1223,1277,4,11,1,0],[1282,1566,3,18,20,18],[1567,1568,4,1,1,0],[1577,1624,4,11,1,0],[1633,1863,3,18,19,13],[1864,1865,4,1,1,0],[1874,1921,4,11,1,0],[1930,2007,3,18,5,5],[2007,2016,4,1,2,0],[2024,2148,4,11,1,0],[2155,2420,3,18,16,17],[2420,2451,4,1,6,0]]},{"p":"scss/main.scss","f":"content","t":[0,0,0,33,45],"m":0,"s":[[0,120,3,18,9,5],[120,121,4,1,1,0],[122,151,4,11,1,0],[154,177,3,18,2,1],[177,178,4,1,1,0],[179,210,4,11,1,0],[213,232,3,18,2,1],[232,233,4,1,1,0],[234,248,4,11,1,0],[251,262,3,18,2,1],[262,263,4,1,1,0],[264,289,4,11,1,0],[290,291,4,1,1,0],[293,322,3,18,3,2],[322,323,4,1,1,0],[324,368,4,11,1,0],[371,385,3,18,3,1],[385,386,4,1,1,0],[387,464,4,11,2,0],[467,489,3,18,2,1],[489,490,4,1,1,0],[491,522,4,11,1,0],[523,524,4,1,1,0],[526,535,3,18,1,0],[536,537,4,1,1,0],[540,813,4,11,5,0],[816,878,3,18,9,7],[878,885,4,1,3,0]]}],"rules":["scaffolding:imports","punctuation","scaffolding:exportKeywords","scaffolding:classSignatures","scaffolding:functionSignatures","method:constructor","scaffolding:superCalls","method:addActionListeners","method:broadcastEvents","compose-view","content:html","comment","payload-filter","role:SpyneTrait","default","conditional","dom","content:css","content:scss"],"empty":["scss/02-variables/mixins.scss"],"skipped":{"count":1,"byExtension":{".png":1},"tests":1},"failed":[],"src":{"app/app-view.js":"import { ViewStream } from 'spyne';\nimport { TodoListView } from 'components/todo-list-view.js';\n\nexport class AppView extends ViewStream {\n  constructor(props = {}) {\n    props.tagName = 'main';\n    props.id = 'app';\n    props.template = `\u003cdiv id='examples'>\u003c/div>`;\n    super(props);\n  }\n\n  addActionListeners() {\n    return [];\n  }\n\n  broadcastEvents() {\n    return [];\n  }\n\n  onRendered() {\n    this.appendView(new TodoListView(), '#examples');\n  }\n}\n","app/components/templates/todo-item.tmpl.html":"\u003cp class=\"todo-text\">{{text}}\u003c/p>\n\n\u003cinput class=\"edit-input\" type=\"text\" />\n\n\u003cdiv class=\"buttons-holder\">\n    \u003cbutton\n            class=\"edit-btn\"\n            data-action=\"edit\"\n            data-todo-id=\"{{todoId}}\">Edit\n    \u003c/button>\n\n    \u003cbutton\n            class=\"remove-btn\"\n            data-action=\"remove\"\n            data-todo-id=\"{{todoId}}\">Remove\n    \u003c/button>\n\n    \u003cbutton\n            class=\"end-edit\"\n            data-action=\"endEdit\"\n            data-todo-id=\"{{todoId}}\">Done\n    \u003c/button>\n\u003c/div>\n","app/components/templates/todo-list-view.html":"\u003ch1>todos\u003c/h1>\n\u003cdiv class=\"todo-header\">\n  \u003cinput\n    type=\"text\"\n    class=\"new-todo\"\n    placeholder=\"What needs to be done?\" />\n  \u003cbutton\n    class=\"add-todo\"\n    data-action=\"add\">\n    Add Todo\n  \u003c/button>\n  \u003c!-- add todo items here -->\n  \u003cdiv class=\"items\">\u003c/div>\n\u003c/div>\n","app/components/todo-item-view.js":"import { ViewStream, ChannelPayloadFilter } from 'spyne';\nimport { TodoTraits } from 'traits/todo-traits.js';\nimport TodoItemTmpl from './templates/todo-item.tmpl.html';\n\nexport class TodoItemView extends ViewStream {\n  constructor(props = {}) {\n    props.channels = ['CHANNEL_UI'];\n    props.class = 'todo-item';\n    props.traits = [TodoTraits];\n    props.template = TodoItemTmpl;\n    super(props);\n  }\n\n  broadcastEvents() {\n    // Broadcast all button clicks\n    return [['button', 'click']];\n  }\n\n  addActionListeners() {\n    // Filter so only events with the correct todoId reach onItemEvent\n    const todoFilter = new ChannelPayloadFilter({\n      todoId: this.props.data.todoId,\n    });\n    return [['CHANNEL_UI_CLICK_EVENT', 'todos$onItemEvent', todoFilter]];\n  }\n}\n","app/components/todo-list-view.js":"import { ViewStream, ChannelPayloadFilter } from 'spyne';\nimport { TodoTraits } from 'traits/todo-traits.js';\nimport TodoListTmpl from './templates/todo-list-view.html';\n\nexport class TodoListView extends ViewStream {\n  constructor(props = {}) {\n    props.channels = ['CHANNEL_UI'];\n    props.id = 'todo-app';\n    props.traits = [TodoTraits];\n    props.nextTodoId = 1;\n    props.template = TodoListTmpl;\n    super(props);\n  }\n\n  broadcastEvents() {\n    // The \"Add Todo\" button\n    return [['.add-todo', 'click']];\n  }\n\n  // We want to respond to an \"add\" action from the same channel,\n  addActionListeners() {\n    const addActionFilter = new ChannelPayloadFilter({ action: 'add' });\n    return [['CHANNEL_UI_CLICK_EVENT', 'todos$OnAddTodo', addActionFilter]];\n  }\n}\n","app/traits/todo-traits.js":"import { SpyneTrait } from 'spyne';\nimport { TodoItemView } from 'components/todo-item-view.js';\n\nexport class TodoTraits extends SpyneTrait {\n  constructor(context) {\n    let traitPrefix = 'todos$';\n    super(context, traitPrefix);\n  }\n\n  static todos$OnAddTodo() {\n    // Grab the input text\n    const inputEl = this.props.el$('.new-todo').el;\n    const text = inputEl.value.trim();\n    if (!text) return;\n\n    // Create a new item object\n    const newItem = {\n      todoId: `todo-${this.props.nextTodoId++}`,\n      text,\n      completed: false,\n    };\n\n    // Append a new TodoItemView\n    this.appendView(new TodoItemView({ data: newItem }), '.items');\n\n    // Clear the input\n    inputEl.value = '';\n  }\n\n  static todos$onItemEvent(e) {\n    const { action } = e.payload;\n    const actionsFnLookup = {\n      edit: this.todos$StartEditMode,\n      remove: this.todos$RemoveItem,\n      endEdit: this.todos$EndEditMode,\n    };\n    const fn = actionsFnLookup[action];\n    if (fn) fn.call(this);\n  }\n\n  static todos$StartEditMode() {\n    // Toggle .is-editing class on the root .todo-item element\n    this.props.el$.toggleClass('is-editing', true);\n\n    // Initialize the edit input text\n    this.props.el$('.edit-input').el.value = this.props.data.text;\n  }\n\n  static todos$EndEditMode() {\n    this.props.el$.toggleClass('is-editing', false);\n\n    // If we have new text, update the data\n    const newVal = this.props.el$('.edit-input').el.value.trim();\n    if (newVal) {\n      this.props.data.text = newVal;\n      this.props.el$('.todo-text').el.innerText = newVal;\n    }\n  }\n\n  static todos$RemoveItem() {\n    this.disposeViewStream();\n  }\n}\n","dev-tools.js":"import { SpyneApp } from 'spyne';\nimport { SpynePluginConsole } from 'spyne-plugin-console';\n\n// Register console plugin\nSpyneApp.registerPlugin(\n  new SpynePluginConsole({ position: ['bottom', 'right'], minimize: false }),\n);\n","index.js":"import './scss/main.scss';\nimport { SpyneApp } from 'spyne';\nimport { AppView } from './app/app-view.js';\n\nconst config = {\n  debug: true,\n  strict: true,\n};\n\nSpyneApp.init(config);\n\nif (process.env.NODE_ENV === 'development') {\n  import('./dev-tools.js');\n}\n\nnew AppView().appendToDom(document.querySelector('body'));\n","index.tmpl.html":"\u003c!doctype html>\n\u003chtml lang=\"en\">\n  \u003chead>\n    \u003ctitle>Spyne Starter App\u003c/title>\n    \u003cmeta charset=\"utf-8\" />\n    \u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n    \u003c!-- Basic Metadata -->\n    \u003cmeta\n      name=\"description\"\n      content=\"A base template for building SpyneJS applications.\"\n    />\n    \u003cmeta name=\"author\" content=\"Your Name or Organization\" />\n\n    \u003c!-- Optional: Open Graph -->\n    \u003c!--\n    \u003cmeta property=\"og:title\" content=\"SpyneJS Base App\" />\n    \u003cmeta property=\"og:description\" content=\"A base template for building SpyneJS apps.\" />\n    \u003cmeta property=\"og:image\" content=\"https://example.com/assets/og-image.png\" />\n    \u003cmeta property=\"og:url\" content=\"https://example.com\" />\n    \u003cmeta name=\"twitter:card\" content=\"summary_large_image\" />\n\n    -->\n\n    \u003c!-- Optional: Favicon & Touch Icon -->\n    \u003c!--\n    \u003clink rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/favicon-32x32.png\" />\n    \u003clink rel=\"apple-touch-icon\" href=\"/assets/apple-touch-icon.png\" />\n    -->\n\n    \u003c!-- Optional: Manifest & Theme Color (PWA) -->\n    \u003c!--\n    \u003clink rel=\"manifest\" href=\"/manifest.json\" />\n    \u003cmeta name=\"theme-color\" content=\"#ffffff\" />\n    -->\n  \u003c/head>\n  \u003cbody>\n    \u003c!-- NoScript Fallback -->\n    \u003cnoscript> You need to enable JavaScript to run this app. \u003c/noscript>\n  \u003c/body>\n\u003c/html>\n","scss/01-vendors/normalize.css":"/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n\n/* Document\n   ========================================================================== */\n\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\n\nhtml {\n  line-height: 1.15; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n}\n\n/* Sections\n   ========================================================================== */\n\n/**\n * Remove the margin in all browsers.\n */\n\nbody {\n  margin: 0;\n}\n\n/**\n * Render the `main` element consistently in IE.\n */\n\nmain {\n  display: block;\n}\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\n\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n\n/* Grouping content\n   ========================================================================== */\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\n\nhr {\n  box-sizing: content-box; /* 1 */\n  height: 0; /* 1 */\n  overflow: visible; /* 2 */\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\n\npre {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/* Text-level semantics\n   ========================================================================== */\n\n/**\n * Remove the gray background on active links in IE 10.\n */\n\na {\n  background-color: transparent;\n}\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\n\nabbr[title] {\n  border-bottom: none; /* 1 */\n  text-decoration: underline; /* 2 */\n  text-decoration: underline dotted; /* 2 */\n}\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\n\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/**\n * Add the correct font size in all browsers.\n */\n\nsmall {\n  font-size: 80%;\n}\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\n   ========================================================================== */\n\n/**\n * Remove the border on images inside links in IE 10.\n */\n\nimg {\n  border-style: none;\n}\n\n/* Forms\n   ========================================================================== */\n\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  line-height: 1.15; /* 1 */\n  margin: 0; /* 2 */\n}\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\n\nbutton,\ninput {\n  /* 1 */\n  overflow: visible;\n}\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\n\nbutton,\nselect {\n  /* 1 */\n  text-transform: none;\n}\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\n\nbutton,\n[type='button'],\n[type='reset'],\n[type='submit'] {\n  -webkit-appearance: button;\n}\n\n/**\n * Remove the inner border and padding in Firefox.\n */\n\nbutton::-moz-focus-inner,\n[type='button']::-moz-focus-inner,\n[type='reset']::-moz-focus-inner,\n[type='submit']::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\n\nbutton:-moz-focusring,\n[type='button']:-moz-focusring,\n[type='reset']:-moz-focusring,\n[type='submit']:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n\n/**\n * Correct the padding in Firefox.\n */\n\nfieldset {\n  padding: 0.35em 0.75em 0.625em;\n}\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\n\nlegend {\n  box-sizing: border-box; /* 1 */\n  color: inherit; /* 2 */\n  display: table; /* 1 */\n  max-width: 100%; /* 1 */\n  padding: 0; /* 3 */\n  white-space: normal; /* 1 */\n}\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\n\nprogress {\n  vertical-align: baseline;\n}\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\n\ntextarea {\n  overflow: auto;\n}\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n\n[type='checkbox'],\n[type='radio'] {\n  box-sizing: border-box; /* 1 */\n  padding: 0; /* 2 */\n}\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n\n[type='number']::-webkit-inner-spin-button,\n[type='number']::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n\n[type='search'] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n\n[type='search']::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/* Interactive\n   ========================================================================== */\n\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\n\ndetails {\n  display: block;\n}\n\n/*\n * Add the correct display in all browsers.\n */\n\nsummary {\n  display: list-item;\n}\n\n/* Misc\n   ========================================================================== */\n\n/**\n * Add the correct display in IE 10+.\n */\n\ntemplate {\n  display: none;\n}\n\n/**\n * Add the correct display in IE 10.\n */\n\n[hidden] {\n  display: none;\n}\n","scss/03-components/todo-app.scss":"/* Define some common variables for repeated usage */\n$border-radius: 4px;\n$border-color: #ddd;\n$border-color-alt: #ccc;\n$bg-color-input: #fcfcfc;\n$bg-color-button: #fff;\n$bg-color-hover: #f0f0f0;\n$text-color-heading: #999;\n\n/*\n  The main container for our Todo App\n*/\n#todo-app {\n  background-color: azure;\n  border: 1px solid $border-color;\n  border-radius: $border-radius;\n  padding: 1.5rem;\n  width: 100%;\n  max-width: 600px;\n  margin: 0 auto;\n\n  h1 {\n    margin: 0 0 1rem;\n    color: $text-color-heading;\n    font-weight: 100;\n  }\n\n  .todo-header {\n    display: flex;\n    flex-direction: column;\n    gap: 0.75rem;\n    margin-bottom: 1.25rem;\n\n    /* Reuse these styles for input-like elements if needed */\n    .new-todo {\n      flex: 1;\n      padding: 0.5rem 0.75rem;\n      border: 1px solid $border-color-alt;\n      border-radius: $border-radius;\n      background-color: $bg-color-input;\n    }\n\n    /* A universal .btn class for consistent button styling */\n    .btn {\n      padding: 0.5rem 1rem;\n      border: 1px solid $border-color;\n      border-radius: $border-radius;\n      background-color: $bg-color-button;\n      cursor: pointer;\n\n      &:hover {\n        background-color: $bg-color-hover;\n      }\n    }\n\n    /* Make .add-todo inherit from .btn for consistency */\n    .add-todo {\n      @extend .btn;\n    }\n  }\n\n  .items {\n    .todo-item {\n      margin-bottom: 0.5rem;\n      padding: 0.25rem 0;\n      border-bottom: 1px dashed $border-color-alt;\n\n      .todo-text {\n        display: inline-block;\n        margin-right: 0.5rem;\n      }\n\n      .edit-input {\n        /* Hidden by default; toggled in .is-editing */\n        display: none;\n        padding: 0.35rem 0.6rem;\n        margin: 0 0.5rem 0.5rem 0;\n        border: 1px solid $border-color;\n        border-radius: $border-radius;\n        background-color: $bg-color-input;\n      }\n\n      .end-edit {\n        /* Hidden by default; toggled in .is-editing */\n        display: none;\n      }\n\n      .buttons-holder {\n        margin-bottom: 0.5rem;\n      }\n\n      /*\n        Let all item buttons share the .btn styling\n        (instead of repeating the same hover, padding, etc.)\n      */\n      button {\n        @extend .btn;\n        padding: 0.3rem 0.6rem;\n      }\n\n      &.is-editing {\n        .todo-text {\n          display: none;\n        }\n        .edit-input {\n          display: inline-block;\n        }\n        .end-edit {\n          display: inline-block;\n        }\n      }\n    }\n  }\n}\n","scss/main.scss":"@use '01-vendors/normalize.css';\n@use '02-variables/mixins.scss';\n@use '03-components/todo-app.scss';\nbody {\n  margin: 0; // Remove default body margin\n  font-family: sans-serif; // Or your preferred font stack\n  background: #1d1f21; // Subtle gray\n  color: #333; // Dark text for contrast\n}\n\nmain#app {\n  max-width: 960px; // Constrain content width on larger screens\n  margin: 0 auto; // Center the main content\n  //padding: 1rem; // Basic padding around content\n  box-sizing: border-box; // Helps keep consistent sizing\n}\n\n#examples {\n  //padding: 1.5rem;\n  //background: whitesmoke; // White background for contrast\n  //border-radius: 6px; // Subtle rounded corners\n // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Simple shadow for some depth\n // margin-bottom: 1.5rem; // Space below the Hello World section\n  display: flex;\n  margin: 1rem;\n  h2,\n  p {\n    margin: .5rem 0;\n  }\n}\n"}}</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById('nm-data').textContent);
+  var K = ['V', 'B', 'L', 'C'];
+  var NAMES = ['View', 'Behavior', 'Logic', 'Content'];
+  var COLORS = ['var(--V)', 'var(--B)', 'var(--L)', 'var(--C)'];
+  var hasRoles = D.modules.some(function (m) { return m.r !== undefined; });
+  var state = { sort: 'size', role: 'all', q: '', sel: -1, names: true };
+  var maxTok = 1;
+
+  function tok(m) { return m.t[0] + m.t[1] + m.t[2] + m.t[3]; }
+  function shares(m) { var n = tok(m) || 1; return m.t.slice(0, 4).map(function (x) { return x / n; }); }
+  function pct(x) { return Math.round(x * 100) + '%'; }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function f2(x) { return x === undefined ? '' : x.toFixed(2); }
+
+  // ---- 100 blocks per module: integer percentages (largest remainder), laid out in source order ----
+  function integerPercents(counts) {
+    var n = counts[0] + counts[1] + counts[2] + counts[3];
+    if (n === 0) return [0, 0, 0, 0];
+    var raw = counts.map(function (c) { return (c * 100) / n; });
+    var q = raw.map(Math.floor);
+    var left = 100 - q.reduce(function (a, b) { return a + b; }, 0);
+    raw.map(function (r, i) { return { i: i, f: r - Math.floor(r) }; }).sort(function (a, b) { return b.f - a.f; }).forEach(function (x) { if (left > 0) { q[x.i] += 1; left -= 1; } });
+    return q;
+  }
+  function blockSeq(m) {
+    var counts = m.t.slice(0, 4), n = counts[0] + counts[1] + counts[2] + counts[3];
+    var q = integerPercents(counts), emitted = [0, 0, 0, 0], cum = [0, 0, 0, 0], seq = [], lastSeen = [-1, -1, -1, -1];
+    if (n === 0) return seq;
+    m.s.forEach(function (sp, idx) {
+      var b = sp[2];
+      if (b > 3 || sp[4] === 0) return;
+      cum[b] += sp[4]; lastSeen[b] = idx;
+      var target = Math.min(q[b], Math.floor((cum[b] * 100) / n));
+      while (emitted[b] < target) { seq.push(b); emitted[b] += 1; }
+    });
+    // Floor rounding leaves a few blocks; append them where each bucket last appeared, in that order.
+    [0, 1, 2, 3].sort(function (a, b) { return lastSeen[a] - lastSeen[b]; }).forEach(function (b) { while (emitted[b] < q[b]) { seq.push(b); emitted[b] += 1; } });
+    return seq;
+  }
+  function blocksSvg(seq, size, attrs) {
+    var cell = 10, gap = size >= 40 ? 0.6 : 0.35;
+    var s = '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100" role="img"' + (attrs || '') + '>';
+    s += '<rect x="0" y="0" width="100" height="100" fill="var(--surface-2)"/>';
+    for (var i = 0; i < seq.length; i++) {
+      var x = (i % 10) * cell, y = Math.floor(i / 10) * cell;
+      s += '<rect x="' + (x + gap) + '" y="' + (y + gap) + '" width="' + (cell - 2 * gap) + '" height="' + (cell - 2 * gap) + '" fill="' + COLORS[seq[i]] + '"/>';
+    }
+    return s + '</svg>';
+  }
+  function codebaseSeq(sh) {
+    var q = integerPercents(sh.map(function (x) { return Math.round(x * 100000); })), seq = [];
+    for (var b = 0; b < 4; b++) for (var k = 0; k < q[b]; k++) seq.push(b);
+    return seq;
+  }
+  function middle(name, max) {
+    if (name.length <= max) return name;
+    var head = Math.ceil((max - 1) / 2), tail = Math.floor((max - 1) / 2);
+    return name.slice(0, head) + '…' + name.slice(name.length - tail);
+  }
+
+  function tileSize(m) { return Math.round(14 + 126 * Math.sqrt(tok(m) / maxTok)); }
+
+  function sharebar(sh) {
+    var s = '<div class="sharebar" aria-hidden="true">';
+    for (var i = 0; i < 4; i++) if (sh[i] > 0) s += '<i style="width:' + (sh[i] * 100) + '%;background:' + COLORS[i] + '"></i>';
+    return s + '</div>';
+  }
+
+  // ---- codebase scores ----
+  function renderScores() {
+    var sc = D.scores, sh = [sc.shares.V, sc.shares.B, sc.shares.L, sc.shares.C];
+    var md = [sc.median.V, sc.median.B, sc.median.L, sc.median.C];
+    var html = '<div class="tile-big">' + blocksSvg(codebaseSeq(sh), 160, ' aria-label="Codebase shape"') + '</div>';
+    html += '<div class="stats">';
+    html += stat(D.modules.length, 'modules') + stat(sc.totals.counted.toLocaleString(), 'tokens');
+    html += stat(f2(sc.consistency), 'consistency') + stat(f2(sc.meanMixing), 'mean mixing, by module') + stat(f2(sc.meanMixingTokenWeighted), 'mean mixing, by token');
+    html += '</div>';
+    html += '<div><div class="legend">';
+    for (var i = 0; i < 4; i++) html += '<span><span class="sw" style="background:' + COLORS[i] + '"></span>' + NAMES[i] + ' ' + pct(sh[i]) + '</span>';
+    html += '</div>' + sharebar(sh);
+    html += '<div class="frameworks">families: ' + K.map(function (k, i) { var f = sc.families[k]; return f ? '<span class="dot" style="background:' + COLORS[i] + '"></span>' + NAMES[i] + ' ' + f.modules + ' (median ' + K.map(function (j) { return j + ' ' + pct(f.median[j]); }).join(' ') + ')' : ''; }).filter(Boolean).join(' · ') + '</div>';
+    html += '<div class="frameworks">median shape of all modules V ' + pct(md[0]) + ' · B ' + pct(md[1]) + ' · L ' + pct(md[2]) + ' · C ' + pct(md[3]) + '</div>';
+    html += '<div class="frameworks">detected: ' + esc(D.frameworks.detected.join(', ') || 'none') + (D.frameworks.override ? ' · override: ' + esc(D.frameworks.override) : '') + ' · adapters: ' + esc(D.frameworks.adapters.join(', ')) + ' · skipped ' + D.skipped.count + (D.skipped.tests ? ' · tests left out ' + D.skipped.tests : '') + (D.empty.length ? ' · empty ' + D.empty.length : '') + (D.failed.length ? ' · failed ' + D.failed.length : '') + (D.frameworks.userConfig ? ' · config: ' + esc(D.frameworks.userConfig) : '') + '</div>';
+    html += '</div>';
+    document.getElementById('scores').innerHTML = html;
+  }
+  function stat(n, l) { return '<div class="stat"><div class="n">' + n + '</div><div class="l">' + l + '</div></div>'; }
+
+  // ---- controls ----
+  function renderControls() {
+    var roles = {};
+    D.modules.forEach(function (m) { var k = m.r || (m.f === 'content' ? 'content' : 'no role'); roles[k] = (roles[k] || 0) + 1; });
+    var html = '<label>sort</label><div class="seg" id="sort">';
+    html += segBtn('size', 'largest first') + segBtn('noise', 'noisiest first') + (hasRoles ? segBtn('drift', 'most drift first') : '');
+    html += '</div>';
+    html += '<label>show</label><div class="seg" id="role">' + segBtn('all', 'all ' + D.modules.length);
+    Object.keys(roles).sort().forEach(function (k) { html += segBtn(k, k + ' ' + roles[k]); });
+    html += '</div>';
+    html += '<input type="search" id="q" placeholder="filter by path" aria-label="filter by path">';
+    html += '<label class="chk"><input type="checkbox" id="names" checked> names</label>';
+    html += '<div class="legend">';
+    for (var i = 0; i < 4; i++) html += '<span><span class="sw" style="background:' + COLORS[i] + '"></span>' + NAMES[i] + '</span>';
+    html += '<span><span class="sw" style="background:var(--surface-2);border:1px solid var(--border)"></span>empty</span></div>';
+    html += '<span class="count" id="count"></span>';
+    document.getElementById('controls').innerHTML = html;
+    document.getElementById('names').addEventListener('change', function (e) { state.names = e.target.checked; renderMap(); });
+    document.getElementById('sort').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { state.sort = b.dataset.v; renderMap(); } });
+    document.getElementById('role').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { state.role = b.dataset.v; renderMap(); } });
+    document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value.toLowerCase(); renderMap(); });
+  }
+  function segBtn(v, label) { return '<button type="button" data-v="' + esc(v) + '">' + esc(label) + '</button>'; }
+  function syncSeg(id, v) { Array.prototype.forEach.call(document.getElementById(id).querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', b.dataset.v === v ? 'true' : 'false'); }); }
+
+  // ---- map ----
+  function visible() {
+    return D.modules.map(function (m, i) { return { m: m, i: i }; }).filter(function (x) {
+      var k = x.m.r || (x.m.f === 'content' ? 'content' : 'no role');
+      if (state.role !== 'all' && k !== state.role) return false;
+      if (state.q && x.m.p.toLowerCase().indexOf(state.q) === -1) return false;
+      return true;
+    }).sort(function (a, b) {
+      if (state.sort === 'noise') return b.m.m - a.m.m || tok(b.m) - tok(a.m);
+      if (state.sort === 'drift') return (b.m.d === undefined ? -1 : b.m.d) - (a.m.d === undefined ? -1 : a.m.d) || tok(b.m) - tok(a.m);
+      return tok(b.m) - tok(a.m) || a.m.p.localeCompare(b.m.p);
+    });
+  }
+  function renderMap() {
+    syncSeg('sort', state.sort); syncSeg('role', state.role);
+    var list = visible();
+    // Tiles scale to the largest visible module, so a filtered view is not dwarfed by a hidden one.
+    maxTok = list.reduce(function (a, x) { return Math.max(a, tok(x.m)); }, 1);
+    var html = '';
+    list.forEach(function (x) {
+      var m = x.m, sz = tileSize(m), w = state.names ? Math.max(sz, 64) : sz;
+      var name = m.p.slice(m.p.lastIndexOf('/') + 1);
+      html += '<div class="tile' + (x.i === state.sel ? ' sel' : '') + '" data-i="' + x.i + '" tabindex="0" role="button" aria-label="' + esc(m.p) + '" style="width:' + w + 'px">';
+      html += blocksSvg(blockSeq(m), sz);
+      if (state.names) html += '<div class="name" title="' + esc(m.p) + '">' + esc(middle(name, Math.max(6, Math.floor(w / 5.6)))) + '</div>';
+      html += '</div>';
+    });
+    document.getElementById('map').innerHTML = html;
+    document.getElementById('count').textContent = list.length + ' of ' + D.modules.length + ' modules';
+  }
+
+  // ---- hover ----
+  var tip = document.getElementById('tip');
+  function tipHtml(m) {
+    var sh = shares(m);
+    var h = '<div class="p">' + esc(m.p) + '</div>';
+    h += '<div class="row"><span>' + esc(m.f) + (m.r ? ' · ' + esc(m.r) : '') + '</span><span>' + tok(m) + ' tokens</span></div>';
+    h += sharebar(sh);
+    h += '<div class="row">';
+    for (var i = 0; i < 4; i++) h += '<span><span class="dot" style="background:' + COLORS[i] + '"></span>' + K[i] + ' ' + pct(sh[i]) + '</span>';
+    h += '</div><div class="row"><span>mixing ' + f2(m.m) + '</span>' + (m.d !== undefined ? '<span>drift ' + f2(m.d) + '</span>' : '') + '<span>excluded ' + m.t[4] + '</span></div>';
+    return h;
+  }
+  var map = document.getElementById('map');
+  map.addEventListener('mousemove', function (e) {
+    var t = e.target.closest('.tile[data-i]');
+    if (!t) { tip.hidden = true; return; }
+    tip.innerHTML = tipHtml(D.modules[+t.dataset.i]);
+    tip.hidden = false;
+    var x = e.clientX + 14, y = e.clientY + 14;
+    if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 14;
+    if (y + tip.offsetHeight > window.innerHeight - 8) y = e.clientY - tip.offsetHeight - 14;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  });
+  map.addEventListener('mouseleave', function () { tip.hidden = true; });
+  map.addEventListener('click', function (e) { var t = e.target.closest('.tile[data-i]'); if (t) openDetail(+t.dataset.i); });
+  map.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { var t = e.target.closest('.tile[data-i]'); if (t) { e.preventDefault(); openDetail(+t.dataset.i); } } });
+
+  // ---- detail ----
+  var detail = document.getElementById('detail');
+  function openDetail(i) {
+    state.sel = i; tip.hidden = true;
+    var m = D.modules[i], sh = shares(m), src = D.src[m.p];
+    var h = '<div class="dh"><button type="button" class="close" aria-label="close">×</button>';
+    h += '<div class="p">' + esc(m.p) + '</div>';
+    h += '<div class="row"><span>' + esc(m.f) + (m.r ? ' · role ' + esc(m.r) : '') + '</span><span>' + tok(m) + ' tokens</span><span>mixing ' + f2(m.m) + '</span>' + (m.d !== undefined ? '<span>drift ' + f2(m.d) + '</span>' : '') + '<span>excluded ' + m.t[4] + '</span></div>';
+    h += sharebar(sh) + '<div class="row">';
+    for (var k = 0; k < 4; k++) h += '<span><span class="dot" style="background:' + COLORS[k] + '"></span>' + NAMES[k] + ' ' + m.t[k] + ' (' + pct(sh[k]) + ')</span>';
+    h += '</div><div class="dtabs seg">' + segBtn('rules', 'rules') + (src !== undefined ? segBtn('source', 'source') : '') + '</div></div>';
+    h += '<div class="db" id="db"></div>';
+    detail.innerHTML = h; detail.hidden = false;
+    detail.querySelector('.close').addEventListener('click', closeDetail);
+    var tabs = detail.querySelector('.dtabs');
+    tabs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) showTab(m, src, b.dataset.v); });
+    showTab(m, src, src !== undefined ? 'source' : 'rules');
+    Array.prototype.forEach.call(map.querySelectorAll('.tile.sel'), function (s) { s.classList.remove('sel'); });
+    var t = map.querySelector('.tile[data-i="' + i + '"]'); if (t) t.classList.add('sel');
+  }
+  function closeDetail() { detail.hidden = true; state.sel = -1; Array.prototype.forEach.call(map.querySelectorAll('.tile.sel'), function (s) { s.classList.remove('sel'); }); }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !detail.hidden) closeDetail(); });
+  function showTab(m, src, which) {
+    Array.prototype.forEach.call(detail.querySelectorAll('.dtabs button'), function (b) { b.setAttribute('aria-pressed', b.dataset.v === which ? 'true' : 'false'); });
+    document.getElementById('db').innerHTML = which === 'source' ? sourceHtml(m, src) : rulesHtml(m);
+  }
+  function rulesHtml(m) {
+    var agg = {};
+    m.s.forEach(function (s) { var key = s[2] + '|' + s[3]; if (!agg[key]) agg[key] = { b: s[2], r: D.rules[s[3]], t: 0, n: 0 }; agg[key].t += s[4]; agg[key].n += 1; });
+    var rows = Object.keys(agg).map(function (k) { return agg[k]; }).sort(function (a, b) { return b.t - a.t; });
+    var h = '<table><thead><tr><th>bucket</th><th>rule</th><th class="n">tokens</th><th class="n">spans</th></tr></thead><tbody>';
+    rows.forEach(function (r) { h += '<tr><td>' + (r.b < 4 ? '<span class="dot" style="background:' + COLORS[r.b] + '"></span>' + K[r.b] : '<span class="dot" style="background:var(--X)"></span>excluded') + '</td><td>' + esc(r.r) + '</td><td class="n">' + r.t + '</td><td class="n">' + r.n + '</td></tr>'; });
+    return h + '</tbody></table>';
+  }
+  function sourceHtml(m, src) {
+    var h = '<pre>', pos = 0;
+    m.s.forEach(function (s) {
+      if (s[0] > pos) h += esc(src.slice(pos, s[0]));
+      h += '<span class="b' + s[2] + '" title="' + esc(D.rules[s[3]]) + ' · ' + s[4] + ' tokens">' + esc(src.slice(s[0], s[1])) + '</span>';
+      pos = s[1];
+    });
+    if (pos < src.length) h += esc(src.slice(pos));
+    return h + '</pre>';
+  }
+
+  // ---- table view ----
+  function renderTable() {
+    var h = '<table><thead><tr><th>file</th><th class="n">tokens</th><th class="n">V</th><th class="n">B</th><th class="n">L</th><th class="n">C</th><th class="n">mixing</th>' + (hasRoles ? '<th>role</th><th class="n">drift</th>' : '') + '</tr></thead><tbody>';
+    D.modules.slice().sort(function (a, b) { return b.m - a.m || tok(b) - tok(a); }).forEach(function (m) {
+      var sh = shares(m);
+      h += '<tr><td class="p">' + esc(m.p) + '</td><td class="n">' + tok(m) + '</td><td class="n">' + pct(sh[0]) + '</td><td class="n">' + pct(sh[1]) + '</td><td class="n">' + pct(sh[2]) + '</td><td class="n">' + pct(sh[3]) + '</td><td class="n">' + f2(m.m) + '</td>' + (hasRoles ? '<td>' + esc(m.r || '') + '</td><td class="n">' + f2(m.d) + '</td>' : '') + '</tr>';
+    });
+    document.getElementById('table').innerHTML = h + '</tbody></table>';
+  }
+
+  renderScores(); renderControls(); renderMap(); renderTable();
+})();
+</script>
+</body>
+</html>

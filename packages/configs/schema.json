@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/relevantcontext/noisemap/packages/configs/schema.json",
+  "title": "noisemap framework config",
+  "description": "Shape shared by the built-in configs and by a target repo's noisemap.config.json. Every rule is a classifier: a node kind the adapter knows how to find, plus the bucket it gets. Classification is by what a token does, never by what the framework calls the module; the same rule gives the same bucket in every config.",
+  "type": "object",
+  "required": [
+    "framework",
+    "default",
+    "classifiers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "framework": {
+      "type": "string",
+      "description": "Adapter id this config drives: react, spynejs, later angular/vue/svelte."
+    },
+    "detect": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "package.json dependency names (a trailing slash matches a scope) that select this config."
+        },
+        "extensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Extensions always routed to this adapter."
+        },
+        "plainExtensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Extensions routed here only when the framework is detected or forced, and no earlier adapter claimed the file."
+        },
+        "extends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Class names whose `extends` routes a file here (SpyneJS)."
+        }
+      }
+    },
+    "default": {
+      "$ref": "#/$defs/bucket",
+      "description": "Bucket for a counted token no classifier reaches. React: L (a module that is not view, behavior, or content is computing something)."
+    },
+    "scaffolding": {
+      "type": "array",
+      "description": "Structure that is excluded in every config (ruling 4). Only bodies count.",
+      "items": {
+        "enum": [
+          "imports",
+          "exportKeywords",
+          "functionSignatures",
+          "classSignatures",
+          "constructors",
+          "superCalls",
+          "decorators",
+          "typeAnnotations",
+          "directives"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "roles": {
+      "type": "array",
+      "description": "Declared roles: a match rule plus an expected shape. Drift is measured against the shape.",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "match",
+          "expected",
+          "default"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "match": {
+            "type": "object",
+            "required": [
+              "extends"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "extends": {
+                "type": "string",
+                "description": "Regex matched against the superclass name, e.g. `ViewStream` or `DomElement|DomItem`."
+              }
+            }
+          },
+          "expected": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/bucket"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "default": {
+            "$ref": "#/$defs/bucket"
+          },
+          "methods": {
+            "type": "object",
+            "description": "Method name → bucket for the whole method (its signature is still scaffolding), or {bucket, uniform: true} to make every counted token in the method that bucket regardless of classifiers. `constructor` names the constructor body: in SpyneJS that body is the config object.",
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/bucket"
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "bucket"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "bucket": {
+                      "$ref": "#/$defs/bucket"
+                    },
+                    "uniform": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "calls": {
+            "type": "object",
+            "description": "Callee pattern (regex) → bucket for the call, with `permitted: true` meaning it is expected and not drift.",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "bucket"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "bucket": {
+                  "$ref": "#/$defs/bucket"
+                },
+                "permitted": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "uniform": {
+            "type": "boolean",
+            "description": "Every counted token in the class body takes the role's default bucket; classifiers inside are not applied. Scaffolding and comments are still excluded. Drift is zero by definition. SpyneTrait: a trait is the logic module of the instance it is bound to."
+          }
+        }
+      }
+    },
+    "classifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/classifier"
+      }
+    },
+    "openQuestions": {
+      "type": "array",
+      "description": "The config's contestable calls, one line each. Copy the config, change the call, open a pull request.",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule",
+          "call",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "rule": {
+            "type": "string",
+            "description": "Classifier id or a short name for the rule."
+          },
+          "call": {
+            "type": "string",
+            "description": "What the config decided."
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "bucket": {
+      "enum": [
+        "V",
+        "B",
+        "L",
+        "C"
+      ]
+    },
+    "classifier": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "bucket"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique within the config. An override with the same id replaces the built-in classifier."
+        },
+        "kind": {
+          "description": "The node kind the adapter finds. Each kind is a fixed detector in the adapter; `match` narrows it.",
+          "enum": [
+            "jsx",
+            "jsxAttribute",
+            "jsxExpressionCall",
+            "jsxText",
+            "copyAttribute",
+            "styleAttribute",
+            "copyString",
+            "markupTemplate",
+            "taggedTemplate",
+            "call",
+            "classMethod",
+            "conditional",
+            "assignment"
+          ]
+        },
+        "match": {
+          "type": "string",
+          "description": "Regular expression tested against the kind's subject: an attribute name, a callee's source text (`new X` for constructors), an assignment's left-hand source text, a method name, a template tag."
+        },
+        "bucket": {
+          "$ref": "#/$defs/bucket"
+        },
+        "rule": {
+          "type": "string",
+          "description": "Rule label written into spans. Defaults to the id."
+        },
+        "resolve": {
+          "type": "boolean",
+          "description": "jsxAttribute and call only: when the value (or a call argument) is an identifier or this.member, also classify the local function it names."
+        },
+        "minWords": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "copyString only: a string literal counts as copy at this many whitespace-separated words."
+        },
+        "notWithin": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "copyString only: attribute names and callee names inside which a string is never copy (class lists)."
+        },
+        "allow": {
+          "type": "array",
+          "description": "conditional only: contexts where a conditional is native to another bucket.",
+          "items": {
+            "type": "object",
+            "required": [
+              "within",
+              "bucket"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "within": {
+                "type": "string",
+                "description": "Method or callee name (regex) enclosing the conditional."
+              },
+              "bucket": {
+                "$ref": "#/$defs/bucket"
+              }
+            }
+          }
+        },
+        "defaults": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "conditional only: default-value operators that are exempt from the conditional rule, e.g. `a ?? b`. Exempt unless an operand calls something that does not match `allowCalls`; with no `allowCalls`, exempt only when no operand calls anything.",
+          "required": [
+            "operators"
+          ],
+          "properties": {
+            "operators": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "??",
+                  "||"
+                ]
+              },
+              "minItems": 1
+            },
+            "allowCalls": {
+              "type": "string",
+              "description": "Regex over callee text; calls matching it keep the exemption (SpyneJS: trait methods)."
+            }
+          }
+        },
+        "resolveBucket": {
+          "$ref": "#/$defs/bucket",
+          "description": "With `resolve`: the bucket for the function the value or argument names, and for an inline function value, when it differs from `bucket`. Registration is configuration (View); the body that runs is Behavior."
+        }
+      }
+    }
+  }
+}

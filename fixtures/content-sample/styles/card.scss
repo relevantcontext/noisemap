@@ -1,0 +1,8 @@
+@use 'variables' as v;
+
+/* A card. */
+.card {
+  border-radius: v.$radius;
+  &:hover { color: v.$brand; }
+  .title { font-weight: 600; }
+}

@@ -1,0 +1,16 @@
+app/components/page-items/customers-pagination-container.js  spynejs  role ViewStream
+tokens 52  VVVVVVVVVVVVVVVVVVVB  V 49 B 3 L 0 C 0  excluded 141  mixing 0.06  drift 0.00
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { ViewStream } from 'spyne'; import CustomersPaginationContainerTmpl from './templates/customers-pagination-container.tmpl.html'; import { PaginationT...
+[- comment] /** * Persistent pagination controller for the customers page. * * Unlike the invoices twin, this holds no page of its own between emissions: * the page live...
+[- scaffolding:exportKeywords] export
+[- scaffolding:classSignatures] class CustomersPaginationContainer extends ViewStream
+[- scaffolding:functionSignatures] constructor(props
+[V method:constructor] props.tagName = 'div'; props.class = 'inline-flex'; props.template = CustomersPaginationContainerTmpl; props.channels = ['CHANNEL_ACME_CUSTOMERS']; props.tra...
+[- scaffolding:superCalls] super(props
+[- scaffolding:functionSignatures] addActionListeners
+[B method:addActionListeners] return [ ['CHANNEL_ACME_CUSTOMERS_LIST_EVENT', 'customersPagination$OnList'
+[- scaffolding:functionSignatures] broadcastEvents
+[V method:broadcastEvents] return
+[- scaffolding:functionSignatures] onRendered

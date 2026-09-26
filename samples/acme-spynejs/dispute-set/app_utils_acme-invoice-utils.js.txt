@@ -1,0 +1,237 @@
+app/utils/acme-invoice-utils.js  spynejs
+tokens 882  LLLLLLLLLLLLLLLLLLLL  V 0 B 0 L 870 C 12  excluded 1621  mixing 0.01
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { buildAcmeSearch } from 'utils/acme-utils.js'
+[- comment] /** * The client-side equivalent of fetchFilteredInvoices / fetchInvoicesPages. * * The SpyneJS app holds every invoice and filters the collection in the bro...
+[- scaffolding:exportKeywords] export
+[L default] const ITEMS_PER_PAGE = 6
+[- comment] /** * Reproduces the WHERE clause: * * customers.name ILIKE %query% OR * customers.email ILIKE %query% OR * invoices.amount::text ILIKE %query% OR * invoices...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const filterInvoices = (invoices = [], query = ''
+[L default] const q = String(query).trim().toLowerCase
+[L conditional] if (q === ''
+[L default] return invoices; return invoices.filter
+[- scaffolding:functionSignatures] invoice
+[L default] invoice.name, invoice.email, String(invoice.amount), String(invoice.date).slice(0, 10), invoice.status, ].some
+[- scaffolding:functionSignatures] field
+[L default] String(field).toLowerCase().includes(q
+[- comment] // ── Sorting ───────────────────────────────────────────────────────────────── // // The sortable columns and the value each one orders by. `customer` sorts...
+[L default] const SORT_VALUE_BY_KEY = { customer
+[- scaffolding:functionSignatures] invoice
+[L default] String(invoice.name).toLowerCase(), amount
+[- scaffolding:functionSignatures] invoice
+[L default] Number(invoice.amount), date
+[- scaffolding:functionSignatures] invoice
+[L default] String(invoice.date), status
+[- scaffolding:functionSignatures] invoice
+[L default] String(invoice.status).toLowerCase(), }; const SORT_DIRS = ['asc', 'desc'
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const isValidInvoiceSortKey = (key
+[L default] Object.hasOwn(SORT_VALUE_BY_KEY, key
+[- comment] /** * Orders a copy of the collection by one of the four sortable columns. * * A null/unknown key returns the input untouched — the server's newest-first * o...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const sortInvoices = ( invoices = [], sortKey = null, sortDir = 'asc'
+[L default] const getValue = SORT_VALUE_BY_KEY[sortKey
+[L conditional] if (getValue == null
+[L default] return invoices; const direction
+[L conditional] sortDir === 'desc'
+[L default] 1 : 1; return [...invoices].sort
+[- scaffolding:functionSignatures] a, b
+[L default] const aVal = getValue(a); const bVal = getValue(b
+[L conditional] if (aVal < bVal
+[L default] return -direction
+[L conditional] if (aVal > bVal
+[L default] return direction; return 0
+[- comment] /** * The next `sort` param value after a header click: same column flips the * direction, a new column starts ascending. Returns the `<key>-<dir>` string * ...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const nextInvoiceSortValue = (currentKey, currentDir, clickedKey
+[L conditional] if (isValidInvoiceSortKey(clickedKey) === false
+[L default] return ''; const dir
+[L conditional] clickedKey === currentKey && currentDir === 'asc'
+[L default] 'desc' : 'asc'; return `${clickedKey}-${dir
+[- comment] /** * Reads the invoice search term and sort off a query string. * * The channel never holds them. window.location is the state, so this runs on * every para...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const readInvoiceParams = (search = ''
+[L default] const params = new URLSearchParams(search); const [sortKey = '', sortDir = ''] = String
+[L conditional] params.get('sort'
+[L default] '').split( '-', ); const isValidSort
+[L conditional] isValidInvoiceSortKey(sortKey
+[L default] SORT_DIRS.includes(sortDir); return { query
+[L conditional] params.get('query'
+[L default] '', sortKey
+[L conditional] isValidSort
+[L default] sortKey : null, sortDir
+[L conditional] isValidSort
+[L default] sortDir : null
+[- comment] /** * The inverse of readInvoiceParams: merges an update into the current query * string and returns the new one. * * Merging rather than replacing leaves un...
+[- scaffolding:exportKeywords] export
+[L default] const buildInvoiceSearch = buildAcmeSearch
+[- comment] /** * The custom window event that closes the params loop. * * history.replaceState and pushState fire nothing — verified, zero popstate * events for either ...
+[- scaffolding:exportKeywords] export
+[L default] const INVOICE_PARAMS_EVENT = 'acme_invoices_params_changed'
+[- comment] /** * The row/card breakpoint, matching next-learn's `md`. One definition: index.js * registers it under config.channels.WINDOW.mediaQueries, and the invoice...
+[- scaffolding:exportKeywords] export
+[L default] const INVOICE_MOBILE_QUERY = '(max-width: 768px)'
+[- comment] /** * formatCurrency and formatDateToLocal from the Next.js app's lib/utils.ts. * * The source builds a new Intl formatter on every call — `toLocaleString` d...
+[L default] const CURRENCY_FORMATTER = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', }); const DATE_FORMATTER = new Intl.DateTimeFormat('en-US', {...
+[- comment] // Amounts are stored in CENTS — see filterInvoices.
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const formatInvoiceAmount = (amount
+[L default] CURRENCY_FORMATTER.format(Number(amount) / 100
+[- comment] /** * The two dashboard card sums, recomputed client-side from the held invoices. * * Mirrors fetchCardData's SUM(CASE WHEN status = ...) so an optimistic st...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const computeInvoiceStatusTotals = (invoices
+[L default] let paidCents = 0; let pendingCents = 0; invoices.forEach
+[- scaffolding:functionSignatures] invoice
+[L conditional] if (invoice.status === 'paid'
+[L default] paidCents += Number(invoice.amount
+[L conditional] if (invoice.status === 'pending'
+[L default] pendingCents += Number(invoice.amount); }); return { totalPaidInvoices: formatInvoiceAmount(paidCents), totalPendingInvoices: formatInvoiceAmount(pendingCents
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const formatInvoiceDate = (dateStr
+[L default] DATE_FORMATTER.format(new Date(dateStr
+[- comment] // ── Live events ───────────────────────────────────────────────────────────── // // The client-side half of the live payment simulator. The server commits ...
+[L default] const TIME_FORMATTER = new Intl.DateTimeFormat('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit'
+[- comment] /** * The server's collection order — ORDER BY invoices.date DESC, invoices.id * DESC — as a comparator, so a live-created invoice can be spliced into the * ...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const compareInvoicesNewestFirst = (a, b
+[L default] const aDate = String(a.date); const bDate = String(b.date
+[L conditional] if (aDate !== bDate
+[L default] return
+[L conditional] aDate < bDate
+[L default] 1 : -1; const aId = String(a.id); const bId = String(b.id
+[L conditional] if (aId === bId
+[L default] return 0; return
+[L conditional] aId < bId
+[L default] 1 : -1
+[- comment] /** * The latest-invoices slice, recomputed from the held collection — the same * five rows fetchLatestInvoices would return (the collection is kept in that ...
+[- scaffolding:functionSignatures] const computeLatestInvoices = (invoices
+[L default] invoices.slice(0, 5).map
+[- scaffolding:functionSignatures] id, name, email, image_url, amount
+[L default] id, name, email, image_url, amount: formatInvoiceAmount(amount
+[- comment] /** * Recomputes the customers-table aggregates for the given customer ids from * the held invoices — the client-side mirror of fetchFilteredCustomers's * CO...
+[- scaffolding:functionSignatures] const patchCustomerAggregates = ( customers = [], invoices = [], customerIds
+[L conditional] if (customerIds.size === 0
+[L default] return customers; return customers.map
+[- scaffolding:functionSignatures] customer
+[L conditional] if (customerIds.has(String(customer.id)) === false
+[L default] return customer; let totalInvoices = 0; let pendingCents = 0; let paidCents = 0; invoices.forEach
+[- scaffolding:functionSignatures] invoice
+[L conditional] if (String(invoice.customer_id) !== String(customer.id
+[L default] return; totalInvoices += 1
+[L conditional] if (invoice.status === 'pending'
+[L default] pendingCents += Number(invoice.amount
+[L conditional] if (invoice.status === 'paid'
+[L default] paidCents += Number(invoice.amount); }); return { ...customer, total_invoices: totalInvoices, total_pending: formatInvoiceAmount(pendingCents), total_paid: f...
+[- comment] /** * Applies one tick's events to the held dump, immutably. * * invoice-paid the held row takes the server row's status — unless the * invoice has an in-fli...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const applyLiveInvoiceEvents = ( data, events = [], rows = [], skipIds = new Set
+[L default] const rowById = new Map(rows.map
+[- scaffolding:functionSignatures] row
+[L default] String(row.id), row])); const touchedCustomerIds = new Set(); let invoices = data.invoices || []; let changed = false; events.forEach
+[- scaffolding:functionSignatures] event
+[L default] const id = String(event.invoiceId); const row = rowById.get(id
+[L conditional] if (row == null
+[L default] return
+[L conditional] if (event.type === 'invoice-created') { if (invoices.some
+[- scaffolding:functionSignatures] invoice
+[L conditional] String(invoice.id) === id
+[L default] return; invoices = [...invoices, row].sort(compareInvoicesNewestFirst); touchedCustomerIds.add(String(row.customer_id)); changed = true; return
+[L conditional] if (event.type === 'invoice-paid') { if (skipIds.has(id) === true
+[L default] return; const held = invoices.find
+[- scaffolding:functionSignatures] invoice
+[L default] String(invoice.id) === id
+[L conditional] if (held == null || held.status === row.status
+[L default] return; invoices = invoices.map
+[- scaffolding:functionSignatures] invoice
+[L conditional] String(invoice.id) === id
+[L default] invoice, status: row.status } : invoice, ); touchedCustomerIds.add(String(row.customer_id)); changed = true
+[L conditional] if (changed === false
+[L default] return { data, changed: false }; return { changed: true, data: { ...data, invoices, cards: { ...data.cards, ...computeInvoiceStatusTotals(invoices), numberOf...
+[- comment] /** * Conforms one tick's raw events into feed entries. The human-readable line is * composed HERE, channel-side, so every payload the feed view receives alr...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const buildLiveFeedEvents = (events = [], rows
+[L default] const rowById = new Map(rows.map
+[- scaffolding:functionSignatures] row
+[L default] String(row.id), row])); return events .map
+[- scaffolding:functionSignatures] event
+[L default] const row = rowById.get(String(event.invoiceId
+[L conditional] if (row == null
+[L default] return null; const amount = formatInvoiceAmount(row.amount); const isPaid = event.type === 'invoice-paid'; return { eventId: event.id, type: event.type, invo...
+[L conditional] isPaid
+[L default] row.name} paid ${amount
+[C copy-string] New invoice for ${row.name} — ${amount
+[L default] time: TIME_FORMATTER.format(new Date(event.at)), name: row.name, image_url: row.image_url, }; }) .filter
+[- scaffolding:functionSignatures] entry
+[L default] entry !== null
+[- comment] // ── Bulk edit ─────────────────────────────────────────────────────────────── // // The client-side half of the bulk-editable table. A draft is an UNSAVED ...
+[- scaffolding:exportKeywords] export
+[L default] const EDITABLE_INVOICE_FIELDS = ['amount', 'date', 'status'
+[- comment] /** The held dump's value for one editable field, in draft units. */
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const readInvoiceField = (invoice, field
+[L conditional] if (invoice == null
+[L default] return undefined
+[L conditional] if (field === 'amount'
+[L default] return Number(invoice.amount
+[L conditional] if (field === 'date'
+[L default] return String(invoice.date).slice(0, 10); return invoice.status
+[- comment] /** * Overlays unsaved drafts onto a copy of the collection for DISPLAY — the * table's row map renders from this, so a row minted mid-session shows the * dr...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const applyInvoiceDrafts = (invoices = [], draftsById
+[L default] invoices.map
+[- scaffolding:functionSignatures] invoice
+[L default] const draft = draftsById[String(invoice.id
+[L conditional] if (draft == null
+[L default] return invoice; return { ...invoice
+[L conditional] draft.amount !== undefined
+[L default] amount: draft.amount
+[L conditional] draft.date !== undefined
+[L default] date: `${draft.date}T00:00:00.000Z
+[L conditional] draft.status !== undefined
+[L default] status: draft.status } : {}), isEdited: true
+[- comment] /** * Folds a set of CONFIRMED field patches into the held dump — the moment a * batch save returns, before the authoritative refetch lands. Same * recompute...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const applyInvoiceFieldPatches = (data, patches
+[L default] const ids = Object.keys(patches
+[L conditional] if (ids.length === 0
+[L default] return { data, changed: false }; const touchedCustomerIds = new Set(); const invoices = (data.invoices || []) .map
+[- scaffolding:functionSignatures] invoice
+[L default] const patch = patches[String(invoice.id
+[L conditional] if (patch == null
+[L default] return invoice; touchedCustomerIds.add(String(invoice.customer_id)); return { ...invoice
+[L conditional] patch.amount !== undefined
+[L default] amount: patch.amount
+[L conditional] patch.date !== undefined
+[L default] date: `${patch.date}T00:00:00.000Z
+[L conditional] patch.status !== undefined
+[L default] status: patch.status } : {}), }; }) .sort(compareInvoicesNewestFirst); return { changed: true, data: { ...data, invoices, cards: { ...data.cards, ...computeI...
+[- comment] /** * Shapes conformed feed entries into what the activity-feed row template * renders — the same finished-array discipline as buildInvoiceRows: image * path...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const buildActivityFeedRows = (feedEvents
+[L default] feedEvents.map
+[- scaffolding:functionSignatures] event, i
+[L default] const pill = FEED_PILL_BY_TYPE[event.type] ?? FEED_PILL_BY_TYPE['invoice-created']; return { attrEventId: event.eventId, attrRowClass
+[L conditional] i === 0
+[L default] FEED_ROW_BASE : `${FEED_ROW_BASE} border-t`, attrImageSrc: 'imgs' + event.image_url, attrImageAlt
+[C copy-string] event.name}'s profile picture
+[L default] msg: event.msg, time: event.time, pillLabel: pill.label, attrPillClass: `${STATUS_PILL_BASE} ${pill.variant}`, }; }); const STATUS_PILL_BASE = 'inline-flex i...
+[- comment] /** * The status pill's classes, resolved from the status. * * Exported because the pill now has two renderers — InvoicesStatusView for a * single pill, and ...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const getInvoiceStatusClass = (status
+[L default] STATUS_PILL_BASE} ${STATUS_PILL_VARIANT[status] ?? STATUS_PILL_VARIANT.pending
+[- comment] /** * Shapes raw invoice records into what the bulk row template renders. * * Every decision is made here and the template iterates a finished array: the * i...
+[- scaffolding:exportKeywords] export
+[- scaffolding:functionSignatures] const buildInvoiceRows = (invoices = [], icons
+[L default] invoices.map
+[- scaffolding:functionSignatures] invoice
+[L default] const isPaid = invoice.status === 'paid'; return { name: invoice.name, email: invoice.email, amount: formatInvoiceAmount(invoice.amount), date: formatInvoice...
+[- comment] // The raw editable values, riding the row so an in-place editor seeds // itself from what the cell is showing — dollars for the amount input, // the date in...
+[L default] rawAmount: Number(invoice.amount) / 100, rawDate: String(invoice.date).slice(0, 10), status: invoice.status, isEdited: invoice.isEdited === true, attrImageSr...
+[C copy-string] invoice.name}'s profile picture
+[L default] attrInvoiceId: invoice.id, attrEditHref: `/dashboard/invoices/${invoice.id}/edit`, attrStatusClass: getInvoiceStatusClass
+[L conditional] isPaid
+[L default] 'paid' : 'pending'), svgPencil: icons.svgPencil, svgTrash: icons.svgTrash
+[L conditional] isPaid
+[L default] isPaid: { label: 'Paid', svgCheck: icons.svgCheck } } : { isPending: { label: 'Pending', svgClock: icons.svgClock

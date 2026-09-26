@@ -1,0 +1,349 @@
+{
+  "version": 2,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.1.0"
+  },
+  "generatedAt": "2026-09-26T05:45:58.275Z",
+  "root": "/private/tmp/noisemap-samples/fixtures/content",
+  "frameworks": {
+    "detected": [
+      "react"
+    ],
+    "override": null,
+    "adapters": [
+      "content"
+    ],
+    "userConfig": null
+  },
+  "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
+  "scores": {
+    "consistency": 0,
+    "median": {
+      "V": 0,
+      "B": 0,
+      "L": 0,
+      "C": 1
+    },
+    "families": {
+      "C": {
+        "modules": 6,
+        "median": {
+          "V": 0,
+          "B": 0,
+          "L": 0,
+          "C": 1
+        }
+      }
+    },
+    "totals": {
+      "V": 0,
+      "B": 0,
+      "L": 0,
+      "C": 55,
+      "excluded": 57,
+      "counted": 55
+    },
+    "shares": {
+      "V": 0,
+      "B": 0,
+      "L": 0,
+      "C": 1
+    },
+    "meanMixing": 0,
+    "meanMixingTokenWeighted": 0
+  },
+  "modules": [
+    {
+      "path": "NOTES.txt",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 6,
+        "excluded": 0
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 33,
+          "bucket": "C",
+          "rule": "content:txt",
+          "tokens": 6,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0
+    },
+    {
+      "path": "pages/about.md",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 12,
+        "excluded": 13
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 1,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2,
+          "end": 73,
+          "bucket": "C",
+          "rule": "content:md",
+          "tokens": 12,
+          "punctuation": 10
+        },
+        {
+          "start": 73,
+          "end": 75,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0
+    },
+    {
+      "path": "pages/index.html",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 14,
+        "excluded": 16
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 2,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2,
+          "end": 14,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 14,
+          "end": 15,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 16,
+          "end": 32,
+          "bucket": "excluded",
+          "rule": "comment",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 33,
+          "end": 34,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 34,
+          "end": 111,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 12,
+          "punctuation": 11
+        }
+      ],
+      "mixing": 0
+    },
+    {
+      "path": "styles/_variables.scss",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 4,
+        "excluded": 5
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 16,
+          "bucket": "excluded",
+          "rule": "comment",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 17,
+          "end": 46,
+          "bucket": "C",
+          "rule": "content:scss",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 46,
+          "end": 47,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0
+    },
+    {
+      "path": "styles/card.scss",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 13,
+        "excluded": 16
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 21,
+          "bucket": "C",
+          "rule": "content:scss",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 21,
+          "end": 22,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 24,
+          "end": 37,
+          "bucket": "excluded",
+          "rule": "comment",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 38,
+          "end": 132,
+          "bucket": "C",
+          "rule": "content:scss",
+          "tokens": 9,
+          "punctuation": 11
+        },
+        {
+          "start": 132,
+          "end": 137,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0
+    },
+    {
+      "path": "styles/legacy.css",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 6,
+        "excluded": 7
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 50,
+          "bucket": "C",
+          "rule": "content:css",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 50,
+          "end": 53,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0
+    }
+  ],
+  "empty": [
+    "styles/empty.scss"
+  ],
+  "skipped": {
+    "count": 2,
+    "byExtension": {
+      ".json": 2
+    },
+    "tests": 0
+  },
+  "failed": []
+}

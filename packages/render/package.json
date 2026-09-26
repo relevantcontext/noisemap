@@ -1,0 +1,15 @@
+{
+  "name": "@noisemap/render",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./terminal": "./src/terminal.ts",
+    "./html": "./src/html.ts",
+    "./explain": "./src/explain.ts"
+  },
+  "dependencies": {
+    "@noisemap/core": "workspace:*"
+  }
+}

@@ -1,0 +1,1 @@
+{ "name": "spyne-sample", "private": true, "dependencies": { "spyne": "^0.26.0" } }

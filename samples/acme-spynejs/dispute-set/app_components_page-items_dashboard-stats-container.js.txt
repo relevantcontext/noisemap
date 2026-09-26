@@ -1,0 +1,23 @@
+app/components/page-items/dashboard-stats-container.js  spynejs  role ViewStream
+tokens 61  VVVVVVVVVBBBBBLLLLLL  V 29 B 14 L 18 C 0  excluded 186  mixing 0.52  drift 0.30
+(punctuation-only spans omitted)
+
+[- scaffolding:imports] import { ViewStream, ChannelPayloadFilter } from 'spyne'; import { withClass } from 'utils/svg-icons.js'; import { buildDashboardCards } from 'utils/acme-uti...
+[- comment] // Card type -> icon, from the iconMap in app/ui/dashboard/cards.tsx. Built once // at module load and handed to the shaper, the same way InvoicesTableRowsTr...
+[L default] const CARD_ICONS = { collected: withClass('banknotes', 'h-5 w-5 text-gray-700'), customers: withClass('userGroup', 'h-5 w-5 text-gray-700'), pending: withCla...
+[- comment] /** * Owns the dashboard's summary-stat row. * * Converted from the CardWrapper export in app/ui/dashboard/cards.tsx, plus the * grid wrapper that lives in d...
+[- scaffolding:exportKeywords] export
+[- scaffolding:classSignatures] class DashboardStatsContainer extends ViewStream
+[- scaffolding:functionSignatures] constructor(props
+[V method:constructor] props.tagName = 'div'; props.class = 'grid gap-6 sm:grid-cols-2 lg:grid-cols-4'; props.template = DashboardStatsTmpl; props.channels = ['CHANNEL_ACME_DATA'];...
+[- scaffolding:superCalls] super(props
+[- scaffolding:functionSignatures] addActionListeners
+[- comment] // Birth data renders the cards; these two actions are the ONLY ways the // held dump can change while this view is mounted (the authoritative // refetch beh...
+[- scaffolding:functionSignatures] const dumpIsLoaded
+[B payload-filter] new ChannelPayloadFilter({ payload
+[- scaffolding:functionSignatures] payload
+[B payload-filter] payload?.status?.isLoaded === true
+[B method:addActionListeners] return [ [ 'CHANNEL_ACME_DATA_UPDATED_EVENT', 'dashboardStats$OnAcmeData', dumpIsLoaded(), ], [ 'CHANNEL_ACME_DATA_ERROR_EVENT', 'dashboardStats$OnAcmeData',...
+[- scaffolding:functionSignatures] broadcastEvents
+[V method:broadcastEvents] return
+[- scaffolding:functionSignatures] onRendered
