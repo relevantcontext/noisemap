@@ -89,7 +89,7 @@ export function renderHtml(report: NoisemapReport, options: HtmlOptions = {}): s
 <title>${esc(title)}</title>
 <style>${CSS}</style>
 </head>
-<body data-palette="#0072b2,#882255,#009e73,#e69f00">
+<body data-palette="#0072b2,#882255,#009e73,#c39318">
 <header class="hdr">
   <div class="hdr-row">
     <h1>noisemap <span class="root" title="${esc(report.root)}">${esc(rootName)}</span></h1>
@@ -115,7 +115,7 @@ const CSS = `
 :root {
   --surface-0: #ffffff; --surface-1: #fcfcfb; --surface-2: #f0efec; --border: #d9d8d4;
   --ink: #1f1f1e; --ink-2: #4a4a48; --ink-3: #7a7a77;
-  --V: #0072b2; --B: #882255; --L: #009e73; --C: #e69f00; --X: #c9c8c4;
+  --V: #0072b2; --B: #882255; --L: #009e73; --C: #c39318; --X: #c9c8c4;
   --accent: #0072b2;
 }
 @media (prefers-color-scheme: dark) {
