@@ -44,12 +44,13 @@ describe('spynejs adapter: ViewStream', () => {
     expect(spans('scaffolding:superCalls')).toEqual(['super(props']);
     expect(spans('scaffolding:functionSignatures')).toEqual(expect.arrayContaining(['constructor(props', 'addActionListeners', 'onRendered']));
   });
-  it('addActionListeners is B with its payload filter; broadcastEvents is uniformly V (configuration)', () => {
+  it('addActionListeners and broadcastEvents are uniformly V: listener tables are configuration', () => {
     expect(spans('method:addActionListeners').join(' ')).toContain("'CHANNEL_ROUTE_CHANGE_EVENT', 'menuView$SetActiveLink', filter");
-    expect(spans('payload-filter')).toEqual(["new ChannelPayloadFilter('.item', { isOpen", 'v === true']);
+    expect(spans('payload-filter')).toEqual([]); // sealed inside the uniform method
     expect(spans('conditional')).not.toContain('v === true');
     expect(spans('method:broadcastEvents')).toEqual(["return [['a', 'click'], ['.close', 'click'"]);
-    expect(mod.spans.find((s) => s.rule === 'method:broadcastEvents')?.bucket).toBe('V');
+    expect(mod.spans.filter((s) => s.rule === 'method:addActionListeners' || s.rule === 'method:broadcastEvents').every((s) => s.bucket === 'V')).toBe(true);
+    expect(mod.tokens.B).toBe(0);
   });
   it('the constructor is uniformly View: its ?? defaults, trait calls, and local calls are all config', () => {
     expect(spans('conditional')).not.toContain('props.data?.limit');
@@ -73,6 +74,18 @@ describe('spynejs adapter: ViewStream', () => {
     expect(mod.drift).toBeCloseTo((mod.tokens.L - traitTokens) / counted);
     expect(mod.drift).toBeGreaterThan(0);
     expect(mod.drift).toBeLessThan(0.15);
+  });
+
+  it('a view that subscribes itself has Behavior; a listener table alone has none', () => {
+    const file2: FileInfo = {
+      path: 'self-view.js',
+      absPath: '/x/self-view.js',
+      ext: '.js',
+      source: "import { ViewStream } from 'spyne';\nexport class SelfView extends ViewStream {\n  addActionListeners() { return [['CHANNEL_X_EVENT', 'onX']]; }\n  onRendered() { this.getChannel('CHANNEL_X').subscribe((p) => this.onX(p)); }\n}\n",
+    };
+    const m2 = moduleFromOutput(file2, spynejsAdapter.analyze(file2, config));
+    expect(m2.tokens.B).toBeGreaterThan(0);
+    expect(m2.spans.filter((s) => s.rule === 'method:addActionListeners').every((s) => s.bucket === 'V')).toBe(true);
   });
 });
 

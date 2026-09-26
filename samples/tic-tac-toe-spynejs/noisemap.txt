@@ -1,11 +1,11 @@
 file                                          tokens  V B L C                  V     B     L     C  mixing  role        drift
 --------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
-app/components/todo-item-view.js                  28  VVVVVVVVVVVBBBBBBBBB   54%   46%    0%    0%    0.46  ViewStream   0.00
-app/components/todo-list-view.js                  28  VVVVVVVVVVVVVBBBBBBB   64%   36%    0%    0%    0.36  ViewStream   0.00
 index.js                                          22  VVVVVLLLLLLLLLLLLLLL   27%    0%   73%    0%    0.27
-app/app-view.js                                   16  VVVVVVVVVVVVVVVVVVVB   94%    6%    0%    0%    0.06  ViewStream   0.00
+app/app-view.js                                   16  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/templates/todo-item.tmpl.html      41  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/templates/todo-list-view.html      26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/todo-item-view.js                  28  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/todo-list-view.js                  28  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/traits/todo-traits.js                        109  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 dev-tools.js                                       9  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 index.tmpl.html                                   44  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
@@ -13,8 +13,8 @@ scss/01-vendors/normalize.css                    204  CCCCCCCCCCCCCCCCCCCC    0%
 scss/03-components/todo-app.scss                 141  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/main.scss                                    33  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  12 modules  701 tokens  VBLLLLCCCCCCCCCCCCCC  V   8% B   3% L  19% C  70%
-          consistency 0.08  mean mixing 0.10 (by module) 0.04 (by token)  median V   0% B   0% L   0% C  50%
-          families: V 3 ( 64%  36%   0%   0%)  L 3 (  0%   0% 100%   0%)  C 6 (  0%   0%   0% 100%)
+codebase  12 modules  701 tokens  VVLLLLCCCCCCCCCCCCCC  V  11% B   0% L  19% C  70%
+          consistency 0.03  mean mixing 0.02 (by module) 0.01 (by token)  median V   0% B   0% L   0% C  50%
+          families: V 3 (100%   0%   0%   0%)  L 3 (  0%   0% 100%   0%)  C 6 (  0%   0%   0% 100%)
           detected: spynejs  adapters: content, spynejs  skipped: 1  tests: 1  empty: 1
 

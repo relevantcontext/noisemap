@@ -1,23 +1,23 @@
 file                                                                           tokens  V B L C                  V     B     L     C  mixing  role        drift
 -----------------------------------------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
-app/components/page-components/page-heroes-item-component.js                       35  VVVVVVVVVVBBBBBBBBBB   51%   49%    0%    0%    0.49  ViewStream   0.00
-app/components/page-components/page-dashboard-search-item.js                       36  VVVVVVVVVBBBBBBBBBBB   44%   56%    0%    0%    0.44  ViewStream   0.00
-app/components/page-components/page-404-view.js                                    23  VVVVVVVVVVVBBBBBLLLL   57%   26%   17%    0%    0.43  ViewStream   0.00
-app/components/page-components/page-hero-view.js                                   30  VVVVVVVVVVVVBBBBBLLL   60%   27%   13%    0%    0.40  ViewStream   0.00
-app/components/page-components/page-heroes-view.js                                 29  VVVVVVVVVVVVVVVBBLLL   76%   10%   14%    0%    0.24  ViewStream   0.00
-app/components/stage-view.js                                                       13  VVVVVVVVVVVVVVVBBBBB   77%   23%    0%    0%    0.23  ViewStream   0.00
-app/components/page-components/page-dashboard-view.js                              23  VVVVVVVVVVVVVVVVBLLL   78%    4%   17%    0%    0.22  ViewStream   0.00
-app/components/stage-messages-component.js                                         32  VVVVVVVVVVVVVVVVBBBB   81%   19%    0%    0%    0.19  ViewStream   0.00
-app/components/page-components/page-dashboard-search-component.js                  19  VVVVVVVVVVVVVVVVVBBB   84%   16%    0%    0%    0.16  ViewStream   0.00
 app/channels/channel-toh.js                                                        69  BBBBBBBBBBBBBBBBBBLL    0%   90%   10%    0%    0.10  Channel      0.10
+app/components/page-components/page-404-view.js                                    23  VVVVVVVVVVVVVVVVVVLL   91%    0%    9%    0%    0.09  ViewStream   0.00
+app/components/page-components/page-dashboard-view.js                              23  VVVVVVVVVVVVVVVVVVLL   91%    0%    9%    0%    0.09  ViewStream   0.00
+app/components/page-components/page-heroes-view.js                                 29  VVVVVVVVVVVVVVVVVVVL   93%    0%    7%    0%    0.07  ViewStream   0.00
+app/components/page-components/page-hero-view.js                                   30  VVVVVVVVVVVVVVVVVVVL   93%    0%    7%    0%    0.07  ViewStream   0.00
 index.js                                                                           75  VLLLLLLLLLLLLLLLLLLL    7%    0%   93%    0%    0.07
-app/app-view.js                                                                    25  VVVVVVVVVVVVVVVVVVVB   96%    4%    0%    0%    0.04  ViewStream   0.00
+app/app-view.js                                                                    25  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-components/page-dashboard-search-component.js                  19  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-components/page-dashboard-search-item.js                       36  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-components/page-heroes-item-component.js                       35  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/page-components/templates/page-dashboard-search-item.tmpl.html      13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-components/templates/page-dashboard-search.component.html      30  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-components/templates/page-dashboard.component.html             27  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-components/templates/page-hero-detail.component.html           48  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-components/templates/page-heroes-item-component.tmpl.html      31  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-components/templates/page-heroes.component.html                29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/stage-messages-component.js                                         32  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/stage-view.js                                                       13  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/templates/app.component.html                                        35  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/templates/messages.component.html                                   17  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/mock-data.js                                                                   38  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
@@ -36,8 +36,8 @@ scss/03-components/heroes.scss                                                  
 scss/03-components/messages.scss                                                   29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/main.scss                                                                    158  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  35 modules  1936 tokens  VVBLLLLLLCCCCCCCCCCC  V  10% B   7% L  31% C  52%
-          consistency 0.07  mean mixing 0.09 (by module) 0.05 (by token)  median V   0% B   0% L   0% C   0%
-          families: V 9 ( 77%  19%   0%   0%)  B 2 ( 22%  73%   5%   0%)  L 7 (  0%   0% 100%   0%)  C 17 (  0%   0%   0% 100%)
+codebase  35 modules  1936 tokens  VVVBLLLLLLCCCCCCCCCC  V  14% B   3% L  31% C  52%
+          consistency 0.02  mean mixing 0.01 (by module) 0.01 (by token)  median V   0% B   0% L   0% C   0%
+          families: V 10 (100%   0%   0%   0%)  B 1 (  0%  90%  10%   0%)  L 7 (  0%   0% 100%   0%)  C 17 (  0%   0%   0% 100%)
           detected: spynejs  adapters: content, spynejs  skipped: 0  tests: 2  empty: 1
 

@@ -1,8 +1,8 @@
 file                                     tokens  V B L C                  V     B     L     C  mixing  role        drift
 ---------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
-app/app-view.js                              15  VVVVVVVVVVVVVVVVBBBB   80%   20%    0%    0%    0.20  ViewStream   0.00
 app/channels/channel-meme-generator.js       12  BBBBBBBBBBBBBBBBBLLL    0%   83%   17%    0%    0.17  Channel      0.00
 index.js                                     72  VLLLLLLLLLLLLLLLLLLL    7%    0%   93%    0%    0.07
+app/app-view.js                              15  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/meme-element.js                9  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  DomElement   0.00
 app/components/templates/meme.tmpl.html      13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/traits/meme-generator-traits.js          69  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
@@ -12,8 +12,8 @@ scss/01-vendors/normalize.css               204  CCCCCCCCCCCCCCCCCCCC    0%    0
 scss/03-components/meme-generator.scss      105  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/main.scss                               46  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  11 modules  598 tokens  VLLLLLCCCCCCCCCCCCCC  V   4% B   2% L  25% C  69%
-          consistency 0.03  mean mixing 0.04 (by module) 0.02 (by token)  median V   0% B   0% L   0% C   0%
-          families: V 2 ( 90%  10%   0%   0%)  B 1 (  0%  83%  17%   0%)  L 3 (  0%   0% 100%   0%)  C 5 (  0%   0%   0% 100%)
+codebase  11 modules  598 tokens  VLLLLLCCCCCCCCCCCCCC  V   5% B   2% L  25% C  69%
+          consistency 0.01  mean mixing 0.02 (by module) 0.01 (by token)  median V   0% B   0% L   0% C   0%
+          families: V 2 (100%   0%   0%   0%)  B 1 (  0%  83%  17%   0%)  L 3 (  0%   0% 100%   0%)  C 5 (  0%   0%   0% 100%)
           detected: spynejs  adapters: content, spynejs  skipped: 1  tests: 1  empty: 1
 

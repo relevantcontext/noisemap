@@ -1,7 +1,11 @@
 import type { NoisemapReport, Span } from '@noisemap/core';
 
 /**
- * Single-file HTML map. Renders from a NoisemapReport (the JSON contract) and, when the
+ * Single-file HTML map. Palette: V blue, B magenta, L aqua, C yellow. Validated with every
+ * pair compared (not only adjacent pairs, since blocks sit in a grid): light passes all
+ * checks; dark passes with B↔L colorblind ΔE 6.9, legal with the block gaps as secondary
+ * encoding, and B at OKLCH L 0.68 against a 0.67 band. Orange for B was dropped because
+ * orange↔yellow read alike (normal-vision ΔE 13.7, below the 15 floor). Renders from a NoisemapReport (the JSON contract) and, when the
  * caller supplies them, the module sources for click-to-detail. Plain SVG built from
  * strings in the page's own script; no chart library. The embedded data is a compact form
  * of the report, private to this renderer; noisemap.json stays the contract.
@@ -85,7 +89,7 @@ export function renderHtml(report: NoisemapReport, options: HtmlOptions = {}): s
 <title>${esc(title)}</title>
 <style>${CSS}</style>
 </head>
-<body data-palette="#2a78d6,#eb6834,#1baf7a,#eda100">
+<body data-palette="#2a78d6,#c2277d,#1baf7a,#eda100">
 <header class="hdr">
   <div class="hdr-row">
     <h1>noisemap <span class="root" title="${esc(report.root)}">${esc(rootName)}</span></h1>
@@ -111,7 +115,7 @@ const CSS = `
 :root {
   --surface-0: #ffffff; --surface-1: #fcfcfb; --surface-2: #f0efec; --border: #d9d8d4;
   --ink: #1f1f1e; --ink-2: #4a4a48; --ink-3: #7a7a77;
-  --V: #2a78d6; --B: #eb6834; --L: #1baf7a; --C: #eda100; --X: #c9c8c4;
+  --V: #2a78d6; --B: #c2277d; --L: #1baf7a; --C: #eda100; --X: #c9c8c4;
   --accent: #2a78d6;
 }
 @media (prefers-color-scheme: dark) {
@@ -119,7 +123,7 @@ const CSS = `
     color-scheme: dark;
     --surface-0: #111110; --surface-1: #1a1a19; --surface-2: #262624; --border: #3a3a37;
     --ink: #ececea; --ink-2: #bdbdb9; --ink-3: #8a8a86;
-    --V: #3987e5; --B: #d95926; --L: #199e70; --C: #c98500; --X: #4a4a47;
+    --V: #3987e5; --B: #ea6294; --L: #199e70; --C: #c98500; --X: #4a4a47;
     --accent: #3987e5;
   }
 }
@@ -127,7 +131,7 @@ const CSS = `
   color-scheme: dark;
   --surface-0: #111110; --surface-1: #1a1a19; --surface-2: #262624; --border: #3a3a37;
   --ink: #ececea; --ink-2: #bdbdb9; --ink-3: #8a8a86;
-  --V: #3987e5; --B: #d95926; --L: #199e70; --C: #c98500; --X: #4a4a47;
+  --V: #3987e5; --B: #ea6294; --L: #199e70; --C: #c98500; --X: #4a4a47;
   --accent: #3987e5;
 }
 * { box-sizing: border-box; }

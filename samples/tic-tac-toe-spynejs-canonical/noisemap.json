@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T05:45:57.201Z",
+  "generatedAt": "2026-09-26T09:43:30.301Z",
   "root": "/private/tmp/noisemap-samples/tic-tac-toe-spynejs-canonical/src",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.04828348979674029,
+    "consistency": 0.02561981091255607,
     "median": {
       "V": 0,
       "B": 0,
@@ -30,8 +30,8 @@
       "V": {
         "modules": 2,
         "median": {
-          "V": 0.7371794871794872,
-          "B": 0.26282051282051283,
+          "V": 1,
+          "B": 0,
           "L": 0,
           "C": 0
         }
@@ -65,21 +65,21 @@
       }
     },
     "totals": {
-      "V": 45,
-      "B": 45,
+      "V": 62,
+      "B": 28,
       "L": 255,
       "C": 459,
       "excluded": 1544,
       "counted": 804
     },
     "shares": {
-      "V": 0.055970149253731345,
-      "B": 0.055970149253731345,
+      "V": 0.07711442786069651,
+      "B": 0.03482587064676617,
       "L": 0.31716417910447764,
       "C": 0.5708955223880597
     },
-    "meanMixing": 0.06747491638795985,
-    "meanMixingTokenWeighted": 0.029850746268656712
+    "meanMixing": 0.023671497584541058,
+    "meanMixingTokenWeighted": 0.00870646766169154
   },
   "modules": [
     {
@@ -396,15 +396,15 @@
       "path": "app/components/tic-tac-toe-game.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 15,
-        "B": 3,
+        "V": 18,
+        "B": 0,
         "L": 0,
         "C": 0,
         "excluded": 83
       },
       "shares": {
-        "V": 0.8333333333333334,
-        "B": 0.16666666666666666,
+        "V": 1,
+        "B": 0,
         "L": 0,
         "C": 0
       },
@@ -516,7 +516,7 @@
         {
           "start": 416,
           "end": 481,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
           "tokens": 3,
           "punctuation": 3
@@ -578,7 +578,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.16666666666666663,
+      "mixing": 0,
       "role": "ViewStream",
       "drift": 0
     },
@@ -586,15 +586,15 @@
       "path": "app/components/tic-tac-toe-move-btn.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 25,
-        "B": 14,
+        "V": 39,
+        "B": 0,
         "L": 0,
         "C": 0,
         "excluded": 117
       },
       "shares": {
-        "V": 0.6410256410256411,
-        "B": 0.358974358974359,
+        "V": 1,
+        "B": 0,
         "L": 0,
         "C": 0
       },
@@ -705,27 +705,11 @@
         },
         {
           "start": 568,
-          "end": 587,
-          "bucket": "B",
-          "rule": "method:addActionListeners",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 588,
-          "end": 589,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 590,
           "end": 630,
-          "bucket": "B",
-          "rule": "payload-filter",
-          "tokens": 3,
-          "punctuation": 2
+          "bucket": "V",
+          "rule": "method:addActionListeners",
+          "tokens": 5,
+          "punctuation": 3
         },
         {
           "start": 630,
@@ -753,27 +737,11 @@
         },
         {
           "start": 639,
-          "end": 670,
-          "bucket": "B",
-          "rule": "payload-filter",
-          "tokens": 5,
-          "punctuation": 4
-        },
-        {
-          "start": 670,
-          "end": 679,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 4,
-          "punctuation": 0
-        },
-        {
-          "start": 684,
           "end": 802,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 4,
-          "punctuation": 4
+          "tokens": 9,
+          "punctuation": 12
         },
         {
           "start": 802,
@@ -832,7 +800,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.3589743589743589,
+      "mixing": 0,
       "role": "ViewStream",
       "drift": 0
     },

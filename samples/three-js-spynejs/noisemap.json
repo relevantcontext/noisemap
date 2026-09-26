@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T05:45:58.174Z",
+  "generatedAt": "2026-09-26T09:43:31.219Z",
   "root": "/private/tmp/noisemap-samples/three-js-spynejs/src",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.05133315598295868,
+    "consistency": 0.030553996717937237,
     "median": {
       "V": 0,
       "B": 0,
@@ -30,8 +30,8 @@
       "V": {
         "modules": 6,
         "median": {
-          "V": 0.820855614973262,
-          "B": 0.15073529411764708,
+          "V": 1,
+          "B": 0,
           "L": 0,
           "C": 0
         }
@@ -65,21 +65,21 @@
       }
     },
     "totals": {
-      "V": 80,
-      "B": 32,
+      "V": 94,
+      "B": 18,
       "L": 695,
       "C": 283,
       "excluded": 2122,
       "counted": 1090
     },
     "shares": {
-      "V": 0.07339449541284404,
-      "B": 0.029357798165137616,
+      "V": 0.08623853211009175,
+      "B": 0.01651376146788991,
       "L": 0.6376146788990825,
       "C": 0.25963302752293577
     },
-    "meanMixing": 0.06582244008714595,
-    "meanMixingTokenWeighted": 0.022935779816513763
+    "meanMixing": 0.02716049382716049,
+    "meanMixingTokenWeighted": 0.010091743119266056
   },
   "modules": [
     {
@@ -450,15 +450,15 @@
       "path": "app/components/callout-view-item.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 14,
-        "B": 3,
+        "V": 17,
+        "B": 0,
         "L": 0,
         "C": 0,
         "excluded": 60
       },
       "shares": {
-        "V": 0.8235294117647058,
-        "B": 0.17647058823529413,
+        "V": 1,
+        "B": 0,
         "L": 0,
         "C": 0
       },
@@ -570,7 +570,7 @@
         {
           "start": 387,
           "end": 453,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
           "tokens": 3,
           "punctuation": 3
@@ -584,7 +584,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.17647058823529416,
+      "mixing": 0,
       "role": "ViewStream",
       "drift": 0
     },
@@ -592,15 +592,15 @@
       "path": "app/components/callout-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 12,
-        "B": 3,
+        "V": 15,
+        "B": 0,
         "L": 0,
         "C": 0,
         "excluded": 63
       },
       "shares": {
-        "V": 0.8,
-        "B": 0.2,
+        "V": 1,
+        "B": 0,
         "L": 0,
         "C": 0
       },
@@ -712,7 +712,7 @@
         {
           "start": 363,
           "end": 445,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
           "tokens": 3,
           "punctuation": 3
@@ -726,7 +726,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.19999999999999996,
+      "mixing": 0,
       "role": "ViewStream",
       "drift": 0
     },
@@ -734,15 +734,15 @@
       "path": "app/components/cc-attr-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 7,
-        "B": 1,
+        "V": 8,
+        "B": 0,
         "L": 0,
         "C": 0,
         "excluded": 62
       },
       "shares": {
-        "V": 0.875,
-        "B": 0.125,
+        "V": 1,
+        "B": 0,
         "L": 0,
         "C": 0
       },
@@ -862,7 +862,7 @@
         {
           "start": 334,
           "end": 340,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
           "tokens": 1,
           "punctuation": 0
@@ -932,7 +932,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.125,
+      "mixing": 0,
       "role": "ViewStream",
       "drift": 0
     },
@@ -1138,15 +1138,15 @@
       "path": "app/components/threejs-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 27,
-        "B": 7,
+        "V": 34,
+        "B": 0,
         "L": 2,
         "C": 0,
         "excluded": 116
       },
       "shares": {
-        "V": 0.75,
-        "B": 0.19444444444444445,
+        "V": 0.9444444444444444,
+        "B": 0,
         "L": 0.05555555555555555,
         "C": 0
       },
@@ -1258,7 +1258,7 @@
         {
           "start": 432,
           "end": 653,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
           "tokens": 7,
           "punctuation": 11
@@ -1352,7 +1352,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.25,
+      "mixing": 0.05555555555555558,
       "role": "ViewStream",
       "drift": 0
     },

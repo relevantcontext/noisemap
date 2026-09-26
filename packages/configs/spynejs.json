@@ -51,7 +51,10 @@
           "bucket": "V",
           "uniform": true
         },
-        "addActionListeners": "B",
+        "addActionListeners": {
+          "bucket": "V",
+          "uniform": true
+        },
         "broadcastEvents": {
           "bucket": "V",
           "uniform": true
@@ -227,6 +230,11 @@
     }
   ],
   "openQuestions": [
+    {
+      "rule": "addActionListeners",
+      "call": "addActionListeners is uniformly View, like broadcastEvents (ratified 2026-09-26)",
+      "reason": "the listener table is the view's configuration; it does nothing by itself and is read by the application to wire the behavior layer. Behavior in a view is the view implementing its own RxJS or listeners: subscribe, channel I/O, handler bodies"
+    },
     {
       "rule": "config = View",
       "call": "a role's constructor body is uniformly its config bucket, props.data included; broadcastEvents is uniformly View (ratified 2026-09-22, after tag preliminary-criteria)",

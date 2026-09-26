@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T05:45:58.499Z",
+  "generatedAt": "2026-09-26T09:43:31.529Z",
   "root": "/private/tmp/noisemap-samples/fixtures/spyne/src",
   "frameworks": {
     "detected": [
@@ -18,7 +18,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.06638908045061229,
+    "consistency": 0.04061697158873764,
     "median": {
       "V": 0,
       "B": 0,
@@ -29,8 +29,8 @@
       "V": {
         "modules": 2,
         "median": {
-          "V": 0.831578947368421,
-          "B": 0.07368421052631578,
+          "V": 0.9052631578947368,
+          "B": 0,
           "L": 0.07368421052631578,
           "C": 0.021052631578947368
         }
@@ -55,21 +55,21 @@
       }
     },
     "totals": {
-      "V": 72,
-      "B": 40,
+      "V": 86,
+      "B": 26,
       "L": 51,
       "C": 4,
       "excluded": 494,
       "counted": 167
     },
     "shares": {
-      "V": 0.4311377245508982,
-      "B": 0.23952095808383234,
+      "V": 0.5149700598802395,
+      "B": 0.15568862275449102,
       "L": 0.30538922155688625,
       "C": 0.023952095808383235
     },
-    "meanMixing": 0.09535603715170281,
-    "meanMixingTokenWeighted": 0.2395209580838324
+    "meanMixing": 0.07079463364293087,
+    "meanMixingTokenWeighted": 0.15568862275449105
   },
   "modules": [
     {
@@ -504,15 +504,15 @@
       "path": "components/menu-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 63,
-        "B": 14,
+        "V": 77,
+        "B": 0,
         "L": 14,
         "C": 4,
         "excluded": 195
       },
       "shares": {
-        "V": 0.6631578947368421,
-        "B": 0.14736842105263157,
+        "V": 0.8105263157894737,
+        "B": 0,
         "L": 0.14736842105263157,
         "C": 0.042105263157894736
       },
@@ -623,27 +623,11 @@
         },
         {
           "start": 614,
-          "end": 626,
-          "bucket": "B",
-          "rule": "method:addActionListeners",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 627,
-          "end": 628,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 629,
           "end": 671,
-          "bucket": "B",
-          "rule": "payload-filter",
-          "tokens": 4,
-          "punctuation": 3
+          "bucket": "V",
+          "rule": "method:addActionListeners",
+          "tokens": 6,
+          "punctuation": 4
         },
         {
           "start": 671,
@@ -671,27 +655,11 @@
         },
         {
           "start": 680,
-          "end": 690,
-          "bucket": "B",
-          "rule": "payload-filter",
-          "tokens": 2,
-          "punctuation": 1
-        },
-        {
-          "start": 691,
-          "end": 694,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 3,
-          "punctuation": 0
-        },
-        {
-          "start": 699,
           "end": 814,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 6,
-          "punctuation": 8
+          "tokens": 8,
+          "punctuation": 12
         },
         {
           "start": 814,
@@ -926,7 +894,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.33684210526315794,
+      "mixing": 0.18947368421052635,
       "role": "ViewStream",
       "drift": 0.06315789473684211
     },

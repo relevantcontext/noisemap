@@ -1,6 +1,6 @@
 {
   "name": "code-noisemap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Codebase noise analyzer: classifies every token as View, Behavior, Logic, or Content, and reports mixing, consistency, and drift per module, as a terminal table, a JSON file, and a single-file HTML map.",
   "license": "MIT",
   "author": "Frank Batista",

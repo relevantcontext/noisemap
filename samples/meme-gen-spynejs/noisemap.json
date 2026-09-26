@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T05:45:58.004Z",
+  "generatedAt": "2026-09-26T09:43:31.067Z",
   "root": "/private/tmp/noisemap-samples/meme-gen-spynejs/src",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.03464108978540157,
+    "consistency": 0.008928115924072569,
     "median": {
       "V": 0,
       "B": 0,
@@ -30,8 +30,8 @@
       "V": {
         "modules": 2,
         "median": {
-          "V": 0.9,
-          "B": 0.1,
+          "V": 1,
+          "B": 0,
           "L": 0,
           "C": 0
         }
@@ -65,36 +65,36 @@
       }
     },
     "totals": {
-      "V": 26,
-      "B": 13,
+      "V": 29,
+      "B": 10,
       "L": 147,
       "C": 412,
       "excluded": 1125,
       "counted": 598
     },
     "shares": {
-      "V": 0.043478260869565216,
-      "B": 0.021739130434782608,
+      "V": 0.048494983277591976,
+      "B": 0.016722408026755852,
       "L": 0.24581939799331104,
       "C": 0.6889632107023411
     },
-    "meanMixing": 0.03964646464646464,
-    "meanMixingTokenWeighted": 0.016722408026755845
+    "meanMixing": 0.02146464646464646,
+    "meanMixingTokenWeighted": 0.011705685618729094
   },
   "modules": [
     {
       "path": "app/app-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 12,
-        "B": 3,
+        "V": 15,
+        "B": 0,
         "L": 0,
         "C": 0,
         "excluded": 64
       },
       "shares": {
-        "V": 0.8,
-        "B": 0.2,
+        "V": 1,
+        "B": 0,
         "L": 0,
         "C": 0
       },
@@ -206,7 +206,7 @@
         {
           "start": 372,
           "end": 483,
-          "bucket": "B",
+          "bucket": "V",
           "rule": "method:addActionListeners",
           "tokens": 3,
           "punctuation": 3
@@ -220,7 +220,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.19999999999999996,
+      "mixing": 0,
       "role": "ViewStream",
       "drift": 0
     },
