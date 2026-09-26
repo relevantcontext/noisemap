@@ -1,14 +1,14 @@
 file                        tokens  V B L C                  V     B     L     C  mixing  role        drift
 --------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
-channels/channel-cards.js       34  BBBBBBBBBBBBBBBLLLLL    0%   76%   24%    0%    0.24  Channel      0.00
-components/menu-view.js         95  VVVVVVVVVVVVVVVVLLLC   81%    0%   15%    4%    0.19  ViewStream   0.06
+components/menu-view.js         95  VVVVVVVVVVVVVVVLLLLC   77%    0%   19%    4%    0.23  ViewStream   0.08
+channels/channel-cards.js       34  BBBBBBBBBBBBBBBBLLLL    0%   82%   18%    0%    0.18  Channel      0.00
 components/bare-item.js          9  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  DomElement   0.00
 traits/cards-traits.js          11  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 traits/menu-view-traits.js      13  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 util.js                          5  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 
-codebase  6 modules  167 tokens  VVVVVVVVVVBBBLLLLLLC  V  51% B  16% L  31% C   2%
-          consistency 0.04  mean mixing 0.07 (by module) 0.16 (by token)  median V   0% B   0% L  62% C   0%
-          families: V 2 ( 91%   0%   7%   2%)  B 1 (  0%  76%  24%   0%)  L 3 (  0%   0% 100%   0%)
+codebase  6 modules  167 tokens  VVVVVVVVVVBBBLLLLLLC  V  49% B  17% L  32% C   2%
+          consistency 0.05  mean mixing 0.07 (by module) 0.17 (by token)  median V   0% B   0% L  59% C   0%
+          families: V 2 ( 88%   0%   9%   2%)  B 1 (  0%  82%  18%   0%)  L 3 (  0%   0% 100%   0%)
           detected: spynejs  adapters: spynejs  skipped: 0
 

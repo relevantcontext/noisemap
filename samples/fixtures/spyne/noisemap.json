@@ -4,7 +4,7 @@
     "name": "noisemap",
     "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T09:43:31.529Z",
+  "generatedAt": "2026-09-26T10:02:06.507Z",
   "root": "/private/tmp/noisemap-samples/fixtures/spyne/src",
   "frameworks": {
     "detected": [
@@ -18,20 +18,20 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.04061697158873764,
+    "consistency": 0.05036035120844676,
     "median": {
       "V": 0,
       "B": 0,
-      "L": 0.6176470588235294,
+      "L": 0.5947368421052631,
       "C": 0
     },
     "families": {
       "V": {
         "modules": 2,
         "median": {
-          "V": 0.9052631578947368,
+          "V": 0.8842105263157894,
           "B": 0,
-          "L": 0.07368421052631578,
+          "L": 0.09473684210526316,
           "C": 0.021052631578947368
         }
       },
@@ -39,8 +39,8 @@
         "modules": 1,
         "median": {
           "V": 0,
-          "B": 0.7647058823529411,
-          "L": 0.23529411764705882,
+          "B": 0.8235294117647058,
+          "L": 0.17647058823529413,
           "C": 0
         }
       },
@@ -55,21 +55,21 @@
       }
     },
     "totals": {
-      "V": 86,
-      "B": 26,
-      "L": 51,
+      "V": 82,
+      "B": 28,
+      "L": 53,
       "C": 4,
       "excluded": 494,
       "counted": 167
     },
     "shares": {
-      "V": 0.5149700598802395,
-      "B": 0.15568862275449102,
-      "L": 0.30538922155688625,
+      "V": 0.49101796407185627,
+      "B": 0.16766467065868262,
+      "L": 0.31736526946107785,
       "C": 0.023952095808383235
     },
-    "meanMixing": 0.07079463364293087,
-    "meanMixingTokenWeighted": 0.15568862275449105
+    "meanMixing": 0.06800825593395254,
+    "meanMixingTokenWeighted": 0.16766467065868268
   },
   "modules": [
     {
@@ -77,15 +77,15 @@
       "framework": "spynejs",
       "tokens": {
         "V": 0,
-        "B": 26,
-        "L": 8,
+        "B": 28,
+        "L": 6,
         "C": 0,
         "excluded": 111
       },
       "shares": {
         "V": 0,
-        "B": 0.7647058823529411,
-        "L": 0.23529411764705882,
+        "B": 0.8235294117647058,
+        "L": 0.17647058823529413,
         "C": 0
       },
       "spans": [
@@ -260,8 +260,8 @@
         {
           "start": 391,
           "end": 406,
-          "bucket": "L",
-          "rule": "Channel:call",
+          "bucket": "B",
+          "rule": "method:onRegistered",
           "tokens": 2,
           "punctuation": 1
         },
@@ -386,7 +386,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.23529411764705888,
+      "mixing": 0.17647058823529416,
       "role": "Channel",
       "drift": 0
     },
@@ -504,16 +504,16 @@
       "path": "components/menu-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 77,
+        "V": 73,
         "B": 0,
-        "L": 14,
+        "L": 18,
         "C": 4,
         "excluded": 195
       },
       "shares": {
-        "V": 0.8105263157894737,
+        "V": 0.7684210526315789,
         "B": 0,
-        "L": 0.14736842105263157,
+        "L": 0.18947368421052632,
         "C": 0.042105263157894736
       },
       "spans": [
@@ -575,11 +575,59 @@
         },
         {
           "start": 239,
-          "end": 558,
+          "end": 469,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 35,
-          "punctuation": 40
+          "tokens": 26,
+          "punctuation": 29
+        },
+        {
+          "start": 470,
+          "end": 472,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 473,
+          "end": 498,
+          "bucket": "L",
+          "rule": "ViewStream:call",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 498,
+          "end": 501,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 506,
+          "end": 537,
+          "bucket": "V",
+          "rule": "method:constructor",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 538,
+          "end": 540,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 541,
+          "end": 558,
+          "bucket": "L",
+          "rule": "call:composed",
+          "tokens": 2,
+          "punctuation": 1
         },
         {
           "start": 558,
@@ -894,9 +942,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.18947368421052635,
+      "mixing": 0.2315789473684211,
       "role": "ViewStream",
-      "drift": 0.06315789473684211
+      "drift": 0.08421052631578947
     },
     {
       "path": "traits/cards-traits.js",

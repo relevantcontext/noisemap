@@ -142,7 +142,7 @@
           },
           "calls": {
             "type": "object",
-            "description": "Callee pattern (regex) → bucket for the call, with `permitted: true` meaning it is expected and not drift.",
+            "description": "Callee pattern (regex) → bucket for the call. `permitted: true` means it is expected and not drift. `bare: \"host\"` means a bare delegation (an expression statement whose result is unused, with no arguments or only identifiers passed through) is configuration and takes the host's bucket; a call whose result is used is Logic in the host.",
             "additionalProperties": {
               "type": "object",
               "required": [
@@ -155,6 +155,12 @@
                 },
                 "permitted": {
                   "type": "boolean"
+                },
+                "bare": {
+                  "enum": [
+                    "host"
+                  ],
+                  "description": "Bare delegations take the host's bucket (the role default, or the enclosing method's bucket)."
                 }
               }
             }

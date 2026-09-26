@@ -63,7 +63,8 @@
       "calls": {
         "(^|\\.)[A-Za-z_]+\\$[A-Za-z_]+$": {
           "bucket": "L",
-          "permitted": true
+          "permitted": true,
+          "bare": "host"
         }
       }
     },
@@ -105,7 +106,8 @@
       "calls": {
         "(^|\\.)[A-Za-z_]+\\$[A-Za-z_]+$": {
           "bucket": "L",
-          "permitted": true
+          "permitted": true,
+          "bare": "host"
         }
       }
     },
@@ -230,6 +232,16 @@
     }
   ],
   "openQuestions": [
+    {
+      "rule": "delegation",
+      "call": "a bare trait call (statement, result unused, only identifiers passed through) is configuration and takes the host's bucket; a trait call whose result is used is Logic in the host, permitted (ratified 2026-09-26)",
+      "reason": "delegation is declaration by another syntax, the same act as naming the method in a listener table; composition is computation wherever it sits, and hiding it behind a trait call would be self-serving"
+    },
+    {
+      "rule": "call:composed",
+      "call": "a local call whose result is used inside a uniform method (a constructor) is Logic, not configuration (ratified 2026-09-26)",
+      "reason": "the config object is View, but a computed value inside it is a computation; it shows as drift because it is not a trait"
+    },
     {
       "rule": "addActionListeners",
       "call": "addActionListeners is uniformly View, like broadcastEvents (ratified 2026-09-26)",

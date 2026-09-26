@@ -4,7 +4,7 @@
     "name": "noisemap",
     "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T09:43:31.067Z",
+  "generatedAt": "2026-09-26T10:02:06.044Z",
   "root": "/private/tmp/noisemap-samples/meme-gen-spynejs/src",
   "frameworks": {
     "detected": [
@@ -40,8 +40,8 @@
         "modules": 1,
         "median": {
           "V": 0,
-          "B": 0.8333333333333334,
-          "L": 0.16666666666666666,
+          "B": 1,
+          "L": 0,
           "C": 0
         }
       },
@@ -66,20 +66,20 @@
     },
     "totals": {
       "V": 29,
-      "B": 10,
-      "L": 147,
+      "B": 12,
+      "L": 145,
       "C": 412,
       "excluded": 1125,
       "counted": 598
     },
     "shares": {
       "V": 0.048494983277591976,
-      "B": 0.016722408026755852,
-      "L": 0.24581939799331104,
+      "B": 0.020066889632107024,
+      "L": 0.24247491638795987,
       "C": 0.6889632107023411
     },
-    "meanMixing": 0.02146464646464646,
-    "meanMixingTokenWeighted": 0.011705685618729094
+    "meanMixing": 0.006313131313131311,
+    "meanMixingTokenWeighted": 0.008361204013377923
   },
   "modules": [
     {
@@ -229,15 +229,15 @@
       "framework": "spynejs",
       "tokens": {
         "V": 0,
-        "B": 10,
-        "L": 2,
+        "B": 12,
+        "L": 0,
         "C": 0,
         "excluded": 69
       },
       "shares": {
         "V": 0,
-        "B": 0.8333333333333334,
-        "L": 0.16666666666666666,
+        "B": 1,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -380,8 +380,8 @@
         {
           "start": 561,
           "end": 592,
-          "bucket": "L",
-          "rule": "Channel:call",
+          "bucket": "B",
+          "rule": "method:onRegistered",
           "tokens": 2,
           "punctuation": 1
         },
@@ -434,7 +434,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.16666666666666663,
+      "mixing": 0,
       "role": "Channel",
       "drift": 0
     },

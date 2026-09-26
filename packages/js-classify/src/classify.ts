@@ -154,9 +154,9 @@ export class RangeBuilder {
     return this.source.slice(n.start ?? 0, n.end ?? 0);
   }
 
-  private add(start: number | null | undefined, end: number | null | undefined, bucket: Bucket | 'excluded', rule: string, prose?: readonly CommentStyle[]): Range | null {
+  private add(start: number | null | undefined, end: number | null | undefined, bucket: Bucket | 'excluded', rule: string, prose?: readonly CommentStyle[], pierce = false): Range | null {
     if (start == null || end == null || end <= start) return null;
-    if (bucket !== 'excluded' && !rule.startsWith('role:') && !rule.startsWith('method:') && this.sealed.some((z) => z.start <= start && end <= z.end)) return null;
+    if (!pierce && bucket !== 'excluded' && !rule.startsWith('role:') && !rule.startsWith('method:') && this.sealed.some((z) => z.start <= start && end <= z.end)) return null;
     const r: Range = { start, end, bucket, rule };
     if (prose) r.prose = prose;
     this.ranges.push(r);
@@ -176,13 +176,24 @@ export class RangeBuilder {
   }
 
   /** Role-level call rule, e.g. a SpyneTrait call inside a Channel. */
-  private roleCall(calleeText: string): { bucket: Bucket; permitted: boolean } | null {
+  private roleCall(calleeText: string): { bucket: Bucket; permitted: boolean; bare: boolean } | null {
     const role = this.role;
     if (!role?.calls) return null;
     for (const [pattern, rule] of Object.entries(role.calls)) {
-      if (this.re(pattern).test(calleeText)) return { bucket: rule.bucket, permitted: rule.permitted ?? false };
+      if (this.re(pattern).test(calleeText)) return { bucket: rule.bucket, permitted: rule.permitted ?? false, bare: rule.bare === 'host' };
     }
     return null;
+  }
+
+  /**
+   * A bare delegation: the call is a statement on its own, its result unused, and it passes
+   * nothing or only identifiers and member reads through (`e`, `this.props`). Ruling
+   * 2026-09-26: that is configuration by another syntax. Anything else composes.
+   */
+  private isBareDelegation(node: t.CallExpression | t.NewExpression, parent: Node | null): boolean {
+    if (node.type !== 'CallExpression') return false;
+    if (parent?.type !== 'ExpressionStatement') return false;
+    return node.arguments.every((a) => a.type === 'Identifier' || a.type === 'MemberExpression' || a.type === 'ThisExpression');
   }
 
   private exclude(n: Node | null | undefined, kind: ScaffoldingKind, rule = `scaffolding:${kind}`): void {
@@ -405,9 +416,14 @@ export class RangeBuilder {
           }
         }
         const rc = this.roleCall(calleeText);
-        if (rc) {
-          const r = this.add(node.start, node.end, rc.bucket, `${this.role?.name ?? 'role'}:call`);
+        const bare = this.isBareDelegation(node, parent);
+        if (rc && !(rc.bare && bare)) {
+          // A composed call is Logic in the host even inside a uniform method (constructor config).
+          const r = this.add(node.start, node.end, rc.bucket, `${this.role?.name ?? 'role'}:call`, undefined, !bare);
           if (r) r.permitted = rc.permitted;
+        } else if (!rc && !bare && this.role && !c && this.sealed.length > 0 && this.role.uniform !== true) {
+          // A composed local call inside a uniform method (e.g. a constructor) is a computed value: Logic, not config.
+          this.add(node.start, node.end, 'L', 'call:composed', undefined, true);
         }
         if (parent?.type === 'JSXExpressionContainer') {
           const jc = this.first('jsxExpressionCall');

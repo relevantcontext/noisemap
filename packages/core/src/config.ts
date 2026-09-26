@@ -48,7 +48,7 @@ export interface RoleConfig {
   expected: Bucket[];
   default: Bucket;
   methods?: Record<string, Bucket | { bucket: Bucket; uniform?: boolean }>;
-  calls?: Record<string, { bucket: Bucket; permitted?: boolean }>;
+  calls?: Record<string, { bucket: Bucket; permitted?: boolean; bare?: 'host' }>;
   /** Every counted token in the class body is the default bucket; classifiers inside do not apply. */
   uniform?: boolean;
 }

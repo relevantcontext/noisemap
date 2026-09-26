@@ -52,11 +52,12 @@ describe('spynejs adapter: ViewStream', () => {
     expect(mod.spans.filter((s) => s.rule === 'method:addActionListeners' || s.rule === 'method:broadcastEvents').every((s) => s.bucket === 'V')).toBe(true);
     expect(mod.tokens.B).toBe(0);
   });
-  it('the constructor is uniformly View: its ?? defaults, trait calls, and local calls are all config', () => {
+  it('the constructor is View, but a computed value inside it is Logic: a trait call permitted, a local call not', () => {
     expect(spans('conditional')).not.toContain('props.data?.limit');
-    expect(spans('conditional')).not.toContain('props.data?.title');
     expect(spans('method:constructor').join(' ')).toContain('props.limit = props.data?.limit ?? 10');
-    expect(spans('method:constructor').join(' ')).toContain('this.computeTitle');
+    expect(spans('ViewStream:call')).toContain('this.menuView$DefaultSort');
+    expect(spans('call:composed')).toEqual(['this.computeTitle']);
+    expect(mod.spans.find((s) => s.rule === 'call:composed')?.bucket).toBe('L');
   });
 
   it('onRendered is role default V; composition is V; trait calls are L and permitted; a conditional is L', () => {
@@ -64,7 +65,8 @@ describe('spynejs adapter: ViewStream', () => {
     expect(spans('dom')).toEqual(["this.el.classList.toggle('busy', count > 3"]);
     expect(spans('compose-view')).toEqual(['this.appendView']);
     expect(spans('new-view')).toEqual(["new ViewStream({ tagName: 'p', data"]);
-    expect(spans('ViewStream:call')).toEqual(["this.menuView$SetActiveLink({ payload: { path: '/'", "this.menuView$Log('multi'"]);
+    // both calls pass literals, so they compose; a bare `this.x$Y()` or `this.x$Y(e)` would take the host bucket
+    expect(spans('ViewStream:call')).toEqual(['this.menuView$DefaultSort', "this.menuView$SetActiveLink({ payload: { path: '/'", "this.menuView$Log('multi'"]);
     expect(spans('conditional')).toEqual(['if (this.props.channels.length > 1']);
     expect(spans('copy-string')).toEqual(['Menu ready to use']);
   });
@@ -74,6 +76,16 @@ describe('spynejs adapter: ViewStream', () => {
     expect(mod.drift).toBeCloseTo((mod.tokens.L - traitTokens) / counted);
     expect(mod.drift).toBeGreaterThan(0);
     expect(mod.drift).toBeLessThan(0.15);
+  });
+
+  it('a bare trait delegation takes the host bucket; a composed one is Logic', () => {
+    const mk = (body: string): FileInfo => ({ path: 'c.js', absPath: '/x/c.js', ext: '.js', source: `import { Channel } from 'spyne';\nexport class C extends Channel {\n  onRegistered() {\n${body}\n  }\n}\n` });
+    const bare = moduleFromOutput(mk('    this.c$OnRegistered(); this.c$Bind(this.props);'), spynejsAdapter.analyze(mk('    this.c$OnRegistered(); this.c$Bind(this.props);'), config));
+    expect(bare.tokens.L).toBe(0);
+    expect(bare.shares.B).toBe(1);
+    const composed = moduleFromOutput(mk("    const s = this.c$Sort(this.props.items, 'title'); this.sendChannelPayload('X', { s });"), spynejsAdapter.analyze(mk("    const s = this.c$Sort(this.props.items, 'title'); this.sendChannelPayload('X', { s });"), config));
+    expect(composed.tokens.L).toBeGreaterThan(0);
+    expect(composed.drift).toBe(0); // permitted
   });
 
   it('a view that subscribes itself has Behavior; a listener table alone has none', () => {
@@ -107,7 +119,7 @@ describe('spynejs adapter: Channel', () => {
   const spans = (rule: string) => by(file, mod.spans, rule);
   it('is Behavior with permitted trait calls that are reported, not drift', () => {
     expect(mod.role).toBe('Channel');
-    expect(spans('Channel:call')).toEqual(['this.cards$Init', "this.cards$Sort(p.payload.cards, 'title'"]);
+    expect(spans('Channel:call')).toEqual(["this.cards$Sort(p.payload.cards, 'title'"]); // this.cards$Init() is a bare delegation: B
     expect(mod.tokens.L).toBeGreaterThan(0);
     expect(mod.drift).toBe(0);
     expect(spans('channel-io')).toEqual(["this.getChannel('CHANNEL_ROUTE'", "this.sendChannelPayload('CHANNEL_CARDS_SORT_EVENT', { cards: sorted"]);
