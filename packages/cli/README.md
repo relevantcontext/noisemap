@@ -1,4 +1,4 @@
-# noisemap
+# code-noisemap
 
 **Noise** is the avoidable ambiguity an agent must resolve when deciding what to implement, how code fits in the application, and where code and content belongs.
 
@@ -58,12 +58,15 @@ in the file, so a brick reads like its module.
 ## Install and run
 
 ```
-npx noisemap ./src                     # terminal table + writes noisemap.json
-npx noisemap map ./src                 # also writes noisemap.html and opens it
-npx noisemap ./src --json              # JSON to stdout only
-npx noisemap ./src --framework react   # override detection
-npx noisemap explain ./src/App.tsx     # one file, one span per line, to dispute a call
+npx code-noisemap ./src                     # terminal table + writes noisemap.json
+npx code-noisemap map ./src                 # also writes noisemap.html and opens it
+npx code-noisemap ./src --json              # JSON to stdout only
+npx code-noisemap ./src --framework react   # override detection
+npx code-noisemap explain ./src/App.tsx     # one file, one span per line, to dispute a call
 ```
+
+The package is `code-noisemap`; the installed command is `noisemap`, so after
+`npm install -g code-noisemap` the examples above read `noisemap ./src`.
 
 Detection reads the nearest `package.json`: `react` selects the React config, `spyne` or a
 `@spynejs/*` package selects the SpyneJS config. Routing is per file: `.jsx`, `.tsx`, and

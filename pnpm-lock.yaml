@@ -20,12 +20,12 @@ importers:
       ajv-formats:
         specifier: ^3.0.1
         version: 3.0.1(ajv@8.20.0)
+      code-noisemap:
+        specifier: workspace:*
+        version: link:packages/cli
       eslint:
         specifier: ^10.0.0
         version: 10.11.0(supports-color@7.2.0)
-      noisemap:
-        specifier: workspace:*
-        version: link:packages/cli
       typescript:
         specifier: ^5.9.0
         version: 5.9.3

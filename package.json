@@ -10,8 +10,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "pnpm --filter noisemap build",
-    "dev": "pnpm --filter noisemap dev",
+    "build": "pnpm --filter code-noisemap build",
+    "dev": "pnpm --filter code-noisemap dev",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
@@ -22,8 +22,8 @@
     "@types/node": "^22.18.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
+    "code-noisemap": "workspace:*",
     "eslint": "^10.0.0",
-    "noisemap": "workspace:*",
     "typescript": "^5.9.0",
     "typescript-eslint": "^8.70.0",
     "vitest": "^5.0.0"
