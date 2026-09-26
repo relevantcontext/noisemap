@@ -1,20 +1,28 @@
 #!/usr/bin/env bash
 # Rebuilds every published sample from a neutral root, so noisemap.json's `root` says nothing
 # about the machine it ran on. Each source is copied (src + package.json) into
-# $STAGE/<name>/ and analyzed there. Local sources are Frank's checkouts; the two React
-# twins are public code fetched into $STAGE/upstream (see their SOURCE.md files).
+# $STAGE/<name>/ and analyzed there.
+#
+# Sources are given by environment variables, no defaults:
+#   ACME_SPYNEJS   the Acme dashboard SpyneJS port (project root; src/ is analyzed)
+#   ACME_NEXTJS    the Acme dashboard Next.js reference (project root; app/ is analyzed)
+#   SPYNE_SAMPLES  the spynejs.com examples checkout (spyne-ttt-simplified, spyne-todos, …)
+# The two React twins are public code fetched into $STAGE (see their SOURCE.md files):
+#   react.dev tutorial final App.js  → $STAGE/react-tic-tac-toe
+#   tastejs/todomvc examples/react   → $STAGE/todomvc-react
 set -euo pipefail
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
 BIN="$HERE/node_modules/.bin/noisemap"
 OUT="$HERE/samples"
 STAGE="${NOISEMAP_STAGE:-/tmp/noisemap-samples}"
-SPYNE_SAMPLES="${SPYNE_SAMPLES:-$HOME/sites/claude-code-spynejs-code-samples}"
-ACME="${ACME:-$HOME/sites/acme-comparison}"
+: "${ACME_SPYNEJS:?set ACME_SPYNEJS to the Acme SpyneJS project root}"
+: "${ACME_NEXTJS:?set ACME_NEXTJS to the Acme Next.js project root}"
+: "${SPYNE_SAMPLES:?set SPYNE_SAMPLES to the spynejs.com examples checkout}"
 
 # name | source project dir | analyzed subdir | sources embedded in the map
 SAMPLES=(
-  "acme-spynejs|$ACME/acme-dashboard-spynejs-private|src|yes"
-  "acme-nextjs|$ACME/acme-dashboard-nextjs-private|app|yes"
+  "acme-spynejs|$ACME_SPYNEJS|src|yes"
+  "acme-nextjs|$ACME_NEXTJS|app|yes"
   "tic-tac-toe-react|$STAGE/react-tic-tac-toe|src|yes"
   "tic-tac-toe-spynejs|$SPYNE_SAMPLES/spyne-ttt-simplified|src|yes"
   "tic-tac-toe-spynejs-canonical|$SPYNE_SAMPLES/spyne-ttt-canonical|src|yes"

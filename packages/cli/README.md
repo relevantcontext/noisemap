@@ -27,6 +27,15 @@ It evaluates:
 
 `noisemap` is a pure measurement instrument. It sets no thresholds, enforces no rules, and passes no judgment. It simply reports the signal.
 
+### Version 1
+
+This is the initial noisemap. It measures the proxy for the definition above: how concerns
+mix within a module, how consistently each kind of module holds its shape, and how far a
+module with a declared role drifts from it. More thorough analysis follows soon: resolving
+where a listener's handler actually lives, whether separately maintained contracts agree,
+and how much logic sits inside rendering. Those are the questions the definition asks, and
+they are the next version.
+
 ## The fairness test
 
 **The same rule gives the same bucket in every config.** Classification is by what a token
