@@ -3,8 +3,8 @@ file                                        tokens  V B L C                  V  
 layout.tsx                                      35  VVVVVVVLLLLLLCCCCCCC   34%    0%   31%   34%    0.66
 ui/history-refresh.tsx                          32  VVVVVBBBBBBBBLLLLLLL   25%   38%   38%    0%    0.63
 ui/invoices/editable-table.tsx                1058  VVVVVVVVBBBLLLLLLLLC   38%   17%   38%    6%    0.62
-ui/quick-search/overlay.tsx                    614  VVVVVVVVBBBLLLLLLLLC   38%   15%   40%    7%    0.60
 ui/invoices/status-toggle.tsx                   55  VVVVVVVVBBBLLLLLLCCC   40%   16%   27%   16%    0.60
+ui/quick-search/overlay.tsx                    612  VVVVVVVVBBBLLLLLLLLC   38%   15%   40%    7%    0.60
 ui/invoices/status.tsx                          26  VVVVVVVVVLLLLLLLLLCC   46%    0%   46%    8%    0.54
 ui/live/live-events-provider.tsx               143  VBBBBBBBBBBLLLLLLLLL    6%   48%   46%    0%    0.52
 ui/quick-search/provider.tsx                    59  VVVVVVVBBBLLLLLLLLLL   34%   14%   53%    0%    0.47
@@ -42,7 +42,6 @@ ui/acme-logo.tsx                                15  VVVVVVVVVVVVVVVVVVVC   93%  
 ui/dashboard/sidenav.tsx                        46  VVVVVVVVVVVVVVVVVVVC   96%    0%    0%    4%    0.04
 seed/route.ts                                  225  LLLLLLLLLLLLLLLLLLLC    0%    0%   96%    4%    0.04
 ui/skeletons.tsx                               578  VVVVVVVVVVVVVVVVVVVC   97%    0%    1%    2%    0.03
-lib/payment-events.ts                          192  LLLLLLLLLLLLLLLLLLLL    0%    0%   98%    2%    0.02
 lib/placeholder-data.ts                        244  LLLLLLLLLLLLLLLLLLLL    0%    0%   99%    1%    0.01
 api/search/route.ts                             55  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 dashboard/(overview)/loading.tsx                 2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
@@ -54,13 +53,14 @@ dashboard/layout.tsx                            20  VVVVVVVVVVVVVVVVVVVV  100%  
 lib/enterprise-data.ts                         264  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 lib/invoice-edits.ts                            62  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 lib/invoice-sort.ts                             39  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+lib/payment-events.ts                          189  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 lib/utils.ts                                   111  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 login/page.tsx                                  21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
 query/route.ts                                  29  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 ui/fonts.ts                                     13  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 ui/global.css                                   29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  59 modules  8007 tokens  VVVVVVVVBLLLLLLLLLLC  V  39% B   5% L  50% C   7%
+codebase  59 modules  8002 tokens  VVVVVVVVBLLLLLLLLLLC  V  39% B   5% L  50% C   7%
           consistency 0.23  mean mixing 0.23 (by module) 0.26 (by token)  median V  56% B   0% L  32% C   2%
           families: V 34 ( 79%   0%  11%   7%)  B 2 ( 15%  43%  42%   0%)  L 22 (  0%   0%  92%   0%)  C 1 (  0%   0%   0% 100%)
           detected: react  adapters: content, react  skipped: 2  empty: 1

@@ -14,15 +14,12 @@ app/components/page-items/login-form-view.js                                    
 app/components/elements/invoices-item-view.js                                    113  VVVVVVVVVVVVVVVVVLLL   83%    0%   17%    0%    0.17  ViewStream   0.17
 app/components/page-items/dashboard-invoices-latest-view.js                       54  VVVVVVVVVVVVVVVVVLLL   83%    0%   17%    0%    0.17  ViewStream   0.17
 app/components/pages/page-guest-view.js                                           27  VVVVVVVVVVVVVVVVVLLL   85%    0%   15%    0%    0.15  ViewStream   0.15
-app/utils/page-template-lookup.js                                                 54  LLLLLLLLLLLLLLLLLCCC    0%    0%   85%   15%    0.15
 app/components/elements/invoices-customer-option-view.js                          42  VVVVVVVVVVVVVVVVVLLL   86%    0%   14%    0%    0.14  ViewStream   0.14
-app/utils/svg-icons.js                                                            53  LLLLLLLLLLLLLLLLLCCC    0%    0%   87%   13%    0.13
 app/components/page-items/ui-acme-logo-view.js                                    25  VVVVVVVVVVVVVVVVVVLL   88%    0%   12%    0%    0.12  ViewStream   0.12
 app/components/page-items/customers-table-view.js                                 40  VVVVVVVVVVVVVVVVVVLL   90%    0%   10%    0%    0.10  ViewStream   0.00
 app/components/elements/invoices-cell-editor-view.js                              92  VVVVVVVVVVVVVVVVVVLL   90%    0%   10%    0%    0.10  ViewStream   0.10
 app/components/pages/page-acme-view.js                                            41  VVVVVVVVVVVVVVVVVVLL   90%    0%   10%    0%    0.10  ViewStream   0.10
 app/components/search/quick-search-overlay-view.js                                38  VVVVVVVVVVVVVVVVVVLL   92%    0%    8%    0%    0.08  ViewStream   0.08
-dev-tools.js                                                                      39  LLLLLLLLLLLLLLLLLLCC    0%    0%   92%    8%    0.08
 app/components/page-items/invoices-create-button-view.js                          40  VVVVVVVVVVVVVVVVVVVL   93%    0%    8%    0%    0.07  ViewStream   0.07
 index.js                                                                         166  VLLLLLLLLLLLLLLLLLLL    7%    0%   93%    0%    0.07
 app/components/page-items/home-intro-view.js                                      44  VVVVVVVVVVVVVVVVVVVL   93%    0%    7%    0%    0.07  ViewStream   0.07
@@ -137,6 +134,9 @@ app/traits/ui/ui-search-traits.js                                               
 app/traits/util-traits.js                                                        177  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/utils/acme-pagination-controls.js                                            152  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 app/utils/page-item-template-lookup.js                                            26  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+app/utils/page-template-lookup.js                                                 49  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+app/utils/svg-icons.js                                                            49  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+dev-tools.js                                                                      37  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 index.tmpl.html                                                                  212  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/00-spynejs-design-system/_index.scss                                        113  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/00-spynejs-design-system/core/_base.scss                                     60  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
@@ -204,8 +204,8 @@ scss/03-components/ui/menu-hamburger.scss                                       
 scss/app.scss                                                                     26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/tailwind.scss                                                                29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  203 modules  20921 tokens  VLLLLLLLLLCCCCCCCCCC  V   7% B   1% L  43% C  49%
-          consistency 0.03  mean mixing 0.02 (by module) 0.02 (by token)  median V   0% B   0% L   0% C 100%
+codebase  203 modules  20910 tokens  VLLLLLLLLLCCCCCCCCCC  V   7% B   1% L  43% C  49%
+          consistency 0.03  mean mixing 0.02 (by module) 0.01 (by token)  median V   0% B   0% L   0% C 100%
           families: V 40 ( 92%   0%   8%   0%)  B 8 (  0% 100%   0%   0%)  L 51 (  0%   0% 100%   0%)  C 104 (  0%   0%   0% 100%)
           detected: spynejs  adapters: content, spynejs  skipped: 37  tests: 8
 

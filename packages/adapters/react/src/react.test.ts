@@ -162,6 +162,21 @@ describe('react adapter: copy strings vs class lists', () => {
   });
 });
 
+describe('react adapter: console output is Logic', () => {
+  const file: FileInfo = {
+    path: 'log.ts',
+    absPath: '/x/log.ts',
+    ext: '.ts',
+    source: "export function report(n: number) { console.log('Loaded all the invoices for the page'); console.warn(`<b>${n}</b> rows were dropped`); return 'Rows were dropped from the page'; }",
+  };
+  const mod = moduleFromOutput(file, reactAdapter.analyze(file, config));
+  it('strings and markup inside console.* are Logic; the returned copy is still Content', () => {
+    expect(by(file, mod.spans, 'copy-string')).toEqual(['Rows were dropped from the page']);
+    expect(by(file, mod.spans, 'markup-template')).toEqual([]);
+    expect(mod.tokens.C).toBe(6);
+  });
+});
+
 describe('react adapter: ?? defaults', () => {
   const file: FileInfo = {
     path: 'Defaults.tsx',

@@ -194,7 +194,18 @@
         "className",
         "classList.add",
         "classList.remove",
-        "classList.toggle"
+        "classList.toggle",
+        "console.log",
+        "console.info",
+        "console.warn",
+        "console.error",
+        "console.debug",
+        "console.table",
+        "console.group",
+        "console.groupCollapsed",
+        "console.trace",
+        "console.assert",
+        "console.dir"
       ]
     },
     {
@@ -336,6 +347,11 @@
       "rule": "dom",
       "call": "DOM access (document.*, querySelector, classList, appendChild, setAttribute, focus…) and DOM writes (innerHTML, textContent, className, style.*, dataset.*) → V wherever they appear (ratified 2026-09-22)",
       "reason": "the stricter mixing is type mixing: a Channel, hook, or trait that manages the DOM is doing View work. Reads from a payload are not DOM access. Inside a uniform role (SpyneTrait) the role wins"
+    },
+    {
+      "rule": "console",
+      "call": "strings inside console.* calls are Logic, never Content, markup included (ratified 2026-09-26)",
+      "reason": "console output is not content for the app; it is the developer's instrumentation, which is logic"
     }
   ]
 }

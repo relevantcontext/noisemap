@@ -4,7 +4,7 @@
     "name": "noisemap",
     "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T10:17:03.053Z",
+  "generatedAt": "2026-09-26T10:39:06.352Z",
   "root": "/private/tmp/noisemap-samples/acme-nextjs/app",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.23087641666415032,
+    "consistency": 0.23113358159825595,
     "median": {
       "V": 0.56,
       "B": 0,
@@ -67,19 +67,19 @@
     "totals": {
       "V": 3102,
       "B": 401,
-      "L": 3970,
-      "C": 534,
-      "excluded": 16591,
-      "counted": 8007
+      "L": 3972,
+      "C": 527,
+      "excluded": 16589,
+      "counted": 8002
     },
     "shares": {
-      "V": 0.38741101536155864,
-      "B": 0.05008117896840265,
-      "L": 0.4958161608592482,
-      "C": 0.06669164481079055
+      "V": 0.38765308672831794,
+      "B": 0.05011247188202949,
+      "L": 0.49637590602349413,
+      "C": 0.06585853536615846
     },
-    "meanMixing": 0.2258877427575109,
-    "meanMixingTokenWeighted": 0.2636443112276758
+    "meanMixing": 0.22548483909066125,
+    "meanMixingTokenWeighted": 0.26293426643339163
   },
   "modules": [
     {
@@ -8292,15 +8292,15 @@
       "tokens": {
         "V": 0,
         "B": 0,
-        "L": 188,
-        "C": 4,
-        "excluded": 333
+        "L": 189,
+        "C": 0,
+        "excluded": 332
       },
       "shares": {
         "V": 0,
         "B": 0,
-        "L": 0.9791666666666666,
-        "C": 0.020833333333333332
+        "L": 1,
+        "C": 0
       },
       "spans": [
         {
@@ -8793,43 +8793,11 @@
         },
         {
           "start": 5859,
-          "end": 5872,
-          "bucket": "L",
-          "rule": "default",
-          "tokens": 2,
-          "punctuation": 1
-        },
-        {
-          "start": 5872,
-          "end": 5873,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 5874,
-          "end": 5908,
-          "bucket": "C",
-          "rule": "copy-string",
-          "tokens": 4,
-          "punctuation": 0
-        },
-        {
-          "start": 5908,
-          "end": 5911,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 5912,
           "end": 5917,
           "bucket": "L",
           "rule": "default",
-          "tokens": 1,
-          "punctuation": 0
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 5917,
@@ -9056,7 +9024,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.02083333333333337
+      "mixing": 0
     },
     {
       "path": "lib/placeholder-data.ts",
@@ -27416,15 +27384,15 @@
       "tokens": {
         "V": 232,
         "B": 93,
-        "L": 245,
-        "C": 44,
-        "excluded": 1321
+        "L": 246,
+        "C": 41,
+        "excluded": 1320
       },
       "shares": {
-        "V": 0.3778501628664495,
-        "B": 0.15146579804560262,
-        "L": 0.3990228013029316,
-        "C": 0.07166123778501629
+        "V": 0.3790849673202614,
+        "B": 0.15196078431372548,
+        "L": 0.4019607843137255,
+        "C": 0.06699346405228758
       },
       "spans": [
         {
@@ -27893,43 +27861,11 @@
         },
         {
           "start": 3254,
-          "end": 3281,
-          "bucket": "L",
-          "rule": "memo",
-          "tokens": 3,
-          "punctuation": 2
-        },
-        {
-          "start": 3281,
-          "end": 3282,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 3283,
-          "end": 3302,
-          "bucket": "C",
-          "rule": "copy-string",
-          "tokens": 3,
-          "punctuation": 0
-        },
-        {
-          "start": 3302,
-          "end": 3305,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 3306,
           "end": 3373,
           "bucket": "L",
           "rule": "memo",
-          "tokens": 5,
-          "punctuation": 6
+          "tokens": 9,
+          "punctuation": 10
         },
         {
           "start": 3373,
@@ -30252,7 +30188,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.6009771986970684
+      "mixing": 0.5980392156862745
     },
     {
       "path": "ui/quick-search/provider.tsx",

@@ -4,7 +4,7 @@
     "name": "noisemap",
     "version": "0.1.1"
   },
-  "generatedAt": "2026-09-26T10:17:02.631Z",
+  "generatedAt": "2026-09-26T10:39:06.106Z",
   "root": "/private/tmp/noisemap-samples/acme-spynejs/src",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.03186500595543384,
+    "consistency": 0.02937691875184788,
     "median": {
       "V": 0,
       "B": 0,
@@ -67,19 +67,19 @@
     "totals": {
       "V": 1431,
       "B": 176,
-      "L": 9051,
-      "C": 10263,
-      "excluded": 37336,
-      "counted": 20921
+      "L": 9058,
+      "C": 10245,
+      "excluded": 37334,
+      "counted": 20910
     },
     "shares": {
-      "V": 0.0684001720759046,
-      "B": 0.008412599780125233,
-      "L": 0.4326275034654175,
-      "C": 0.49055972467855263
+      "V": 0.06843615494978479,
+      "B": 0.008417025346724056,
+      "L": 0.4331898613103778,
+      "C": 0.4899569583931133
     },
-    "meanMixing": 0.02455838364764505,
-    "meanMixingTokenWeighted": 0.015008842789541609
+    "meanMixing": 0.022799040313805946,
+    "meanMixingTokenWeighted": 0.014155906264945003
   },
   "modules": [
     {
@@ -41050,15 +41050,15 @@
       "tokens": {
         "V": 0,
         "B": 0,
-        "L": 46,
-        "C": 8,
-        "excluded": 106
+        "L": 49,
+        "C": 0,
+        "excluded": 105
       },
       "shares": {
         "V": 0,
         "B": 0,
-        "L": 0.8518518518518519,
-        "C": 0.14814814814814814
+        "L": 1,
+        "C": 0
       },
       "spans": [
         {
@@ -41231,43 +41231,11 @@
         },
         {
           "start": 1252,
-          "end": 1264,
-          "bucket": "L",
-          "rule": "default",
-          "tokens": 2,
-          "punctuation": 1
-        },
-        {
-          "start": 1264,
-          "end": 1273,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 1273,
-          "end": 1360,
-          "bucket": "C",
-          "rule": "copy-string",
-          "tokens": 8,
-          "punctuation": 3
-        },
-        {
-          "start": 1360,
-          "end": 1369,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 4,
-          "punctuation": 0
-        },
-        {
-          "start": 1375,
           "end": 1414,
           "bucket": "L",
           "rule": "default",
-          "tokens": 4,
-          "punctuation": 2
+          "tokens": 9,
+          "punctuation": 11
         },
         {
           "start": 1414,
@@ -41278,7 +41246,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.14814814814814814
+      "mixing": 0
     },
     {
       "path": "app/utils/svg-icons.js",
@@ -41286,15 +41254,15 @@
       "tokens": {
         "V": 0,
         "B": 0,
-        "L": 46,
-        "C": 7,
-        "excluded": 203
+        "L": 49,
+        "C": 0,
+        "excluded": 202
       },
       "shares": {
         "V": 0,
         "B": 0,
-        "L": 0.8679245283018868,
-        "C": 0.1320754716981132
+        "L": 1,
+        "C": 0
       },
       "spans": [
         {
@@ -41435,43 +41403,11 @@
         },
         {
           "start": 2646,
-          "end": 2658,
-          "bucket": "L",
-          "rule": "default",
-          "tokens": 2,
-          "punctuation": 1
-        },
-        {
-          "start": 2658,
-          "end": 2660,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 2660,
-          "end": 2697,
-          "bucket": "C",
-          "rule": "copy-string",
-          "tokens": 7,
-          "punctuation": 3
-        },
-        {
-          "start": 2697,
-          "end": 2700,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 3,
-          "punctuation": 0
-        },
-        {
-          "start": 2705,
           "end": 2729,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
-          "punctuation": 2
+          "tokens": 8,
+          "punctuation": 10
         },
         {
           "start": 2730,
@@ -41506,7 +41442,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.13207547169811318
+      "mixing": 0
     },
     {
       "path": "dev-tools.js",
@@ -41514,15 +41450,15 @@
       "tokens": {
         "V": 0,
         "B": 0,
-        "L": 36,
-        "C": 3,
+        "L": 37,
+        "C": 0,
         "excluded": 88
       },
       "shares": {
         "V": 0,
         "B": 0,
-        "L": 0.9230769230769231,
-        "C": 0.07692307692307693
+        "L": 1,
+        "C": 0
       },
       "spans": [
         {
@@ -41551,27 +41487,11 @@
         },
         {
           "start": 157,
-          "end": 287,
+          "end": 306,
           "bucket": "L",
           "rule": "default",
-          "tokens": 13,
-          "punctuation": 16
-        },
-        {
-          "start": 287,
-          "end": 288,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 289,
-          "end": 305,
-          "bucket": "C",
-          "rule": "copy-string",
-          "tokens": 3,
-          "punctuation": 0
+          "tokens": 14,
+          "punctuation": 17
         },
         {
           "start": 306,
@@ -41662,7 +41582,7 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.07692307692307687
+      "mixing": 0
     },
     {
       "path": "index.js",

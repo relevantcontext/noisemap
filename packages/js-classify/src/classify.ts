@@ -475,7 +475,7 @@ export class RangeBuilder {
       case 'StringLiteral': {
         if (parent?.type === 'ImportDeclaration' || parent?.type === 'JSXAttribute') break;
         const markup = this.first('markupTemplate');
-        if (markup && MARKUP.test(node.value) && !this.isKey(node, parent)) {
+        if (markup && MARKUP.test(node.value) && !this.isKey(node, parent) && !this.inExcludedContext()) {
           this.add(node.start, node.end, markup.bucket, markup.rule ?? markup.id, ['html']);
           break;
         }
@@ -486,7 +486,7 @@ export class RangeBuilder {
         if (parent?.type === 'TaggedTemplateExpression') break;
         const raw = node.quasis.map((q) => q.value.cooked ?? q.value.raw).join(' ');
         const markup = this.first('markupTemplate');
-        if (markup && MARKUP.test(raw)) {
+        if (markup && MARKUP.test(raw) && !this.inExcludedContext()) {
           this.add(node.start, node.end, markup.bucket, markup.rule ?? markup.id, ['html']);
           break;
         }
@@ -576,6 +576,12 @@ export class RangeBuilder {
     walk(node.right);
     if (callees.length === 0) return true;
     return d.allowCalls !== undefined && callees.every((callee) => this.re(d.allowCalls as string).test(callee));
+  }
+
+  /** Inside a callee or attribute the copy-string rule lists in `notWithin` (class helpers, console.*). */
+  private inExcludedContext(): boolean {
+    const c = this.first('copyString');
+    return !!c?.notWithin && this.within(c.notWithin);
   }
 
   private isKey(node: Node, parent: Node | null): boolean {
