@@ -1,0 +1,78 @@
+wiring  240 modules  720 connections  1934 sites
+        discernibility  99% (declared 1920 / opaque 14)   resolution 100%
+        vocabulary share 100%   working set: median 3 modules, 268 counted tokens (455 by token), 26 counterparts uncounted   locality 2.9
+        entries: index.js
+        roots: app, static, static/imgs
+
+vocabulary: 57 names the app declares (12 more from the framework)
+  name                                               registers  emits  listens  binds
+  CHANNEL_ACME_AUTH                                          0      0        0      3
+  CHANNEL_ACME_AUTH_CHANGED_EVENT                            1      0        0      0
+  CHANNEL_ACME_AUTH_ERROR_EVENT                              1      0        0      0
+  CHANNEL_ACME_AUTH_INIT_EVENT                               1      0        1      0
+  CHANNEL_ACME_AUTH_LOGIN_FAILED_EVENT                       1      0        0      0
+  CHANNEL_ACME_AUTH_LOGIN_SUCCESS_EVENT                      1      0        0      0
+  CHANNEL_ACME_AUTH_REQUEST_EVENT                            1      1        1      0
+  CHANNEL_ACME_AUTH_SESSION_EVENT                            1      0        0      0
+  CHANNEL_ACME_AUTH_SIGNOUT_COMPLETED_EVENT                  1      0        1      0
+  CHANNEL_ACME_CUSTOMERS                                     0      1        0      4
+  CHANNEL_ACME_CUSTOMERS_LIST_EVENT                          1      1        2      0
+  CHANNEL_ACME_CUSTOMERS_UPDATE_PARAMS_EVENT                 1      2        1      0
+  CHANNEL_ACME_CUSTOMERS_VISIBLE_IDS_EVENT                   1      1        1      0
+  CHANNEL_ACME_DATA                                          0      3        0     10
+  CHANNEL_ACME_DATA_EDIT_COMMIT_EVENT                        1      0        3      0
+  CHANNEL_ACME_DATA_EDITS_EVENT                              1      0        3      0
+  CHANNEL_ACME_DATA_ERROR_EVENT                              1      0        6      0
+  CHANNEL_ACME_DATA_INVOICE_SUBMIT_EVENT                     1      0        3      0
+  CHANNEL_ACME_DATA_LOADED_EVENT                             1      0        4      0
+  CHANNEL_ACME_DATA_MUTATION_EVENT                           1      0        3      0
+  CHANNEL_ACME_DATA_REQUEST_EVENT                            1      1        4      0
+  CHANNEL_ACME_DATA_UPDATED_EVENT                            1      0        8      0
+  CHANNEL_ACME_EDIT_SESSION                                  0      4        0      4
+  CHANNEL_ACME_EDIT_SESSION_CURSOR_EVENT                     1      0        1      0
+  CHANNEL_ACME_EDIT_SESSION_EDIT_END_EVENT                   1      0        2      0
+  CHANNEL_ACME_EDIT_SESSION_EDIT_START_EVENT                 1      0        2      0
+  CHANNEL_ACME_EDIT_SESSION_SELECTION_EVENT                  1      0        2      0
+  CHANNEL_ACME_INVOICES                                      0      2        0      9
+  CHANNEL_ACME_INVOICES_CELLS_EVENT                          1      1        1      0
+  CHANNEL_ACME_INVOICES_CREATE_EVENT                         1      1        1      0
+  CHANNEL_ACME_INVOICES_DISPLAY_EVENT                        1      1        1      0
+  CHANNEL_ACME_INVOICES_EDIT_EVENT                           1      1        1      0
+  CHANNEL_ACME_INVOICES_LIST_EVENT                           1      1        2      0
+  CHANNEL_ACME_INVOICES_NAVIGATE_EVENT                       1      0        0      0
+  CHANNEL_ACME_INVOICES_PAGINATION_EVENT                     1      1        2      0
+  CHANNEL_ACME_INVOICES_STATUS_EVENT                         1      1        2      0
+  CHANNEL_ACME_INVOICES_UPDATE_PARAMS_EVENT                  1      1        1      0
+  CHANNEL_ACME_INVOICES_VISIBLE_IDS_EVENT                    1      0        3      0
+  CHANNEL_ACME_SEARCH                                        0      1        0      5
+  CHANNEL_ACME_SEARCH_CLOSE_EVENT                            1      1        1      0
+  CHANNEL_ACME_SEARCH_OPEN_EVENT                             1      1        1      0
+  CHANNEL_ACME_SEARCH_RESULTS_EVENT                          1      1        3      0
+  CHANNEL_ACME_SEARCH_SELECT_EVENT                           1      0        0      0
+  CHANNEL_ACME_SEARCH_UPDATE_INVOICE_PARAMS_EVENT            1      1        1      0
+  CHANNEL_APP                                                0      0        0      4
+  CHANNEL_APP_INIT_EVENT                                     1      0        2      0
+  CHANNEL_APP_PAGE_DATA_EVENT                                1      0        2      0
+  CHANNEL_APP_SETTING_EVENT                                  1      1        1      0
+  CHANNEL_FETCH_ACME_API                                     0      0        0      0
+  CHANNEL_FETCH_ACME_AUTH                                    0      1        0      0
+  CHANNEL_FETCH_ACME_AUTH_REQUEST_EVENT                      0      0        0      0
+  CHANNEL_FETCH_ACME_SESSION                                 0      0        0      0
+  CHANNEL_FETCH_MODEL                                        0      0        0      0
+  CHANNEL_LOCAL_STORAGE                                      0      1        0      2
+  CHANNEL_LOCAL_STORAGE_APP_SETTINGS_INITIALIZED_EVENT         1      0        1      0
+  CHANNEL_LOCAL_STORAGE_EMPTY_EVENT                          0      0        0      0
+  CHANNEL_LOCAL_STORAGE_UPDATE_KEY_REQUEST                   1      0        0      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                    301           0          0       116        0
+listener-method            62           0          0        10        0
+listener-action            53           0          0        17        0
+channel-binding            41           0          0        15        0
+broadcast-selector         30           0          0         0        2
+template-key                1           0          0         0       29
+action-registration        42           1          0         0        0
+
+findings: 1 unresolved/ambiguous, 14 opaque
+  unresolved app/channels/channel-local-storage.js:522  'CHANNEL_LOCAL_STORAGE_UPDATE_KEY_REQUEST' is registered but nothing listens for it or mentions it
+

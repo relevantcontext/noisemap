@@ -1,0 +1,28 @@
+wiring  6 modules  18 connections  41 sites
+        discernibility 100% (declared 41 / opaque 0)   resolution  40%
+        vocabulary share 100%   working set: median 2 modules, 45 counted tokens (105 by token)   locality 2.0
+        entries: none found
+        roots: (none)
+
+vocabulary: 3 names the app declares (2 more from the framework)
+  name                                               registers  emits  listens  binds
+  CHANNEL_CARDS                                              0      0        0      0
+  CHANNEL_CARDS_LOAD_EVENT                                   1      0        0      0
+  CHANNEL_CARDS_SORT_EVENT                                   1      1        0      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                      2           1          0         5        0
+listener-method             2           1          0         0        0
+listener-action             0           0          0         2        0
+channel-binding             0           0          0         1        0
+broadcast-selector          0           2          0         0        0
+action-registration         0           2          0         0        0
+
+findings: 6 unresolved/ambiguous, 0 opaque
+  unresolved components/menu-view.js:79  import './menu.tmpl.html' does not resolve to a file or a package
+  unresolved channels/channel-cards.js:511  ChannelCards names method 'onLoad' that neither it nor a bound trait defines
+  unresolved components/menu-view.js:864  MenuView broadcasts on 'a' but its template has no element matching it (child views may supply one)
+  unresolved components/menu-view.js:880  MenuView broadcasts on '.close' but its template has no element matching it (child views may supply one)
+  unresolved channels/channel-cards.js:454  'CHANNEL_CARDS_SORT_EVENT' is registered but nothing listens for it or mentions it
+  unresolved channels/channel-cards.js:483  'CHANNEL_CARDS_LOAD_EVENT' is registered but nothing listens for it or mentions it
+

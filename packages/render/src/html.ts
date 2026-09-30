@@ -1,4 +1,5 @@
 import type { NoisemapReport, Span } from '@noisemap/core';
+import type { WiringResult } from '@noisemap/wiring';
 
 /**
  * Single-file HTML map. Palette for red/green color-blindness (the author's): V blue, B wine,
@@ -14,6 +15,8 @@ export interface HtmlOptions {
   /** Module path → source text. Optional; without it click-to-detail shows the rule table only. */
   sources?: Readonly<Record<string, string>>;
   title?: string;
+  /** A wiring run over the same root. Optional; with it the map gains the Wiring tab. */
+  wiring?: WiringResult;
 }
 
 const BUCKET_INDEX: Record<Span['bucket'], number> = { V: 0, B: 1, L: 2, C: 3, excluded: 4 };
@@ -25,8 +28,18 @@ interface CompactModule {
   t: [number, number, number, number, number];
   m: number;
   d?: number;
-  /** [start, end, bucketIdx, ruleIdx, tokens, punctuation] */
-  s: [number, number, number, number, number, number][];
+  /** Expected bucket indices (declared roles). */
+  e?: number[];
+  /** Base bucket index: the module's own color (declared roles). */
+  b?: number;
+  /** Surface: sanctioned member list or null, members, extras. */
+  sf?: { sanctioned: string[] | null; members: string[]; extra: string[] };
+  /** Bindings: the hosts that bind a trait. */
+  bd?: { host: string; kind: string }[];
+  /** Mixing by operation. */
+  mo?: number;
+  /** [start, end, bucketIdx, ruleIdx, tokens, punctuation, permitted, misplaced] */
+  s: [number, number, number, number, number, number, number, number][];
 }
 
 function compact(report: NoisemapReport, sources: Readonly<Record<string, string>> | undefined) {
@@ -47,10 +60,15 @@ function compact(report: NoisemapReport, sources: Readonly<Record<string, string
       f: m.framework,
       t: [m.tokens.V, m.tokens.B, m.tokens.L, m.tokens.C, m.tokens.excluded],
       m: m.mixing,
-      s: m.spans.map((s) => [s.start, s.end, BUCKET_INDEX[s.bucket], rid(s.rule), s.tokens, s.punctuation]),
+      s: m.spans.map((s) => [s.start, s.end, BUCKET_INDEX[s.bucket], rid(s.rule), s.tokens, s.punctuation, s.permitted ? 1 : 0, s.misplaced ? 1 : 0]),
     };
     if (m.role !== undefined) cm.r = m.role;
     if (m.drift !== undefined) cm.d = m.drift;
+    if (m.expected !== undefined) cm.e = m.expected.map((k) => BUCKET_INDEX[k]);
+    if (m.base !== undefined) cm.b = BUCKET_INDEX[m.base];
+    if (m.surface !== undefined) cm.sf = m.surface;
+    if (m.bindings !== undefined) cm.bd = m.bindings;
+    if (m.mixingByOperation !== undefined) cm.mo = m.mixingByOperation;
     return cm;
   });
   const src: Record<string, string> = {};
@@ -76,7 +94,10 @@ const esc = (s: string): string => s.replace(/&/g, '&amp;').replace(/</g, '&lt;'
 
 export function renderHtml(report: NoisemapReport, options: HtmlOptions = {}): string {
   const data = compact(report, options.sources);
-  const json = JSON.stringify(data).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+  const safe = (v: unknown): string => JSON.stringify(v).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+  const json = safe(data);
+  // The Wiring tab needs edges, findings, vocabulary, per-module measures, and the summary; not the site list.
+  const wiring = options.wiring ? safe({ ...options.wiring, sites: [] }) : 'null';
   const parts = report.root.split('/').filter(Boolean);
   const last = parts[parts.length - 1] ?? report.root;
   const rootName = ['src', 'app', 'lib', 'packages'].includes(last) && parts.length > 1 ? `${parts[parts.length - 2] as string}/${last}` : last;
@@ -95,16 +116,32 @@ export function renderHtml(report: NoisemapReport, options: HtmlOptions = {}): s
     <h1>noisemap <span class="root" title="${esc(report.root)}">${esc(rootName)}</span></h1>
     <div class="meta">${esc(report.tool.name)} ${esc(report.tool.version)} · ${esc(report.generatedAt.slice(0, 10))} · JSON v${String(report.version)}</div>
   </div>
-  <p class="explainer">Every module is a brick with four faces. <b class="k k-V">View</b> is what it draws, <b class="k k-B">Behavior</b> is what it listens to, <b class="k k-L">Logic</b> is what it computes, <b class="k k-C">Content</b> is what it says. Each tile below is one module: its size is the module's token count, and its 100 blocks are the module's tokens by percentage, laid out in the order they appear in the file. A clean brick is one color. A codebase of same-shaped bricks is easy to build with, even when the shape is mixed; a pile of random shapes is not.</p>
+  <p class="explainer">Every module is a brick with four faces. <b class="k k-V">View</b> is what draws and maintains a section of the page, <b class="k k-B">Behavior</b> is what listens and emits, <b class="k k-L">Logic</b> is what computes, and includes the operations a trait performs for its host, since the trait is the framework's function module, <b class="k k-C">Content</b> is what is shown: markup, copy, and styles, in a template or in JSX. Each tile below is one module: its size is the module's token count, and its 100 blocks are the module's tokens by percentage, laid out in the order they appear in the file. A module that declares its shape can be drawn wearing one color for every token in its place, with another color only where a token is out of place, and a member its role does not sanction out of place in full. The default view is composition on every side. A brick that is one color in the composition view is one bucket; a brick that is one color in the declared-shape view is inside its declared shape. A codebase of same-shaped bricks is easy to build with, even when the shape is mixed; a pile of random shapes is not.</p>
   <p class="explainer small"><b>Mixing</b> (per module, 0 to 0.75) = 1 − largest share. <b>Consistency</b> (per codebase, 0 to √2) = mean distance of each module's shape from the median shape of its family, a family being the modules that share a dominant color; low means each kind of module has one shape to learn. <b>Drift</b> (declared roles only) = share of tokens outside the shape the role promises, less what the config permits there. Punctuation, comments, and scaffolding are excluded from every count.</p>
 </header>
+<nav class="tabs" id="tabs" aria-label="Views"><button type="button" data-tab="shape" aria-pressed="true">Shape <span class="sub">where code belongs</span></button><button type="button" data-tab="wiring" aria-pressed="false" id="tab-wiring">Wiring <span class="sub">how code fits</span></button></nav>
+<div id="view-shape">
 <section class="scores" id="scores"></section>
 <section class="controls" id="controls"></section>
 <main class="map" id="map" aria-label="Module map"></main>
 <section class="tableview"><details><summary>Table view</summary><div id="table"></div></details></section>
+</div>
+<div id="view-wiring" hidden>
+<section class="wsummary" id="wsummary"></section>
+<section class="wcharts" id="wcharts"></section>
+<div class="wgrid">
+  <aside class="wlist">
+    <div class="seg wsub" id="wsub"><button type="button" data-v="vocab" aria-pressed="true">Vocabulary</button><button type="button" data-v="modules" aria-pressed="false">Modules</button></div>
+    <div class="wfilters" id="wfilters"></div>
+    <div class="wrows" id="wrows"></div>
+  </aside>
+  <section class="wdetail" id="wdetail"><p class="muted">Pick a name or a module.</p></section>
+</div>
+</div>
 <div class="tip" id="tip" role="tooltip" hidden></div>
 <aside class="detail" id="detail" hidden aria-label="Module detail"></aside>
 <script id="nm-data" type="application/json">${json}</script>
+<script id="nm-wiring" type="application/json">${wiring}</script>
 <script>${JS}</script>
 </body>
 </html>
@@ -198,6 +235,53 @@ h1 .root { font-weight: 400; color: var(--ink-2); margin-left: 8px; }
 .tableview td.p { white-space: normal; word-break: break-all; }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; vertical-align: 0; margin-right: 4px; }
 @media (max-width: 720px) { .detail { width: 100%; } .controls .count { margin-left: 0; } }
+.tabs { display: flex; gap: 6px; padding: 10px 0 0; }
+.tabs button { border: 1px solid var(--border); border-bottom: 0; background: var(--surface-1); color: var(--ink-2); padding: 8px 14px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 8px 8px 0 0; }
+.tabs button[aria-pressed="true"] { background: var(--surface-0); color: var(--ink); border-color: var(--ink-3); }
+.tabs button:disabled { opacity: .5; cursor: default; }
+.tabs .sub { font-weight: 400; color: var(--ink-3); font-size: 12px; margin-left: 6px; }
+.wsummary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px 20px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.wcharts { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.wchart h3 { margin: 0 0 6px; font-size: 12.5px; color: var(--ink-2); text-transform: uppercase; letter-spacing: .04em; }
+.wchart svg { display: block; width: 100%; height: auto; }
+.wchart .seg-r { cursor: pointer; }
+.wchart .seg-r:hover { opacity: .8; }
+.wchart .seg-r.on { stroke: var(--ink); stroke-width: 2; }
+.wchart .donut { display: flex; align-items: center; gap: 14px; }
+.wchart .donut svg { width: 140px; flex: none; }
+.wchart .legend.vert { display: flex; flex-direction: column; gap: 3px; margin: 0; }
+.wchart .seg-l { cursor: pointer; font-size: 12px; color: var(--ink-2); padding: 1px 4px; border-radius: 4px; }
+.wchart .seg-l:hover, .wchart .seg-l.on { background: var(--surface-2); color: var(--ink); }
+.wchart .seg-l b { font-weight: 600; color: var(--ink); } .row b.extra { color: var(--B); font-weight: 600; } .wchart .seg-l i { font-style: normal; color: var(--ink-3); }
+.wchart .legend { margin-top: 4px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; padding: 2px 8px; border-radius: 12px; border: 1px solid var(--accent); color: var(--accent); }
+.chip button { border: 0; background: none; color: inherit; cursor: pointer; font: inherit; padding: 0; }
+.wgrid { display: grid; grid-template-columns: minmax(280px, 1fr) 2fr; gap: 16px; padding: 14px 0; }
+@media (max-width: 900px) { .wgrid { grid-template-columns: 1fr; } }
+.wlist { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1); display: flex; flex-direction: column; max-height: 80vh; }
+.wsub { margin: 8px; }
+.wfilters { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 8px 8px; }
+.wfilters input, .wfilters select { font: inherit; font-size: 12.5px; padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-0); color: var(--ink); }
+.wrows { overflow: auto; flex: 1; }
+.wrow { display: flex; justify-content: space-between; gap: 8px; padding: 6px 10px; border-top: 1px solid var(--border); cursor: pointer; font-size: 12.5px; }
+.wrow:hover { background: var(--surface-2); }
+.wrow.sel { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--accent); }
+.wrow .n { font-variant-numeric: tabular-nums; color: var(--ink-3); white-space: nowrap; }
+.wrow .p { word-break: break-all; }
+.wdetail { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-1); padding: 12px 16px; overflow: auto; max-height: 80vh; font-size: 13px; }
+.wdetail h3 { margin: 12px 0 6px; font-size: 13px; color: var(--ink-2); text-transform: uppercase; letter-spacing: .04em; }
+.wdetail h2 { margin: 0 0 6px; font-size: 15px; word-break: break-all; }
+.wdetail .row { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--ink-2); font-size: 12.5px; }
+.wdetail table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+.wdetail th, .wdetail td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.wdetail td.n { text-align: right; font-variant-numeric: tabular-nums; }
+.wdetail a.j, .wdetail button.j { color: var(--accent); background: none; border: 0; padding: 0; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; word-break: break-all; text-align: left; }
+.st { display: inline-block; padding: 0 6px; border-radius: 10px; font-size: 11px; border: 1px solid var(--border); color: var(--ink-2); }
+.st-resolved { border-color: var(--L); color: var(--L); } .st-unresolved { border-color: var(--B); color: var(--B); } .st-ambiguous { border-color: var(--C); color: var(--C); } .st-external { color: var(--ink-3); } .st-unknown { color: var(--ink-3); border-style: dashed; }
+.strip { margin: 8px 0; overflow-x: auto; }
+.muted { color: var(--ink-3); }
+.detail .wlink { font-size: 12.5px; }
+.detail pre .hl { background: var(--surface-2); outline: 2px solid var(--accent); border-radius: 2px; }
 `;
 
 const JS = `
@@ -207,14 +291,27 @@ const JS = `
   var NAMES = ['View', 'Behavior', 'Logic', 'Content'];
   var COLORS = ['var(--V)', 'var(--B)', 'var(--L)', 'var(--C)'];
   var hasRoles = D.modules.some(function (m) { return m.r !== undefined; });
-  var state = { sort: 'size', role: 'all', q: '', sel: -1, names: true };
+  var state = { sort: 'size', role: 'all', q: '', sel: -1, names: true, view: 'composition', styles: 'grouped' };
+  // Stylesheets: one codebase files its styles in 65 SCSS modules, another puts them on its elements.
+  // Grouped, the stylesheets draw as one tile sized by their total, so the two maps read alike; the
+  // scores are untouched. 'all' shows every file.
+  function isStyle(m) { return /\\.(s?css|sass|less)$/.test(m.p); }
+  var styleCount = D.modules.filter(isStyle).length;
+  var GROUP = null;
+  function styleGroup(entries) {
+    var t = [0, 0, 0, 0, 0], s = [], mix = 0;
+    entries.forEach(function (x) { for (var k = 0; k < 5; k++) t[k] += x.m.t[k]; mix += x.m.m; x.m.s.forEach(function (sp) { s.push(sp); }); });
+    GROUP = { p: 'styles \u00b7 ' + entries.length + ' files', f: 'content', t: t, m: entries.length ? mix / entries.length : 0, s: s, group: entries.map(function (x) { return x.i; }) };
+    return GROUP;
+  }
   var maxTok = 1;
 
   function tok(m) { return m.t[0] + m.t[1] + m.t[2] + m.t[3]; }
   function shares(m) { var n = tok(m) || 1; return m.t.slice(0, 4).map(function (x) { return x / n; }); }
   function pct(x) { return Math.round(x * 100) + '%'; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-  function f2(x) { return x === undefined ? '' : x.toFixed(2); }
+  function f2(x) { return x === undefined ? '' : x === null ? '—' : x.toFixed(2); }
+  function f3(x) { return x === undefined ? '' : x === null ? '—' : x.toFixed(3); } // summary tiles: a headline of 0.005 must not read as 0.00
 
   // ---- 100 blocks per module: integer percentages (largest remainder), laid out in source order ----
   function integerPercents(counts) {
@@ -226,16 +323,23 @@ const JS = `
     raw.map(function (r, i) { return { i: i, f: r - Math.floor(r) }; }).sort(function (a, b) { return b.f - a.f; }).forEach(function (x) { if (left > 0) { q[x.i] += 1; left -= 1; } });
     return q;
   }
+  // In place: a token inside the module's declared shape, or permitted there, wears the module's own color;
+  // only a token out of place keeps its bucket color. A module with no declared shape shows its composition.
+  function inPlace(m) { return state.view === 'place' && m.b !== undefined; }
+  function displayBucket(m, sp) { var b = sp[2]; if (b > 3) return b; if (!inPlace(m)) return b; if (sp[7] === 1) return b; return (m.e.indexOf(b) !== -1 || sp[6] === 1) ? m.b : b; }
+  function displayCounts(m) { var c = [0, 0, 0, 0]; if (!inPlace(m)) return m.t.slice(0, 4); m.s.forEach(function (sp) { var b = displayBucket(m, sp); if (b <= 3) c[b] += sp[4]; }); return c; }
+  function outOfPlace(m) { return m.d !== undefined ? m.d : m.m; }
   function blockSeq(m) {
-    var counts = m.t.slice(0, 4), n = counts[0] + counts[1] + counts[2] + counts[3];
+    var counts = displayCounts(m), n = counts[0] + counts[1] + counts[2] + counts[3];
     var q = integerPercents(counts), emitted = [0, 0, 0, 0], cum = [0, 0, 0, 0], seq = [], lastSeen = [-1, -1, -1, -1];
     if (n === 0) return seq;
     m.s.forEach(function (sp, idx) {
-      var b = sp[2];
+      var b = displayBucket(m, sp);
       if (b > 3 || sp[4] === 0) return;
       cum[b] += sp[4]; lastSeen[b] = idx;
       var target = Math.min(q[b], Math.floor((cum[b] * 100) / n));
-      while (emitted[b] < target) { seq.push(b); emitted[b] += 1; }
+      var mark = inPlace(m) && sp[7] === 1 ? 4 : 0; // a member outside the sanctioned surface is hatched, whatever color it wears
+      while (emitted[b] < target) { seq.push(b + mark); emitted[b] += 1; }
     });
     // Floor rounding leaves a few blocks; append them where each bucket last appeared, in that order.
     [0, 1, 2, 3].sort(function (a, b) { return lastSeen[a] - lastSeen[b]; }).forEach(function (b) { while (emitted[b] < q[b]) { seq.push(b); emitted[b] += 1; } });
@@ -246,8 +350,9 @@ const JS = `
     var s = '<svg width="' + size + '" height="' + size + '" viewBox="0 0 100 100" role="img"' + (attrs || '') + '>';
     s += '<rect x="0" y="0" width="100" height="100" fill="var(--surface-2)"/>';
     for (var i = 0; i < seq.length; i++) {
-      var x = (i % 10) * cell, y = Math.floor(i / 10) * cell;
-      s += '<rect x="' + (x + gap) + '" y="' + (y + gap) + '" width="' + (cell - 2 * gap) + '" height="' + (cell - 2 * gap) + '" fill="' + COLORS[seq[i]] + '"/>';
+      var x = (i % 10) * cell, y = Math.floor(i / 10) * cell, b = seq[i] % 4;
+      s += '<rect x="' + (x + gap) + '" y="' + (y + gap) + '" width="' + (cell - 2 * gap) + '" height="' + (cell - 2 * gap) + '" fill="' + COLORS[b] + '"/>';
+      if (seq[i] >= 4) s += '<line x1="' + (x + gap) + '" y1="' + (y + cell - gap) + '" x2="' + (x + cell - gap) + '" y2="' + (y + gap) + '" stroke="var(--surface-2)" stroke-width="2"/>';
     }
     return s + '</svg>';
   }
@@ -277,7 +382,13 @@ const JS = `
     var html = '<div class="tile-big">' + blocksSvg(codebaseSeq(sh), 160, ' aria-label="Codebase shape"') + '</div>';
     html += '<div class="stats">';
     html += stat(D.modules.length, 'modules') + stat(sc.totals.counted.toLocaleString(), 'tokens');
-    html += stat(f2(sc.consistency), 'consistency') + stat(f2(sc.meanMixing), 'mean mixing, by module') + stat(f2(sc.meanMixingTokenWeighted), 'mean mixing, by token');
+    var cm = sc.codeModules || { count: D.modules.length, meanMixing: sc.meanMixing };
+    html += stat(f3(cm.meanMixing), 'mean mixing, non-stylesheet modules (' + cm.count + ')') + stat(f3(sc.meanMixing), 'mean mixing, all modules') + stat(f3(sc.meanMixingTokenWeighted), 'mean mixing, by token') + (sc.byOperation ? stat(f3(sc.byOperation.meanMixing), 'mean mixing, by operation: no member or export seals, no trait absorption, no host inheritance') : '') + stat(f3(sc.consistency), 'consistency');
+    var shp = sc.shape;
+    if (shp) {
+      if (shp.declared) html += stat(shp.insideShape + ' of ' + shp.declared, 'declared modules inside their shape') + stat(shp.onSurface + ' of ' + shp.withSurface, 'on the sanctioned surface');
+      if (shp.internalModules) html += stat(shp.internalSurfaces + ' among ' + shp.internalModules, 'distinct internal surfaces, none sanctioned (an inventory, not a score)');
+    }
     html += '</div>';
     html += '<div><div class="legend">';
     for (var i = 0; i < 4; i++) html += '<span><span class="sw" style="background:' + COLORS[i] + '"></span>' + NAMES[i] + ' ' + pct(sh[i]) + '</span>';
@@ -302,12 +413,17 @@ const JS = `
     html += '</div>';
     html += '<input type="search" id="q" placeholder="filter by path" aria-label="filter by path">';
     html += '<label class="chk"><input type="checkbox" id="names" checked> names</label>';
-    html += '<div class="legend">';
+    if (hasRoles) html += '<label>tiles</label><div class="seg" id="view">' + segBtn('composition', 'composition') + segBtn('place', 'declared shape') + '</div>';
+    if (styleCount >= 2) html += '<label>styles</label><div class="seg" id="styles">' + segBtn('grouped', 'one tile') + segBtn('all', 'all ' + styleCount) + '</div>';
+    html += '<div class="legend" id="maplegend">';
     for (var i = 0; i < 4; i++) html += '<span><span class="sw" style="background:' + COLORS[i] + '"></span>' + NAMES[i] + '</span>';
     html += '<span><span class="sw" style="background:var(--surface-2);border:1px solid var(--border)"></span>empty</span></div>';
+    if (hasRoles) html += '<div class="frameworks" id="viewnote"></div>';
     html += '<span class="count" id="count"></span>';
     document.getElementById('controls').innerHTML = html;
     document.getElementById('names').addEventListener('change', function (e) { state.names = e.target.checked; renderMap(); });
+    var vw = document.getElementById('view'); if (vw) vw.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { state.view = b.dataset.v; renderMap(); } });
+    var sg = document.getElementById('styles'); if (sg) sg.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { state.styles = b.dataset.v; renderMap(); } });
     document.getElementById('sort').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { state.sort = b.dataset.v; renderMap(); } });
     document.getElementById('role').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { state.role = b.dataset.v; renderMap(); } });
     document.getElementById('q').addEventListener('input', function (e) { state.q = e.target.value.toLowerCase(); renderMap(); });
@@ -317,33 +433,47 @@ const JS = `
 
   // ---- map ----
   function visible() {
-    return D.modules.map(function (m, i) { return { m: m, i: i }; }).filter(function (x) {
+    var list = D.modules.map(function (m, i) { return { m: m, i: i }; }).filter(function (x) {
       var k = x.m.r || (x.m.f === 'content' ? 'content' : 'no role');
       if (state.role !== 'all' && k !== state.role) return false;
       if (state.q && x.m.p.toLowerCase().indexOf(state.q) === -1) return false;
       return true;
-    }).sort(function (a, b) {
-      if (state.sort === 'noise') return b.m.m - a.m.m || tok(b.m) - tok(a.m);
+    });
+    if (state.styles === 'grouped' && styleCount >= 2) {
+      var styles = list.filter(function (x) { return isStyle(x.m); });
+      if (styles.length >= 2) list = list.filter(function (x) { return !isStyle(x.m); }).concat([{ m: styleGroup(styles), i: 'g' }]);
+    }
+    return list.sort(function (a, b) {
+      if (a.m.group !== b.m.group) return a.m.group ? 1 : -1; // the grouped stylesheets sit last: the map opens on code
+      if (state.sort === 'noise') return outOfPlace(b.m) - outOfPlace(a.m) || tok(b.m) - tok(a.m);
       if (state.sort === 'drift') return (b.m.d === undefined ? -1 : b.m.d) - (a.m.d === undefined ? -1 : a.m.d) || tok(b.m) - tok(a.m);
       return tok(b.m) - tok(a.m) || a.m.p.localeCompare(b.m.p);
     });
   }
   function renderMap() {
     syncSeg('sort', state.sort); syncSeg('role', state.role);
+    if (document.getElementById('styles')) syncSeg('styles', state.styles);
+    if (document.getElementById('view')) {
+      syncSeg('view', state.view);
+      document.getElementById('viewnote').textContent = state.view === 'place'
+        ? 'declared shape: a module with a declared role wears its own color for every token inside its declared shape or permitted there; another color marks a token out of place, and a member the role does not sanction is out of place in full and hatched, whatever color it wears. A module with no role recognized by this adapter shows its composition.'
+        : 'composition: every token in its own bucket color, whatever the module declares. The same picture on every side.';
+    }
     var list = visible();
     // Tiles scale to the largest visible module, so a filtered view is not dwarfed by a hidden one.
     maxTok = list.reduce(function (a, x) { return Math.max(a, tok(x.m)); }, 1);
     var html = '';
     list.forEach(function (x) {
       var m = x.m, sz = tileSize(m), w = state.names ? Math.max(sz, 64) : sz;
-      var name = m.p.slice(m.p.lastIndexOf('/') + 1);
+      var name = m.group ? m.p : m.p.slice(m.p.lastIndexOf('/') + 1);
       html += '<div class="tile' + (x.i === state.sel ? ' sel' : '') + '" data-i="' + x.i + '" tabindex="0" role="button" aria-label="' + esc(m.p) + '" style="width:' + w + 'px">';
       html += blocksSvg(blockSeq(m), sz);
       if (state.names) html += '<div class="name" title="' + esc(m.p) + '">' + esc(middle(name, Math.max(6, Math.floor(w / 5.6)))) + '</div>';
       html += '</div>';
     });
     document.getElementById('map').innerHTML = html;
-    document.getElementById('count').textContent = list.length + ' of ' + D.modules.length + ' modules';
+    var grouped = list.some(function (x) { return x.m.group; });
+    document.getElementById('count').textContent = (grouped ? (list.length - 1) + ' modules + ' + GROUP.group.length + ' stylesheets as one tile' : list.length + ' of ' + D.modules.length + ' modules');
   }
 
   // ---- hover ----
@@ -362,7 +492,7 @@ const JS = `
   map.addEventListener('mousemove', function (e) {
     var t = e.target.closest('.tile[data-i]');
     if (!t) { tip.hidden = true; return; }
-    tip.innerHTML = tipHtml(D.modules[+t.dataset.i]);
+    tip.innerHTML = tipHtml(t.dataset.i === 'g' ? GROUP : D.modules[+t.dataset.i]);
     tip.hidden = false;
     var x = e.clientX + 14, y = e.clientY + 14;
     if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 14;
@@ -370,34 +500,60 @@ const JS = `
     tip.style.left = x + 'px'; tip.style.top = y + 'px';
   });
   map.addEventListener('mouseleave', function () { tip.hidden = true; });
-  map.addEventListener('click', function (e) { var t = e.target.closest('.tile[data-i]'); if (t) openDetail(+t.dataset.i); });
-  map.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { var t = e.target.closest('.tile[data-i]'); if (t) { e.preventDefault(); openDetail(+t.dataset.i); } } });
+  function openTile(t) { if (t.dataset.i === 'g') openGroupDetail(); else openDetail(+t.dataset.i); }
+  map.addEventListener('click', function (e) { var t = e.target.closest('.tile[data-i]'); if (t) openTile(t); });
+  map.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { var t = e.target.closest('.tile[data-i]'); if (t) { e.preventDefault(); openTile(t); } } });
+  function openGroupDetail() {
+    if (!GROUP) return;
+    tip.hidden = true;
+    var h = '<div class="dh"><button type="button" class="close" aria-label="close">×</button>';
+    h += '<div class="p">' + esc(GROUP.p) + '</div>';
+    h += '<div class="row"><span>content · stylesheets</span><span>' + tok(GROUP) + ' tokens</span><span>mean mixing ' + f2(GROUP.m) + '</span></div>';
+    h += '<div class="frameworks">Styles are a content format. This codebase files them separately; a codebase that puts its classes on its elements carries the same tokens inside its markup. Grouped so the two read alike; the scores count every file on its own. Switch tiles to “all stylesheets” to see each.</div></div>';
+    h += '<div class="db"><table>' + GROUP.group.map(function (i) { var m = D.modules[i]; return '<tr><td><button type="button" class="j" data-open="' + i + '">' + esc(m.p) + '</button></td><td class="n">' + tok(m).toLocaleString() + ' tok</td></tr>'; }).join('') + '</table></div>';
+    detail.innerHTML = h; detail.hidden = false;
+    detail.querySelector('.close').addEventListener('click', closeDetail);
+    Array.prototype.forEach.call(detail.querySelectorAll('button[data-open]'), function (b) { b.addEventListener('click', function () { openDetail(+b.dataset.open); }); });
+  }
 
   // ---- detail ----
   var detail = document.getElementById('detail');
-  function openDetail(i) {
+  function openDetail(i, at) {
     state.sel = i; tip.hidden = true;
     var m = D.modules[i], sh = shares(m), src = D.src[m.p];
+    var wm = W && W.modules[m.p];
     var h = '<div class="dh"><button type="button" class="close" aria-label="close">×</button>';
     h += '<div class="p">' + esc(m.p) + '</div>';
-    h += '<div class="row"><span>' + esc(m.f) + (m.r ? ' · role ' + esc(m.r) : '') + '</span><span>' + tok(m) + ' tokens</span><span>mixing ' + f2(m.m) + '</span>' + (m.d !== undefined ? '<span>drift ' + f2(m.d) + '</span>' : '') + '<span>excluded ' + m.t[4] + '</span></div>';
+    h += '<div class="row"><span>' + esc(m.f) + (m.r ? ' · role ' + esc(m.r) : '') + '</span><span>' + tok(m) + ' tokens</span><span>mixing ' + f2(m.m) + '</span>' + (m.mo !== undefined && m.mo !== m.m ? '<span>by operation ' + f2(m.mo) + '</span>' : '') + (m.d !== undefined ? '<span>drift ' + f2(m.d) + '</span>' : '') + '<span>excluded ' + m.t[4] + '</span></div>';
     h += sharebar(sh) + '<div class="row">';
     for (var k = 0; k < 4; k++) h += '<span><span class="dot" style="background:' + COLORS[k] + '"></span>' + NAMES[k] + ' ' + m.t[k] + ' (' + pct(sh[k]) + ')</span>';
-    h += '</div><div class="dtabs seg">' + segBtn('rules', 'rules') + (src !== undefined ? segBtn('source', 'source') : '') + '</div></div>';
+    h += '</div>';
+    if (m.b !== undefined) {
+      var oop = [0, 0, 0, 0]; m.s.forEach(function (sp) { if (sp[2] <= 3 && (sp[7] === 1 || (m.e.indexOf(sp[2]) === -1 && sp[6] !== 1))) oop[sp[2]] += sp[4]; });
+      var oopTotal = oop[0] + oop[1] + oop[2] + oop[3];
+      h += '<div class="row"><span>declared shape: ' + m.e.map(function (b) { return NAMES[b]; }).join(', ') + (m.s.some(function (sp) { return sp[6] === 1; }) ? ' + permitted calls' : '') + '</span>';
+      h += '<span>in place ' + (tok(m) - oopTotal) + ' (' + pct((tok(m) - oopTotal) / (tok(m) || 1)) + ')</span>';
+      h += '<span>out of place ' + oopTotal + ' (' + pct(m.d) + ')' + (oopTotal ? ': ' + [0, 1, 2, 3].filter(function (b) { return oop[b]; }).map(function (b) { return '<span class="dot" style="background:' + COLORS[b] + '"></span>' + NAMES[b] + ' ' + oop[b]; }).join(' ') : '') + '</span></div>';
+    }
+    if (m.sf) h += '<div class="row"><span>' + (m.sf.sanctioned === null ? 'internal surface, none sanctioned: ' : 'surface: ') + m.sf.members.map(function (x) { return m.sf.extra.indexOf(x) !== -1 ? '<b class="extra">' + esc(x) + '</b>' : esc(x); }).join(', ') + (m.sf.sanctioned !== null && m.sf.extra.length ? ' <span class="st st-unresolved">' + m.sf.extra.length + ' outside the sanctioned surface</span>' : '') + '</span></div>';
+    if (m.bd && m.bd.length) { var kinds = {}; m.bd.forEach(function (b) { kinds[b.kind] = 1; }); h += '<div class="row"><span>bound by ' + m.bd.map(function (b) { return esc(b.host) + ' (' + esc(b.kind) + ')'; }).join(', ') + (kinds.view && kinds.channel ? ': both layers absorbed' : '') + '</span></div>'; }
+    h += (wm ? '<div class="row wlink"><button type="button" class="j" data-wm="' + esc(m.p) + '">working set ' + wm.workingSet.modules + ' modules' + (wm.workingSet.tokens !== null ? ', ' + wm.workingSet.tokens.toLocaleString() + ' tokens' + (wm.workingSet.unmeasured ? ' + ' + wm.workingSet.unmeasured + ' uncounted' : '') : '') + ((wm.edges.unresolved + wm.edges.ambiguous) ? ', ' + (wm.edges.unresolved + wm.edges.ambiguous) + ' unresolved' : '') + ' → Wiring</button></div>' : '') + '<div class="dtabs seg">' + segBtn('rules', 'rules') + (src !== undefined ? segBtn('source', 'source') : '') + '</div></div>';
     h += '<div class="db" id="db"></div>';
     detail.innerHTML = h; detail.hidden = false;
     detail.querySelector('.close').addEventListener('click', closeDetail);
-    var tabs = detail.querySelector('.dtabs');
-    tabs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) showTab(m, src, b.dataset.v); });
-    showTab(m, src, src !== undefined ? 'source' : 'rules');
+    var wl = detail.querySelector('.wlink button'); if (wl) wl.addEventListener('click', function () { closeDetail(); showTab('wiring'); wstate.sub = 'modules'; renderWiring(); showModule(m.p); });
+    var dtabs = detail.querySelector('.dtabs');
+    dtabs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) showDetailTab(m, src, b.dataset.v, at); });
+    showDetailTab(m, src, src !== undefined ? 'source' : 'rules', at);
     Array.prototype.forEach.call(map.querySelectorAll('.tile.sel'), function (s) { s.classList.remove('sel'); });
     var t = map.querySelector('.tile[data-i="' + i + '"]'); if (t) t.classList.add('sel');
   }
   function closeDetail() { detail.hidden = true; state.sel = -1; Array.prototype.forEach.call(map.querySelectorAll('.tile.sel'), function (s) { s.classList.remove('sel'); }); }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !detail.hidden) closeDetail(); });
-  function showTab(m, src, which) {
+  function showDetailTab(m, src, which, at) {
     Array.prototype.forEach.call(detail.querySelectorAll('.dtabs button'), function (b) { b.setAttribute('aria-pressed', b.dataset.v === which ? 'true' : 'false'); });
-    document.getElementById('db').innerHTML = which === 'source' ? sourceHtml(m, src) : rulesHtml(m);
+    document.getElementById('db').innerHTML = which === 'source' ? sourceHtml(m, src, at) : rulesHtml(m);
+    var hl = document.getElementById('db').querySelector('.hl'); if (hl) hl.scrollIntoView({ block: 'center' });
   }
   function rulesHtml(m) {
     var agg = {};
@@ -407,11 +563,12 @@ const JS = `
     rows.forEach(function (r) { h += '<tr><td>' + (r.b < 4 ? '<span class="dot" style="background:' + COLORS[r.b] + '"></span>' + K[r.b] : '<span class="dot" style="background:var(--X)"></span>excluded') + '</td><td>' + esc(r.r) + '</td><td class="n">' + r.t + '</td><td class="n">' + r.n + '</td></tr>'; });
     return h + '</tbody></table>';
   }
-  function sourceHtml(m, src) {
+  function sourceHtml(m, src, at) {
     var h = '<pre>', pos = 0;
     m.s.forEach(function (s) {
       if (s[0] > pos) h += esc(src.slice(pos, s[0]));
-      h += '<span class="b' + s[2] + '" title="' + esc(D.rules[s[3]]) + ' · ' + s[4] + ' tokens">' + esc(src.slice(s[0], s[1])) + '</span>';
+      var hit = at !== undefined && s[0] <= at && at < s[1];
+      h += '<span class="b' + s[2] + (hit ? ' hl' : '') + '" title="' + esc(D.rules[s[3]]) + ' · ' + s[4] + ' tokens">' + esc(src.slice(s[0], s[1])) + '</span>';
       pos = s[1];
     });
     if (pos < src.length) h += esc(src.slice(pos));
@@ -429,5 +586,209 @@ const JS = `
   }
 
   renderScores(); renderControls(); renderMap(); renderTable();
+
+  // ==== Wiring tab ====
+  var W = JSON.parse(document.getElementById('nm-wiring').textContent);
+  var tabs = document.getElementById('tabs');
+  var wstate = { sub: 'vocab', q: '', dir: '', sort: 'ws', sel: null, kind: '', edgeFilter: null, wsBucket: null };
+  var STATUS = ['resolved', 'unresolved', 'ambiguous', 'external', 'unknown'];
+  var STATUS_COLOR = { resolved: 'var(--L)', unresolved: 'var(--B)', ambiguous: 'var(--C)', external: 'var(--X)', unknown: 'var(--ink-3)' };
+  var WS_BUCKETS = [[0, 200, '< 200'], [200, 500, '200–500'], [500, 1000, '500–1k'], [1000, 2000, '1k–2k'], [2000, Infinity, '> 2k']];
+  var WS_OPACITY = [0.22, 0.4, 0.6, 0.8, 1];
+  function wsBucketOf(m) { var t = m.workingSet.tokens; var v = t === null ? m.workingSet.modules * 100 : t; for (var i = 0; i < WS_BUCKETS.length; i++) if (v < WS_BUCKETS[i][1]) return i; return WS_BUCKETS.length - 1; }
+  function moduleHasEdge(p, kind, status) { return W.edges.some(function (e) { return e.kind === kind && e.status === status && (e.from.module === p || (e.to && e.to.module === p)); }); }
+  var byPath = {}; D.modules.forEach(function (m, i) { byPath[m.p] = i; });
+  function showTab(name) {
+    Array.prototype.forEach.call(tabs.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', b.dataset.tab === name ? 'true' : 'false'); });
+    document.getElementById('view-shape').hidden = name !== 'shape';
+    document.getElementById('view-wiring').hidden = name !== 'wiring';
+    if (name === 'wiring' && W) renderWiring();
+  }
+  tabs.addEventListener('click', function (e) { var b = e.target.closest('button[data-tab]'); if (b && !b.disabled) showTab(b.dataset.tab); });
+  if (!W) { var tw = document.getElementById('tab-wiring'); tw.disabled = true; tw.title = 'run noisemap map without --no-wiring to add the Wiring tab'; }
+
+  function wsum() {
+    var s = W.summary, ws = s.workingSet;
+    var f1 = function (x) { return x === null ? '—' : x.toFixed(2); };
+    var pc = function (x) { return x === null ? '—' : Math.round(x * 100) + '%'; };
+    var n = function (x) { return x === null ? '—' : Math.round(x).toLocaleString(); };
+    var h = '';
+    h += stat(pc(s.vocabularyShare), 'action-style sites against handler-style sites') + stat(n(ws.medianModules) + ' / ' + n(ws.medianTokens), 'working set: module + resolved neighbors, median modules / counted tokens') + stat(n(ws.tokenWeightedMedianTokens) + (ws.unmeasuredCounterparts ? ' <small>+' + ws.unmeasuredCounterparts + ' uncounted</small>' : ''), 'working set, token-weighted median');
+    h += stat(f1(s.locality), 'locality (dir. distance)') + stat(pc(s.discernibility), 'discernibility') + stat(pc(s.resolution), 'resolution');
+    h += stat(String(W.findings.filter(function (f) { return f.kind !== 'opaque'; }).length), 'unresolved or ambiguous') + stat(String(W.vocabulary.filter(function (v) { return !v.framework; }).length), 'names declared');
+    document.getElementById('wsummary').innerHTML = h;
+  }
+  function stBadge(st) { return '<span class="st st-' + st + '">' + st + '</span>'; }
+  function jumpModule(p) { return '<button type="button" class="j" data-wm="' + esc(p) + '">' + esc(p) + '</button>'; }
+  function jumpSite(p, start) { return '<button type="button" class="j" data-ws="' + esc(p) + '" data-at="' + (start === undefined ? '' : start) + '">' + esc(p) + (start !== undefined ? ':' + start : '') + '</button>'; }
+
+  function renderCharts() {
+    var kinds = Object.keys(W.summary.byKind);
+    var rowH = 18, gap = 6, labelW = 128, barW = 220, w = labelW + barW + 60, h = kinds.length * (rowH + gap) + 4;
+    var max = kinds.reduce(function (a, k) { var c = W.summary.byKind[k]; return Math.max(a, c.resolved + c.unresolved + c.ambiguous + c.external + c.unknown); }, 1);
+    var svg = '<svg viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="connections by kind and status">';
+    kinds.forEach(function (k, i) {
+      var c = W.summary.byKind[k], y = i * (rowH + gap) + 2, x = labelW, total = c.resolved + c.unresolved + c.ambiguous + c.external + c.unknown;
+      svg += '<text x="' + (labelW - 8) + '" y="' + (y + 13) + '" font-size="11" text-anchor="end" fill="var(--ink-2)">' + esc(k) + '</text>';
+      STATUS.forEach(function (st) {
+        var n = c[st]; if (!n) return;
+        var wdt = Math.max(2, (n / max) * barW);
+        var on = wstate.edgeFilter && wstate.edgeFilter.kind === k && wstate.edgeFilter.status === st;
+        svg += '<rect class="seg-r' + (on ? ' on' : '') + '" data-kind="' + esc(k) + '" data-status="' + st + '" data-tip="' + esc(k + ': ' + n + ' ' + st + ' of ' + total) + '" x="' + x + '" y="' + y + '" width="' + wdt + '" height="' + rowH + '" rx="3" fill="' + STATUS_COLOR[st] + '"/>';
+        x += wdt + 2;
+      });
+      svg += '<text x="' + (x + 4) + '" y="' + (y + 13) + '" font-size="11" fill="var(--ink-3)">' + total + '</text>';
+    });
+    svg += '</svg>';
+    var c1 = '<div class="wchart"><h3>connections by kind and status</h3>' + svg + '<div class="legend">' + STATUS.map(function (st) { return '<span><span class="sw" style="background:' + STATUS_COLOR[st] + '"></span>' + st + '</span>'; }).join('') + '</div></div>';
+
+    var counts = WS_BUCKETS.map(function () { return 0; });
+    var mods = Object.keys(W.modules);
+    mods.forEach(function (p) { counts[wsBucketOf(W.modules[p])] += 1; });
+    var hasTokens = mods.some(function (p) { return W.modules[p].workingSet.tokens !== null; });
+    var n = mods.length || 1, cx = 70, cy = 70, R = 62, r0 = 34, a0 = -Math.PI / 2;
+    var svg2 = '<svg viewBox="0 0 140 140" role="img" aria-label="working set distribution">';
+    var legend2 = '';
+    WS_BUCKETS.forEach(function (b, i) {
+      var share = counts[i] / n, on = wstate.wsBucket === i, op = WS_OPACITY[i], pct = Math.round(share * 100);
+      var tipTxt = counts[i] + ' module' + (counts[i] === 1 ? '' : 's') + ' (' + pct + '%) need ' + b[2] + (hasTokens ? ' tokens' : ' (×100 modules)') + ' to change safely';
+      if (counts[i]) {
+        var a1 = a0 + share * 2 * Math.PI, d;
+        if (share >= 0.9999) d = 'M' + cx + ' ' + (cy - R) + 'A' + R + ' ' + R + ' 0 1 1 ' + (cx - 0.01) + ' ' + (cy - R) + 'Z M' + cx + ' ' + (cy - r0) + 'A' + r0 + ' ' + r0 + ' 0 1 0 ' + (cx + 0.01) + ' ' + (cy - r0) + 'Z';
+        else {
+          var large = share > 0.5 ? 1 : 0;
+          d = 'M' + (cx + R * Math.cos(a0)) + ' ' + (cy + R * Math.sin(a0)) + 'A' + R + ' ' + R + ' 0 ' + large + ' 1 ' + (cx + R * Math.cos(a1)) + ' ' + (cy + R * Math.sin(a1)) + 'L' + (cx + r0 * Math.cos(a1)) + ' ' + (cy + r0 * Math.sin(a1)) + 'A' + r0 + ' ' + r0 + ' 0 ' + large + ' 0 ' + (cx + r0 * Math.cos(a0)) + ' ' + (cy + r0 * Math.sin(a0)) + 'Z';
+        }
+        svg2 += '<path class="seg-r' + (on ? ' on' : '') + '" data-ws="' + i + '" data-tip="' + esc(tipTxt) + '" d="' + d + '" fill="var(--V)" fill-opacity="' + op + '" stroke="var(--surface-0)" stroke-width="1.5"' + (share >= 0.9999 ? ' fill-rule="evenodd"' : '') + '/>';
+        if (share >= 0.08) { var am = (a0 + a1) / 2, rm = (R + r0) / 2; svg2 += '<text x="' + (cx + rm * Math.cos(am)) + '" y="' + (cy + rm * Math.sin(am) + 3.5) + '" font-size="9" font-weight="600" text-anchor="middle" fill="' + (op >= 0.6 ? '#fff' : 'var(--ink)') + '" pointer-events="none">' + pct + '%</text>'; }
+        a0 = a1;
+      }
+      legend2 += '<span class="seg-l' + (on ? ' on' : '') + '" data-ws="' + i + '" data-tip="' + esc(tipTxt) + '"><span class="sw" style="background:var(--V);opacity:' + op + '"></span>' + b[2] + ' <b>' + pct + '%</b> <i>' + counts[i] + '</i></span>';
+    });
+    svg2 += '<text x="' + cx + '" y="' + (cy - 2) + '" font-size="14" font-weight="600" text-anchor="middle" fill="var(--ink)">' + mods.length + '</text><text x="' + cx + '" y="' + (cy + 10) + '" font-size="8" text-anchor="middle" fill="var(--ink-3)">modules</text></svg>';
+    var c2 = '<div class="wchart"><h3>working set, ' + (hasTokens ? 'counted tokens in the one-hop neighborhood' : 'modules in the one-hop neighborhood (×100)') + '</h3><div class="donut">' + svg2 + '<div class="legend vert">' + legend2 + '</div></div></div>';
+    document.getElementById('wcharts').innerHTML = c1 + c2;
+  }
+  document.getElementById('wcharts').addEventListener('click', function (e) {
+    var r = e.target.closest('.seg-r, .seg-l'); if (!r) return;
+    if (r.dataset.kind) { var same = wstate.edgeFilter && wstate.edgeFilter.kind === r.dataset.kind && wstate.edgeFilter.status === r.dataset.status; wstate.edgeFilter = same ? null : { kind: r.dataset.kind, status: r.dataset.status }; }
+    else if (r.dataset.ws !== undefined) { var b = +r.dataset.ws; wstate.wsBucket = wstate.wsBucket === b ? null : b; }
+    wstate.sub = 'modules'; renderWiring();
+  });
+  document.getElementById('wcharts').addEventListener('mousemove', function (e) {
+    var r = e.target.closest('[data-tip]');
+    if (!r) { tip.hidden = true; return; }
+    tip.innerHTML = '<div class="p">' + esc(r.dataset.tip) + '</div>';
+    tip.hidden = false;
+    var x = e.clientX + 14, y = e.clientY + 14;
+    if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 14;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  });
+  document.getElementById('wcharts').addEventListener('mouseleave', function () { tip.hidden = true; });
+
+  function renderWiring() {
+    wsum();
+    renderCharts();
+    var sub = document.getElementById('wsub');
+    Array.prototype.forEach.call(sub.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', b.dataset.v === wstate.sub ? 'true' : 'false'); });
+    var filters = document.getElementById('wfilters');
+    if (wstate.sub === 'vocab') {
+      var kinds = {}; W.vocabulary.forEach(function (v) { kinds[v.kind] = (kinds[v.kind] || 0) + 1; });
+      filters.innerHTML = '<input type="search" id="wq" placeholder="filter names" value="' + esc(wstate.q) + '"><select id="wkind"><option value="">all kinds</option>' + Object.keys(kinds).sort().map(function (k) { return '<option value="' + k + '"' + (wstate.kind === k ? ' selected' : '') + '>' + k + ' ' + kinds[k] + '</option>'; }).join('') + '</select>';
+      var rows = W.vocabulary.filter(function (v) { return (!wstate.kind || v.kind === wstate.kind) && (!wstate.q || v.name.toLowerCase().indexOf(wstate.q) !== -1); });
+      document.getElementById('wrows').innerHTML = rows.map(function (v) { return '<div class="wrow' + (wstate.sel === 'v:' + v.kind + ':' + v.name ? ' sel' : '') + '" data-wv="' + esc(v.kind + ':' + v.name) + '"><span class="p">' + esc(v.name) + (v.framework ? ' <span class="muted">framework</span>' : '') + '</span><span class="n">' + v.kind + ' · ' + v.uses.length + '</span></div>'; }).join('') || '<p class="muted" style="padding:8px">no names</p>';
+    } else {
+      var dirs = {}; Object.keys(W.modules).forEach(function (p) { var d = p.indexOf('/') === -1 ? '.' : p.slice(0, p.lastIndexOf('/')); dirs[d] = 1; });
+      filters.innerHTML = '<input type="search" id="wq" placeholder="filter by path" value="' + esc(wstate.q) + '"><select id="wdir"><option value="">all directories</option>' + Object.keys(dirs).sort().map(function (d) { return '<option value="' + esc(d) + '"' + (wstate.dir === d ? ' selected' : '') + '>' + esc(d) + '</option>'; }).join('') + '</select><div class="seg" id="wsort">' + segBtn('ws', 'working set') + segBtn('unres', 'unresolved') + segBtn('loc', 'locality') + '</div>';
+      Array.prototype.forEach.call(filters.querySelectorAll('#wsort button'), function (b) { b.setAttribute('aria-pressed', b.dataset.v === wstate.sort ? 'true' : 'false'); });
+      var chips = '';
+      if (wstate.edgeFilter) chips += '<span class="chip">' + esc(wstate.edgeFilter.kind + ' · ' + wstate.edgeFilter.status) + ' <button type="button" data-clear="edge" aria-label="clear">×</button></span>';
+      if (wstate.wsBucket !== null) chips += '<span class="chip">working set ' + esc(WS_BUCKETS[wstate.wsBucket][2]) + ' <button type="button" data-clear="ws" aria-label="clear">×</button></span>';
+      filters.innerHTML += chips;
+      var list = Object.keys(W.modules).map(function (p) { return { p: p, m: W.modules[p] }; }).filter(function (x) {
+        if (wstate.dir && !(x.p === wstate.dir || x.p.indexOf(wstate.dir + '/') === 0)) return false;
+        if (wstate.q && x.p.toLowerCase().indexOf(wstate.q) === -1) return false;
+        if (wstate.edgeFilter && !moduleHasEdge(x.p, wstate.edgeFilter.kind, wstate.edgeFilter.status)) return false;
+        if (wstate.wsBucket !== null && wsBucketOf(x.m) !== wstate.wsBucket) return false;
+        return true;
+      });
+      list.sort(function (a, b) {
+        if (wstate.sort === 'unres') return (b.m.edges.unresolved + b.m.edges.ambiguous) - (a.m.edges.unresolved + a.m.edges.ambiguous) || (b.m.workingSet.tokens || 0) - (a.m.workingSet.tokens || 0);
+        if (wstate.sort === 'loc') return (b.m.locality || 0) - (a.m.locality || 0);
+        return (b.m.workingSet.tokens || b.m.workingSet.modules) - (a.m.workingSet.tokens || a.m.workingSet.modules);
+      });
+      document.getElementById('wrows').innerHTML = list.map(function (x) { var ws = x.m.workingSet; return '<div class="wrow' + (wstate.sel === 'm:' + x.p ? ' sel' : '') + '" data-wm="' + esc(x.p) + '"><span class="p">' + esc(x.p) + '</span><span class="n">' + ws.modules + ' mod' + (ws.tokens !== null ? ' · ' + ws.tokens.toLocaleString() + ' tok' : '') + ((x.m.edges.unresolved + x.m.edges.ambiguous) ? ' · <span class="st st-unresolved">' + (x.m.edges.unresolved + x.m.edges.ambiguous) + '</span>' : '') + '</span></div>'; }).join('') || '<p class="muted" style="padding:8px">no modules</p>';
+    }
+    var q = document.getElementById('wq'); if (q) q.addEventListener('input', function (e) { wstate.q = e.target.value.toLowerCase(); renderWiring(); });
+    var k = document.getElementById('wkind'); if (k) k.addEventListener('change', function (e) { wstate.kind = e.target.value; renderWiring(); });
+    var dsel = document.getElementById('wdir'); if (dsel) dsel.addEventListener('change', function (e) { wstate.dir = e.target.value; renderWiring(); });
+    var ws = document.getElementById('wsort'); if (ws) ws.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { wstate.sort = b.dataset.v; renderWiring(); } });
+    Array.prototype.forEach.call(filters.querySelectorAll('button[data-clear]'), function (b) { b.addEventListener('click', function () { if (b.dataset.clear === 'edge') wstate.edgeFilter = null; else wstate.wsBucket = null; renderWiring(); }); });
+  }
+  document.getElementById('wsub').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { wstate.sub = b.dataset.v; wstate.q = ''; renderWiring(); } });
+  document.getElementById('wrows').addEventListener('click', function (e) {
+    var r = e.target.closest('.wrow'); if (!r) return;
+    if (r.dataset.wv) showVocab(r.dataset.wv); else if (r.dataset.wm) showModule(r.dataset.wm);
+  });
+  document.getElementById('wdetail').addEventListener('click', function (e) {
+    var b = e.target.closest('button.j'); if (!b) return;
+    if (b.dataset.wm) { wstate.sub = 'modules'; renderWiring(); showModule(b.dataset.wm); }
+    else if (b.dataset.ws !== undefined) openSource(b.dataset.ws, b.dataset.at === '' ? undefined : +b.dataset.at);
+    else if (b.dataset.wv) { wstate.sub = 'vocab'; renderWiring(); showVocab(b.dataset.wv); }
+    else if (b.dataset.we) showEdge(b.dataset.we);
+  });
+  function openSource(p, at) {
+    var i = byPath[p];
+    if (i === undefined) return;
+    showTab('shape'); openDetail(i, at);
+  }
+  function showVocab(key) {
+    wstate.sel = 'v:' + key; renderWiring();
+    var kind = key.slice(0, key.indexOf(':')), name = key.slice(key.indexOf(':') + 1);
+    var v = W.vocabulary.find(function (x) { return x.kind === kind && x.name === name; }); if (!v) return;
+    var roles = ['registers', 'emits', 'listens', 'binds', 'names', 'mentions'];
+    var h = '<h2>' + esc(v.name) + '</h2><div class="row"><span>' + v.kind + '</span>' + (v.framework ? '<span>framework</span>' : '') + '<span>' + v.uses.length + ' uses in ' + Object.keys(v.uses.reduce(function (a, u) { a[u.module] = 1; return a; }, {})).length + ' modules</span></div>';
+    roles.forEach(function (r) {
+      var us = v.uses.filter(function (u) { return u.role === r; }); if (!us.length) return;
+      h += '<h3>' + r + '</h3><table>' + us.map(function (u) { return '<tr><td>' + jumpModule(u.module) + '</td><td class="n">' + jumpSite(u.module, u.start) + '</td></tr>'; }).join('') + '</table>';
+    });
+    document.getElementById('wdetail').innerHTML = h;
+  }
+  function edgeRow(e, dir) {
+    var other = dir === 'out' ? e.to : { module: e.from.module, start: e.from.start };
+    var where = other ? jumpModule(other.module) : '<span class="muted">' + (e.candidates && e.candidates.length ? 'candidates: ' + e.candidates.map(function (c) { return esc(c); }).join(', ') : '—') + '</span>';
+    return '<tr><td>' + esc(e.kind) + '</td><td>' + esc(e.label) + (e.hops && e.hops.length ? ' <button type="button" class="j" data-we="' + esc(e.id) + '">' + e.hops.length + ' hop' + (e.hops.length === 1 ? '' : 's') + '</button>' : '') + '</td><td>' + stBadge(e.status) + '</td><td>' + where + '</td><td class="n">' + jumpSite(dir === 'out' ? e.from.module : (e.to ? e.to.module : e.from.module), dir === 'out' ? e.from.start : (e.to ? e.to.start : e.from.start)) + '</td></tr>';
+  }
+  function showModule(p) {
+    wstate.sel = 'm:' + p; renderWiring();
+    var m = W.modules[p]; if (!m) return;
+    var si = byPath[p];
+    var outE = W.edges.filter(function (e) { return e.from.module === p; });
+    var inE = W.edges.filter(function (e) { return e.to && e.to.module === p; });
+    var finds = W.findings.filter(function (f) { return f.module === p; });
+    var h = '<h2>' + esc(p) + '</h2><div class="row">' + (si !== undefined ? '<span>' + jumpSite(p, undefined).replace('>' + esc(p) + '<', '>open source<') + '</span>' : '') + '<span>working set ' + m.workingSet.modules + ' modules' + (m.workingSet.tokens !== null ? ', ' + m.workingSet.tokens.toLocaleString() + ' counted tokens' + (m.workingSet.unmeasured ? ' + ' + m.workingSet.unmeasured + ' uncounted' : '') : '') + '</span><span>locality ' + (m.locality === null ? '—' : m.locality.toFixed(1)) + '</span><span>discernibility ' + (m.discernibility === null ? '—' : Math.round(m.discernibility * 100) + '%') + '</span><span>resolution ' + (m.resolution === null ? '—' : Math.round(m.resolution * 100) + '%') + '</span></div>';
+    if (m.workingSet.counterparts.length) h += '<h3>working set</h3><table>' + m.workingSet.counterparts.map(function (c) { var t = D.modules[byPath[c]]; return '<tr><td>' + jumpModule(c) + '</td><td class="n">' + (t ? tok(t).toLocaleString() + ' tok' : '') + '</td></tr>'; }).join('') + '</table>';
+    var names = W.vocabulary.filter(function (v) { return v.uses.some(function (u) { return u.module === p; }); });
+    if (names.length) h += '<h3>names this module shares</h3><table>' + names.map(function (v) { var mods = Object.keys(v.uses.reduce(function (a, u) { a[u.module] = 1; return a; }, {})); return '<tr><td><button type="button" class="j" data-wv="' + esc(v.kind + ':' + v.name) + '">' + esc(v.name) + '</button></td><td class="n">' + mods.length + ' module' + (mods.length === 1 ? '' : 's') + ', ' + v.uses.length + ' sites</td></tr>'; }).join('') + '</table>';
+    if (outE.length) h += '<h3>connections out (' + outE.length + ')</h3><table>' + outE.map(function (e) { return edgeRow(e, 'out'); }).join('') + '</table>';
+    if (inE.length) h += '<h3>connections in (' + inE.length + ')</h3><table>' + inE.map(function (e) { return edgeRow(e, 'in'); }).join('') + '</table>';
+    if (finds.length) h += '<h3>findings</h3><table>' + finds.map(function (f) { return '<tr><td>' + stBadge(f.kind) + '</td><td>' + esc(f.message) + '</td><td class="n">' + jumpSite(p, f.start) + '</td></tr>'; }).join('') + '</table>';
+    h += '<div id="wstrip"></div>';
+    document.getElementById('wdetail').innerHTML = h;
+  }
+  function showEdge(id) {
+    var e = W.edges.find(function (x) { return x.id === id; }); if (!e) return;
+    var nodes = [e.from].concat(e.hops || []).concat(e.to ? [e.to] : []);
+    var bw = 190, bh = 34, gap = 28, perRow = 4, w = perRow * (bw + gap), rows = Math.ceil(nodes.length / perRow);
+    var svg = '<svg width="' + w + '" height="' + (rows * (bh + 26)) + '" viewBox="0 0 ' + w + ' ' + (rows * (bh + 26)) + '" role="img" aria-label="path">';
+    nodes.forEach(function (n, i) {
+      var x = (i % perRow) * (bw + gap), y = Math.floor(i / perRow) * (bh + 26) + 4;
+      var label = n.module.split('/').pop() + (n.start !== undefined ? ':' + n.start : '');
+      svg += '<rect x="' + x + '" y="' + y + '" width="' + bw + '" height="' + bh + '" rx="6" fill="var(--surface-2)" stroke="var(--border)"/><text x="' + (x + 8) + '" y="' + (y + 21) + '" font-size="12" fill="var(--ink)">' + esc(label.length > 26 ? label.slice(0, 25) + '…' : label) + '</text>';
+      if (i < nodes.length - 1) { var nx = ((i + 1) % perRow) * (bw + gap), ny = Math.floor((i + 1) / perRow) * (bh + 26) + 4; if (nx > x) svg += '<line x1="' + (x + bw) + '" y1="' + (y + bh / 2) + '" x2="' + nx + '" y2="' + (ny + bh / 2) + '" stroke="var(--ink-3)" marker-end="url(#arr)"/>'; else svg += '<line x1="' + (x + bw / 2) + '" y1="' + (y + bh) + '" x2="' + (nx + bw / 2) + '" y2="' + ny + '" stroke="var(--ink-3)" marker-end="url(#arr)"/>'; }
+    });
+    svg += '<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--ink-3)"/></marker></defs></svg>';
+    var strip = document.getElementById('wstrip'); if (strip) strip.innerHTML = '<h3>path: ' + esc(e.label) + ' ' + stBadge(e.status) + '</h3><div class="strip">' + svg + '</div>';
+  }
 })();
 `;

@@ -26,7 +26,12 @@ export type ClassifierKind =
   | 'call'
   | 'classMethod'
   | 'conditional'
-  | 'assignment';
+  | 'assignment'
+  | 'jsxIteration'
+  | 'actionLabel'
+  | 'configData'
+  | 'classAttribute'
+  | 'jsxComponent';
 
 export interface Classifier {
   id: string;
@@ -34,6 +39,14 @@ export interface Classifier {
   match?: string;
   bucket: Bucket;
   rule?: string;
+  /** The call takes the bucket of whatever encloses it (a method rule, a role default) and its arguments are part of it: a declaration, not a computation. `bucket` is the fallback outside any role. */
+  host?: boolean;
+  /**
+   * An explicit operation of a layer (DOM access, channel I/O, a fetch, a subscription, console
+   * output, markup, styles): it keeps its bucket even inside a role's sanctioned members, where
+   * every other token is the module's type (ruling 2026-09-29, "properties defining the type").
+   */
+  operation?: boolean;
   resolve?: boolean;
   resolveBucket?: Bucket;
   minWords?: number;
@@ -44,13 +57,30 @@ export interface Classifier {
 
 export interface RoleConfig {
   name: string;
-  match: { extends: string };
+  /**
+   * How a module is recognized as this role: a class extending `extends` (regex on the superclass
+   * name); a file that contains JSX (`jsx: true`); a file with no JSX whose exports match `exports`
+   * (regex on exported function names, e.g. `^use[A-Z]` for a React hook module).
+   */
+  match: { extends?: string; jsx?: boolean; exports?: string };
   expected: Bucket[];
   default: Bucket;
   methods?: Record<string, Bucket | { bucket: Bucket; uniform?: boolean }>;
   calls?: Record<string, { bucket: Bucket; permitted?: boolean; bare?: 'host' }>;
   /** Every counted token in the class body is the default bucket; classifiers inside do not apply. */
   uniform?: boolean;
+  /**
+   * The role is the framework's function module, written for a host (a SpyneTrait for a
+   * ViewStream or a Channel). An operation of the host's own layer inside it is what its
+   * functions do and takes the role's default: `true` absorbs every operation; a map from host
+   * kind (`view`, `channel`, as the adapter's prepare pass reports it) to the operation buckets
+   * absorbed for that host reads a channel trait's DOM work, or a view trait's subscription, as
+   * out of place. A class bound to no host or to both absorbs the union. Content formats and
+   * configuration data stay foreign either way (ruling 2026-09-29).
+   */
+  functions?: boolean | Record<string, Bucket[]>;
+  /** The members the role sanctions on the class, as exact names or regexes; anything else is outside the surface. */
+  surface?: string[];
 }
 
 export interface OpenQuestion {
@@ -116,8 +146,23 @@ export function assertConfigShape(value: unknown, where: string): asserts value 
     if (def !== undefined && (typeof def !== 'string' || !['V', 'B', 'L', 'C'].includes(def))) {
       throw new Error(`${where}: "${id}.default" must be one of V, B, L, C`);
     }
+    if (c.roles !== undefined) {
+      if (!Array.isArray(c.roles)) throw new Error(`${where}: "${id}.roles" must be an array`);
+      c.roles.forEach((r: unknown, i: number) => {
+        if (typeof r !== 'object' || r === null) throw new Error(`${where}: "${id}.roles[${String(i)}]" must be an object`);
+        for (const key of Object.keys(r)) {
+          if (ROLE_KEYS.has(key)) continue;
+          const hint = RETIRED_ROLE_KEYS[key];
+          throw new Error(`${where}: "${id}.roles[${String(i)}]" has an unknown field "${key}"${hint ? ` (${hint})` : ''}`);
+        }
+      });
+    }
   }
 }
+
+const ROLE_KEYS = new Set(['name', 'match', 'expected', 'default', 'methods', 'calls', 'uniform', 'surface', 'functions']);
+/** Fields a user config from an earlier revision may still carry. A silently ignored field would let an old experiment rerun under new meaning (review 3, 2026-09-29). */
+const RETIRED_ROLE_KEYS: Record<string, string> = { hosts: 'retired 2026-09-29; a trait absorbs its host\'s operations through `functions` on the SpyneTrait role' };
 
 export interface LoadedConfigs {
   configs: Record<string, FrameworkConfig>;

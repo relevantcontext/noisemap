@@ -1,0 +1,817 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:32.374Z",
+  "root": "/private/tmp/noisemap-samples/tic-tac-toe-react/src",
+  "nodes": [
+    {
+      "id": "App.js",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "styles.css",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "App.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 801,
+          "end": 837
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 801,
+        "end": 837
+      }
+    },
+    {
+      "id": "e3",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 876,
+          "end": 912
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 876,
+        "end": 912
+      }
+    },
+    {
+      "id": "e4",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 951,
+          "end": 987
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 951,
+        "end": 987
+      }
+    },
+    {
+      "id": "e5",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 1073,
+          "end": 1109
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 1073,
+        "end": 1109
+      }
+    },
+    {
+      "id": "e6",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 1148,
+          "end": 1184
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 1148,
+        "end": 1184
+      }
+    },
+    {
+      "id": "e7",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 1223,
+          "end": 1259
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 1223,
+        "end": 1259
+      }
+    },
+    {
+      "id": "e8",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 1345,
+          "end": 1381
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 1345,
+        "end": 1381
+      }
+    },
+    {
+      "id": "e9",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 1420,
+          "end": 1456
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 1420,
+        "end": 1456
+      }
+    },
+    {
+      "id": "e10",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 121,
+        "end": 144
+      },
+      "label": "onClick=onSquareClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [
+        {
+          "module": "App.js",
+          "start": 1495,
+          "end": 1531
+        }
+      ],
+      "to": {
+        "module": "App.js",
+        "start": 1495,
+        "end": 1531
+      }
+    },
+    {
+      "id": "e11",
+      "kind": "handler-path",
+      "from": {
+        "module": "App.js",
+        "start": 2304,
+        "end": 2332
+      },
+      "label": "onClick=inline",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "App.js",
+        "start": 2304,
+        "end": 2332
+      }
+    }
+  ],
+  "sites": [
+    {
+      "module": "App.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "App.js",
+      "start": 121,
+      "end": 144,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick"
+    },
+    {
+      "module": "App.js",
+      "start": 265,
+      "end": 280,
+      "kind": "call",
+      "class": "declared",
+      "label": "calculateWinner"
+    },
+    {
+      "module": "App.js",
+      "start": 351,
+      "end": 364,
+      "kind": "call",
+      "class": "declared",
+      "label": "squares.slice"
+    },
+    {
+      "module": "App.js",
+      "start": 466,
+      "end": 472,
+      "kind": "call",
+      "class": "declared",
+      "label": "onPlay"
+    },
+    {
+      "module": "App.js",
+      "start": 509,
+      "end": 524,
+      "kind": "call",
+      "class": "declared",
+      "label": "calculateWinner"
+    },
+    {
+      "module": "App.js",
+      "start": 782,
+      "end": 800,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 801,
+      "end": 837,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 822,
+      "end": 833,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 857,
+      "end": 875,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 876,
+      "end": 912,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 897,
+      "end": 908,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 932,
+      "end": 950,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 951,
+      "end": 987,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 972,
+      "end": 983,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 1054,
+      "end": 1072,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 1073,
+      "end": 1109,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 1094,
+      "end": 1105,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 1129,
+      "end": 1147,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 1148,
+      "end": 1184,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 1169,
+      "end": 1180,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 1204,
+      "end": 1222,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 1223,
+      "end": 1259,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 1244,
+      "end": 1255,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 1326,
+      "end": 1344,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 1345,
+      "end": 1381,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 1366,
+      "end": 1377,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 1401,
+      "end": 1419,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 1420,
+      "end": 1456,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 1441,
+      "end": 1452,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 1476,
+      "end": 1494,
+      "kind": "prop",
+      "class": "declared",
+      "label": "value"
+    },
+    {
+      "module": "App.js",
+      "start": 1495,
+      "end": 1531,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSquareClick=inline"
+    },
+    {
+      "module": "App.js",
+      "start": 1516,
+      "end": 1527,
+      "kind": "call",
+      "class": "declared",
+      "label": "handleClick"
+    },
+    {
+      "module": "App.js",
+      "start": 1629,
+      "end": 1637,
+      "kind": "call",
+      "class": "declared",
+      "label": "useState"
+    },
+    {
+      "module": "App.js",
+      "start": 1639,
+      "end": 1652,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).fill"
+    },
+    {
+      "module": "App.js",
+      "start": 1639,
+      "end": 1644,
+      "kind": "call",
+      "class": "declared",
+      "label": "Array"
+    },
+    {
+      "module": "App.js",
+      "start": 1702,
+      "end": 1710,
+      "kind": "call",
+      "class": "declared",
+      "label": "useState"
+    },
+    {
+      "module": "App.js",
+      "start": 1869,
+      "end": 1882,
+      "kind": "call",
+      "class": "declared",
+      "label": "history.slice"
+    },
+    {
+      "module": "App.js",
+      "start": 1922,
+      "end": 1932,
+      "kind": "call",
+      "class": "declared",
+      "label": "setHistory"
+    },
+    {
+      "module": "App.js",
+      "start": 1951,
+      "end": 1965,
+      "kind": "call",
+      "class": "declared",
+      "label": "setCurrentMove"
+    },
+    {
+      "module": "App.js",
+      "start": 2030,
+      "end": 2044,
+      "kind": "call",
+      "class": "declared",
+      "label": "setCurrentMove"
+    },
+    {
+      "module": "App.js",
+      "start": 2077,
+      "end": 2088,
+      "kind": "call",
+      "class": "declared",
+      "label": "history.map"
+    },
+    {
+      "module": "App.js",
+      "start": 2304,
+      "end": 2332,
+      "kind": "handler",
+      "class": "declared",
+      "label": "inline"
+    },
+    {
+      "module": "App.js",
+      "start": 2319,
+      "end": 2325,
+      "kind": "call",
+      "class": "declared",
+      "label": "jumpTo"
+    },
+    {
+      "module": "App.js",
+      "start": 2470,
+      "end": 2487,
+      "kind": "prop",
+      "class": "declared",
+      "label": "xIsNext"
+    },
+    {
+      "module": "App.js",
+      "start": 2488,
+      "end": 2512,
+      "kind": "prop",
+      "class": "declared",
+      "label": "squares"
+    },
+    {
+      "module": "App.js",
+      "start": 2513,
+      "end": 2532,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onPlay=handlePlay"
+    }
+  ],
+  "findings": [],
+  "vocabulary": [
+    {
+      "name": "onPlay",
+      "kind": "handler",
+      "framework": false,
+      "uses": [
+        {
+          "module": "App.js",
+          "start": 2513,
+          "end": 2532,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 182,
+          "end": 1562,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "onSquareClick",
+      "kind": "handler",
+      "framework": false,
+      "uses": [
+        {
+          "module": "App.js",
+          "start": 801,
+          "end": 837,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 876,
+          "end": 912,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 951,
+          "end": 987,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 1073,
+          "end": 1109,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 1148,
+          "end": 1184,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 1223,
+          "end": 1259,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 1345,
+          "end": 1381,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 1420,
+          "end": 1456,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 1495,
+          "end": 1531,
+          "role": "emits"
+        },
+        {
+          "module": "App.js",
+          "start": 35,
+          "end": 180,
+          "role": "listens"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "App.js": {
+      "edges": {
+        "out": 11,
+        "in": 10,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 47,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 270,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "styles.css": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 55,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 1,
+        "unknown": 0
+      },
+      "handler-path": {
+        "resolved": 10,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 47,
+      "opaque": 0
+    },
+    "discernibility": 1,
+    "resolution": 1,
+    "vocabularyShare": 0,
+    "workingSet": {
+      "medianModules": 1,
+      "medianTokens": 162.5,
+      "tokenWeightedMedianTokens": 270,
+      "unmeasuredCounterparts": 0
+    },
+    "locality": null,
+    "entries": [],
+    "roots": []
+  }
+}

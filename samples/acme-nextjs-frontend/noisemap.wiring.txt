@@ -1,0 +1,52 @@
+wiring  55 modules  225 connections  864 sites
+        discernibility 100% (declared 861 / opaque 3)   resolution  89%
+        vocabulary share  25%   working set: median 4 modules, 560 counted tokens (1085 by token), 6 counterparts uncounted   locality 2.3
+        entries: dashboard/(overview)/loading.tsx, dashboard/(overview)/page.tsx, dashboard/customers/loading.tsx, dashboard/customers/page.tsx, dashboard/invoices/[id]/edit/loading.tsx, dashboard/invoices/[id]/edit/not-found.tsx, dashboard/invoices/[id]/edit/page.tsx, dashboard/invoices/create/loading.tsx, dashboard/invoices/create/page.tsx, dashboard/invoices/error.tsx, dashboard/invoices/loading.tsx, dashboard/invoices/page.tsx, dashboard/layout.tsx, layout.tsx, login/page.tsx, page.tsx
+        roots: ..
+
+vocabulary: 19 names the app declares (0 more from the framework)
+  name                                               registers  emits  listens  binds
+  apply                                                      1      4        0      0
+  redo                                                       1      2        0      0
+  reset                                                      1      1        0      0
+  undo                                                       1      2        0      0
+  InvoiceEditsContext                                        0      1        1      0
+  LiveEventsContext                                          0      1        1      0
+  QuickSearchContext                                         0      1        1      0
+  onClick                                                    0      2        0      0
+  onClose                                                    0      1        1      0
+  onHover                                                    0      2        2      0
+  onNavigate                                                 0      2        2      0
+  onToggled                                                  0      2        2      0
+  /                                                          0      1        0      0
+  /dashboard                                                 0      0        0      0
+  /dashboard/customers                                       0      0        0      0
+  /dashboard/invoices                                        0      3        0      0
+  /dashboard/invoices/*/edit                                 0      1        0      0
+  /dashboard/invoices/create                                 0      1        0      0
+  /login                                                     0      1        0      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                     80          15          0        79        0
+handler-path               25           0          0         0        7
+action-type                 9           0          0         0        0
+context                     3           0          0         0        0
+route                       7           0          0         0        0
+
+findings: 15 unresolved/ambiguous, 3 opaque
+  unresolved dashboard/customers/page.tsx:347  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved dashboard/invoices/[id]/edit/page.tsx:154  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved dashboard/invoices/create/page.tsx:31  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved dashboard/invoices/page.tsx:394  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved ui/customers/table.tsx:71  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved ui/dashboard/cards.tsx:180  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved ui/dashboard/latest-invoices.tsx:197  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved ui/dashboard/revenue-chart.tsx:181  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved ui/invoices/buttons.tsx:139  import '@/app/lib/actions' does not resolve to a file or a package
+  unresolved ui/invoices/create-form.tsx:292  import '@/app/lib/actions' does not resolve to a file or a package
+  unresolved ui/invoices/edit-form.tsx:305  import '@/app/lib/actions' does not resolve to a file or a package
+  unresolved ui/invoices/edits-provider.tsx:215  import '@/app/lib/actions' does not resolve to a file or a package
+  unresolved ui/invoices/status-toggle.tsx:159  import '@/app/lib/actions' does not resolve to a file or a package
+  unresolved ui/invoices/table.tsx:38  import '@/app/lib/data' does not resolve to a file or a package
+  unresolved ui/login-form.tsx:328  import '@/app/lib/actions' does not resolve to a file or a package
+

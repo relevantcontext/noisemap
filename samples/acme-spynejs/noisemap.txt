@@ -1,31 +1,12 @@
 file                                                                          tokens  V B L C                  V     B     L     C  mixing  role        drift
 ----------------------------------------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
-app/components/page-items/customers-pagination-container.js                       52  VVVVVVVVVVLLLLLLLLLL   50%    0%   50%    0%    0.50  ViewStream   0.00
-app/components/page-items/invoices-pagination-container.js                        54  VVVVVVVVVVLLLLLLLLLL   52%    0%   48%    0%    0.48  ViewStream   0.00
-app/components/page-items/dashboard-stats-container.js                            61  VVVVVVVVVVVLLLLLLLLL   54%    0%   46%    0%    0.46  ViewStream   0.46
-app/components/page-items/dashboard-revenue-chart-view.js                         38  VVVVVVVVVVVVVVVLLLLL   74%    0%   26%    0%    0.26  ViewStream   0.26
-app/components/page-items/ui-search-view.js                                       77  VVVVVVVVVVVVVVVLLLLL   77%    0%   23%    0%    0.23  ViewStream   0.23
-app/components/search/quick-search-invoice-item-view.js                           73  VVVVVVVVVVVVVVVLLLLL   77%    0%   23%    0%    0.23  ViewStream   0.23
-app/components/search/quick-search-customer-item-view.js                          54  VVVVVVVVVVVVVVVVLLLL   78%    0%   22%    0%    0.22  ViewStream   0.22
-app/components/page-items/invoices-create-form-view.js                            85  VVVVVVVVVVVVVVVVLLLL   79%    0%   21%    0%    0.21  ViewStream   0.21
-app/components/page-items/invoices-edit-form-view.js                              85  VVVVVVVVVVVVVVVVLLLL   79%    0%   21%    0%    0.21  ViewStream   0.21
-app/components/shell/ui-sidenav-view.js                                           54  VVVVVVVVVVVVVVVVLLLL   80%    0%   20%    0%    0.20  ViewStream   0.20
-app/components/page-items/login-form-view.js                                      69  VVVVVVVVVVVVVVVVVLLL   83%    0%   17%    0%    0.17  ViewStream   0.17
-app/components/elements/invoices-item-view.js                                    113  VVVVVVVVVVVVVVVVVLLL   83%    0%   17%    0%    0.17  ViewStream   0.17
-app/components/page-items/dashboard-invoices-latest-view.js                       54  VVVVVVVVVVVVVVVVVLLL   83%    0%   17%    0%    0.17  ViewStream   0.17
-app/components/pages/page-guest-view.js                                           27  VVVVVVVVVVVVVVVVVLLL   85%    0%   15%    0%    0.15  ViewStream   0.15
-app/components/elements/invoices-customer-option-view.js                          42  VVVVVVVVVVVVVVVVVLLL   86%    0%   14%    0%    0.14  ViewStream   0.14
-app/components/page-items/ui-acme-logo-view.js                                    25  VVVVVVVVVVVVVVVVVVLL   88%    0%   12%    0%    0.12  ViewStream   0.12
-app/components/page-items/customers-table-view.js                                 40  VVVVVVVVVVVVVVVVVVLL   90%    0%   10%    0%    0.10  ViewStream   0.00
-app/components/elements/invoices-cell-editor-view.js                              92  VVVVVVVVVVVVVVVVVVLL   90%    0%   10%    0%    0.10  ViewStream   0.10
-app/components/pages/page-acme-view.js                                            41  VVVVVVVVVVVVVVVVVVLL   90%    0%   10%    0%    0.10  ViewStream   0.10
-app/components/search/quick-search-overlay-view.js                                38  VVVVVVVVVVVVVVVVVVLL   92%    0%    8%    0%    0.08  ViewStream   0.08
-app/components/page-items/invoices-create-button-view.js                          40  VVVVVVVVVVVVVVVVVVVL   93%    0%    8%    0%    0.07  ViewStream   0.07
+app/components/page-items/dashboard-stats-container.js                            61  VVVVVVVVVVVVVVLLLLLL   70%    0%   30%    0%    0.30  ViewStream   0.30
+app/components/page-items/ui-search-view.js                                       77  VVVVVVVVVVVVVVVVVVLL   90%    0%   10%    0%    0.10  ViewStream   0.10
 index.js                                                                         166  VLLLLLLLLLLLLLLLLLLL    7%    0%   93%    0%    0.07
-app/components/page-items/home-intro-view.js                                      44  VVVVVVVVVVVVVVVVVVVL   93%    0%    7%    0%    0.07  ViewStream   0.07
-app/components/page-items/dashboard-activity-feed-view.js                         48  VVVVVVVVVVVVVVVVVVVL   94%    0%    6%    0%    0.06  ViewStream   0.06
-app/utils/acme-utils.js                                                          263  LLLLLLLLLLLLLLLLLLLL    0%    0%   98%    2%    0.02
-app/utils/acme-invoice-utils.js                                                  882  LLLLLLLLLLLLLLLLLLLL    0%    0%   99%    1%    0.01
+app/components/page-items/invoices-create-form-view.js                            85  VVVVVVVVVVVVVVVVVVVL   93%    0%    7%    0%    0.07  ViewStream   0.07
+app/components/page-items/invoices-edit-form-view.js                              85  VVVVVVVVVVVVVVVVVVVL   93%    0%    7%    0%    0.07  ViewStream   0.07
+app/components/page-items/login-form-view.js                                      69  VVVVVVVVVVVVVVVVVVVL   96%    0%    4%    0%    0.04  ViewStream   0.04
+app/traits/pages/page-item-core-traits.js                                        342  LLLLLLLLLLLLLLLLLLLL    0%    0%   99%    1%    0.01  SpyneTrait   0.01
 app/channels/channel-acme-auth.js                                                 19  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
 app/channels/channel-acme-customers.js                                            15  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
 app/channels/channel-acme-data.js                                                 49  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
@@ -35,60 +16,78 @@ app/channels/channel-acme-search.js                                             
 app/channels/channel-app.js                                                       20  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
 app/channels/channel-local-storage.js                                             17  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
 app/components/elements/customers-pagination-items-view.js                        19  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/elements/invoices-cell-editor-view.js                              92  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/elements/invoices-customer-option-view.js                          42  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/elements/invoices-item-view.js                                    113  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/elements/invoices-pagination-items-view.js                         21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/components/elements/templates/customers-pagination-items-view.tmpl.html       95  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/elements/templates/invoices-cell-editor-view.tmpl.html             62  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/customers-pagination-items-view.tmpl.html       96  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/invoices-cell-editor-view.tmpl.html             65  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/elements/templates/invoices-customer-option-view.tmpl.html          1  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/elements/templates/invoices-item-view.tmpl.html                   139  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/elements/templates/invoices-pagination-items-view.tmpl.html        95  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/elements/templates/ui-nav-link-view.tmpl.html                      26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/invoices-item-view.tmpl.html                   150  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/invoices-pagination-items-view.tmpl.html        96  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/elements/templates/ui-nav-link-view.tmpl.html                      43  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/elements/ui-nav-link-view.js                                       24  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/nav/nav-breadcrumb-item.js                                         23  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/nav/nav-breadcrumb-view.js                                         23  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/components/nav/templates/nav-breadcrumb-item.tmpl.html                        17  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-breadcrumb-item.tmpl.html                        21  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/nav/templates/nav-breadcrumb-view.tmpl.html                         8  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/customers-pagination-container.js                       52  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/customers-table-view.js                                 40  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/dashboard-activity-feed-view.js                         48  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/dashboard-invoices-latest-view.js                       54  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/dashboard-revenue-chart-view.js                         38  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/page-items/home-hero-view.js                                       21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/home-intro-view.js                                      44  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/invoices-create-button-view.js                          40  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/invoices-pagination-container.js                        54  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/page-items/invoices-save-bar-view.js                               31  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/page-items/invoices-table-view.js                                  63  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/page-items/templates/customers-pagination-container.tmpl.html       4  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/customers-table-view.tmpl.html               207  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/dashboard-activity-feed-rows.tmpl.html        42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/dashboard-activity-feed-view.tmpl.html        32  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/dashboard-invoices-latest-rows.tmpl.html      40  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/dashboard-invoices-latest-view.tmpl.html      25  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/dashboard-revenue-chart-view.tmpl.html        50  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/dashboard-stats-container.tmpl.html           23  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/home-hero-view.tmpl.html                      11  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/home-intro-view.tmpl.html                     32  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/invoices-create-button-view.tmpl.html          6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/invoices-form-view.tmpl.html                 201  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/customers-table-view.tmpl.html               287  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-activity-feed-rows.tmpl.html        49  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-activity-feed-view.tmpl.html        49  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-invoices-latest-rows.tmpl.html      52  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-invoices-latest-view.tmpl.html      40  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-revenue-chart-view.tmpl.html        83  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/dashboard-stats-container.tmpl.html           36  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/home-hero-view.tmpl.html                      12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/home-intro-view.tmpl.html                     49  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-create-button-view.tmpl.html          7  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-form-view.tmpl.html                 306  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-items/templates/invoices-pagination-container.tmpl.html        4  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/invoices-save-bar-view.tmpl.html             107  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/invoices-table-view.tmpl.html                134  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/login-form-view.tmpl.html                     94  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-save-bar-view.tmpl.html             125  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/invoices-table-view.tmpl.html                137  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/login-form-view.tmpl.html                    151  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-items/templates/ui-acme-logo-view.tmpl.html                    6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/ui-search-view.tmpl.html                      21  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/ui-search-view.tmpl.html                      31  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/ui-acme-logo-view.js                                    25  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/pages/page-404-view.js                                             14  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/components/pages/templates/dashboard-customers.page.tmpl.html                 14  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/page-acme-view.js                                            41  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/pages/page-guest-view.js                                           27  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/pages/templates/dashboard-customers.page.tmpl.html                 17  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/pages/templates/dashboard-invoices-form.page.tmpl.html              8  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/pages/templates/dashboard-invoices.page.tmpl.html                  24  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/pages/templates/dashboard.page.tmpl.html                           14  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/pages/templates/home.page.tmpl.html                                26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/pages/templates/login.page.tmpl.html                               22  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/dashboard-invoices.page.tmpl.html                  33  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/dashboard.page.tmpl.html                           19  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/home.page.tmpl.html                                57  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/login.page.tmpl.html                               43  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/pages/templates/page-404.tmpl.html                                 31  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/pages/templates/page.tmpl.html                                     12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/page.tmpl.html                                     13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/search/quick-search-customer-item-view.js                          54  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/search/quick-search-host-view.js                                   16  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/components/search/templates/quick-search-customer-item-view.tmpl.html         42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/search/templates/quick-search-invoice-item-view.tmpl.html          71  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/search/templates/quick-search-overlay-view.tmpl.html              152  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/search/quick-search-invoice-item-view.js                           73  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/search/quick-search-overlay-view.js                                38  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/search/templates/quick-search-customer-item-view.tmpl.html         45  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/search/templates/quick-search-invoice-item-view.tmpl.html          73  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/search/templates/quick-search-overlay-view.tmpl.html              160  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/shell/app-container.js                                             28  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/shell/app-loading-view.js                                          17  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/shell/null-views/acme-query-params-null-view.js                    16  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/shell/null-views/acme-requester-null-view.js                       12  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/shell/null-views/local-storage-null-view.js                        10  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/shell/stage-container.js                                           21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/components/shell/templates/ui-sidenav-view.tmpl.html                          75  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/shell/templates/ui-sidenav-view.tmpl.html                         137  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/shell/ui-container.js                                              20  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/shell/ui-sidenav-view.js                                           54  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/traits/customers/customers-pagination-view-traits.js                          55  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/customers/customers-table-traits.js                                    87  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/dashboard/dashboard-activity-feed-traits.js                            62  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
@@ -115,7 +114,6 @@ app/traits/invoices/invoices-table-rows-traits.js                               
 app/traits/nav/acme-nav-traits.js                                                 94  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/nav/nav-breadcrumb-item-traits.js                                     271  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/nav/nav-breadcrumb-view-traits.js                                     118  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
-app/traits/pages/page-item-core-traits.js                                        339  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/search/quick-search-host-traits.js                                      4  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/search/quick-search-overlay-traits.js                                 390  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/shell/acme-auth-state-traits.js                                        60  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
@@ -132,8 +130,10 @@ app/traits/ui/form-login-traits.js                                              
 app/traits/ui/pagination-traits.js                                               424  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/ui/ui-search-traits.js                                                 28  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/util-traits.js                                                        177  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/utils/acme-invoice-utils.js                                                  881  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 app/utils/acme-pagination-controls.js                                            152  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
-app/utils/page-item-template-lookup.js                                            26  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+app/utils/acme-utils.js                                                          263  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+app/utils/page-item-template-lookup.js                                            25  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 app/utils/page-template-lookup.js                                                 49  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 app/utils/svg-icons.js                                                            49  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 dev-tools.js                                                                      37  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
@@ -203,9 +203,11 @@ scss/03-components/ui/menu-drawer.scss                                          
 scss/03-components/ui/menu-hamburger.scss                                        170  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/app.scss                                                                     26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/tailwind.scss                                                                29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+static/data/app.model.json                                                       816  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  203 modules  20910 tokens  VLLLLLLLLLCCCCCCCCCC  V   7% B   1% L  43% C  49%
-          consistency 0.03  mean mixing 0.02 (by module) 0.01 (by token)  median V   0% B   0% L   0% C 100%
-          families: V 40 ( 92%   0%   8%   0%)  B 8 (  0% 100%   0%   0%)  L 51 (  0%   0% 100%   0%)  C 104 (  0%   0%   0% 100%)
-          detected: spynejs  adapters: content, spynejs  skipped: 37  tests: 8
+codebase  204 modules  22298 tokens  VVLLLLLLLLCCCCCCCCCC  V   7% B   1% L  40% C  52%
+          mean mixing 0.00 (non-stylesheet modules, 139)  0.00 (all modules)  0.00 (by token)  0.09 (by operation: no seals, absorption, or host inheritance)  consistency 0.00  median V   0% B   0% L   0% C 100%
+          families: V 40 (100%   0%   0%   0%)  B 8 (  0% 100%   0%   0%)  L 51 (  0%   0% 100%   0%)  C 105 (  0%   0%   0% 100%)
+          shape: inside declared shape 85/91  on sanctioned surface 91/91
+          detected: spynejs  adapters: content, spynejs  skipped: 36  tests: 8
 

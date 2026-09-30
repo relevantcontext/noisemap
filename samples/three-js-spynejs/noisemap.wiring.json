@@ -1,0 +1,3264 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:35.575Z",
+  "root": "/private/tmp/noisemap-samples/three-js-spynejs/src",
+  "nodes": [
+    {
+      "id": "app/app-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/channels/channel-threejs.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "Channel"
+    },
+    {
+      "id": "app/components/callout-view-item.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/callout-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/cc-attr-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/creative-commons-dom-el.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "DomElement"
+    },
+    {
+      "id": "app/components/templates/callout-view-item.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/templates/creative-commonts.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/threejs-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/traits/app-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/callout-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/threejs-channel-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/threejs-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/utils/angle-utils.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    },
+    {
+      "id": "dev-tools.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    },
+    {
+      "id": "index.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": true
+    },
+    {
+      "id": "index.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/main.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/back-scooter.png",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/front-scooter.png",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/left-scooter.png",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/models/fanali,targa.png",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/models/vespa_50_final_00.fbx",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/right-scooter.png",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 62,
+        "end": 84
+      },
+      "label": "traits/app-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/app-traits.js"
+      }
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 24,
+        "end": 31
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 70,
+        "end": 104
+      },
+      "label": "traits/threejs-channel-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/threejs-channel-traits.js"
+      }
+    },
+    {
+      "id": "e5",
+      "kind": "import",
+      "from": {
+        "module": "app/components/callout-view-item.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e6",
+      "kind": "import",
+      "from": {
+        "module": "app/components/callout-view-item.js",
+        "start": 64,
+        "end": 105
+      },
+      "label": "./templates/callout-view-item.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/callout-view-item.tmpl.html"
+      }
+    },
+    {
+      "id": "e7",
+      "kind": "import",
+      "from": {
+        "module": "app/components/callout-view.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e8",
+      "kind": "import",
+      "from": {
+        "module": "app/components/callout-view.js",
+        "start": 66,
+        "end": 92
+      },
+      "label": "traits/callout-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/callout-traits.js"
+      }
+    },
+    {
+      "id": "e9",
+      "kind": "import",
+      "from": {
+        "module": "app/components/cc-attr-view.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e10",
+      "kind": "import",
+      "from": {
+        "module": "app/components/cc-attr-view.js",
+        "start": 68,
+        "end": 109
+      },
+      "label": "./templates/creative-commonts.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/creative-commonts.tmpl.html"
+      }
+    },
+    {
+      "id": "e11",
+      "kind": "import",
+      "from": {
+        "module": "app/components/creative-commons-dom-el.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e12",
+      "kind": "import",
+      "from": {
+        "module": "app/components/creative-commons-dom-el.js",
+        "start": 68,
+        "end": 109
+      },
+      "label": "./templates/creative-commonts.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/creative-commonts.tmpl.html"
+      }
+    },
+    {
+      "id": "e13",
+      "kind": "import",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e14",
+      "kind": "import",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 66,
+        "end": 92
+      },
+      "label": "traits/threejs-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/threejs-traits.js"
+      }
+    },
+    {
+      "id": "e15",
+      "kind": "import",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 121,
+        "end": 150
+      },
+      "label": "traits/utils/angle-utils.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/utils/angle-utils.js"
+      }
+    },
+    {
+      "id": "e16",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/app-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e17",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/app-traits.js",
+        "start": 73,
+        "end": 112
+      },
+      "label": "components/creative-commons-dom-el.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/creative-commons-dom-el.js"
+      }
+    },
+    {
+      "id": "e18",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/app-traits.js",
+        "start": 142,
+        "end": 170
+      },
+      "label": "components/callout-view.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/callout-view.js"
+      }
+    },
+    {
+      "id": "e19",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/app-traits.js",
+        "start": 200,
+        "end": 228
+      },
+      "label": "components/threejs-view.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/threejs-view.js"
+      }
+    },
+    {
+      "id": "e20",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/callout-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e21",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/callout-traits.js",
+        "start": 68,
+        "end": 101
+      },
+      "label": "components/callout-view-item.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/callout-view-item.js"
+      }
+    },
+    {
+      "id": "e22",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/threejs-channel-traits.js",
+        "start": 49,
+        "end": 56
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e23",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/threejs-channel-traits.js",
+        "start": 137,
+        "end": 143
+      },
+      "label": "rxjs",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e24",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/threejs-traits.js",
+        "start": 73,
+        "end": 80
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e25",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/threejs-traits.js",
+        "start": 142,
+        "end": 149
+      },
+      "label": "three",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e26",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/threejs-traits.js",
+        "start": 177,
+        "end": 218
+      },
+      "label": "three/examples/jsm/loaders/FBXLoader.js",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e27",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/threejs-traits.js",
+        "start": 250,
+        "end": 296
+      },
+      "label": "three/examples/jsm/controls/OrbitControls.js",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e28",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/utils/angle-utils.js",
+        "start": 31,
+        "end": 38
+      },
+      "label": "ramda",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e29",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/utils/angle-utils.js",
+        "start": 66,
+        "end": 73
+      },
+      "label": "three",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e30",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e31",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 69,
+        "end": 91
+      },
+      "label": "spyne-plugin-console",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e32",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 7,
+        "end": 25
+      },
+      "label": "./scss/main.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/main.scss"
+      }
+    },
+    {
+      "id": "e33",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 53,
+        "end": 60
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e34",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 93,
+        "end": 122
+      },
+      "label": "channels/channel-threejs.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js"
+      }
+    },
+    {
+      "id": "e35",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 148,
+        "end": 167
+      },
+      "label": "./app/app-view.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/app-view.js"
+      }
+    },
+    {
+      "id": "e36",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/callout-view-item.js",
+        "start": 434,
+        "end": 453
+      },
+      "label": "disposeViewStream",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e37",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/callout-view-item.js",
+        "start": 396,
+        "end": 432
+      },
+      "label": "CHANNEL_THREEJS_ANGLE_CHANGE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 399,
+        "end": 435
+      }
+    },
+    {
+      "id": "e38",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/callout-view-item.js",
+        "start": 315,
+        "end": 332
+      },
+      "label": "CHANNEL_THREEJS",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 114,
+        "end": 673
+      }
+    },
+    {
+      "id": "e39",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/callout-view-item.js"
+      },
+      "to": {
+        "module": "app/components/templates/callout-view-item.tmpl.html"
+      },
+      "label": "2 keys, data supplied by the constructor's caller",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e40",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/callout-view.js",
+        "start": 417,
+        "end": 445
+      },
+      "label": "callout$OnAngleChangeEvent",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/callout-traits.js"
+      }
+    },
+    {
+      "id": "e41",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/callout-view.js",
+        "start": 379,
+        "end": 415
+      },
+      "label": "CHANNEL_THREEJS_ANGLE_CHANGE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 399,
+        "end": 435
+      }
+    },
+    {
+      "id": "e42",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/callout-view.js",
+        "start": 291,
+        "end": 308
+      },
+      "label": "CHANNEL_THREEJS",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 114,
+        "end": 673
+      }
+    },
+    {
+      "id": "e43",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/cc-attr-view.js"
+      },
+      "to": {
+        "module": "app/components/templates/creative-commonts.tmpl.html"
+      },
+      "label": "0 keys, data supplied by the constructor's caller",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e44",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/creative-commons-dom-el.js"
+      },
+      "to": {
+        "module": "app/components/templates/creative-commonts.tmpl.html"
+      },
+      "label": "0 keys, data supplied by the constructor's caller",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e45",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 489,
+        "end": 515
+      },
+      "label": "threejs$OnStartAnimation",
+      "status": "ambiguous",
+      "verified": "static",
+      "candidates": [
+        "app/traits/threejs-traits.js"
+      ]
+    },
+    {
+      "id": "e46",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 448,
+        "end": 487
+      },
+      "label": "CHANNEL_THREEJS_START_ANIMATION_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 443,
+        "end": 482
+      }
+    },
+    {
+      "id": "e47",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 564,
+        "end": 588
+      },
+      "label": "threejs$OnEndAnimation",
+      "status": "ambiguous",
+      "verified": "static",
+      "candidates": [
+        "app/traits/threejs-traits.js"
+      ]
+    },
+    {
+      "id": "e48",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 525,
+        "end": 562
+      },
+      "label": "CHANNEL_THREEJS_END_ANIMATION_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 490,
+        "end": 527
+      }
+    },
+    {
+      "id": "e49",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 629,
+        "end": 653
+      },
+      "label": "threejs$onWindowResize",
+      "status": "ambiguous",
+      "verified": "static",
+      "candidates": [
+        "app/traits/threejs-traits.js"
+      ]
+    },
+    {
+      "id": "e50",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 598,
+        "end": 627
+      },
+      "label": "CHANNEL_WINDOW_RESIZE_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e51",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 309,
+        "end": 326
+      },
+      "label": "CHANNEL_THREEJS",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 114,
+        "end": 673
+      }
+    },
+    {
+      "id": "e52",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 328,
+        "end": 344
+      },
+      "label": "CHANNEL_WINDOW",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e53",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 710,
+        "end": 715
+      },
+      "label": "div",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/threejs-view.js"
+      }
+    },
+    {
+      "id": "e54",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 738,
+        "end": 743
+      },
+      "label": "div",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/threejs-view.js"
+      }
+    },
+    {
+      "id": "e55",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 764,
+        "end": 769
+      },
+      "label": "div",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/threejs-view.js"
+      }
+    },
+    {
+      "id": "e56",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/threejs-view.js",
+        "start": 793,
+        "end": 798
+      },
+      "label": "div",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/threejs-view.js"
+      }
+    },
+    {
+      "id": "e57",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 399,
+        "end": 435
+      },
+      "label": "CHANNEL_THREEJS_ANGLE_CHANGE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/threejs-traits.js",
+        "start": 6299,
+        "end": 6335
+      }
+    },
+    {
+      "id": "e58",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 443,
+        "end": 482
+      },
+      "label": "CHANNEL_THREEJS_START_ANIMATION_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/threejs-channel-traits.js",
+        "start": 590,
+        "end": 629
+      }
+    },
+    {
+      "id": "e59",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-threejs.js",
+        "start": 490,
+        "end": 527
+      },
+      "label": "CHANNEL_THREEJS_END_ANIMATION_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/threejs-channel-traits.js",
+        "start": 640,
+        "end": 677
+      }
+    }
+  ],
+  "sites": [
+    {
+      "module": "app/app-view.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 62,
+      "end": 84,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/app-traits.js"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 283,
+      "end": 306,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.app$AddThreejsView"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 24,
+      "end": 31,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 70,
+      "end": 104,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/threejs-channel-traits.js"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 312,
+      "end": 344,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejsChannel$AddUIChannel"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 399,
+      "end": 435,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS_ANGLE_CHANGE_EVENT"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 443,
+      "end": 482,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS_START_ANIMATION_EVENT"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 490,
+      "end": 527,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS_END_ANIMATION_EVENT"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 603,
+      "end": 618,
+      "kind": "call",
+      "class": "declared",
+      "label": "vsPayload.clone"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 626,
+      "end": 649,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendChannelPayload"
+    },
+    {
+      "module": "app/channels/channel-threejs.js",
+      "start": 650,
+      "end": 656,
+      "kind": "dispatch",
+      "class": "opaque",
+      "label": "action from a variable"
+    },
+    {
+      "module": "app/components/callout-view-item.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/callout-view-item.js",
+      "start": 64,
+      "end": 105,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/callout-view-item.tmpl.html"
+    },
+    {
+      "module": "app/components/callout-view-item.js",
+      "start": 315,
+      "end": 332,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS"
+    },
+    {
+      "module": "app/components/callout-view-item.js",
+      "start": 396,
+      "end": 432,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS_ANGLE_CHANGE_EVENT"
+    },
+    {
+      "module": "app/components/callout-view-item.js",
+      "start": 434,
+      "end": 453,
+      "kind": "listener",
+      "class": "declared",
+      "label": "disposeViewStream"
+    },
+    {
+      "module": "app/components/callout-view.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/callout-view.js",
+      "start": 66,
+      "end": 92,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/callout-traits.js"
+    },
+    {
+      "module": "app/components/callout-view.js",
+      "start": 291,
+      "end": 308,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS"
+    },
+    {
+      "module": "app/components/callout-view.js",
+      "start": 379,
+      "end": 415,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS_ANGLE_CHANGE_EVENT"
+    },
+    {
+      "module": "app/components/callout-view.js",
+      "start": 417,
+      "end": 445,
+      "kind": "listener",
+      "class": "declared",
+      "label": "callout$OnAngleChangeEvent"
+    },
+    {
+      "module": "app/components/cc-attr-view.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/cc-attr-view.js",
+      "start": 68,
+      "end": 109,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/creative-commonts.tmpl.html"
+    },
+    {
+      "module": "app/components/creative-commons-dom-el.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/creative-commons-dom-el.js",
+      "start": 68,
+      "end": 109,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/creative-commonts.tmpl.html"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 66,
+      "end": 92,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/threejs-traits.js"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 121,
+      "end": 150,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/utils/angle-utils.js"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 309,
+      "end": 326,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 328,
+      "end": 344,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_WINDOW"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 448,
+      "end": 487,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS_START_ANIMATION_EVENT"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 489,
+      "end": 515,
+      "kind": "listener",
+      "class": "declared",
+      "label": "threejs$OnStartAnimation"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 525,
+      "end": 562,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_THREEJS_END_ANIMATION_EVENT"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 564,
+      "end": 588,
+      "kind": "listener",
+      "class": "declared",
+      "label": "threejs$OnEndAnimation"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 598,
+      "end": 627,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_WINDOW_RESIZE_EVENT"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 629,
+      "end": 653,
+      "kind": "listener",
+      "class": "declared",
+      "label": "threejs$onWindowResize"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 710,
+      "end": 715,
+      "kind": "listener",
+      "class": "declared",
+      "label": "div"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 717,
+      "end": 728,
+      "kind": "listener",
+      "class": "declared",
+      "label": "mousedown"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 738,
+      "end": 743,
+      "kind": "listener",
+      "class": "declared",
+      "label": "div"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 745,
+      "end": 754,
+      "kind": "listener",
+      "class": "declared",
+      "label": "mouseup"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 764,
+      "end": 769,
+      "kind": "listener",
+      "class": "declared",
+      "label": "div"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 771,
+      "end": 783,
+      "kind": "listener",
+      "class": "declared",
+      "label": "touchstart"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 793,
+      "end": 798,
+      "kind": "listener",
+      "class": "declared",
+      "label": "div"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 800,
+      "end": 810,
+      "kind": "listener",
+      "class": "declared",
+      "label": "touchend"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 874,
+      "end": 884,
+      "kind": "call",
+      "class": "declared",
+      "label": "new AngleUtils"
+    },
+    {
+      "module": "app/components/threejs-view.js",
+      "start": 892,
+      "end": 911,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejs$OnLoad"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 73,
+      "end": 112,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/creative-commons-dom-el.js"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 142,
+      "end": 170,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/callout-view.js"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 200,
+      "end": 228,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/threejs-view.js"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 404,
+      "end": 429,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el.appendChild"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 430,
+      "end": 463,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).render"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 434,
+      "end": 454,
+      "kind": "call",
+      "class": "declared",
+      "label": "new CreativeCommonsDomEl"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 472,
+      "end": 487,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 492,
+      "end": 503,
+      "kind": "call",
+      "class": "declared",
+      "label": "new CalloutView"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 512,
+      "end": 527,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/app-traits.js",
+      "start": 532,
+      "end": 543,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ThreejsView"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 68,
+      "end": 101,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/callout-view-item.js"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 961,
+      "end": 982,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.callout$GetTitle"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 1042,
+      "end": 1067,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.callout$GetListItems"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 1176,
+      "end": 1183,
+      "kind": "call",
+      "class": "declared",
+      "label": "e.clone"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 1202,
+      "end": 1229,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.callout$GetCalloutData"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 1246,
+      "end": 1261,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/callout-traits.js",
+      "start": 1266,
+      "end": 1281,
+      "kind": "call",
+      "class": "declared",
+      "label": "new CalloutViewItem"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 49,
+      "end": 56,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 137,
+      "end": 143,
+      "kind": "import",
+      "class": "declared",
+      "label": "rxjs"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 377,
+      "end": 396,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).test"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 412,
+      "end": 450,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejsChannel$SendChannelPayload"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 684,
+      "end": 707,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendChannelPayload"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 708,
+      "end": 714,
+      "kind": "dispatch",
+      "class": "opaque",
+      "label": "action from a variable"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 967,
+      "end": 985,
+      "kind": "call",
+      "class": "declared",
+      "label": "arrActions.indexOf"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1029,
+      "end": 1049,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1108,
+      "end": 1123,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getChannel"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1161,
+      "end": 1174,
+      "kind": "call",
+      "class": "declared",
+      "label": "ui$.subscribe"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1175,
+      "end": 1212,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejsChannel$OnMouseEvent.bind"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1738,
+      "end": 1886,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).pipe"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1738,
+      "end": 1753,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getChannel"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1793,
+      "end": 1813,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1887,
+      "end": 1892,
+      "kind": "call",
+      "class": "declared",
+      "label": "share"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1925,
+      "end": 2073,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).pipe"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1925,
+      "end": 1930,
+      "kind": "call",
+      "class": "declared",
+      "label": "merge"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1940,
+      "end": 1951,
+      "kind": "call",
+      "class": "declared",
+      "label": "wheel$.pipe"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1952,
+      "end": 1955,
+      "kind": "call",
+      "class": "declared",
+      "label": "map"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 1978,
+      "end": 1989,
+      "kind": "call",
+      "class": "declared",
+      "label": "wheel$.pipe"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 2003,
+      "end": 2015,
+      "kind": "call",
+      "class": "declared",
+      "label": "debounceTime"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 2034,
+      "end": 2037,
+      "kind": "call",
+      "class": "declared",
+      "label": "map"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 2074,
+      "end": 2094,
+      "kind": "call",
+      "class": "declared",
+      "label": "distinctUntilChanged"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 2104,
+      "end": 2128,
+      "kind": "call",
+      "class": "declared",
+      "label": "wheelActivity$.subscribe"
+    },
+    {
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 2138,
+      "end": 2181,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejsChannel$SendChannelPayload.bind"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 73,
+      "end": 80,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 142,
+      "end": 149,
+      "kind": "import",
+      "class": "declared",
+      "label": "three"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 177,
+      "end": 218,
+      "kind": "import",
+      "class": "declared",
+      "label": "three/examples/jsm/loaders/FBXLoader.js"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 250,
+      "end": 296,
+      "kind": "import",
+      "class": "declared",
+      "label": "three/examples/jsm/controls/OrbitControls.js"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 556,
+      "end": 567,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.Clock"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 942,
+      "end": 965,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejs$Initialize"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 1556,
+      "end": 1581,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejs$GetStageSize"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 1626,
+      "end": 1649,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.PerspectiveCamera"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 1686,
+      "end": 1710,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.camera.position.set"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 1751,
+      "end": 1762,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.Clock"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 1805,
+      "end": 1816,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.Scene"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 1854,
+      "end": 1865,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.Color"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 1988,
+      "end": 2006,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.AmbientLight"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2029,
+      "end": 2043,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.scene.add"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2086,
+      "end": 2107,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.HemisphereLight"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2140,
+      "end": 2162,
+      "kind": "call",
+      "class": "declared",
+      "label": "hemiLight.position.set"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2181,
+      "end": 2195,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.scene.add"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2234,
+      "end": 2256,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.DirectionalLight"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2279,
+      "end": 2300,
+      "kind": "call",
+      "class": "declared",
+      "label": "dirLight.position.set"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2524,
+      "end": 2538,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.scene.add"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2601,
+      "end": 2611,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.Mesh"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2625,
+      "end": 2644,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.PlaneGeometry"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2670,
+      "end": 2693,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.MeshPhongMaterial"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2861,
+      "end": 2875,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.scene.add"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 2935,
+      "end": 2944,
+      "kind": "call",
+      "class": "declared",
+      "label": "new FBXLoader"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3236,
+      "end": 3247,
+      "kind": "call",
+      "class": "declared",
+      "label": "loader.load"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3304,
+      "end": 3324,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.AnimationMixer"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3445,
+      "end": 3464,
+      "kind": "call",
+      "class": "declared",
+      "label": "object.rotation.set"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3468,
+      "end": 3484,
+      "kind": "call",
+      "class": "declared",
+      "label": "degreesToRadians"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3504,
+      "end": 3519,
+      "kind": "call",
+      "class": "declared",
+      "label": "object.traverse"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3673,
+      "end": 3687,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.scene.add"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3752,
+      "end": 3771,
+      "kind": "call",
+      "class": "declared",
+      "label": "new THREE.WebGLRenderer"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3934,
+      "end": 3961,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.renderer.setPixelRatio"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 3962,
+      "end": 3970,
+      "kind": "call",
+      "class": "declared",
+      "label": "Math.min"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4007,
+      "end": 4028,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.renderer.setSize"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4158,
+      "end": 4184,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.container.appendChild"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4257,
+      "end": 4270,
+      "kind": "call",
+      "class": "declared",
+      "label": "new OrbitControls"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4317,
+      "end": 4341,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.controls.target.set"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4360,
+      "end": 4380,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.controls.update"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4568,
+      "end": 4589,
+      "kind": "call",
+      "class": "declared",
+      "label": "requestAnimationFrame"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4812,
+      "end": 4838,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejs$OnFrameUpdate"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4841,
+      "end": 4873,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.controls.getAzimuthalAngle"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4907,
+      "end": 4926,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.clock.getDelta"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4952,
+      "end": 4969,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.mixer.update"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 4985,
+      "end": 5006,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.renderer.render"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 5397,
+      "end": 5404,
+      "kind": "call",
+      "class": "declared",
+      "label": "animate"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 5589,
+      "end": 5593,
+      "kind": "call",
+      "class": "declared",
+      "label": "init"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 5601,
+      "end": 5610,
+      "kind": "call",
+      "class": "declared",
+      "label": "startLoop"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 5940,
+      "end": 5965,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.threejs$GetStageSize"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 6015,
+      "end": 6049,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.camera.updateProjectionMatrix"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 6058,
+      "end": 6079,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.renderer.setSize"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 6100,
+      "end": 6120,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.renderer.render"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 6207,
+      "end": 6239,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.angleUtils.checkAngle"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 6381,
+      "end": 6403,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendInfoToChannel"
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 6404,
+      "end": 6421,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "\"CHANNEL_THREEJS\""
+    },
+    {
+      "module": "app/traits/threejs-traits.js",
+      "start": 6522,
+      "end": 6551,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.startAnimationLoop"
+    },
+    {
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 31,
+      "end": 38,
+      "kind": "import",
+      "class": "declared",
+      "label": "ramda"
+    },
+    {
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 66,
+      "end": 73,
+      "kind": "import",
+      "class": "declared",
+      "label": "three"
+    },
+    {
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 490,
+      "end": 493,
+      "kind": "call",
+      "class": "declared",
+      "label": "lte"
+    },
+    {
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 518,
+      "end": 527,
+      "kind": "call",
+      "class": "declared",
+      "label": "findIndex"
+    },
+    {
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 594,
+      "end": 605,
+      "kind": "call",
+      "class": "declared",
+      "label": "console.log"
+    },
+    {
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 933,
+      "end": 951,
+      "kind": "call",
+      "class": "declared",
+      "label": "MathUtils.radToDeg"
+    },
+    {
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 1048,
+      "end": 1065,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getAngleName"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 69,
+      "end": 91,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne-plugin-console"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 121,
+      "end": 144,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerPlugin"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 152,
+      "end": 170,
+      "kind": "call",
+      "class": "declared",
+      "label": "new SpynePluginConsole"
+    },
+    {
+      "module": "index.js",
+      "start": 7,
+      "end": 25,
+      "kind": "import",
+      "class": "declared",
+      "label": "./scss/main.scss"
+    },
+    {
+      "module": "index.js",
+      "start": 53,
+      "end": 60,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "index.js",
+      "start": 93,
+      "end": 122,
+      "kind": "import",
+      "class": "declared",
+      "label": "channels/channel-threejs.js"
+    },
+    {
+      "module": "index.js",
+      "start": 148,
+      "end": 167,
+      "kind": "import",
+      "class": "declared",
+      "label": "./app/app-view.js"
+    },
+    {
+      "module": "index.js",
+      "start": 373,
+      "end": 386,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.init"
+    },
+    {
+      "module": "index.js",
+      "start": 396,
+      "end": 421,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).appendToDom"
+    },
+    {
+      "module": "index.js",
+      "start": 400,
+      "end": 407,
+      "kind": "call",
+      "class": "declared",
+      "label": "new AppView"
+    },
+    {
+      "module": "index.js",
+      "start": 439,
+      "end": 463,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 468,
+      "end": 482,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelThreejs"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "unresolved",
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 137,
+      "end": 143,
+      "edge": "e23",
+      "message": "import 'rxjs' does not resolve to a file or a package"
+    },
+    {
+      "kind": "unresolved",
+      "module": "app/traits/utils/angle-utils.js",
+      "start": 31,
+      "end": 38,
+      "edge": "e28",
+      "message": "import 'ramda' does not resolve to a file or a package"
+    },
+    {
+      "kind": "ambiguous",
+      "module": "app/components/threejs-view.js",
+      "start": 489,
+      "end": 515,
+      "edge": "e45",
+      "message": "ThreejsView names method 'threejs$OnStartAnimation' defined in a trait it does not bind",
+      "candidates": [
+        "app/traits/threejs-traits.js"
+      ]
+    },
+    {
+      "kind": "ambiguous",
+      "module": "app/components/threejs-view.js",
+      "start": 564,
+      "end": 588,
+      "edge": "e47",
+      "message": "ThreejsView names method 'threejs$OnEndAnimation' defined in a trait it does not bind",
+      "candidates": [
+        "app/traits/threejs-traits.js"
+      ]
+    },
+    {
+      "kind": "ambiguous",
+      "module": "app/components/threejs-view.js",
+      "start": 629,
+      "end": 653,
+      "edge": "e49",
+      "message": "ThreejsView names method 'threejs$onWindowResize' defined in a trait it does not bind",
+      "candidates": [
+        "app/traits/threejs-traits.js"
+      ]
+    },
+    {
+      "kind": "opaque",
+      "module": "app/channels/channel-threejs.js",
+      "start": 650,
+      "end": 656,
+      "message": "dispatch cannot be followed statically: action from a variable"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/traits/threejs-channel-traits.js",
+      "start": 708,
+      "end": 714,
+      "message": "dispatch cannot be followed statically: action from a variable"
+    }
+  ],
+  "vocabulary": [
+    {
+      "name": "CHANNEL_THREEJS",
+      "kind": "channel",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-threejs.js",
+          "start": 114,
+          "end": 673,
+          "role": "names"
+        },
+        {
+          "module": "app/traits/threejs-traits.js",
+          "start": 6404,
+          "end": 6421,
+          "role": "emits"
+        },
+        {
+          "module": "app/components/callout-view-item.js",
+          "start": 315,
+          "end": 332,
+          "role": "binds"
+        },
+        {
+          "module": "app/components/callout-view.js",
+          "start": 291,
+          "end": 308,
+          "role": "binds"
+        },
+        {
+          "module": "app/components/threejs-view.js",
+          "start": 309,
+          "end": 326,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_THREEJS_ANGLE_CHANGE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-threejs.js",
+          "start": 399,
+          "end": 435,
+          "role": "registers"
+        },
+        {
+          "module": "app/traits/threejs-traits.js",
+          "start": 6299,
+          "end": 6335,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/callout-view-item.js",
+          "start": 396,
+          "end": 432,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/callout-view.js",
+          "start": 379,
+          "end": 415,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_THREEJS_END_ANIMATION_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-threejs.js",
+          "start": 490,
+          "end": 527,
+          "role": "registers"
+        },
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 640,
+          "end": 677,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/threejs-view.js",
+          "start": 525,
+          "end": 562,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_THREEJS_START_ANIMATION_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-threejs.js",
+          "start": 443,
+          "end": 482,
+          "role": "registers"
+        },
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 590,
+          "end": 629,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/threejs-view.js",
+          "start": 448,
+          "end": 487,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 1124,
+          "end": 1136,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI_MOUSEDOWN_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 798,
+          "end": 826,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI_MOUSEUP_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 834,
+          "end": 860,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI_TOUCHEND_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 905,
+          "end": 932,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI_TOUCHSTART_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 868,
+          "end": 897,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_WINDOW",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 1763,
+          "end": 1779,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/threejs-view.js",
+          "start": 328,
+          "end": 344,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_WINDOW_RESIZE_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/components/threejs-view.js",
+          "start": 598,
+          "end": 627,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_WINDOW_WHEEL_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/traits/threejs-channel-traits.js",
+          "start": 1834,
+          "end": 1862,
+          "role": "mentions"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "app/app-view.js": {
+      "edges": {
+        "out": 2,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 3,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 62,
+        "counterparts": [
+          "app/traits/app-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/channels/channel-threejs.js": {
+      "edges": {
+        "out": 5,
+        "in": 8,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 8,
+        "opaque": 1
+      },
+      "discernibility": 0.8888888888888888,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 7,
+        "tokens": 608,
+        "counterparts": [
+          "app/components/callout-view-item.js",
+          "app/components/callout-view.js",
+          "app/components/threejs-view.js",
+          "app/traits/threejs-channel-traits.js",
+          "app/traits/threejs-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/components/callout-view-item.js": {
+      "edges": {
+        "out": 6,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 132,
+        "counterparts": [
+          "app/channels/channel-threejs.js",
+          "app/components/templates/callout-view-item.tmpl.html",
+          "app/traits/callout-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.6666666666666667
+    },
+    "app/components/callout-view.js": {
+      "edges": {
+        "out": 5,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 130,
+        "counterparts": [
+          "app/channels/channel-threejs.js",
+          "app/traits/app-traits.js",
+          "app/traits/callout-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/components/cc-attr-view.js": {
+      "edges": {
+        "out": 3,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 2,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 34,
+        "counterparts": [
+          "app/components/templates/creative-commonts.tmpl.html"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/creative-commons-dom-el.js": {
+      "edges": {
+        "out": 3,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 2,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 50,
+        "counterparts": [
+          "app/components/templates/creative-commonts.tmpl.html",
+          "app/traits/app-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.5
+    },
+    "app/components/templates/callout-view-item.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 35,
+        "counterparts": [
+          "app/components/callout-view-item.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/templates/creative-commonts.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 40,
+        "counterparts": [
+          "app/components/cc-attr-view.js",
+          "app/components/creative-commons-dom-el.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/threejs-view.js": {
+      "edges": {
+        "out": 15,
+        "in": 5,
+        "unresolved": 0,
+        "ambiguous": 3
+      },
+      "sites": {
+        "declared": 21,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 0.75,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 550,
+        "counterparts": [
+          "app/channels/channel-threejs.js",
+          "app/traits/app-traits.js",
+          "app/traits/threejs-traits.js",
+          "app/traits/utils/angle-utils.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.25
+    },
+    "app/traits/app-traits.js": {
+      "edges": {
+        "out": 4,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 11,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 86,
+        "counterparts": [
+          "app/app-view.js",
+          "app/components/callout-view.js",
+          "app/components/creative-commons-dom-el.js",
+          "app/components/threejs-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.75
+    },
+    "app/traits/callout-traits.js": {
+      "edges": {
+        "out": 2,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 8,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 109,
+        "counterparts": [
+          "app/components/callout-view-item.js",
+          "app/components/callout-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/traits/threejs-channel-traits.js": {
+      "edges": {
+        "out": 2,
+        "in": 3,
+        "unresolved": 1,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 24,
+        "opaque": 1
+      },
+      "discernibility": 0.96,
+      "resolution": 0,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 101,
+        "counterparts": [
+          "app/channels/channel-threejs.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/traits/threejs-traits.js": {
+      "edges": {
+        "out": 4,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 56,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 462,
+        "counterparts": [
+          "app/channels/channel-threejs.js",
+          "app/components/threejs-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/traits/utils/angle-utils.js": {
+      "edges": {
+        "out": 2,
+        "in": 1,
+        "unresolved": 1,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 7,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 0,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 106,
+        "counterparts": [
+          "app/components/threejs-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 3
+    },
+    "dev-tools.js": {
+      "edges": {
+        "out": 2,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 4,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 9,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "index.js": {
+      "edges": {
+        "out": 4,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 9,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 259,
+        "counterparts": [
+          "app/app-view.js",
+          "app/channels/channel-threejs.js",
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.3333333333333333
+    },
+    "index.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 45,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "scss/main.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 228,
+        "counterparts": [
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "static/imgs/back-scooter.png": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "static/imgs/front-scooter.png": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "static/imgs/left-scooter.png": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "static/imgs/models/fanali,targa.png": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "static/imgs/models/vespa_50_final_00.fbx": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "static/imgs/right-scooter.png": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 15,
+        "unresolved": 2,
+        "ambiguous": 0,
+        "external": 18,
+        "unknown": 0
+      },
+      "listener-method": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 3,
+        "external": 1,
+        "unknown": 0
+      },
+      "listener-action": {
+        "resolved": 4,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 1,
+        "unknown": 0
+      },
+      "channel-binding": {
+        "resolved": 3,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 1,
+        "unknown": 0
+      },
+      "template-key": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 3
+      },
+      "broadcast-selector": {
+        "resolved": 4,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "action-registration": {
+        "resolved": 3,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 165,
+      "opaque": 2
+    },
+    "discernibility": 0.9880239520958084,
+    "resolution": 0.8571428571428571,
+    "vocabularyShare": 1,
+    "workingSet": {
+      "medianModules": 2,
+      "medianTokens": 103.5,
+      "tokenWeightedMedianTokens": 228,
+      "unmeasuredCounterparts": 0
+    },
+    "locality": 1.65625,
+    "entries": [
+      "index.js"
+    ],
+    "roots": [
+      "app"
+    ]
+  }
+}

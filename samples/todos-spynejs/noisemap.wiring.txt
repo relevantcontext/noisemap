@@ -1,0 +1,26 @@
+wiring  14 modules  43 connections  87 sites
+        discernibility 100% (declared 87 / opaque 0)   resolution 100%
+        vocabulary share 100%   working set: median 2 modules, 182 counted tokens (237 by token), 1 counterparts uncounted   locality 1.2
+        entries: index.js
+        roots: app
+
+vocabulary: 7 names the app declares (2 more from the framework)
+  name                                               registers  emits  listens  binds
+  CHANNEL_FETCH_TODO                                         0      3        0      2
+  CHANNEL_FETCH_TODO_ERROR_EVENT                             0      0        2      0
+  CHANNEL_FETCH_TODO_LIST                                    0      0        0      1
+  CHANNEL_FETCH_TODO_LIST_ERROR_EVENT                        0      0        1      0
+  CHANNEL_FETCH_TODO_LIST_RESPONSE_EVENT                     0      0        1      0
+  CHANNEL_FETCH_TODO_REQUEST_EVENT                           0      0        0      0
+  CHANNEL_FETCH_TODO_RESPONSE_EVENT                          0      0        2      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                     11           0          0         7        0
+listener-method             8           0          0         0        0
+listener-action             0           0          0         8        0
+channel-binding             3           0          0         2        0
+broadcast-selector          2           0          0         0        0
+template-key                0           0          0         0        2
+
+findings: 0 unresolved/ambiguous, 0 opaque
+

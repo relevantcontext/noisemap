@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.1"
+    "version": "0.2.0"
   },
-  "generatedAt": "2026-09-26T10:39:06.857Z",
+  "generatedAt": "2026-09-29T23:23:32.962Z",
   "root": "/private/tmp/noisemap-samples/todos-react/src",
   "frameworks": {
     "detected": [
@@ -19,67 +19,84 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.12915553765117002,
+    "consistency": 0.2277275777707955,
     "median": {
-      "V": 0.43787878787878787,
-      "B": 0.015151515151515152,
-      "L": 0.3234385724090597,
-      "C": 0.015957446808510637
+      "V": 0.08544955387783115,
+      "B": 0.05770470664087685,
+      "L": 0.3128002745367193,
+      "C": 0.28357771260997067
     },
     "families": {
       "V": {
-        "modules": 6,
+        "modules": 2,
         "median": {
-          "V": 0.5288523533204383,
-          "B": 0.05770470664087685,
-          "L": 0.30179171332586785,
-          "C": 0.03413926499032882
+          "V": 0.7969924812030075,
+          "B": 0,
+          "L": 0.20300751879699247,
+          "C": 0
         }
       },
       "B": {
-        "modules": 1,
+        "modules": 2,
         "median": {
-          "V": 0.3225806451612903,
-          "B": 0.3709677419354839,
-          "L": 0.3064516129032258,
-          "C": 0
+          "V": 0.03225806451612903,
+          "B": 0.5188172043010753,
+          "L": 0.31989247311827956,
+          "C": 0.12903225806451613
         }
       },
       "L": {
         "modules": 2,
         "median": {
-          "V": 0,
-          "B": 0,
-          "L": 1,
-          "C": 0
+          "V": 0.06818181818181818,
+          "B": 0.08181818181818182,
+          "L": 0.6954545454545454,
+          "C": 0.15454545454545454
         }
       },
       "C": {
-        "modules": 1,
+        "modules": 4,
         "median": {
-          "V": 0,
-          "B": 0,
-          "L": 0,
-          "C": 1
+          "V": 0.06329249946271223,
+          "B": 0.05770470664087685,
+          "L": 0.19290780141843972,
+          "C": 0.597979797979798
         }
       }
     },
     "totals": {
-      "V": 207,
-      "B": 57,
-      "L": 266,
-      "C": 65,
+      "V": 62,
+      "B": 71,
+      "L": 250,
+      "C": 212,
       "excluded": 1275,
       "counted": 595
     },
     "shares": {
-      "V": 0.34789915966386553,
-      "B": 0.0957983193277311,
-      "L": 0.4470588235294118,
-      "C": 0.1092436974789916
+      "V": 0.10420168067226891,
+      "B": 0.11932773109243698,
+      "L": 0.42016806722689076,
+      "C": 0.3563025210084034
     },
-    "meanMixing": 0.31015850132600487,
-    "meanMixingTokenWeighted": 0.3663865546218487
+    "meanMixing": 0.32921502399954883,
+    "meanMixingTokenWeighted": 0.3697478991596639,
+    "codeModules": {
+      "count": 9,
+      "meanMixing": 0.3657944711106098
+    },
+    "byOperation": {
+      "count": 9,
+      "meanMixing": 0.3657944711106098
+    },
+    "shape": {
+      "declared": 7,
+      "insideShape": 0,
+      "withSurface": 0,
+      "onSurface": 0,
+      "undeclared": 3,
+      "internalSurfaces": 6,
+      "internalModules": 7
+    }
   },
   "modules": [
     {
@@ -167,7 +184,7 @@
           "start": 272,
           "end": 384,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 9,
           "punctuation": 18
         },
@@ -180,7 +197,23 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.1428571428571429
+      "mixing": 0.1428571428571429,
+      "logicInRendering": 0,
+      "role": "view",
+      "drift": 0.14285714285714285,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "markup only"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.1428571428571429
     },
     {
       "path": "todo/app.css",
@@ -224,7 +257,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "todo/app.jsx",
@@ -301,11 +335,27 @@
         },
         {
           "start": 322,
-          "end": 492,
+          "end": 328,
           "bucket": "V",
           "rule": "jsx",
-          "tokens": 14,
-          "punctuation": 24
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 329,
+          "end": 355,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 355,
+          "end": 492,
+          "bucket": "V",
+          "rule": "compose-component",
+          "tokens": 13,
+          "punctuation": 20
         },
         {
           "start": 492,
@@ -316,23 +366,39 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.26315789473684215
+      "mixing": 0.26315789473684215,
+      "logicInRendering": 0,
+      "role": "view",
+      "drift": 0.2631578947368421,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "useReducer"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.26315789473684215
     },
     {
       "path": "todo/components/footer.jsx",
       "framework": "react",
       "tokens": {
-        "V": 51,
+        "V": 2,
         "B": 3,
         "L": 35,
-        "C": 10,
+        "C": 59,
         "excluded": 203
       },
       "shares": {
-        "V": 0.5151515151515151,
+        "V": 0.020202020202020204,
         "B": 0.030303030303030304,
         "L": 0.35353535353535354,
-        "C": 0.10101010101010101
+        "C": 0.5959595959595959
       },
       "spans": [
         {
@@ -521,11 +587,51 @@
         },
         {
           "start": 542,
-          "end": 676,
-          "bucket": "V",
+          "end": 576,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 13,
-          "punctuation": 12
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 576,
+          "end": 577,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 578,
+          "end": 584,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 586,
+          "end": 663,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 8,
+          "punctuation": 8
+        },
+        {
+          "start": 663,
+          "end": 664,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 665,
+          "end": 675,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 676,
@@ -585,11 +691,35 @@
         },
         {
           "start": 757,
-          "end": 885,
-          "bucket": "V",
+          "end": 788,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 9,
-          "punctuation": 8
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 788,
+          "end": 789,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 790,
+          "end": 797,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 799,
+          "end": 885,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 5,
+          "punctuation": 5
         },
         {
           "start": 885,
@@ -618,7 +748,7 @@
         {
           "start": 928,
           "end": 937,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 2,
           "punctuation": 1
@@ -650,7 +780,7 @@
         {
           "start": 943,
           "end": 1021,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 5,
           "punctuation": 7
@@ -682,7 +812,7 @@
         {
           "start": 1070,
           "end": 1085,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 2,
           "punctuation": 1
@@ -714,7 +844,7 @@
         {
           "start": 1094,
           "end": 1172,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 5,
           "punctuation": 7
@@ -746,7 +876,7 @@
         {
           "start": 1224,
           "end": 1242,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 2,
           "punctuation": 1
@@ -777,11 +907,35 @@
         },
         {
           "start": 1254,
-          "end": 1405,
-          "bucket": "V",
+          "end": 1342,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 9,
-          "punctuation": 12
+          "tokens": 5,
+          "punctuation": 8
+        },
+        {
+          "start": 1342,
+          "end": 1343,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1344,
+          "end": 1359,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1377,
+          "end": 1405,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 3,
+          "punctuation": 3
         },
         {
           "start": 1405,
@@ -826,7 +980,7 @@
         {
           "start": 1509,
           "end": 1533,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 2,
           "punctuation": 3
@@ -840,23 +994,41 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.48484848484848486
+      "mixing": 0.4040404040404041,
+      "logicInRendering": 15,
+      "role": "view",
+      "drift": 0.3838383838383838,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "useCallback",
+          "useLocation",
+          "useMemo"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.4040404040404041
     },
     {
       "path": "todo/components/header.jsx",
       "framework": "react",
       "tokens": {
-        "V": 14,
+        "V": 5,
         "B": 5,
         "L": 2,
-        "C": 9,
+        "C": 18,
         "excluded": 77
       },
       "shares": {
-        "V": 0.4666666666666667,
+        "V": 0.16666666666666666,
         "B": 0.16666666666666666,
         "L": 0.06666666666666667,
-        "C": 0.3
+        "C": 0.6
       },
       "spans": [
         {
@@ -965,11 +1137,35 @@
         },
         {
           "start": 263,
-          "end": 344,
-          "bucket": "V",
+          "end": 297,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 7,
-          "punctuation": 6
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 297,
+          "end": 298,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 299,
+          "end": 305,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 307,
+          "end": 344,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 3,
+          "punctuation": 3
         },
         {
           "start": 344,
@@ -997,11 +1193,27 @@
         },
         {
           "start": 352,
+          "end": 354,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 354,
+          "end": 369,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 369,
           "end": 374,
           "bucket": "V",
-          "rule": "jsx",
-          "tokens": 2,
-          "punctuation": 2
+          "rule": "compose-component",
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 375,
@@ -1023,7 +1235,7 @@
           "start": 394,
           "end": 399,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 1,
           "punctuation": 0
         },
@@ -1047,7 +1259,7 @@
           "start": 417,
           "end": 428,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 1,
           "punctuation": 0
         },
@@ -1078,7 +1290,7 @@
         {
           "start": 467,
           "end": 473,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 1,
           "punctuation": 0
@@ -1092,23 +1304,39 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.5333333333333333
+      "mixing": 0.4,
+      "logicInRendering": 0,
+      "role": "view",
+      "drift": 0.23333333333333334,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "useCallback"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.4
     },
     {
       "path": "todo/components/input.jsx",
       "framework": "react",
       "tokens": {
-        "V": 20,
+        "V": 4,
         "B": 23,
         "L": 19,
-        "C": 0,
+        "C": 16,
         "excluded": 135
       },
       "shares": {
-        "V": 0.3225806451612903,
+        "V": 0.06451612903225806,
         "B": 0.3709677419354839,
         "L": 0.3064516129032258,
-        "C": 0
+        "C": 0.25806451612903225
       },
       "spans": [
         {
@@ -1410,7 +1638,7 @@
         {
           "start": 931,
           "end": 976,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 3,
           "punctuation": 2
@@ -1442,7 +1670,7 @@
         {
           "start": 988,
           "end": 1199,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 13,
           "punctuation": 12
@@ -1472,23 +1700,40 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.6290322580645161
+      "mixing": 0.6290322580645161,
+      "logicInRendering": 1,
+      "role": "view",
+      "drift": 0.6774193548387096,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "2 handlers",
+          "useCallback"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.6290322580645161
     },
     {
       "path": "todo/components/item.jsx",
       "framework": "react",
       "tokens": {
-        "V": 45,
+        "V": 15,
         "B": 18,
         "L": 43,
-        "C": 4,
+        "C": 34,
         "excluded": 259
       },
       "shares": {
-        "V": 0.4090909090909091,
+        "V": 0.13636363636363635,
         "B": 0.16363636363636364,
         "L": 0.39090909090909093,
-        "C": 0.03636363636363636
+        "C": 0.3090909090909091
       },
       "spans": [
         {
@@ -1982,7 +2227,7 @@
         {
           "start": 1207,
           "end": 1237,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 3,
           "punctuation": 2
@@ -2013,11 +2258,67 @@
         },
         {
           "start": 1287,
-          "end": 1534,
-          "bucket": "V",
+          "end": 1338,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 14,
-          "punctuation": 11
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 1338,
+          "end": 1339,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1340,
+          "end": 1344,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1345,
+          "end": 1364,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1364,
+          "end": 1399,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1399,
+          "end": 1400,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1401,
+          "end": 1407,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1429,
+          "end": 1534,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 6,
+          "punctuation": 4
         },
         {
           "start": 1534,
@@ -2046,7 +2347,7 @@
         {
           "start": 1614,
           "end": 1649,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 3,
           "punctuation": 1
@@ -2069,11 +2370,35 @@
         },
         {
           "start": 1706,
-          "end": 1883,
-          "bucket": "V",
+          "end": 1791,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 8,
-          "punctuation": 7
+          "tokens": 4,
+          "punctuation": 5
+        },
+        {
+          "start": 1791,
+          "end": 1792,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1793,
+          "end": 1800,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1822,
+          "end": 1883,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 3,
+          "punctuation": 1
         },
         {
           "start": 1883,
@@ -2110,7 +2435,7 @@
         {
           "start": 1972,
           "end": 1975,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 1,
           "punctuation": 0
@@ -2143,7 +2468,7 @@
           "start": 2023,
           "end": 2056,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 2,
           "punctuation": 0
         },
@@ -2167,7 +2492,7 @@
           "start": 2159,
           "end": 2164,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 1,
           "punctuation": 0
         },
@@ -2189,11 +2514,27 @@
         },
         {
           "start": 2197,
-          "end": 2264,
+          "end": 2216,
           "bucket": "V",
+          "rule": "compose-component",
+          "tokens": 2,
+          "punctuation": 2
+        },
+        {
+          "start": 2216,
+          "end": 2262,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 7,
+          "punctuation": 0
+        },
+        {
+          "start": 2262,
+          "end": 2264,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 3,
-          "punctuation": 9
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 2264,
@@ -2204,23 +2545,41 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.5909090909090908
+      "mixing": 0.6090909090909091,
+      "logicInRendering": 5,
+      "role": "view",
+      "drift": 0.5545454545454546,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "1 handler",
+          "useCallback",
+          "useState"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.6090909090909091
     },
     {
       "path": "todo/components/main.jsx",
       "framework": "react",
       "tokens": {
-        "V": 51,
+        "V": 10,
         "B": 8,
-        "L": 32,
-        "C": 3,
+        "L": 30,
+        "C": 46,
         "excluded": 189
       },
       "shares": {
-        "V": 0.5425531914893617,
+        "V": 0.10638297872340426,
         "B": 0.0851063829787234,
-        "L": 0.3404255319148936,
-        "C": 0.031914893617021274
+        "L": 0.3191489361702128,
+        "C": 0.48936170212765956
       },
       "spans": [
         {
@@ -2457,11 +2816,91 @@
         },
         {
           "start": 731,
-          "end": 1080,
-          "bucket": "V",
+          "end": 763,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 23,
-          "punctuation": 18
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 763,
+          "end": 764,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 765,
+          "end": 769,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 771,
+          "end": 845,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 8,
+          "punctuation": 8
+        },
+        {
+          "start": 845,
+          "end": 846,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 847,
+          "end": 867,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 868,
+          "end": 887,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 887,
+          "end": 922,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 922,
+          "end": 923,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 924,
+          "end": 934,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 956,
+          "end": 1080,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 7,
+          "punctuation": 3
         },
         {
           "start": 1080,
@@ -2490,7 +2929,7 @@
         {
           "start": 1109,
           "end": 1127,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 2,
           "punctuation": 1
@@ -2522,7 +2961,7 @@
         {
           "start": 1138,
           "end": 1152,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 2,
           "punctuation": 1
@@ -2553,11 +2992,35 @@
         },
         {
           "start": 1232,
-          "end": 1287,
-          "bucket": "V",
+          "end": 1247,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 5,
-          "punctuation": 2
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1247,
+          "end": 1248,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1249,
+          "end": 1265,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1267,
+          "end": 1287,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 2,
+          "punctuation": 1
         },
         {
           "start": 1287,
@@ -2585,11 +3048,35 @@
         },
         {
           "start": 1344,
-          "end": 1431,
-          "bucket": "V",
+          "end": 1395,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 7,
-          "punctuation": 7
+          "tokens": 4,
+          "punctuation": 5
+        },
+        {
+          "start": 1395,
+          "end": 1396,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1397,
+          "end": 1406,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1408,
+          "end": 1431,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 2,
+          "punctuation": 1
         },
         {
           "start": 1431,
@@ -2602,8 +3089,8 @@
         {
           "start": 1450,
           "end": 1466,
-          "bucket": "L",
-          "rule": "jsx-expression-call",
+          "bucket": "C",
+          "rule": "jsx-iteration",
           "tokens": 2,
           "punctuation": 1
         },
@@ -2633,11 +3120,27 @@
         },
         {
           "start": 1500,
-          "end": 1606,
+          "end": 1549,
           "bucket": "V",
+          "rule": "compose-component",
+          "tokens": 8,
+          "punctuation": 9
+        },
+        {
+          "start": 1549,
+          "end": 1588,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 8,
+          "punctuation": 0
+        },
+        {
+          "start": 1588,
+          "end": 1606,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 10,
-          "punctuation": 20
+          "tokens": 2,
+          "punctuation": 3
         },
         {
           "start": 1606,
@@ -2648,22 +3151,40 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.45744680851063835
+      "mixing": 0.5106382978723405,
+      "logicInRendering": 3,
+      "role": "view",
+      "drift": 0.40425531914893614,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "useCallback",
+          "useLocation",
+          "useMemo"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.5106382978723405
     },
     {
       "path": "todo/constants.js",
       "framework": "react",
       "tokens": {
         "V": 0,
-        "B": 0,
-        "L": 21,
+        "B": 14,
+        "L": 7,
         "C": 0,
         "excluded": 21
       },
       "shares": {
         "V": 0,
-        "B": 0,
-        "L": 1,
+        "B": 0.6666666666666666,
+        "L": 0.3333333333333333,
         "C": 0
       },
       "spans": [
@@ -2677,10 +3198,18 @@
         },
         {
           "start": 7,
-          "end": 34,
+          "end": 12,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 13,
+          "end": 34,
+          "bucket": "B",
+          "rule": "action-label",
+          "tokens": 2,
           "punctuation": 1
         },
         {
@@ -2701,10 +3230,18 @@
         },
         {
           "start": 43,
-          "end": 76,
+          "end": 48,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 49,
+          "end": 76,
+          "bucket": "B",
+          "rule": "action-label",
+          "tokens": 2,
           "punctuation": 1
         },
         {
@@ -2725,10 +3262,18 @@
         },
         {
           "start": 85,
-          "end": 118,
+          "end": 90,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 91,
+          "end": 118,
+          "bucket": "B",
+          "rule": "action-label",
+          "tokens": 2,
           "punctuation": 1
         },
         {
@@ -2749,10 +3294,18 @@
         },
         {
           "start": 127,
-          "end": 160,
+          "end": 132,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 133,
+          "end": 160,
+          "bucket": "B",
+          "rule": "action-label",
+          "tokens": 2,
           "punctuation": 1
         },
         {
@@ -2773,10 +3326,18 @@
         },
         {
           "start": 169,
-          "end": 212,
+          "end": 174,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 175,
+          "end": 212,
+          "bucket": "B",
+          "rule": "action-label",
+          "tokens": 2,
           "punctuation": 1
         },
         {
@@ -2797,10 +3358,18 @@
         },
         {
           "start": 221,
-          "end": 252,
+          "end": 226,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 227,
+          "end": 252,
+          "bucket": "B",
+          "rule": "action-label",
+          "tokens": 2,
           "punctuation": 1
         },
         {
@@ -2821,10 +3390,18 @@
         },
         {
           "start": 261,
-          "end": 316,
+          "end": 266,
           "bucket": "L",
           "rule": "default",
-          "tokens": 3,
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 267,
+          "end": 316,
+          "bucket": "B",
+          "rule": "action-label",
+          "tokens": 2,
           "punctuation": 1
         },
         {
@@ -2836,7 +3413,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0.33333333333333337,
+      "logicInRendering": 0,
+      "mixingByOperation": 0.33333333333333337
     },
     {
       "path": "todo/reducer.js",
@@ -3432,7 +4011,50 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
+    }
+  ],
+  "directories": [
+    {
+      "path": ".",
+      "modules": 10,
+      "tokens": 595,
+      "shares": {
+        "V": 0.10420168067226891,
+        "B": 0.11932773109243698,
+        "L": 0.42016806722689076,
+        "C": 0.3563025210084034
+      },
+      "meanMixing": 0.32921502399954883,
+      "consistency": 0.2277275777707955
+    },
+    {
+      "path": "todo",
+      "modules": 9,
+      "tokens": 581,
+      "shares": {
+        "V": 0.08605851979345955,
+        "B": 0.12220309810671257,
+        "L": 0.4268502581755594,
+        "C": 0.3648881239242685
+      },
+      "meanMixing": 0.3499214552375939,
+      "consistency": 0.26339310285450046
+    },
+    {
+      "path": "todo/components",
+      "modules": 5,
+      "tokens": 395,
+      "shares": {
+        "V": 0.09113924050632911,
+        "B": 0.14430379746835442,
+        "L": 0.3265822784810127,
+        "C": 0.4379746835443038
+      },
+      "meanMixing": 0.510560373813634,
+      "consistency": 0.16216081823324022
     }
   ],
   "empty": [],

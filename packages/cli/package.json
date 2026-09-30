@@ -1,7 +1,7 @@
 {
   "name": "code-noisemap",
-  "version": "0.1.1",
-  "description": "Codebase noise analyzer: classifies every token as View, Behavior, Logic, or Content, and reports mixing, consistency, and drift per module, as a terminal table, a JSON file, and a single-file HTML map.",
+  "version": "0.2.0",
+  "description": "Codebase noise analyzer: Shape (every token as View, Behavior, Logic, or Content per module: mixing, consistency, drift) and Wiring (every declared connection followed to its definition: vocabulary, working set, locality, findings). Terminal, JSON, and a single-file HTML map.",
   "license": "MIT",
   "author": "Frank Batista",
   "repository": {
@@ -48,6 +48,7 @@
     "@noisemap/configs": "workspace:*",
     "@noisemap/core": "workspace:*",
     "@noisemap/render": "workspace:*",
+    "@noisemap/wiring": "workspace:*",
     "tsup": "^8.5.0"
   }
 }

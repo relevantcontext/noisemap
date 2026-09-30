@@ -1,3 +1,4 @@
+import type { DirectoryRollup } from './directories.js';
 import type { Family } from './scores.js';
 import type { Bucket, ModuleResult, Shares, TokenCounts } from './types.js';
 
@@ -9,8 +10,8 @@ import type { Bucket, ModuleResult, Shares, TokenCounts } from './types.js';
 export const REPORT_VERSION = 2;
 
 export interface CodebaseScores {
-  /** Mean distance of each module's share vector from its family's median. See scores.ts. */
-  consistency: number;
+  /** Mean distance of each module's share vector from its family's median; null when no family has two modules. See scores.ts. */
+  consistency: number | null;
   /** Component-wise median share vector across all modules, for reference. */
   median: Shares;
   /** Per dominant bucket: how many modules, and their median shape. Consistency is measured against these. */
@@ -23,6 +24,20 @@ export interface CodebaseScores {
   meanMixing: number;
   /** Token-weighted mean of module mixing: every counted token counts once. */
   meanMixingTokenWeighted: number;
+  /** The headline: mean mixing over code modules (everything but stylesheets), so the score does not depend on how a framework files its styles. Null with no code modules. */
+  codeModules: { count: number; meanMixing: number | null };
+  /**
+   * The same code modules read by operation alone, every structural ruling off: no sanctioned-member
+   * sealing, no trait absorption, no export sealing, no host inheritance. Beside the headline so the
+   * reader can see whether the ranking depends on the rulings (2026-09-29). Null with no code modules.
+   */
+  byOperation: { count: number; meanMixing: number | null };
+  /**
+   * The declared-shape counts (2026-09-27): modules with a role, how many keep every token
+   * inside what the role expects or permits, how many define only sanctioned members; modules
+   * with no role, and how many distinct internal surfaces they show.
+   */
+  shape: { declared: number; insideShape: number; withSurface: number; onSurface: number; undeclared: number; internalSurfaces: number; internalModules: number };
 }
 
 export interface NoisemapReport {
@@ -46,6 +61,8 @@ export interface NoisemapReport {
   scores: CodebaseScores;
   /** Modules with at least one counted token, in walk order (sorted by path). */
   modules: ModuleResult[];
+  /** The codebase scores per directory, ancestors included; `.` is the root. */
+  directories: DirectoryRollup[];
   /** Files an adapter accepted but which had zero counted tokens. Excluded from scores. */
   empty: string[];
   /** Files no adapter accepted, plus test files left out by default. Neither is in `count`'s modules. */

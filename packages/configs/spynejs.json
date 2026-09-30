@@ -42,23 +42,13 @@
       },
       "expected": [
         "V",
-        "B",
         "C"
       ],
       "default": "V",
       "methods": {
-        "constructor": {
-          "bucket": "V",
-          "uniform": true
-        },
-        "addActionListeners": {
-          "bucket": "V",
-          "uniform": true
-        },
-        "broadcastEvents": {
-          "bucket": "V",
-          "uniform": true
-        }
+        "constructor": "V",
+        "addActionListeners": "V",
+        "broadcastEvents": "V"
       },
       "calls": {
         "(^|\\.)[A-Za-z_]+\\$[A-Za-z_]+$": {
@@ -66,7 +56,13 @@
           "permitted": true,
           "bare": "host"
         }
-      }
+      },
+      "surface": [
+        "constructor",
+        "broadcastEvents",
+        "addActionListeners",
+        "onRendered"
+      ]
     },
     {
       "name": "DomElement",
@@ -79,11 +75,11 @@
       ],
       "default": "V",
       "methods": {
-        "constructor": {
-          "bucket": "V",
-          "uniform": true
-        }
-      }
+        "constructor": "V"
+      },
+      "surface": [
+        "constructor"
+      ]
     },
     {
       "name": "Channel",
@@ -95,10 +91,7 @@
       ],
       "default": "B",
       "methods": {
-        "constructor": {
-          "bucket": "B",
-          "uniform": true
-        },
+        "constructor": "B",
         "onRegistered": "B",
         "addRegisteredActions": "B",
         "onViewStreamInfo": "B"
@@ -109,7 +102,13 @@
           "permitted": true,
           "bare": "host"
         }
-      }
+      },
+      "surface": [
+        "constructor",
+        "onRegistered",
+        "addRegisteredActions",
+        "onViewStreamInfo"
+      ]
     },
     {
       "name": "SpyneTrait",
@@ -123,101 +122,155 @@
       "methods": {
         "constructor": "L"
       },
-      "uniform": true
+      "surface": [
+        "constructor",
+        "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+      ],
+      "functions": {
+        "view": [
+          "V"
+        ],
+        "channel": [
+          "B"
+        ]
+      }
     }
   ],
   "classifiers": [
     {
+      "id": "console",
+      "kind": "call",
+      "match": "^console\\.",
+      "bucket": "L",
+      "operation": true
+    },
+    {
+      "id": "class-attribute",
+      "kind": "classAttribute",
+      "match": "^(class|className)$",
+      "bucket": "C",
+      "operation": true
+    },
+    {
+      "id": "config-data",
+      "kind": "configData",
+      "bucket": "V",
+      "operation": true
+    },
+    {
+      "id": "action-label",
+      "kind": "actionLabel",
+      "bucket": "B"
+    },
+    {
       "id": "compose-view",
       "kind": "call",
       "match": "(^|\\.)(appendView|appendViewAfter|prependView|appendToDom|appendToDomAfter|prependToDom|appendToNull)$",
-      "bucket": "V"
+      "bucket": "V",
+      "operation": true
     },
     {
       "id": "new-view",
       "kind": "call",
       "match": "^new (ViewStream|DomElement|DomItem|DomElementTemplate)$",
-      "bucket": "V"
+      "bucket": "V",
+      "operation": true
     },
     {
       "id": "payload-filter",
       "kind": "call",
       "match": "^new ChannelPayloadFilter$",
-      "bucket": "B"
+      "bucket": "L",
+      "host": true,
+      "operation": true
+    },
+    {
+      "id": "transmit",
+      "kind": "call",
+      "match": "(^|\\.)sendInfoToChannel$",
+      "bucket": "B",
+      "host": true,
+      "operation": true
+    },
+    {
+      "id": "dispose",
+      "kind": "call",
+      "match": "(^|\\.)disposeViewStream$",
+      "bucket": "V",
+      "host": true,
+      "operation": true
     },
     {
       "id": "channel-io",
       "kind": "call",
-      "match": "(^|\\.)(sendInfoToChannel|sendChannelPayload|getChannel|disposeViewStream)$",
-      "bucket": "B"
+      "match": "(^|\\.)(sendChannelPayload|getChannel)$",
+      "bucket": "B",
+      "operation": true
     },
     {
       "id": "listener",
       "kind": "call",
       "match": "(^|\\.)(add|remove)EventListener$",
-      "bucket": "V",
+      "bucket": "B",
       "resolve": true,
-      "resolveBucket": "B"
+      "resolveBucket": "B",
+      "operation": true
     },
     {
       "id": "dom",
       "kind": "call",
-      "match": "^(document|window\\.document)\\.|(^|\\.)(querySelector|querySelectorAll|getElementById|getElementsByClassName|getElementsByTagName|closest|matches|classList\\.(add|remove|toggle|replace|contains)|setAttribute|removeAttribute|getAttribute|appendChild|removeChild|insertBefore|replaceChild|insertAdjacentHTML|insertAdjacentElement|scrollIntoView|focus|blur)$",
-      "bucket": "V"
+      "match": "^(document|window\\.document)\\.|(^|\\.)(el\\$|els?\\$|addClass|removeClass|setClass|toggleClass|addAnimClass|setActiveItem|querySelector|querySelectorAll|getElementById|getElementsByClassName|getElementsByTagName|closest|matches|classList\\.(add|remove|toggle|replace|contains)|setAttribute|removeAttribute|getAttribute|appendChild|removeChild|insertBefore|replaceChild|insertAdjacentHTML|insertAdjacentElement|scrollIntoView|focus|blur)$",
+      "bucket": "V",
+      "operation": true
     },
     {
       "id": "dom-write",
       "kind": "assignment",
       "match": "\\.(innerHTML|outerHTML|textContent|innerText|className|style(\\.[A-Za-z]+)?|dataset\\.[A-Za-z]+)$",
-      "bucket": "V"
+      "bucket": "V",
+      "operation": true
     },
     {
       "id": "subscribe",
       "kind": "call",
       "match": "(^|\\.)(subscribe|unsubscribe)$",
       "bucket": "B",
-      "resolve": true
+      "resolve": true,
+      "operation": true
     },
     {
       "id": "fetch",
       "kind": "call",
       "match": "^(fetch|(axios|api|http|client)\\.(get|post|put|patch|delete|request))$",
-      "bucket": "L"
+      "bucket": "B",
+      "operation": true
     },
     {
-      "id": "copy-string",
-      "kind": "copyString",
-      "bucket": "C",
-      "minWords": 3,
-      "notWithin": [
-        "class",
-        "className",
-        "classList.add",
-        "classList.remove",
-        "classList.toggle",
-        "console.log",
-        "console.info",
-        "console.warn",
-        "console.error",
-        "console.debug",
-        "console.table",
-        "console.group",
-        "console.groupCollapsed",
-        "console.trace",
-        "console.assert",
-        "console.dir"
-      ]
+      "id": "data-access",
+      "kind": "taggedTemplate",
+      "match": "^sql$",
+      "bucket": "B",
+      "operation": true
+    },
+    {
+      "id": "data-client",
+      "kind": "call",
+      "match": "^(postgres|new Pool|new PrismaClient|drizzle|createClient)$|^(sql|db|prisma|pool|knex)\\.(query|execute|begin|transaction|unsafe|end|select|insert|update|delete|from)$",
+      "bucket": "B",
+      "operation": true
     },
     {
       "id": "markup-template",
       "kind": "markupTemplate",
-      "bucket": "C"
+      "bucket": "C",
+      "operation": true
     },
     {
       "id": "css-in-js",
       "kind": "taggedTemplate",
       "match": "^(css|styled(\\.[A-Za-z]+)?|keyframes)$",
-      "bucket": "C"
+      "bucket": "C",
+      "operation": true
     },
     {
       "id": "conditional",
@@ -226,11 +279,11 @@
       "allow": [
         {
           "within": "^addActionListeners$",
-          "bucket": "B"
+          "bucket": "V"
         },
         {
           "within": "^broadcastEvents$",
-          "bucket": "B"
+          "bucket": "V"
         }
       ],
       "defaults": {
@@ -244,24 +297,9 @@
   ],
   "openQuestions": [
     {
-      "rule": "delegation",
-      "call": "a bare trait call (statement, result unused, only identifiers passed through) is configuration and takes the host's bucket; a trait call whose result is used is Logic in the host, permitted (ratified 2026-09-26)",
-      "reason": "delegation is declaration by another syntax, the same act as naming the method in a listener table; composition is computation wherever it sits, and hiding it behind a trait call would be self-serving"
-    },
-    {
-      "rule": "call:composed",
-      "call": "a local call whose result is used inside a uniform method (a constructor) is Logic, not configuration (ratified 2026-09-26)",
-      "reason": "the config object is View, but a computed value inside it is a computation; it shows as drift because it is not a trait"
-    },
-    {
       "rule": "addActionListeners",
-      "call": "addActionListeners is uniformly View, like broadcastEvents (ratified 2026-09-26)",
-      "reason": "the listener table is the view's configuration; it does nothing by itself and is read by the application to wire the behavior layer. Behavior in a view is the view implementing its own RxJS or listeners: subscribe, channel I/O, handler bodies"
-    },
-    {
-      "rule": "config = View",
-      "call": "a role's constructor body is uniformly its config bucket, props.data included; broadcastEvents is uniformly View (ratified 2026-09-22, after tag preliminary-criteria)",
-      "reason": "configuration values are the view's declaration, whatever they hold; the stricter question is type mixing — a method in HTML, a listener in HTML, a Channel managing the DOM"
+      "call": "addActionListeners and broadcastEvents are sanctioned members: everything inside them is View, a ChannelPayloadFilter and its predicate included; an explicit fetch or console call inside a predicate keeps its own bucket (2026-09-29)",
+      "reason": "the table is the view's wiring; a payload filter is a boolean method with one sanctioned place and one purpose, admit or reject, so it is a property of the view. The Grammar's admit-by-payload-filter card supports the structure; the second review was right that it does not make an operation inside a predicate cease to be one"
     },
     {
       "rule": "listener",
@@ -269,39 +307,19 @@
       "reason": "registering is configuration; responding is behavior"
     },
     {
-      "rule": "ViewStream.calls",
-      "call": "a prefix$Method call in a ViewStream → L, permitted (ratified 2026-09-22)",
-      "reason": "calling a trait keeps the logic in the trait; that is the separation, so it is reported and not drift"
-    },
-    {
       "rule": "SpyneTrait",
-      "call": "SpyneTrait is a uniform role: everything counted in a trait is L, drift 0 by definition (ratified 2026-09-22)",
-      "reason": "a trait is the logic module of the ViewStream or Channel it is bound to; that is its purpose. Not checked: that the trait is actually bound to a host somewhere in the codebase"
+      "call": "SpyneTrait expects Logic, plus View when a ViewStream binds it and plus Behavior when a Channel binds it, read from the file that binds it; a trait bound to both, or to nothing, expects Logic alone (2026-09-27)",
+      "reason": "a channel trait may read what a payload exposes and must not create selectors or write to the DOM; a view trait may send its own info to a channel (sendInfoToChannel is permitted) and must not subscribe or run streams. Inside the prefix$ methods, its sanctioned members, computation is the type; DOM access and channel I/O keep their buckets and are judged against the host-bound shape"
     },
     {
       "rule": "inline templates",
-      "call": "Content is in the expected shape of ViewStream and DomElement (ratified 2026-09-22)",
-      "reason": "an inline template is the data part of the view and is clearly separated; it stays Content by ruling 6 and is not drift"
+      "call": "an inline template string in a ViewStream or DomElement is Content (markup-template) inside a View module: it shows as mixing and not as drift, because Content is in the expected shape (2026-09-27)",
+      "reason": "a template in its own file is a Content brick; the same markup inline is the same Content living in the view's file, which is the mixing the tool exists to show"
     },
     {
       "rule": "conditional.defaults",
       "call": "`a ?? b` is not a conditional unless an operand calls a local non-trait method (ratified 2026-09-22); `||` is treated the same (ratified 2026-09-22)",
       "reason": "a nullish default reads a value; a trait call inside it is still logic-in-traits"
-    },
-    {
-      "rule": "constructor",
-      "call": "a role's constructor body is its config object → the role default (V for ViewStream/DomElement, B for Channel); only the signature and super() are scaffolding",
-      "reason": "ruling 9 says the config object is View; in SpyneJS the config is the props assignments in the constructor, so excluding the whole constructor (as React does) would leave a bare view with nothing to count"
-    },
-    {
-      "rule": "onRendered",
-      "call": "onRendered has no method rule; its body is the role default (V) with calls classified by what they do",
-      "reason": "the reference says nested child ViewStreams are added here, which is composition (V); a SpyneTrait call inside it is L and shows as drift, which is what the brief expects to see"
-    },
-    {
-      "rule": "Channel.calls",
-      "call": "a prefix$Method call in a Channel → L, permitted",
-      "reason": "ruling 9: trait calls in a Channel are expected; report them, do not count them as drift"
     },
     {
       "rule": "DomElement",
@@ -315,13 +333,13 @@
     },
     {
       "rule": "channel-io",
-      "call": "sendInfoToChannel, sendChannelPayload, getChannel, disposeViewStream → B; `new ChannelPayloadFilter` → B",
-      "reason": "routing payloads and subscribing are behavior; a payload filter is declarative event routing"
+      "call": "sendInfoToChannel, sendChannelPayload, getChannel, disposeViewStream → B",
+      "reason": "routing payloads and subscribing are behavior. `new ChannelPayloadFilter` is a host call since 2026-09-27: it takes its host's bucket with its arguments (see addActionListeners)"
     },
     {
       "rule": "conditional",
-      "call": "a conditional inside addActionListeners or broadcastEvents → B; anywhere else → L",
-      "reason": "ruling 5's allow-list: a filter in a listener table is event routing, not logic"
+      "call": "a conditional inside addActionListeners or broadcastEvents → V (a predicate in the wiring); anywhere else → L",
+      "reason": "ruling 5's allow-list, re-ruled 2026-09-27: a filter predicate in a listener table is part of the declaration, not logic and not behavior"
     },
     {
       "rule": "plain modules",
@@ -329,29 +347,114 @@
       "reason": "same as React's utility modules; drift needs a declared shape"
     },
     {
-      "rule": "el access",
-      "call": "this.el / el.querySelector / classList calls are unclassified and take their context's bucket",
-      "reason": "DOM access could be argued as View; no rule yet so the count stays honest to context"
-    },
-    {
       "rule": "subscribe",
       "call": "observable.subscribe(cb) and unsubscribe → B, and a local function passed as the callback gets B for its body",
       "reason": "subscribing is registering a listener, which is Behavior in every config (ruling 3); RxJS is the substrate of SpyneJS channels and common in React apps. Not yet moved with addEventListener: is subscribe registration (V) or behavior (B)?"
     },
     {
-      "rule": "copy-string",
-      "call": "a string literal of three or more words, more than half of them plain alphabetic, → C unless inside a class-list attribute or helper",
-      "reason": "prose is Content wherever it lives; class lists and CSS values look like prose by word count and are not"
+      "rule": "dom",
+      "call": "DOM access (document.*, querySelector, classList, appendChild, setAttribute, focus…, and the framework's el$ family) and DOM writes (innerHTML, textContent, className, style.*, dataset.*) → V wherever they appear, an operation that keeps its bucket inside any sanctioned member (2026-09-29)",
+      "reason": "the stricter mixing is type mixing: a Channel or a channel trait that manages the DOM is doing View work. Reads from a payload are not DOM access"
     },
     {
-      "rule": "dom",
-      "call": "DOM access (document.*, querySelector, classList, appendChild, setAttribute, focus…) and DOM writes (innerHTML, textContent, className, style.*, dataset.*) → V wherever they appear (ratified 2026-09-22)",
-      "reason": "the stricter mixing is type mixing: a Channel, hook, or trait that manages the DOM is doing View work. Reads from a payload are not DOM access. Inside a uniform role (SpyneTrait) the role wins"
+      "rule": "fetch",
+      "call": "fetch and axios/api/http/client.verb calls → B, the same as channel I/O (2026-09-27)",
+      "reason": "a fetch talks to the outside, as sendInfoToChannel to a fetch channel does; before this fetch was L in the React config while the SpyneJS equivalent was B"
+    },
+    {
+      "rule": "trait verification",
+      "call": "a prefix$Method call is verified against the methods of the traits its host binds through props.traits, read across files with brace matching; an unverified call is Logic and drift, rule role:call:unverified, and shows even inside a sanctioned member because a call to a method that does not exist is a defect, not configuration (2026-09-29, replacing the global-name check of 2026-09-27)",
+      "reason": "the second review showed that a method defined on an unbound trait elsewhere excused the call, and that a one-line class formatted differently moved a score; both are gone. Single-file explain has no other files and trusts the spelling, and says so"
+    },
+    {
+      "rule": "sections",
+      "call": "a template section {{#key}}…{{/key}} is Content and reports no logic in rendering; {ready && <p/>} in JSX reports one Logic token (2026-09-27, qualified 2026-09-29)",
+      "reason": "DomElementTemplate sections iterate the data at a key, once per item, once for an object, not at all when absent; they evaluate nothing. The second review noted the two forms make an equivalent presence test; the policy is kept, with this qualification: the section admits no expression in that position, the JSX form admits any, and the tool counts evaluation in markup, not selection. A reader may prefer to count both as selection; the counts are in the JSON either way"
+    },
+    {
+      "rule": "action-label",
+      "call": "const NAME = 'NAME' (an uppercase constant equal to its own string) → B (2026-09-27)",
+      "reason": "it names something emitted or dispatched, the same declaration a Channel's registered-action list makes"
+    },
+    {
+      "rule": "el$",
+      "call": "el$(sel) and its chained class methods (addClass, removeClass, setClass, toggleClass, addAnimClass, setActiveItem) → V wherever they appear (2026-09-27)",
+      "reason": "the Grammar's address-region-by-el$ card: DOM updates go through el$; before this the tool knew querySelector and classList and bucketed the framework's own DOM API as composed Logic, hiding View work in 19 Acme trait files"
+    },
+    {
+      "rule": "surface",
+      "call": "a role's sanctioned members come from the Grammar: ViewStream carries only constructor, broadcastEvents, addActionListeners, onRendered (wiring-surface-only-on-viewstream); Channel constructor, onRegistered, addRegisteredActions, onViewStreamInfo (wire-in-onRegistered); SpyneTrait constructor and prefix$ methods (slice-traits-by-concern); DomElement its constructor. Members outside the surface are reported, not scored (2026-09-27)",
+      "reason": "the same structural shape across every view is the claim; counting members against the card is how it is checked rather than asserted"
+    },
+    {
+      "rule": "config-data",
+      "call": "string values in props.data, defaults destructured from props.data, and props.data.x = '…' inside a role class → V (2026-09-27)",
+      "reason": "data handed to a rendering surface is the view's configuration: it declares what the template or component will be given, and is not copy in the wild. The same act gets the same bucket in both configs. Ruled 2026-09-22 as 'config = View, props.data included' and then lost when the seals came off; reapplied as a token rule. A hostile reader may say copy is copy; the answer is that copy inside markup is Content in both, and copy declared as data for markup is configuration in both"
+    },
+    {
+      "rule": "strings in code",
+      "call": "a string literal in JavaScript or TypeScript is not Content by itself: it takes its context (View in a view's configuration, Logic in a trait or a utility, Behavior in a handler). Content is a format: HTML and templates, JSX markup and its text, styles, JSON, Markdown (2026-09-27; JSON coverage implemented 2026-09-29, tooling manifests skipped)",
+      "reason": "content is designated by where it lives, not by counting words. The second review noted what this cannot show: copy kept in a JS object reads as Logic in a React module and in a SpyneJS utility alike; moved to a JSON file it reads as Content. That is the position: copy belongs in data files and templates"
     },
     {
       "rule": "console",
-      "call": "strings inside console.* calls are Logic, never Content, markup included (ratified 2026-09-26)",
-      "reason": "console output is not content for the app; it is the developer's instrumentation, which is logic"
+      "call": "console.* calls → L wherever they appear, arguments included, markup strings included (2026-09-27)",
+      "reason": "console output is the developer's instrumentation, which is logic"
+    },
+    {
+      "rule": "class-attribute",
+      "call": "a static class or className attribute value counts one Content token per class, in JSX and in an HTML template alike (2026-09-27)",
+      "reason": "styles are a content format, and a stylesheet already counts by word: `.card { padding: 16px }` is three tokens. A utility class list does the same work in the markup and counted as one token however many classes it held, so a Tailwind codebase read smaller and less Content-heavy than it is, against a codebase that keeps its styles in SCSS files. A computed class list (clsx, cn) stays Logic with its arguments: choosing classes by state is a decision"
+    },
+    {
+      "rule": "sanctioned members",
+      "call": "inside a role's sanctioned members (ViewStream: constructor, broadcastEvents, addActionListeners, onRendered; Channel: constructor, onRegistered, addRegisteredActions, onViewStreamInfo; SpyneTrait: constructor and prefix$ methods) every token is the module's type: a default, a ternary, a trait call, a payload filter, a local call that feeds a property. Only a classifier marked `operation` keeps its bucket there: DOM access, channel I/O, a subscription, a fetch, console output, markup, styles, data configuration. A member outside the surface is out of place in full, whatever its tokens do (2026-09-29)",
+      "reason": "a module that is VBL structure is its type, and anything inside it that is a property defining that type stays categorized as that type (Frank, 2026-09-29). Noise is significant logic where it is not expected: a large method of its own on a ViewStream, which belongs in a trait. A conditional in a configuration is not a reasonable definition of noise. This replaces the 26 September rulings that a computed value inside configuration is Logic and that a composed trait call is permitted Logic; the second review read every token by operation, and that reading was not adopted, because it measures composition rather than the noise the definition names. An explicit operation of another layer still shows in a ViewStream or a Channel: a DOM query in a channel, a fetch in a view. In a SpyneTrait it does not, see `functions`"
+    },
+    {
+      "rule": "functions",
+      "call": "inside a SpyneTrait an operation of its host's layer is Logic: `el$`, `appendView`, a DOM write in a view trait; `getChannel`, `subscribe`, a fetch, a data call in a channel trait; `sendInfoToChannel` in either. The other layer's operation stays foreign and is drift: a channel trait manipulating the DOM, a view trait subscribing to a stream or adding a listener. A trait bound to both hosts, or to none, absorbs both. Only a content format (a template, styles, a class list) is foreign in a trait; data the trait receives in a payload or assigns to `props.data`, literal or not, is its logic (review 3, 2026-09-29). The trait's expected shape is Logic alone; the host-bound shapes and the permitted transmit are retired (2026-09-29)",
+      "reason": "the traits are the designed logic modules for the ViewStream or Channel instance: globally shared, removed from HTML, JSON, and style Content and from the ViewStream or Channel structural configuration. Saying that a ViewStream trait has views is noise, or a channel trait has behavior is noise, becomes absurd, because then what is the purpose of the trait in the first place (Frank, 2026-09-29). In the framework's own diagram the Logic circle overlaps View as Interactive Functions and Behavior as Data Driven Functions, and those overlaps are trait functions by design. Noise in a trait is a template, a stylesheet, JSON, or a view's configuration written into it, or a method outside its prefix$ surface. What makes a trait noisy is a channel using it to manipulate the DOM, or a view using it to add event listeners, run stream logic, or control what a channel does (Frank, 2026-09-29): a module of pure functions, testable as such and then applied to a `this`, is clean, and nothing in React is as enclosed. A trait is not holding content: an agent is not going into the trait to update templates, styles, or JSON. Part of a view's job is to sync its designed DOM content to the correct context, which means receiving content in the parameters of a method; ViewStream allows data as a string literal, and it is still data in JavaScript terms (Frank, 2026-09-29)"
+    },
+    {
+      "rule": "transmit",
+      "call": "`sendInfoToChannel` and `disposeViewStream` take their host's bucket: View inside a ViewStream, Logic inside a trait, Behavior in a channel (2026-09-29)",
+      "reason": "they are internal methods of ViewStream and expected there: the view sending its own info, or disposing itself, is the view's act, not a behavior layer reaching in. Reverses the 27 September reading that the transmit is Behavior permitted from a view trait"
+    },
+    {
+      "rule": "ViewStream shape",
+      "call": "a ViewStream expects View and Content, not Behavior: its listener table, broadcast table, and `sendInfoToChannel` are View, and a `getChannel`, a `subscribe`, an `addEventListener`, a fetch inside it is out of place (2026-09-29)",
+      "reason": "a view adding event listeners, running rxjs logic, or in some bizarre way controlling what a channel does is noise (Frank, 2026-09-29). Behavior had been in the expected set since 0.1.0 because a view transmits; with the transmit read as the view's own act there is no Behavior a view is expected to hold"
+    },
+    {
+      "rule": "listener",
+      "call": "`addEventListener` is Behavior, its handler body Behavior (2026-09-29)",
+      "reason": "the framework's way is `broadcastEvents`; a manual listener in a view or a view trait is behavior wiring outside the channel system and shows as out of place"
+    },
+    {
+      "rule": "trait calls",
+      "call": "a `prefix$` call from a designated member is the host's own, whether the trait is bound through `props.traits` or used as a pure static function; a call to a method no trait in the codebase defines is named `:unverified` in the report but takes the member's type and is not drift (2026-09-29)",
+      "reason": "the point of a trait is that it is a pure function, not that it is listed in props.traits; if the logic is in traits and the call is in one of the ViewStream's designated methods, it is not noise (Frank, 2026-09-29). Replaces the 29 September gating of trait calls by the host's bound traits, which review 3 showed was read from raw text: a binding inside a comment excused a call, an import alias failed, a same-named class elsewhere was accepted. Bindings are now read with the parser and reported on the trait, and they decide only which layer's operations the trait absorbs"
+    },
+    {
+      "rule": "return keyword",
+      "call": "the keyword that introduces markup (`return`, `const x =`) takes the bucket of what it introduces: View before a component, Content before host markup, in both configs (2026-09-29)",
+      "reason": "an agent or a developer does not distinguish a return from what it returns: `return <Skeleton />` is a view, one concern; what makes a page View and Content is the host markup around the components it places (Frank, 2026-09-29)"
+    },
+    {
+      "rule": "data, formatted or not",
+      "call": "a value handed as data takes the data rule whether or not it is formatted: a string in `props.data` or in an object-literal prop is configuration in a view and logic in a trait, tags or no tags (2026-09-29)",
+      "reason": "data and HTML are both content, formatted or not formatted (Frank, 2026-09-29): the format of a value does not change what the value is to the module that holds it. Review 4 asked that recognizable markup inside a data value take precedence as Content; not adopted. Markup precedence applies to markup written as code, a template literal returned or assigned as a template, not to a value delivered as data"
+    },
+    {
+      "rule": "unresolved call",
+      "call": "a `prefix$` call from a ViewStream, a Channel, or a trait its host inherits is resolved when any trait in the codebase defines the method, static or instance; only a method no trait or static function defines is named `:unverified`, on the bare form as well as the composed one (2026-09-29). Resolution covers trait methods, `$`-named exported functions, and `$`-named static methods anywhere in the codebase (review 5)",
+      "reason": "calls to utilities simpler than traits are pure functions, logic, not missing; an agent or developer can see the import. Only a mysterious method that cannot be traced immediately to a static function or a trait method is unresolved (Frank, 2026-09-29). Review 4 found the bare form skipped the name; fixed"
+    },
+    {
+      "rule": "trait binding",
+      "call": "an import binds only the trait it names, through the file's export table (aliases included); an import that matches nothing binds nothing, and the trait then absorbs both layers as unbound; a reference with no import is a class in the same file, else a unique name (2026-09-29)",
+      "reason": "review 5 showed an explicit import that matched no trait falling back to a same-named trait elsewhere: a unique name is not evidence when the import points somewhere else"
     }
   ]
 }

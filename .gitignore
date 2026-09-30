@@ -4,5 +4,6 @@ dist/
 .DS_Store
 /noisemap.json
 /noisemap.html
+/noisemap.wiring.json
 coverage/
 .idea

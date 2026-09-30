@@ -1,0 +1,159 @@
+file                                                                tokens  V B L C                  V     B     L     C  mixing  role        drift
+------------------------------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
+app/components/stage-container.js                                       28  VVVVVVVVVVVVVVCCCCCC   71%    0%    0%   29%    0.29  ViewStream   0.00
+app/traits/ui/ui-footer-view-traits.js                                  16  LLLLLLLLLLLLLLLLCCCC    0%    0%   81%   19%    0.19  SpyneTrait   0.19
+app/traits/page/products-catalog-traits.js                             241  LLLLLLLLLLLLLLLLLLLC    0%    0%   95%    5%    0.05  SpyneTrait   0.05
+index.js                                                               163  VLLLLLLLLLLLLLLLLLLL    4%    0%   96%    0%    0.04
+app/traits/page/page-item-core-traits.js                               224  LLLLLLLLLLLLLLLLLLLL    0%    0%   98%    2%    0.02  SpyneTrait   0.02
+app/app-container.js                                                    22  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/channels/channel-app.js                                             17  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
+app/channels/channel-cart.js                                            25  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
+app/channels/channel-local-storage.js                                   17  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
+app/channels/channel-menu-drawer.js                                     18  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
+app/channels/channel-shopify.js                                         26  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
+app/components/nav/nav-breadcrumb-container.js                          23  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/nav/nav-breadcrumb-view.js                               23  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/nav/nav-header-hamburger-item.js                         24  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/nav/nav-menu-drawer-view.js                              21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/nav/nav-primary-view.js                                  35  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/nav/templates/nav-breadcrumb-item.tmpl.html              17  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-breadcrumb-view.tmpl.html               8  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-header-hamburger-item.tmpl.html         6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-menu-drawer-content.tmpl.html          23  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-primary-view.tmpl.html                 65  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/cards-container-view.js                       14  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/cart-line-item.js                             34  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/cart-view.js                                  33  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/form-contact-us-view.js                       34  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/hero-view.js                                  16  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/product-tile-item.js                          67  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/products-catalog-view.js                      17  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/page-items/templates/article.tmpl.html                   32  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/cards-container-view.tmpl.html      49  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/cart-line.tmpl.html                 73  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/cart.tmpl.html                      67  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/contact-us.tmpl.html                88  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/cta-banner.tmpl.html                31  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/faq.tmpl.html                       29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/hero.tmpl.html                      42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/product-tile.tmpl.html              91  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/products.tmpl.html                 109  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/stats-band.tmpl.html                20  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/page-404-view.js                                   14  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/pages/page-view.js                                       36  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/pages/templates/page-404.tmpl.html                       31  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/page-home.tmpl.html                      13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/page-view.tmpl.html                      10  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/page.tmpl.html                           13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/ui-elements/null-views/local-storage-null-view.js        10  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/ui-elements/templates/ui-button-theme.html               10  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/ui-elements/templates/ui-footer-view.tmpl.html            4  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/ui-elements/templates/ui-header-view.tmpl.html           32  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/ui-elements/ui-footer-view.js                            16  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/ui-elements/ui-header-view.js                            23  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/ui-elements/ui-menu-drawer-view.js                       21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/traits/app/app-container-traits.js                                  45  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/app/app-local-storage-traits.js                             197  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/app/app-settings-traits.js                                   52  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/app/app-status-traits.js                                    153  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/app/stage-container-traits.js                                41  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/channel/channel-cart-traits.js                              530  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/channel/channel-menu-drawer-traits.js                       110  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/channel/channel-shopify-traits.js                           452  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/form/form-contact-us-traits.js                              130  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/nav-breadcrumb-container-traits.js                      119  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/nav-breadcrumb-view-traits.js                           169  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/nav-header-hamburger-item-traits.js                      16  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/nav-menu-drawer-view-traits.js                           26  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/nav/nav-primary-view-traits.js                              111  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/page/cart-line-traits.js                                     54  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/page/cart-view-traits.js                                    129  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/page/page-item-custom-traits.js                              13  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/page/product-tile-traits.js                                 165  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/ui/ui-header-view-traits.js                                  41  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/ui/ui-menu-drawer-view-traits.js                             60  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/traits/utils/page-item-template-lookup.js                           25  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+app/traits/utils/util-traits.js                                        161  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+dev-tools.js                                                            34  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+index.tmpl.html                                                         46  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/_index.scss                              113  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/core/_base.scss                           62  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/core/_globals.scss                        35  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/core/_reset.scss                          15  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_buttons.scss                   200  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_forms.scss                     166  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_links.scss                     153  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_lists.scss                      83  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_tables.scss                    104  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/elements/_typography.scss                156  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/_dark.scss                          46  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/_index.scss                          2  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/_light.scss                         46  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/theme/theme-utils.scss                    36  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_colors.scss                      356  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_elevation.scss                   122  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_index.scss                        44  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_inject-css-vars.scss              26  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_motion.scss                       69  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_radius.scss                       40  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_spacing.scss                     232  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/tokens/_typography.scss                  156  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_containers.scss                37  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_flex-utils.scss               156  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_grid-utils.scss               121  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_responsive.scss                58  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/00-spynejs-design-system/utilities/_spacing-utils.scss            207  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/01-vendors/normalize.css                                          204  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_base.scss                                           118  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_grid.scss                                           250  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_palette-vars.scss                                    34  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_palette.scss                                        266  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_theme-semantic.scss                                  88  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_type.scss                                           155  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/_variables.scss                                      237  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/fonts.scss                                            19  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/globals.scss                                          12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/02-variables/mixins.scss                                           95  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/cards/_cards-grid.scss                               82  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/cards/_cards.scss                                   209  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/cards/cards-features.scss                            66  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_checkboxes.scss              240  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_inputs.scss                  359  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_radio.scss                   138  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_select.scss                  206  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/forms/_textarea.scss                220  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/core-components/sections/_hero.scss                 215  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/generated/_theme-fonts.scss                          98  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-404.scss                                  82  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_article.scss                       88  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_cards.scss                         21  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_cart.scss                         242  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_contact-us.scss                    86  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_cta-banner.scss                    40  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_faq.scss                           53  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_gallery.scss                       34  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_hero.scss                         118  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_page-item.scss                     75  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_products-assets.scss               43  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_products.scss                     737  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_section-title.scss                 42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/page-items/_stats-band.scss                    30  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/pages/pages.scss                                    136  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/_a11y.scss                                        23  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/_codeblock.scss                                  101  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/_containers.scss                                 219  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/breadcrumbs.scss                                  94  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/footer.scss                                       43  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/header.scss                                      227  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/menu-drawer.scss                                 152  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/03-components/ui/menu-hamburger.scss                              170  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+scss/app.scss                                                          133  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+static/data/app.model.json                                             589  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+static/fonts/licenses/Inter.OFL.txt                                    690  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+
+codebase  150 modules  15420 tokens  VLLLLCCCCCCCCCCCCCCC  V   3% B   1% L  22% C  74%
+          mean mixing 0.01 (non-stylesheet modules, 78)  0.00 (all modules)  0.00 (by token)  0.08 (by operation: no seals, absorption, or host inheritance)  consistency 0.01  median V   0% B   0% L   0% C 100%
+          families: V 20 (100%   0%   0%   0%)  B 5 (  0% 100%   0%   0%)  L 27 (  0%   0% 100%   0%)  C 98 (  0%   0%   0% 100%)
+          shape: inside declared shape 46/49  on sanctioned surface 49/49
+          detected: spynejs  adapters: content, spynejs  skipped: 24  tests: 6  empty: 1
+

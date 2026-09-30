@@ -63,7 +63,13 @@ a formatter that inserts semicolons or trailing commas must not be able to move 
 | `tokens` | raw counts `{ V, B, L, C, excluded }` |
 | `shares` | `tokens[b] / (V+B+L+C)` for each bucket; sums to 1 |
 | `spans` | source ranges, below |
+| `logicInRendering` | Logic tokens whose innermost rendering range is a JSX element: evaluation inside markup. A template section iterates the data at its key and evaluates nothing, so a `.html` module reports 0 by grammar (2026-09-27) |
 | `mixing` | `1 − max(shares)`; 0 means one bucket, 0.75 is the ceiling |
+| `expected` | the buckets the declared role expects; present with `role` (2026-09-27; a SpyneTrait expects Logic alone since 2026-09-29, its host's operations being its functions) |
+| `base` | the role's default bucket, the module's own color; present with `role` (2026-09-27) |
+| `surface` | `{ sanctioned, members, extra }`: the members the module defines against the surface its role sanctions; `sanctioned` is null for a module with no role, and `members` is then the internal surface seen (hooks, handlers) (2026-09-27) |
+| `bindings` | for a trait: the host classes that bind it through `props.traits`, with their kind, as the adapter read them (2026-09-29) |
+| `mixingByOperation` | the module's mixing with the four structural mechanisms off, the per-module counterpart of `scores.byOperation`; code modules only (2026-09-29) |
 | `drift` | present only with `role`: share of counted tokens outside the role's expected buckets, less any the config permits there |
 
 ### Spans
@@ -81,12 +87,15 @@ made the call, for example `content:scss`, `comment`, `scaffolding`,
 
 | field | meaning |
 |---|---|
-| `consistency` | mean Euclidean distance of each module's `shares` vector from the median shape of its family; 0 means every kind of module has one shape; √2 is the ceiling |
+| `consistency` | mean Euclidean distance of each module's `shares` vector from the median shape of its family, over modules whose family has two or more members; 0 means every kind of module has one shape; √2 is the ceiling; null when no family has two modules, since a family of one is its own median (2026-09-27) |
 | `median` | component-wise median of all module share vectors, for reference; need not sum to 1 |
 | `families` | per dominant bucket (`V`, `B`, `L`, `C`): `{ modules, median }`, the modules whose largest share is that bucket and their median shape |
 | `totals` | token counts summed over modules, plus `counted = V+B+L+C` |
 | `shares` | bucket share of all counted tokens in the codebase |
 | `meanMixing` | unweighted mean of module `mixing`: every module counts once |
+| `shape` | `{ declared, insideShape, withSurface, onSurface, undeclared, internalSurfaces, internalModules }`: the declared-shape counts (2026-09-27) |
+| `codeModules` | `{ count, meanMixing }`: the headline mixing figure, the mean over code modules, everything but stylesheets, so the score does not depend on how a framework files its styles (2026-09-29) |
+| `byOperation` | `{ count, meanMixing }`: the same code modules read with the four structural mechanisms off (sanctioned-member sealing, trait absorption, export sealing, host inheritance); role default colors, bare delegation, role call rules, conditional allowances, and rendering-data recognition stay on (2026-09-29) |
 | `meanMixingTokenWeighted` | token-weighted mean of module `mixing`: every counted token counts once, so large modules dominate |
 
 A module's **family** is its dominant bucket, the one with the largest share. Consistency

@@ -1,13 +1,14 @@
-file                    tokens  V B L C                  V     B     L     C  mixing
-----------------------  ------  --------------------  ----  ----  ----  ----  ------
-components/Counter.tsx      82  VVVVVVBBBBLLLLLCCCCC   30%   20%   23%   27%    0.70
-components/Legacy.jsx       36  VVVVVVVVVBBBBBLLLCCC   44%   28%   14%   14%    0.56
-components/Styled.tsx       21  VVVVVLLLLCCCCCCCCCCC   24%    0%   19%   57%    0.43
+file                    tokens  V B L C                  V     B     L     C  mixing  role  drift
+----------------------  ------  --------------------  ----  ----  ----  ----  ------  ----  -----
+components/Legacy.jsx       36  VVBBBBBBBBLLLCCCCCCC    8%   42%   14%   36%    0.58  view   0.56
+components/Counter.tsx      82  VBBBBLLLLLCCCCCCCCCC    6%   20%   23%   51%    0.49  view   0.43
+components/Styled.tsx       21  VVVVVLLLLCCCCCCCCCCC   24%    0%   19%   57%    0.43  view   0.19
 Guide.mdx                   16  VVVVVCCCCCCCCCCCCCCC   25%    0%    0%   75%    0.25
-lib/api.ts                  31  LLLLLLLLLLLLLLLLCCCC    0%    0%   81%   19%    0.19
+lib/api.ts                  26  BBLLLLLLLLLLLLLLLLLL    0%    8%   92%    0%    0.08
 
-codebase  5 modules  186 tokens  VVVVVBBBLLLLLLCCCCCC  V  27% B  14% L  28% C  31%
-          consistency 0.10  mean mixing 0.42 (by module) 0.52 (by token)  median V  25% B   0% L  19% C  27%
-          families: V 2 ( 37%  24%  19%  20%)  L 1 (  0%   0%  81%  19%)  C 2 ( 24%   0%  10%  66%)
+codebase  5 modules  181 tokens  VVBBBLLLLLLCCCCCCCCC  V   9% B  18% L  29% C  44%
+          mean mixing 0.37 (non-stylesheet modules, 5)  0.37 (all modules)  0.42 (by token)  0.37 (by operation: no seals, absorption, or host inheritance)  consistency 0.18  median V   8% B   8% L  19% C  51%
+          families: B 1 (  8%  42%  14%  36%)  L 1 (  0%   8%  92%   0%)  C 3 ( 24%   0%  19%  57%)
+          shape: inside declared shape 0/3  on sanctioned surface 0/0  distinct internal surfaces 2 among 3 (none sanctioned; an inventory, not a score)
           detected: react  adapters: react  skipped: 0  tests: 2  failed: 1
 

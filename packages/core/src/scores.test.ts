@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { consistency, drift, euclidean, medianVector, mixing, shares } from './scores.js';
+import type { Shares } from './types.js';
 
 describe('shares and mixing', () => {
   it('a single-bucket module has mixing 0', () => {
@@ -53,6 +54,13 @@ describe('consistency', () => {
     expect(r.consistency).toBeCloseTo(euclidean(mixed, clean) / 4);
   });
   it('is empty-safe', () => {
-    expect(consistency([])).toEqual({ consistency: 0, median: { V: 0, B: 0, L: 0, C: 0 }, families: {} });
+    expect(consistency([])).toEqual({ consistency: null, median: { V: 0, B: 0, L: 0, C: 0 }, families: {} });
+  });
+  it('a family of one is left out; with no family of two the score is null', () => {
+    const v: Shares = { V: 1, B: 0, L: 0, C: 0 };
+    const l: Shares = { V: 0, B: 0, L: 1, C: 0 };
+    expect(consistency([v, l]).consistency).toBeNull();
+    const mixed: Shares = { V: 0.4, B: 0, L: 0.6, C: 0 }; // dominant L, so it joins the L family; v stays a family of one
+    expect(consistency([v, l, l, mixed]).consistency).toBeCloseTo(consistency([l, l, mixed]).consistency as number);
   });
 });

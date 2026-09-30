@@ -12,3 +12,6 @@ export type { Family, Consistency } from './scores.js';
 export * from './config.js';
 export { tokenizeContent } from './lexer.js';
 export type { CommentStyle, LexOptions } from './lexer.js';
+export { rollupDirectories } from './directories.js';
+export type { DirectoryRollup } from './directories.js';
+export type { Surface } from './types.js';

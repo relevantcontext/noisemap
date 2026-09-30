@@ -21,7 +21,7 @@ export function shareBar(s: Shares, width = BAR_WIDTH): string {
 }
 
 const pct = (n: number): string => `${String(Math.round(n * 100)).padStart(3)}%`;
-const fixed = (n: number): string => n.toFixed(2);
+const fixed = (n: number | null): string => (n === null ? '—' : n.toFixed(2));
 
 interface Column {
   header: string;
@@ -72,7 +72,7 @@ export function renderTerminal(report: NoisemapReport): string {
       `${shareBar(s.shares)}  V ${pct(s.shares.V)} B ${pct(s.shares.B)} L ${pct(s.shares.L)} C ${pct(s.shares.C)}`,
   );
   out.push(
-    `          consistency ${fixed(s.consistency)}  mean mixing ${fixed(s.meanMixing)} (by module) ${fixed(s.meanMixingTokenWeighted)} (by token)  ` +
+    `          mean mixing ${fixed(s.codeModules.meanMixing)} (non-stylesheet modules, ${String(s.codeModules.count)})  ${fixed(s.meanMixing)} (all modules)  ${fixed(s.meanMixingTokenWeighted)} (by token)  ${fixed(s.byOperation.meanMixing)} (by operation: no seals, absorption, or host inheritance)  consistency ${fixed(s.consistency)}  ` +
       `median V ${pct(s.median.V)} B ${pct(s.median.B)} L ${pct(s.median.L)} C ${pct(s.median.C)}`,
   );
   const fams = (['V', 'B', 'L', 'C'] as const)
@@ -82,6 +82,13 @@ export function renderTerminal(report: NoisemapReport): string {
       return `${b} ${String(f.modules)} (${pct(f.median.V)} ${pct(f.median.B)} ${pct(f.median.L)} ${pct(f.median.C)})`;
     });
   out.push(`          families: ${fams.join('  ')}`);
+  const sh = s.shape;
+  if (sh.declared || sh.internalModules) {
+    const parts: string[] = [];
+    if (sh.declared) parts.push(`inside declared shape ${String(sh.insideShape)}/${String(sh.declared)}`, `on sanctioned surface ${String(sh.onSurface)}/${String(sh.withSurface)}`);
+    if (sh.internalModules) parts.push(`distinct internal surfaces ${String(sh.internalSurfaces)} among ${String(sh.internalModules)} (none sanctioned; an inventory, not a score)`);
+    out.push(`          shape: ${parts.join('  ')}`);
+  }
   out.push(
     `          detected: ${detected}` +
       (report.frameworks.override ? `  override: ${report.frameworks.override}` : '') +

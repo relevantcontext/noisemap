@@ -25,14 +25,17 @@ export function spansFromTokens(tokens: readonly Token[]): Span[] {
       continue;
     }
     const last = spans[spans.length - 1];
-    if (last?.bucket === t.bucket && last.rule === t.rule) {
+    if (last?.bucket === t.bucket && last.rule === t.rule && (last.permitted ?? false) === (t.permitted ?? false) && (last.misplaced ?? false) === (t.misplaced ?? false)) {
       last.end = t.end;
       last.tokens += 1;
       last.punctuation += pending.length;
       pending = [];
     } else {
       flushPending();
-      spans.push({ start: t.start, end: t.end, bucket: t.bucket, rule: t.rule, tokens: 1, punctuation: 0 });
+      const span: Span = { start: t.start, end: t.end, bucket: t.bucket, rule: t.rule, tokens: 1, punctuation: 0 };
+      if (t.permitted) span.permitted = true;
+      if (t.misplaced) span.misplaced = true;
+      spans.push(span);
     }
   }
   flushPending();

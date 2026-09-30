@@ -1,7 +1,9 @@
 file                                                                tokens  V B L C                  V     B     L     C  mixing  role        drift
 ------------------------------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
-app/components/pages/page-view.js                                       36  VVVVVVVVVVVVVVVVLLLL   81%    0%   19%    0%    0.19  ViewStream   0.19
+app/components/stage-container.js                                       28  VVVVVVVVVVVVVVCCCCCC   71%    0%    0%   29%    0.29  ViewStream   0.00
+app/traits/ui/ui-footer-view-traits.js                                  16  LLLLLLLLLLLLLLLLCCCC    0%    0%   81%   19%    0.19  SpyneTrait   0.19
 index.js                                                               112  VLLLLLLLLLLLLLLLLLLL    5%    0%   95%    0%    0.05
+app/traits/page/page-item-core-traits.js                               222  LLLLLLLLLLLLLLLLLLLL    0%    0%   98%    2%    0.02  SpyneTrait   0.02
 app/app-container.js                                                    22  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/channels/channel-app.js                                             17  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
 app/channels/channel-local-storage.js                                   17  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
@@ -14,23 +16,23 @@ app/components/nav/nav-primary-view.js                                  32  VVVV
 app/components/nav/templates/nav-breadcrumb-item.tmpl.html              17  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/nav/templates/nav-breadcrumb-view.tmpl.html               8  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/nav/templates/nav-header-hamburger-item.tmpl.html         6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/nav/templates/nav-menu-drawer-content.tmpl.html          19  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/nav/templates/nav-primary-view.tmpl.html                 63  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-menu-drawer-content.tmpl.html          23  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/nav/templates/nav-primary-view.tmpl.html                 65  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-items/cards-container-view.js                       14  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/page-items/form-contact-us-view.js                       18  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/page-items/hero-view.js                                  16  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/components/page-items/templates/cards-container-view.tmpl.html      48  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/contact-us.tmpl.html                68  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/page-items/templates/hero.tmpl.html                      39  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/cards-container-view.tmpl.html      49  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/contact-us.tmpl.html                69  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/page-items/templates/hero.tmpl.html                      42  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/page-items/templates/where-we-are.tmpl.html              35  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/pages/page-404-view.js                                   14  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/pages/page-view.js                                       36  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
 app/components/pages/templates/page-404.tmpl.html                       31  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/pages/templates/page-home.tmpl.html                      12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/pages/templates/page-home.tmpl.html                      13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/pages/templates/page-view.tmpl.html                      10  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/pages/templates/page.tmpl.html                           12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-app/components/stage-container.js                                       21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/components/pages/templates/page.tmpl.html                           13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/ui-elements/null-views/local-storage-null-view.js        10  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/components/ui-elements/templates/ui-button-theme.html                8  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/components/ui-elements/templates/ui-button-theme.html               10  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/ui-elements/templates/ui-footer-view.tmpl.html           11  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/ui-elements/templates/ui-header-view.tmpl.html           32  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/ui-elements/ui-footer-view.js                            16  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
@@ -48,12 +50,10 @@ app/traits/nav/nav-breadcrumb-view-traits.js                           169  LLLL
 app/traits/nav/nav-header-hamburger-item-traits.js                      16  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/nav/nav-menu-drawer-view-traits.js                           26  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/nav/nav-primary-view-traits.js                               46  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
-app/traits/page/page-item-core-traits.js                               219  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/page/page-item-custom-traits.js                              13  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
-app/traits/ui/ui-footer-view-traits.js                                  14  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/ui/ui-header-view-traits.js                                  41  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 app/traits/ui/ui-menu-drawer-view-traits.js                             60  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
-app/traits/utils/page-item-template-lookup.js                           26  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+app/traits/utils/page-item-template-lookup.js                           25  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 app/traits/utils/util-traits.js                                        161  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 dev-tools.js                                                            34  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 index.tmpl.html                                                         62  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
@@ -119,9 +119,11 @@ scss/03-components/ui/header.scss                                      210  CCCC
 scss/03-components/ui/menu-drawer.scss                                 152  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/03-components/ui/menu-hamburger.scss                              170  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/app.scss                                                          121  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+static/data/app.model.json                                             484  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  119 modules  10168 tokens  VLLLCCCCCCCCCCCCCCCC  V   3% B   1% L  17% C  79%
-          consistency 0.00  mean mixing 0.00 (by module) 0.00 (by token)  median V   0% B   0% L   0% C 100%
-          families: V 16 (100%   0%   0%   0%)  B 3 (  0% 100%   0%   0%)  L 21 (  0%   0% 100%   0%)  C 79 (  0%   0%   0% 100%)
-          detected: spynejs  adapters: content, spynejs  skipped: 12  tests: 4  empty: 1
+codebase  120 modules  10678 tokens  VLLLCCCCCCCCCCCCCCCC  V   3% B   0% L  16% C  80%
+          mean mixing 0.01 (non-stylesheet modules, 58)  0.00 (all modules)  0.00 (by token)  0.07 (by operation: no seals, absorption, or host inheritance)  consistency 0.01  median V   0% B   0% L   0% C 100%
+          families: V 16 (100%   0%   0%   0%)  B 3 (  0% 100%   0%   0%)  L 21 (  0%   0% 100%   0%)  C 80 (  0%   0%   0% 100%)
+          shape: inside declared shape 35/37  on sanctioned surface 37/37
+          detected: spynejs  adapters: content, spynejs  skipped: 11  tests: 4  empty: 1
 

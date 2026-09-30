@@ -1,0 +1,3 @@
+@use 'variables';
+@import 'missing-partial';
+.a { color: variables.$c; }

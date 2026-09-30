@@ -33,9 +33,35 @@
   ],
   "classifiers": [
     {
+      "id": "console",
+      "kind": "call",
+      "match": "^console\\.",
+      "bucket": "L",
+      "operation": true
+    },
+    {
+      "id": "config-data",
+      "kind": "configData",
+      "bucket": "V",
+      "operation": true
+    },
+    {
+      "id": "action-label",
+      "kind": "actionLabel",
+      "bucket": "B",
+      "operation": true
+    },
+    {
       "id": "jsx",
       "kind": "jsx",
-      "bucket": "V"
+      "bucket": "C",
+      "operation": true
+    },
+    {
+      "id": "compose-component",
+      "kind": "jsxComponent",
+      "bucket": "V",
+      "operation": true
     },
     {
       "id": "handler-prop",
@@ -43,63 +69,55 @@
       "match": "^on[A-Z]",
       "bucket": "V",
       "resolve": true,
-      "resolveBucket": "B"
+      "resolveBucket": "B",
+      "operation": true
     },
     {
       "id": "jsx-text",
       "kind": "jsxText",
-      "bucket": "C"
+      "bucket": "C",
+      "operation": true
     },
     {
       "id": "copy-attribute",
       "kind": "copyAttribute",
       "match": "^(placeholder|title|alt|label|aria-label|aria-description|aria-placeholder|aria-roledescription|aria-valuetext)$",
-      "bucket": "C"
+      "bucket": "C",
+      "operation": true
     },
     {
       "id": "style-attribute",
       "kind": "styleAttribute",
       "match": "^style$",
-      "bucket": "C"
+      "bucket": "C",
+      "operation": true
     },
     {
-      "id": "copy-string",
-      "kind": "copyString",
+      "id": "class-attribute",
+      "kind": "classAttribute",
+      "match": "^(class|className)$",
       "bucket": "C",
-      "minWords": 3,
-      "notWithin": [
-        "className",
-        "class",
-        "cn",
-        "clsx",
-        "classnames",
-        "classNames",
-        "twMerge",
-        "cva",
-        "tw",
-        "console.log",
-        "console.info",
-        "console.warn",
-        "console.error",
-        "console.debug",
-        "console.table",
-        "console.group",
-        "console.groupCollapsed",
-        "console.trace",
-        "console.assert",
-        "console.dir"
-      ]
+      "operation": true
     },
     {
       "id": "markup-template",
       "kind": "markupTemplate",
-      "bucket": "C"
+      "bucket": "C",
+      "operation": true
     },
     {
       "id": "css-in-js",
       "kind": "taggedTemplate",
       "match": "^(css|styled(\\.[A-Za-z]+)?(\\([^)]*\\))?|keyframes|createGlobalStyle|injectGlobal)$",
-      "bucket": "C"
+      "bucket": "C",
+      "operation": true
+    },
+    {
+      "id": "jsx-iteration",
+      "kind": "jsxIteration",
+      "match": "\\.(map|forEach)$",
+      "bucket": "C",
+      "operation": true
     },
     {
       "id": "jsx-expression-call",
@@ -111,7 +129,8 @@
       "kind": "call",
       "match": "^(React\\.)?use(Layout|Insertion)?Effect$",
       "bucket": "B",
-      "resolve": true
+      "resolve": true,
+      "operation": true
     },
     {
       "id": "memo",
@@ -123,40 +142,60 @@
       "id": "listener",
       "kind": "call",
       "match": "(^|\\.)(add|remove)EventListener$",
-      "bucket": "V",
+      "bucket": "B",
       "resolve": true,
-      "resolveBucket": "B"
+      "resolveBucket": "B",
+      "operation": true
     },
     {
       "id": "dom",
       "kind": "call",
       "match": "^(document|window\\.document)\\.|(^|\\.)(querySelector|querySelectorAll|getElementById|getElementsByClassName|getElementsByTagName|closest|matches|classList\\.(add|remove|toggle|replace|contains)|setAttribute|removeAttribute|getAttribute|appendChild|removeChild|insertBefore|replaceChild|insertAdjacentHTML|insertAdjacentElement|scrollIntoView|focus|blur)$",
-      "bucket": "V"
+      "bucket": "V",
+      "operation": true
     },
     {
       "id": "dom-write",
       "kind": "assignment",
       "match": "\\.(innerHTML|outerHTML|textContent|innerText|className|style(\\.[A-Za-z]+)?|dataset\\.[A-Za-z]+)$",
-      "bucket": "V"
+      "bucket": "V",
+      "operation": true
     },
     {
       "id": "subscribe",
       "kind": "call",
       "match": "(^|\\.)(subscribe|unsubscribe)$",
       "bucket": "B",
-      "resolve": true
+      "resolve": true,
+      "operation": true
     },
     {
       "id": "fetch",
       "kind": "call",
       "match": "^(fetch|(axios|api|http|client)\\.(get|post|put|patch|delete|request))$",
-      "bucket": "L"
+      "bucket": "B",
+      "operation": true
+    },
+    {
+      "id": "data-access",
+      "kind": "taggedTemplate",
+      "match": "^sql$",
+      "bucket": "B",
+      "operation": true
+    },
+    {
+      "id": "data-client",
+      "kind": "call",
+      "match": "^(postgres|new Pool|new PrismaClient|drizzle|createClient)$|^(sql|db|prisma|pool|knex)\\.(query|execute|begin|transaction|unsafe|end|select|insert|update|delete|from)$",
+      "bucket": "B",
+      "operation": true
     },
     {
       "id": "lifecycle",
       "kind": "classMethod",
       "match": "^(componentDidMount|componentDidUpdate|componentWillUnmount|componentDidCatch|shouldComponentUpdate|getSnapshotBeforeUpdate|UNSAFE_\\w+)$",
-      "bucket": "B"
+      "bucket": "B",
+      "operation": true
     },
     {
       "id": "conditional",
@@ -184,7 +223,7 @@
     },
     {
       "rule": "handler-prop",
-      "call": "onX props → V (registration is configuration); the handler body, inline or a local function the prop names → B (2026-09-22, fairness with addEventListener and SpyneJS broadcastEvents)",
+      "call": "onX props → V (registration is configuration); the handler body, inline or a local function the prop names → B; with JSX as Content this is the View a React component has, alongside refs and DOM calls",
       "reason": "the same act must get the same bucket in every config: wiring a listener declares; the body that runs on the event responds"
     },
     {
@@ -194,23 +233,18 @@
     },
     {
       "rule": "useState",
-      "call": "useState/useRef/useContext/custom hooks → L (default)",
-      "reason": "declaring state computes nothing and renders nothing; it falls to the module default. A case can be made for V (state drives the view)"
+      "call": "useState/useRef/useContext and custom hooks inside a view → L (default), and drift, since a view expects View and Content; inside a hook module → B (2026-09-29)",
+      "reason": "declaring state computes nothing and renders nothing; in a view it is the component holding state the framework lets it hold anywhere, which is the ambiguity the tool measures"
     },
     {
       "rule": "jsx-expression-call",
-      "call": "a non-JSX call inside a JSX expression container → L",
-      "reason": "items.map(...) transforms; the JSX it returns is still V because it is innermost. A plain {user.name} stays V"
+      "call": "a non-JSX call inside a JSX expression container → L, unless it is iteration over a bare list (jsx-iteration)",
+      "reason": "a call inside markup evaluates while drawing; it counts as logic in rendering"
     },
     {
       "rule": "conditional",
-      "call": "if/else, ?:, &&, ||, ??, switch → L; only the keyword and the test, branches keep their own bucket",
-      "reason": "ruling 5: a conditional is Logic wherever it appears; React has no allow-list because nothing in React is declarative event routing"
-    },
-    {
-      "rule": "copy-string",
-      "call": "a string literal of three or more words, more than half of them plain alphabetic, → C unless inside a class-list attribute or helper",
-      "reason": "prose is Content wherever it lives; class lists and CSS values look like prose by word count and are not, so words with digits or hyphens do not count as prose"
+      "call": "if/else, ?:, &&, ||, ??, switch → L; only the keyword and the test, branches keep their own bucket. {ready && <p/>} in JSX reports one Logic token where a template section reports none (qualified 2026-09-29)",
+      "reason": "a conditional is Logic wherever it appears. The JSX form evaluates an operator and admits any expression in that position; a DomElementTemplate section admits none. The tool counts evaluation in markup, not selection; a reader may prefer to count both as selection, and the counts are in the JSON either way"
     },
     {
       "rule": "jsx-text",
@@ -219,8 +253,8 @@
     },
     {
       "rule": "fetch",
-      "call": "fetch and axios/api/http/client.verb calls → L",
-      "reason": "a fetch computes a payload; the brief says so. Only the call is classified, so a fetch inside a handler leaves the rest of the handler B"
+      "call": "fetch and axios/api/http/client.verb calls → B (2026-09-27)",
+      "reason": "a fetch talks to the outside, as channel I/O does in SpyneJS; the two configs now agree"
     },
     {
       "rule": "typeAnnotations",
@@ -243,9 +277,117 @@
       "reason": "the stricter mixing is type mixing: a Channel, hook, or trait that manages the DOM is doing View work. Reads from a payload are not DOM access. Inside a uniform role (SpyneTrait) the role wins"
     },
     {
+      "rule": "jsx",
+      "call": "JSX elements, attributes, static attribute values, text, and bare reads used as text → C; the return keyword before JSX too (2026-09-27, reversing the 2026-09-22 ruling that JSX is V)",
+      "reason": "a <p> is what is shown whether it sits in a JSX return or an HTML template; the fairness review showed the same markup scoring V in one and C in the other. View is what draws and maintains a section of the DOM, which in React is React DOM and the root, not the component's return"
+    },
+    {
+      "rule": "jsx-iteration",
+      "call": "{items.map(item => <li/>)} over a bare identifier or member chain → C, like a template section; a block-bodied callback's statements are classified by what they do (2026-09-29, after the second review showed the iteration range hid a call in the body)",
+      "reason": "iteration over data decides nothing; a call inside the callback body evaluates and stays L"
+    },
+    {
+      "rule": "action-label",
+      "call": "const ADD_ITEM = 'ADD_ITEM' → B (2026-09-27)",
+      "reason": "it names what gets dispatched, the same declaration a SpyneJS Channel's registered-action list makes"
+    },
+    {
+      "rule": "config-data",
+      "call": "string values inside an object or array literal passed as a JSX prop (<Form labels={{ email: 'Email' }} />) → V (2026-09-27)",
+      "reason": "data handed to a rendering surface is the view's configuration: it declares what the template or component will be given, and is not copy in the wild. The same act gets the same bucket in both configs. Ruled 2026-09-22 as 'config = View, props.data included' and then lost when the seals came off; reapplied as a token rule. A hostile reader may say copy is copy; the answer is that copy inside markup is Content in both, and copy declared as data for markup is configuration in both"
+    },
+    {
+      "rule": "strings in code",
+      "call": "a string literal in JavaScript or TypeScript is not Content by itself: it takes its context. Content is a format: markup and its text, styles, JSON, Markdown (2026-09-27; JSON coverage implemented 2026-09-29, tooling manifests skipped)",
+      "reason": "content is designated by where it lives. The second review noted what this cannot show: copy kept in a JS constants or i18n object reads as Logic; moved to a JSON file it reads as Content. That is the position: copy belongs in data files and templates, and a codebase that keeps it in code shows that in the map as Logic in its views"
+    },
+    {
       "rule": "console",
-      "call": "strings inside console.* calls are Logic, never Content, markup included (ratified 2026-09-26)",
-      "reason": "console output is not content for the app; it is the developer's instrumentation, which is logic"
+      "call": "console.* calls → L wherever they appear, arguments included, markup strings included (2026-09-27)",
+      "reason": "console output is the developer's instrumentation, which is logic"
+    },
+    {
+      "rule": "class-attribute",
+      "call": "a static class or className attribute value counts one Content token per class, in JSX and in an HTML template alike (2026-09-27)",
+      "reason": "styles are a content format, and a stylesheet already counts by word: `.card { padding: 16px }` is three tokens. A utility class list does the same work in the markup and counted as one token however many classes it held, so a Tailwind codebase read smaller and less Content-heavy than it is, against a codebase that keeps its styles in SCSS files. A computed class list (clsx, cn) stays Logic with its arguments: choosing classes by state is a decision"
+    },
+    {
+      "rule": "view",
+      "call": "a module containing JSX is a view: expected View and Content, base View; its hooks and computation are out of place and drift (Frank, 2026-09-29)",
+      "reason": "React is a UI library by definition, so a module that renders is a view whether or not it is used that way, unless it extends something in React or another library that defines it as something else. That is the same question SpyneJS views are asked: what is in this module that its type does not expect. a module that is VBL structure is its type, and anything inside it that is a property defining that type stays categorized as that type (Frank, 2026-09-29); a React view's defining properties are its markup and its element registrations, and it has no sanctioned member surface"
+    },
+    {
+      "rule": "hook",
+      "call": "a module with no JSX whose exports are use* functions is a hook: the React module that captures events or data, expected Behavior, base Behavior; inside it the React hook calls (useState, useReducer, useRef, useContext, useEffect…) are Behavior, the properties defining that type, and computation is Logic and drift (Frank, 2026-09-29)",
+      "reason": "a custom hook captures events or data and hands them to whoever calls it, which is what a Channel does. A reducer or a utility with no JSX and no use* export declares nothing and gets no drift. Reaffirmed after review 3, which asked for a React function module for a component's DOM work as the trait's counterpart: if every hook is either an event or data, then for the purposes of the noisemap it is always behavior (Frank, 2026-09-29); React declares no module bound to a host, so there is nothing for the absorption rule to attach to"
+    },
+    {
+      "rule": "compose-component",
+      "call": "a JSX element whose tag is a component (`<LoginForm />`, `<Suspense>`, `<Foo.Bar>`) is View on its opening and closing tags: nesting a component is the view managing the DOM by composition, as `appendView` is in a class-based view. Its attributes and children keep their rules: a class list Content, an object-literal prop configuration, text Content (2026-09-29)",
+      "reason": "login/page.tsx and dashboard/customers/loading.tsx read as 100% Content while nesting `<LoginForm />` and `<CustomersPageSkeleton />`, which is clearly View DOM management in the form of nesting (Frank, 2026-09-29). The same act in SpyneJS, composing a child view, was already View"
+    },
+    {
+      "rule": "route",
+      "call": "a module with no JSX exporting `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, or `OPTIONS` is a Route Handler: role `route`, expected Behavior, default Behavior (2026-09-29)",
+      "reason": "api/search/route.ts is literally based on listening for events yet read as 100% Logic (Frank, 2026-09-29). A request handler listens and answers, which is the behavior layer; what it computes on the way is Logic and shows"
+    },
+    {
+      "rule": "data-access",
+      "call": "a `sql` tagged template and a database client call (`postgres(...)`, `sql.begin`, `db.query`, `prisma.*`) are Behavior, in both configs (2026-09-29)",
+      "reason": "lib/data.ts is literally events and data and returns data, yet read as 100% Logic; lib/payment-events.ts fetches outside any shape that designates it (Frank, 2026-09-29). Data I/O is the behavior layer, as a `fetch` already was; the mapping and formatting around the queries stay Logic, so a data module that also formats is mixed, which is what it is"
+    },
+    {
+      "rule": "listener",
+      "call": "`addEventListener` is Behavior in both configs, its handler body Behavior (2026-09-29)",
+      "reason": "a view adding its own event listeners is noise: the framework's way is `broadcastEvents` in SpyneJS and a handler prop in React, and a manual listener is behavior wiring outside the channel system (Frank, 2026-09-29). Before this it was read as View wiring in place"
+    },
+    {
+      "rule": "return keyword",
+      "call": "the keyword that introduces markup (`return`, `const x =`) takes the bucket of what it introduces: View before a component, Content before host markup (2026-09-29)",
+      "reason": "an agent or a developer does not distinguish a return from what it returns: `return <Skeleton />` is a view, one concern; what makes a page View and Content is the host markup around the components it places (Frank, 2026-09-29). Review 3 showed `dashboard/customers/loading.tsx` at mixing 0.50 on two tokens, the component and the keyword"
+    },
+    {
+      "rule": "data, formatted or not",
+      "call": "a value handed as data takes the data rule whether or not it is formatted: a string in `props.data` or in an object-literal prop is configuration in a view and logic in a trait, tags or no tags (2026-09-29)",
+      "reason": "data and HTML are both content, formatted or not formatted (Frank, 2026-09-29): the format of a value does not change what the value is to the module that holds it. Review 4 asked that recognizable markup inside a data value take precedence as Content; not adopted. Markup precedence applies to markup written as code, a template literal returned or assigned as a template, not to a value delivered as data"
+    }
+  ],
+  "roles": [
+    {
+      "name": "view",
+      "match": {
+        "jsx": true
+      },
+      "expected": [
+        "V",
+        "C"
+      ],
+      "default": "V"
+    },
+    {
+      "name": "hook",
+      "match": {
+        "exports": "^use[A-Z]"
+      },
+      "expected": [
+        "B"
+      ],
+      "default": "B",
+      "calls": {
+        "^(React\\.)?use[A-Z]\\w*$": {
+          "bucket": "B"
+        }
+      }
+    },
+    {
+      "name": "route",
+      "match": {
+        "exports": "^(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)$"
+      },
+      "expected": [
+        "B"
+      ],
+      "default": "B"
     }
   ]
 }

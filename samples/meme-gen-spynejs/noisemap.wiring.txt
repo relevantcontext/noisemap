@@ -1,0 +1,23 @@
+wiring  13 modules  23 connections  42 sites
+        discernibility 100% (declared 42 / opaque 0)   resolution 100%
+        vocabulary share 100%   working set: median 2 modules, 168 counted tokens (214 by token), 1 counterparts uncounted   locality 1.2
+        entries: index.js
+        roots: app
+
+vocabulary: 4 names the app declares (0 more from the framework)
+  name                                               registers  emits  listens  binds
+  CHANNEL_MEME_GENERATOR                                     0      0        0      1
+  CHANNEL_MEME_GENERATOR_UPDATE_EVENT                        1      1        1      0
+  CHANNEL_MEME_IMG                                           0      0        0      0
+  CHANNEL_MEME_TXT                                           0      0        0      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                     11           0          0         7        0
+listener-method             1           0          0         0        0
+listener-action             1           0          0         0        0
+channel-binding             1           0          0         0        0
+template-key                0           0          0         0        1
+action-registration         1           0          0         0        0
+
+findings: 0 unresolved/ambiguous, 0 opaque
+

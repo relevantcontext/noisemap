@@ -1,0 +1,41 @@
+wiring  62 modules  249 connections  1058 sites
+        discernibility 100% (declared 1055 / opaque 3)   resolution 100%
+        vocabulary share  25%   working set: median 4 modules, 902 counted tokens (1085 by token), 9 counterparts uncounted   locality 2.4
+        entries: api/events/stream/route.ts, api/search/route.ts, dashboard/(overview)/loading.tsx, dashboard/(overview)/page.tsx, dashboard/customers/loading.tsx, dashboard/customers/page.tsx, dashboard/invoices/[id]/edit/loading.tsx, dashboard/invoices/[id]/edit/not-found.tsx, dashboard/invoices/[id]/edit/page.tsx, dashboard/invoices/create/loading.tsx, dashboard/invoices/create/page.tsx, dashboard/invoices/error.tsx, dashboard/invoices/loading.tsx, dashboard/invoices/page.tsx, dashboard/layout.tsx, layout.tsx, login/page.tsx, page.tsx, query/route.ts, seed/route.ts
+        roots: ..
+
+vocabulary: 23 names the app declares (0 more from the framework)
+  name                                               registers  emits  listens  binds
+  apply                                                      1      4        0      0
+  redo                                                       1      2        0      0
+  reset                                                      1      1        0      0
+  undo                                                       1      2        0      0
+  InvoiceEditsContext                                        0      1        1      0
+  LiveEventsContext                                          0      1        1      0
+  QuickSearchContext                                         0      1        1      0
+  onClick                                                    0      2        0      0
+  onClose                                                    0      1        1      0
+  onHover                                                    0      2        2      0
+  onNavigate                                                 0      2        2      0
+  onToggled                                                  0      2        2      0
+  /                                                          0      1        0      0
+  /api/events/stream                                         0      0        0      0
+  /api/search                                                0      0        0      0
+  /dashboard                                                 0      0        0      0
+  /dashboard/customers                                       0      0        0      0
+  /dashboard/invoices                                        0      5        0      0
+  /dashboard/invoices/*/edit                                 0      1        0      0
+  /dashboard/invoices/create                                 0      1        0      0
+  /login                                                     0      1        0      0
+  /query                                                     0      0        0      0
+  /seed                                                      0      0        0      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                    104           0          0        92        0
+handler-path               27           0          0         0        5
+action-type                 9           0          0         0        0
+context                     3           0          0         0        0
+route                       9           0          0         0        0
+
+findings: 0 unresolved/ambiguous, 3 opaque
+

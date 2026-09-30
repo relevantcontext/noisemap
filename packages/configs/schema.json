@@ -92,14 +92,20 @@
           },
           "match": {
             "type": "object",
-            "required": [
-              "extends"
-            ],
             "additionalProperties": false,
+            "minProperties": 1,
             "properties": {
               "extends": {
                 "type": "string",
                 "description": "Regex matched against the superclass name, e.g. `ViewStream` or `DomElement|DomItem`."
+              },
+              "jsx": {
+                "type": "boolean",
+                "description": "The module contains JSX: a React module that renders is a view by definition (ruling 2026-09-29)."
+              },
+              "exports": {
+                "type": "string",
+                "description": "Regex matched against exported function names in a module with no JSX, e.g. `^use[A-Z]` for a hook module: the React module that captures events or data, Behavior by role (ruling 2026-09-29)."
               }
             }
           },
@@ -167,7 +173,19 @@
           },
           "uniform": {
             "type": "boolean",
-            "description": "Every counted token in the class body takes the role's default bucket; classifiers inside are not applied. Scaffolding and comments are still excluded. Drift is zero by definition. SpyneTrait: a trait is the logic module of the instance it is bound to."
+            "description": "Every counted token in the class body takes the role's default bucket; classifiers inside are not applied. Retired 2026-09-27 after the fairness review: a role may declare an expectation, it may not supply the evidence that the expectation was met. Kept in the schema so a user config can still opt in, and reported as an Open Question when it does."
+          },
+          "surface": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "The members the role sanctions on the class: exact names, or regexes for patterned names (a trait's prefix$ methods). Members outside it are reported as `surface.extra`."
+          },
+          "functions": {
+            "oneOf": [
+              { "type": "boolean" },
+              { "type": "object", "additionalProperties": { "type": "array", "items": { "$ref": "#/$defs/bucket" }, "uniqueItems": true } }
+            ],
+            "description": "The role is the framework's function module, written for a host (a SpyneTrait for a ViewStream or a Channel): an operation of the host's own layer inside it is what its functions do and takes the role's default. `true` absorbs every operation. A map from host kind (`view`, `channel`, as the adapter's prepare pass reports the binding) to the operation buckets absorbed for that host keeps the other layer's operations foreign: a channel trait manipulating the DOM, or a view trait subscribing to a stream, is out of place (ruling 2026-09-29). A class bound to no host or to both absorbs the union. Content formats (markup, styles, class lists) and configuration data stay foreign either way. Replaces `hosts`, retired the same day."
           }
         }
       }
@@ -242,8 +260,21 @@
             "call",
             "classMethod",
             "conditional",
-            "assignment"
+            "assignment",
+            "jsxIteration",
+            "actionLabel",
+            "configData",
+            "classAttribute",
+            "jsxComponent"
           ]
+        },
+        "operation": {
+          "type": "boolean",
+          "description": "An explicit operation of a layer (DOM access, channel I/O, fetch, subscription, console, markup, styles). It keeps its bucket inside a role's sanctioned members, where every other token is the module's type: a computed default in a constructor is the view's configuration, a DOM query in a channel is View (ruling 2026-09-29)."
+        },
+        "host": {
+          "type": "boolean",
+          "description": "For a call: it takes the bucket of whatever encloses it (the method rule, the role default) and its arguments go with it, because the construct is a declaration in its host (a ChannelPayloadFilter is wiring in a view, logic in a trait, subscription in a channel). `bucket` is the fallback outside any role."
         },
         "match": {
           "type": "string",

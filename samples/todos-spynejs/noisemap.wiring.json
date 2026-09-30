@@ -1,0 +1,1984 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:33.518Z",
+  "root": "/private/tmp/noisemap-samples/todos-spynejs/src",
+  "nodes": [
+    {
+      "id": "app/app-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/templates/todo-item.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/templates/todo-list-view.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/todo-item-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/todo-list-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/traits/todo-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "dev-tools.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    },
+    {
+      "id": "index.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": true
+    },
+    {
+      "id": "index.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/01-vendors/normalize.css",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/02-variables/mixins.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/todo-app.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/main.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/noun-robot.png",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 65,
+        "end": 95
+      },
+      "label": "components/todo-list-view.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/todo-list-view.js"
+      }
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 49,
+        "end": 56
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 85,
+        "end": 108
+      },
+      "label": "traits/todo-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e5",
+      "kind": "import",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 135,
+        "end": 168
+      },
+      "label": "./templates/todo-item.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/todo-item.tmpl.html"
+      }
+    },
+    {
+      "id": "e6",
+      "kind": "import",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 49,
+        "end": 56
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e7",
+      "kind": "import",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 85,
+        "end": 108
+      },
+      "label": "traits/todo-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e8",
+      "kind": "import",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 135,
+        "end": 168
+      },
+      "label": "./templates/todo-list-view.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/todo-list-view.html"
+      }
+    },
+    {
+      "id": "e9",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/todo-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e10",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/todo-traits.js",
+        "start": 65,
+        "end": 95
+      },
+      "label": "components/todo-item-view.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/todo-item-view.js"
+      }
+    },
+    {
+      "id": "e11",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e12",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 69,
+        "end": 91
+      },
+      "label": "spyne-plugin-console",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e13",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 7,
+        "end": 25
+      },
+      "label": "./scss/main.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/main.scss"
+      }
+    },
+    {
+      "id": "e14",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 66,
+        "end": 73
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e15",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 99,
+        "end": 118
+      },
+      "label": "./app/app-view.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/app-view.js"
+      }
+    },
+    {
+      "id": "e16",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 6,
+        "end": 30
+      },
+      "label": "01-vendors/normalize.css",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/01-vendors/normalize.css"
+      }
+    },
+    {
+      "id": "e17",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 39,
+        "end": 63
+      },
+      "label": "02-variables/mixins.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/02-variables/mixins.scss"
+      }
+    },
+    {
+      "id": "e18",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 72,
+        "end": 99
+      },
+      "label": "03-components/todo-app.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/todo-app.scss"
+      }
+    },
+    {
+      "id": "e19",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 912,
+        "end": 931
+      },
+      "label": "todos$onItemEvent",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e20",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 886,
+        "end": 910
+      },
+      "label": "CHANNEL_UI_CLICK_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e21",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 1122,
+        "end": 1144
+      },
+      "label": "todos$OnItemResponse",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e22",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 1085,
+        "end": 1120
+      },
+      "label": "CHANNEL_FETCH_TODO_RESPONSE_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e23",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 1188,
+        "end": 1207
+      },
+      "label": "todos$OnItemError",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e24",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 1154,
+        "end": 1186
+      },
+      "label": "CHANNEL_FETCH_TODO_ERROR_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e25",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 419,
+        "end": 431
+      },
+      "label": "CHANNEL_UI",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e26",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 433,
+        "end": 453
+      },
+      "label": "CHANNEL_FETCH_TODO",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "index.js",
+        "start": 2346,
+        "end": 2366
+      }
+    },
+    {
+      "id": "e27",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/todo-item-view.js",
+        "start": 648,
+        "end": 656
+      },
+      "label": "button",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/todo-item.tmpl.html"
+      }
+    },
+    {
+      "id": "e28",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/todo-item-view.js"
+      },
+      "to": {
+        "module": "app/components/templates/todo-item.tmpl.html"
+      },
+      "label": "2 keys, data supplied by the constructor's caller",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e29",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1000,
+        "end": 1017
+      },
+      "label": "todos$OnAddTodo",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e30",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 974,
+        "end": 998
+      },
+      "label": "CHANNEL_UI_CLICK_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e31",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1164,
+        "end": 1184
+      },
+      "label": "todos$OnListLoaded",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e32",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1122,
+        "end": 1162
+      },
+      "label": "CHANNEL_FETCH_TODO_LIST_RESPONSE_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e33",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1233,
+        "end": 1252
+      },
+      "label": "todos$OnListError",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e34",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1194,
+        "end": 1231
+      },
+      "label": "CHANNEL_FETCH_TODO_LIST_ERROR_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e35",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1363,
+        "end": 1387
+      },
+      "label": "todos$OnCreateResponse",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e36",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1326,
+        "end": 1361
+      },
+      "label": "CHANNEL_FETCH_TODO_RESPONSE_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e37",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1431,
+        "end": 1450
+      },
+      "label": "todos$OnListError",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/todo-traits.js"
+      }
+    },
+    {
+      "id": "e38",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 1397,
+        "end": 1429
+      },
+      "label": "CHANNEL_FETCH_TODO_ERROR_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e39",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 563,
+        "end": 575
+      },
+      "label": "CHANNEL_UI",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e40",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 583,
+        "end": 608
+      },
+      "label": "CHANNEL_FETCH_TODO_LIST",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "index.js",
+        "start": 1767,
+        "end": 1792
+      }
+    },
+    {
+      "id": "e41",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 616,
+        "end": 636
+      },
+      "label": "CHANNEL_FETCH_TODO",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "index.js",
+        "start": 2346,
+        "end": 2366
+      }
+    },
+    {
+      "id": "e42",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/todo-list-view.js",
+        "start": 827,
+        "end": 838
+      },
+      "label": ".add-todo",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/todo-list-view.html"
+      }
+    },
+    {
+      "id": "e43",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/todo-list-view.js"
+      },
+      "to": {
+        "module": "app/components/templates/todo-list-view.html"
+      },
+      "label": "0 keys, data supplied by the constructor's caller",
+      "status": "unknown",
+      "verified": "static"
+    }
+  ],
+  "sites": [
+    {
+      "module": "app/app-view.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 65,
+      "end": 95,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/todo-list-view.js"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 399,
+      "end": 414,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 419,
+      "end": 431,
+      "kind": "call",
+      "class": "declared",
+      "label": "new TodoListView"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 49,
+      "end": 56,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 85,
+      "end": 108,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/todo-traits.js"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 135,
+      "end": 168,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/todo-item.tmpl.html"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 419,
+      "end": 431,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_UI"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 433,
+      "end": 453,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 648,
+      "end": 656,
+      "kind": "listener",
+      "class": "declared",
+      "label": "button"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 658,
+      "end": 665,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 797,
+      "end": 817,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 886,
+      "end": 910,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_UI_CLICK_EVENT"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 912,
+      "end": 931,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$onItemEvent"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 1085,
+      "end": 1120,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO_RESPONSE_EVENT"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 1122,
+      "end": 1144,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$OnItemResponse"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 1154,
+      "end": 1186,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO_ERROR_EVENT"
+    },
+    {
+      "module": "app/components/todo-item-view.js",
+      "start": 1188,
+      "end": 1207,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$OnItemError"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 49,
+      "end": 56,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 85,
+      "end": 108,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/todo-traits.js"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 135,
+      "end": 168,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/todo-list-view.html"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 563,
+      "end": 575,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_UI"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 583,
+      "end": 608,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO_LIST"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 616,
+      "end": 636,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 827,
+      "end": 838,
+      "kind": "listener",
+      "class": "declared",
+      "label": ".add-todo"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 840,
+      "end": 847,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 913,
+      "end": 933,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 974,
+      "end": 998,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_UI_CLICK_EVENT"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1000,
+      "end": 1017,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$OnAddTodo"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1122,
+      "end": 1162,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO_LIST_RESPONSE_EVENT"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1164,
+      "end": 1184,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$OnListLoaded"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1194,
+      "end": 1231,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO_LIST_ERROR_EVENT"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1233,
+      "end": 1252,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$OnListError"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1326,
+      "end": 1361,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO_RESPONSE_EVENT"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1363,
+      "end": 1387,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$OnCreateResponse"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1397,
+      "end": 1429,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_FETCH_TODO_ERROR_EVENT"
+    },
+    {
+      "module": "app/components/todo-list-view.js",
+      "start": 1431,
+      "end": 1450,
+      "kind": "listener",
+      "class": "declared",
+      "label": "todos$OnListError"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 65,
+      "end": 95,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/todo-item-view.js"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 1944,
+      "end": 1957,
+      "kind": "call",
+      "class": "declared",
+      "label": "Array.isArray"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 1991,
+      "end": 2004,
+      "kind": "call",
+      "class": "declared",
+      "label": "todos.forEach"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2023,
+      "end": 2038,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2043,
+      "end": 2055,
+      "kind": "call",
+      "class": "declared",
+      "label": "new TodoItemView"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2096,
+      "end": 2116,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.todos$SetStatus"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2334,
+      "end": 2348,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2383,
+      "end": 2401,
+      "kind": "call",
+      "class": "declared",
+      "label": "inputEl.value.trim"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2470,
+      "end": 2490,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.todos$SetStatus"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2514,
+      "end": 2536,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendInfoToChannel"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 2544,
+      "end": 2564,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "'CHANNEL_FETCH_TODO'"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 3127,
+      "end": 3142,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 3147,
+      "end": 3159,
+      "kind": "call",
+      "class": "declared",
+      "label": "new TodoItemView"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 3197,
+      "end": 3217,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.todos$SetStatus"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 3334,
+      "end": 3354,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.todos$SetStatus"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 3480,
+      "end": 3494,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4002,
+      "end": 4009,
+      "kind": "call",
+      "class": "declared",
+      "label": "fn.call"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4127,
+      "end": 4153,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$.toggleClass"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4259,
+      "end": 4273,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4539,
+      "end": 4561,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendInfoToChannel"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4569,
+      "end": 4589,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "'CHANNEL_FETCH_TODO'"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4799,
+      "end": 4842,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).el.value.trim"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4799,
+      "end": 4813,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 4986,
+      "end": 5008,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendInfoToChannel"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 5016,
+      "end": 5036,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "'CHANNEL_FETCH_TODO'"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 5122,
+      "end": 5128,
+      "kind": "call",
+      "class": "declared",
+      "label": "Number"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 5548,
+      "end": 5570,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.disposeViewStream"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 5963,
+      "end": 5977,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 6035,
+      "end": 6061,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$.toggleClass"
+    },
+    {
+      "module": "app/traits/todo-traits.js",
+      "start": 6270,
+      "end": 6296,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$.toggleClass"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 69,
+      "end": 91,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne-plugin-console"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 121,
+      "end": 144,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerPlugin"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 152,
+      "end": 170,
+      "kind": "call",
+      "class": "declared",
+      "label": "new SpynePluginConsole"
+    },
+    {
+      "module": "index.js",
+      "start": 7,
+      "end": 25,
+      "kind": "import",
+      "class": "declared",
+      "label": "./scss/main.scss"
+    },
+    {
+      "module": "index.js",
+      "start": 66,
+      "end": 73,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "index.js",
+      "start": 99,
+      "end": 118,
+      "kind": "import",
+      "class": "declared",
+      "label": "./app/app-view.js"
+    },
+    {
+      "module": "index.js",
+      "start": 173,
+      "end": 186,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.init"
+    },
+    {
+      "module": "index.js",
+      "start": 1393,
+      "end": 1399,
+      "kind": "call",
+      "class": "declared",
+      "label": "String"
+    },
+    {
+      "module": "index.js",
+      "start": 1722,
+      "end": 1746,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 1754,
+      "end": 1766,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelFetch"
+    },
+    {
+      "module": "index.js",
+      "start": 1841,
+      "end": 1854,
+      "kind": "call",
+      "class": "declared",
+      "label": "Array.isArray"
+    },
+    {
+      "module": "index.js",
+      "start": 1860,
+      "end": 1865,
+      "kind": "call",
+      "class": "declared",
+      "label": "d.map"
+    },
+    {
+      "module": "index.js",
+      "start": 2301,
+      "end": 2325,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 2333,
+      "end": 2345,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelFetch"
+    },
+    {
+      "module": "index.js",
+      "start": 3013,
+      "end": 3019,
+      "kind": "call",
+      "class": "declared",
+      "label": "toTodo"
+    },
+    {
+      "module": "index.js",
+      "start": 3117,
+      "end": 3142,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).appendToDom"
+    },
+    {
+      "module": "index.js",
+      "start": 3121,
+      "end": 3128,
+      "kind": "call",
+      "class": "declared",
+      "label": "new AppView"
+    },
+    {
+      "module": "index.js",
+      "start": 3143,
+      "end": 3165,
+      "kind": "call",
+      "class": "declared",
+      "label": "document.querySelector"
+    }
+  ],
+  "findings": [],
+  "vocabulary": [
+    {
+      "name": "CHANNEL_FETCH_TODO",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/traits/todo-traits.js",
+          "start": 2544,
+          "end": 2564,
+          "role": "emits"
+        },
+        {
+          "module": "app/traits/todo-traits.js",
+          "start": 4569,
+          "end": 4589,
+          "role": "emits"
+        },
+        {
+          "module": "app/traits/todo-traits.js",
+          "start": 5016,
+          "end": 5036,
+          "role": "emits"
+        },
+        {
+          "module": "index.js",
+          "start": 2346,
+          "end": 2366,
+          "role": "names"
+        },
+        {
+          "module": "app/components/todo-item-view.js",
+          "start": 433,
+          "end": 453,
+          "role": "binds"
+        },
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 616,
+          "end": 636,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_FETCH_TODO_ERROR_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/components/todo-item-view.js",
+          "start": 1154,
+          "end": 1186,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 1397,
+          "end": 1429,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_FETCH_TODO_LIST",
+      "kind": "channel",
+      "framework": false,
+      "uses": [
+        {
+          "module": "index.js",
+          "start": 1767,
+          "end": 1792,
+          "role": "names"
+        },
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 583,
+          "end": 608,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_FETCH_TODO_LIST_ERROR_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 1194,
+          "end": 1231,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_FETCH_TODO_LIST_RESPONSE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 1122,
+          "end": 1162,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_FETCH_TODO_REQUEST_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/traits/todo-traits.js",
+          "start": 2758,
+          "end": 2792,
+          "role": "mentions"
+        },
+        {
+          "module": "app/traits/todo-traits.js",
+          "start": 4650,
+          "end": 4684,
+          "role": "mentions"
+        },
+        {
+          "module": "app/traits/todo-traits.js",
+          "start": 5186,
+          "end": 5220,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_FETCH_TODO_RESPONSE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/components/todo-item-view.js",
+          "start": 1085,
+          "end": 1120,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 1326,
+          "end": 1361,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI",
+      "kind": "channel",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/components/todo-item-view.js",
+          "start": 419,
+          "end": 431,
+          "role": "binds"
+        },
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 563,
+          "end": 575,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI_CLICK_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/components/todo-item-view.js",
+          "start": 886,
+          "end": 910,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/todo-list-view.js",
+          "start": 974,
+          "end": 998,
+          "role": "listens"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "app/app-view.js": {
+      "edges": {
+        "out": 2,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 4,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 124,
+        "counterparts": [
+          "app/components/todo-list-view.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/templates/todo-item.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 74,
+        "counterparts": [
+          "app/components/todo-item-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/templates/todo-list-view.html": {
+      "edges": {
+        "out": 0,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 69,
+        "counterparts": [
+          "app/components/todo-list-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/todo-item-view.js": {
+      "edges": {
+        "out": 13,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 14,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 418,
+        "counterparts": [
+          "app/components/templates/todo-item.tmpl.html",
+          "app/traits/todo-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.6666666666666667
+    },
+    "app/components/todo-list-view.js": {
+      "edges": {
+        "out": 18,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 19,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 432,
+        "counterparts": [
+          "app/app-view.js",
+          "app/components/templates/todo-list-view.html",
+          "app/traits/todo-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.5
+    },
+    "app/traits/todo-traits.js": {
+      "edges": {
+        "out": 2,
+        "in": 10,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 31,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 342,
+        "counterparts": [
+          "app/components/todo-item-view.js",
+          "app/components/todo-list-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "dev-tools.js": {
+      "edges": {
+        "out": 2,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 4,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 9,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "index.js": {
+      "edges": {
+        "out": 3,
+        "in": 3,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 15,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 190,
+        "counterparts": [
+          "app/app-view.js",
+          "app/components/todo-item-view.js",
+          "app/components/todo-list-view.js",
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.5
+    },
+    "index.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 44,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "scss/01-vendors/normalize.css": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 237,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/02-variables/mixins.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": null,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/todo-app.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 174,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/main.scss": {
+      "edges": {
+        "out": 3,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 448,
+        "counterparts": [
+          "index.js",
+          "scss/01-vendors/normalize.css",
+          "scss/02-variables/mixins.scss",
+          "scss/03-components/todo-app.scss"
+        ],
+        "unmeasured": 1
+      },
+      "locality": 1
+    },
+    "static/imgs/noun-robot.png": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 11,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 7,
+        "unknown": 0
+      },
+      "listener-method": {
+        "resolved": 8,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "listener-action": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 8,
+        "unknown": 0
+      },
+      "channel-binding": {
+        "resolved": 3,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 2,
+        "unknown": 0
+      },
+      "broadcast-selector": {
+        "resolved": 2,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "template-key": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 2
+      }
+    },
+    "sites": {
+      "declared": 87,
+      "opaque": 0
+    },
+    "discernibility": 1,
+    "resolution": 1,
+    "vocabularyShare": 1,
+    "workingSet": {
+      "medianModules": 2,
+      "medianTokens": 182,
+      "tokenWeightedMedianTokens": 237,
+      "unmeasuredCounterparts": 1
+    },
+    "locality": 1.2424242424242424,
+    "entries": [
+      "index.js"
+    ],
+    "roots": [
+      "app"
+    ]
+  }
+}

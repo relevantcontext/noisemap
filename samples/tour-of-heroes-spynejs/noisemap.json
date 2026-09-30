@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.1"
+    "version": "0.2.0"
   },
-  "generatedAt": "2026-09-26T10:39:07.145Z",
+  "generatedAt": "2026-09-29T23:23:33.744Z",
   "root": "/private/tmp/noisemap-samples/tour-of-heroes-spynejs/src",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.028568794150387804,
+    "consistency": 0.003506988649483454,
     "median": {
       "V": 0,
       "B": 0,
@@ -30,9 +30,9 @@
       "V": {
         "modules": 10,
         "median": {
-          "V": 0.864367816091954,
+          "V": 1,
           "B": 0,
-          "L": 0.135632183908046,
+          "L": 0,
           "C": 0
         }
       },
@@ -40,8 +40,8 @@
         "modules": 1,
         "median": {
           "V": 0,
-          "B": 0.8695652173913043,
-          "L": 0.13043478260869565,
+          "B": 1,
+          "L": 0,
           "C": 0
         }
       },
@@ -65,37 +65,54 @@
       }
     },
     "totals": {
-      "V": 229,
-      "B": 60,
-      "L": 633,
-      "C": 1014,
-      "excluded": 3604,
-      "counted": 1936
+      "V": 276,
+      "B": 69,
+      "L": 577,
+      "C": 1018,
+      "excluded": 3608,
+      "counted": 1940
     },
     "shares": {
-      "V": 0.11828512396694214,
-      "B": 0.030991735537190084,
-      "L": 0.3269628099173554,
-      "C": 0.5237603305785123
+      "V": 0.1422680412371134,
+      "B": 0.03556701030927835,
+      "L": 0.29742268041237113,
+      "C": 0.5247422680412371
     },
-    "meanMixing": 0.045704838504485666,
-    "meanMixingTokenWeighted": 0.028409090909090908
+    "meanMixing": 0.0024089635854341747,
+    "meanMixingTokenWeighted": 0.005670103092783513,
+    "codeModules": {
+      "count": 27,
+      "meanMixing": 0.003122730573710967
+    },
+    "byOperation": {
+      "count": 27,
+      "meanMixing": 0.14560236579303396
+    },
+    "shape": {
+      "declared": 15,
+      "insideShape": 14,
+      "withSurface": 15,
+      "onSurface": 14,
+      "undeclared": 20,
+      "internalSurfaces": 0,
+      "internalModules": 0
+    }
   },
   "modules": [
     {
       "path": "app/app-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 23,
+        "V": 25,
         "B": 0,
-        "L": 2,
+        "L": 0,
         "C": 0,
         "excluded": 92
       },
       "shares": {
-        "V": 0.92,
+        "V": 1,
         "B": 0,
-        "L": 0.08,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -157,27 +174,11 @@
         },
         {
           "start": 235,
-          "end": 324,
+          "end": 378,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 11,
-          "punctuation": 10
-        },
-        {
-          "start": 325,
-          "end": 326,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 327,
-          "end": 378,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 13,
+          "punctuation": 12
         },
         {
           "start": 378,
@@ -300,24 +301,46 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.07999999999999996,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.08
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.24
     },
     {
       "path": "app/channels/channel-toh.js",
       "framework": "spynejs",
       "tokens": {
         "V": 0,
-        "B": 60,
-        "L": 9,
+        "B": 69,
+        "L": 0,
         "C": 0,
         "excluded": 151
       },
       "shares": {
         "V": 0,
-        "B": 0.8695652173913043,
-        "L": 0.13043478260869565,
+        "B": 1,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -379,27 +402,11 @@
         },
         {
           "start": 192,
-          "end": 296,
+          "end": 344,
           "bucket": "B",
           "rule": "method:constructor",
-          "tokens": 10,
-          "punctuation": 11
-        },
-        {
-          "start": 297,
-          "end": 298,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 299,
-          "end": 344,
-          "bucket": "L",
-          "rule": "Channel:call",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 12,
+          "punctuation": 13
         },
         {
           "start": 344,
@@ -531,27 +538,11 @@
         },
         {
           "start": 1010,
-          "end": 1066,
-          "bucket": "L",
-          "rule": "conditional",
-          "tokens": 7,
-          "punctuation": 8
-        },
-        {
-          "start": 1067,
-          "end": 1071,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 1071,
           "end": 1109,
           "bucket": "B",
           "rule": "payload-filter",
-          "tokens": 5,
-          "punctuation": 5
+          "tokens": 12,
+          "punctuation": 15
         },
         {
           "start": 1109,
@@ -690,24 +681,44 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.13043478260869568,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "Channel",
-      "drift": 0.10144927536231885
+      "drift": 0,
+      "expected": [
+        "B"
+      ],
+      "base": "B",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions",
+          "onViewStreamInfo"
+        ],
+        "members": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.49275362318840576
     },
     {
       "path": "app/components/page-components/page-404-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 19,
+        "V": 23,
         "B": 0,
-        "L": 4,
+        "L": 0,
         "C": 0,
         "excluded": 81
       },
       "shares": {
-        "V": 0.8260869565217391,
+        "V": 1,
         "B": 0,
-        "L": 0.17391304347826086,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -769,11 +780,59 @@
         },
         {
           "start": 173,
-          "end": 304,
+          "end": 214,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 12,
-          "punctuation": 12
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 215,
+          "end": 216,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 217,
+          "end": 222,
+          "bucket": "V",
+          "rule": "config-data",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 222,
+          "end": 223,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 232,
+          "end": 261,
+          "bucket": "V",
+          "rule": "method:constructor",
+          "tokens": 3,
+          "punctuation": 3
+        },
+        {
+          "start": 261,
+          "end": 262,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 271,
+          "end": 304,
+          "bucket": "V",
+          "rule": "dom-write",
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 313,
@@ -809,59 +868,11 @@
         },
         {
           "start": 368,
-          "end": 392,
-          "bucket": "V",
-          "rule": "method:addActionListeners",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 393,
-          "end": 398,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 4,
-          "punctuation": 0
-        },
-        {
-          "start": 406,
-          "end": 429,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
-        },
-        {
-          "start": 429,
-          "end": 430,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 430,
-          "end": 465,
-          "bucket": "L",
-          "rule": "ViewStream:call",
-          "tokens": 2,
-          "punctuation": 1
-        },
-        {
-          "start": 465,
-          "end": 469,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 4,
-          "punctuation": 0
-        },
-        {
-          "start": 478,
           "end": 503,
           "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 2,
-          "punctuation": 0
+          "tokens": 8,
+          "punctuation": 11
         },
         {
           "start": 503,
@@ -936,24 +947,46 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.17391304347826086,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.08695652173913043
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.17391304347826086
     },
     {
       "path": "app/components/page-components/page-dashboard-search-component.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 17,
+        "V": 19,
         "B": 0,
-        "L": 2,
+        "L": 0,
         "C": 0,
         "excluded": 79
       },
       "shares": {
-        "V": 0.8947368421052632,
+        "V": 1,
         "B": 0,
-        "L": 0.10526315789473684,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -1015,27 +1048,11 @@
         },
         {
           "start": 207,
-          "end": 346,
+          "end": 407,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 11,
-          "punctuation": 13
-        },
-        {
-          "start": 347,
-          "end": 348,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 349,
-          "end": 407,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 13,
+          "punctuation": 15
         },
         {
           "start": 407,
@@ -1142,24 +1159,46 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.10526315789473684,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.10526315789473684
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.10526315789473684
     },
     {
       "path": "app/components/page-components/page-dashboard-search-item.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 27,
+        "V": 36,
         "B": 0,
-        "L": 9,
+        "L": 0,
         "C": 0,
         "excluded": 104
       },
       "shares": {
-        "V": 0.75,
+        "V": 1,
         "B": 0,
-        "L": 0.25,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -1221,27 +1260,11 @@
         },
         {
           "start": 222,
-          "end": 351,
+          "end": 412,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 11,
-          "punctuation": 13
-        },
-        {
-          "start": 352,
-          "end": 353,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 354,
-          "end": 412,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 13,
+          "punctuation": 15
         },
         {
           "start": 412,
@@ -1285,11 +1308,27 @@
         },
         {
           "start": 479,
-          "end": 557,
+          "end": 510,
           "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 5,
-          "punctuation": 3
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 511,
+          "end": 512,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 513,
+          "end": 557,
+          "bucket": "V",
+          "rule": "payload-filter",
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 557,
@@ -1317,27 +1356,27 @@
         },
         {
           "start": 564,
-          "end": 605,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 7,
-          "punctuation": 6
+          "end": 638,
+          "bucket": "V",
+          "rule": "payload-filter",
+          "tokens": 11,
+          "punctuation": 11
         },
         {
-          "start": 605,
-          "end": 610,
+          "start": 647,
+          "end": 650,
           "bucket": "excluded",
           "rule": "punctuation",
-          "tokens": 2,
+          "tokens": 3,
           "punctuation": 0
         },
         {
-          "start": 611,
+          "start": 660,
           "end": 756,
           "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 8,
-          "punctuation": 10
+          "tokens": 4,
+          "punctuation": 4
         },
         {
           "start": 756,
@@ -1396,24 +1435,46 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.25,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.25
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.41666666666666663
     },
     {
       "path": "app/components/page-components/page-dashboard-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 19,
+        "V": 23,
         "B": 0,
-        "L": 4,
+        "L": 0,
         "C": 0,
         "excluded": 92
       },
       "shares": {
-        "V": 0.8260869565217391,
+        "V": 1,
         "B": 0,
-        "L": 0.17391304347826086,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -1475,27 +1536,11 @@
         },
         {
           "start": 283,
-          "end": 369,
+          "end": 423,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 8,
-          "punctuation": 9
-        },
-        {
-          "start": 370,
-          "end": 371,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 372,
-          "end": 423,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 10,
+          "punctuation": 11
         },
         {
           "start": 423,
@@ -1539,27 +1584,11 @@
         },
         {
           "start": 490,
-          "end": 496,
+          "end": 544,
           "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 497,
-          "end": 498,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 509,
-          "end": 544,
-          "bucket": "L",
-          "rule": "ViewStream:call",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 544,
@@ -1650,24 +1679,46 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.17391304347826086,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.08695652173913043
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.26086956521739135
     },
     {
       "path": "app/components/page-components/page-hero-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 26,
+        "V": 30,
         "B": 0,
-        "L": 4,
+        "L": 0,
         "C": 0,
         "excluded": 101
       },
       "shares": {
-        "V": 0.8666666666666667,
+        "V": 1,
         "B": 0,
-        "L": 0.13333333333333333,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -1729,27 +1780,11 @@
         },
         {
           "start": 193,
-          "end": 277,
+          "end": 333,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 8,
-          "punctuation": 9
-        },
-        {
-          "start": 278,
-          "end": 279,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 280,
-          "end": 333,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 10,
+          "punctuation": 11
         },
         {
           "start": 333,
@@ -1793,27 +1828,11 @@
         },
         {
           "start": 398,
-          "end": 604,
+          "end": 651,
           "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 8,
-          "punctuation": 12
-        },
-        {
-          "start": 605,
-          "end": 607,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 616,
-          "end": 651,
-          "bucket": "L",
-          "rule": "ViewStream:call",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 10,
+          "punctuation": 15
         },
         {
           "start": 651,
@@ -1888,24 +1907,46 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.1333333333333333,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.06666666666666667
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.23333333333333328
     },
     {
       "path": "app/components/page-components/page-heroes-item-component.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 25,
+        "V": 35,
         "B": 0,
-        "L": 10,
+        "L": 0,
         "C": 0,
         "excluded": 96
       },
       "shares": {
-        "V": 0.7142857142857143,
+        "V": 1,
         "B": 0,
-        "L": 0.2857142857142857,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -1967,27 +2008,43 @@
         },
         {
           "start": 152,
-          "end": 263,
+          "end": 172,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 8,
-          "punctuation": 9
+          "tokens": 3,
+          "punctuation": 2
         },
         {
-          "start": 264,
-          "end": 265,
+          "start": 172,
+          "end": 173,
           "bucket": "excluded",
           "rule": "punctuation",
           "tokens": 1,
           "punctuation": 0
         },
         {
-          "start": 266,
-          "end": 324,
-          "bucket": "L",
-          "rule": "call:composed",
+          "start": 182,
+          "end": 238,
+          "bucket": "V",
+          "rule": "dom-write",
+          "tokens": 3,
+          "punctuation": 3
+        },
+        {
+          "start": 238,
+          "end": 240,
+          "bucket": "excluded",
+          "rule": "punctuation",
           "tokens": 2,
-          "punctuation": 1
+          "punctuation": 0
+        },
+        {
+          "start": 249,
+          "end": 324,
+          "bucket": "V",
+          "rule": "method:constructor",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 324,
@@ -2031,11 +2088,27 @@
         },
         {
           "start": 389,
-          "end": 455,
+          "end": 410,
           "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 5,
-          "punctuation": 3
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 411,
+          "end": 412,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 413,
+          "end": 455,
+          "bucket": "V",
+          "rule": "payload-filter",
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 455,
@@ -2064,8 +2137,8 @@
         {
           "start": 460,
           "end": 506,
-          "bucket": "L",
-          "rule": "call:composed",
+          "bucket": "V",
+          "rule": "payload-filter",
           "tokens": 8,
           "punctuation": 8
         },
@@ -2158,24 +2231,46 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.2857142857142857,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.2857142857142857
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.4571428571428572
     },
     {
       "path": "app/components/page-components/page-heroes-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 25,
+        "V": 29,
         "B": 0,
-        "L": 4,
+        "L": 0,
         "C": 0,
         "excluded": 94
       },
       "shares": {
-        "V": 0.8620689655172413,
+        "V": 1,
         "B": 0,
-        "L": 0.13793103448275862,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -2237,27 +2332,11 @@
         },
         {
           "start": 175,
-          "end": 258,
+          "end": 309,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 8,
-          "punctuation": 9
-        },
-        {
-          "start": 259,
-          "end": 260,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 261,
-          "end": 309,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 10,
+          "punctuation": 11
         },
         {
           "start": 309,
@@ -2301,27 +2380,11 @@
         },
         {
           "start": 374,
-          "end": 438,
+          "end": 485,
           "bucket": "V",
           "rule": "method:addActionListeners",
-          "tokens": 3,
-          "punctuation": 3
-        },
-        {
-          "start": 439,
-          "end": 441,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 450,
-          "end": 485,
-          "bucket": "L",
-          "rule": "ViewStream:call",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 5,
+          "punctuation": 6
         },
         {
           "start": 485,
@@ -2396,9 +2459,31 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.13793103448275867,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.06896551724137931
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.4482758620689655
     },
     {
       "path": "app/components/page-components/templates/page-dashboard-search-item.tmpl.html",
@@ -2442,7 +2527,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-components/templates/page-dashboard-search.component.html",
@@ -2471,11 +2558,67 @@
         },
         {
           "start": 3,
+          "end": 77,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 10,
+          "punctuation": 7
+        },
+        {
+          "start": 77,
+          "end": 78,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 79,
+          "end": 88,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 90,
+          "end": 132,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 4
+        },
+        {
+          "start": 132,
+          "end": 133,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 134,
+          "end": 147,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 148,
+          "end": 158,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 158,
           "end": 326,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 30,
-          "punctuation": 42
+          "tokens": 14,
+          "punctuation": 26
         },
         {
           "start": 326,
@@ -2486,7 +2629,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-components/templates/page-dashboard.component.html",
@@ -2515,11 +2660,43 @@
         },
         {
           "start": 1,
+          "end": 30,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 30,
+          "end": 31,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 32,
+          "end": 43,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 44,
+          "end": 52,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 52,
           "end": 263,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 27,
-          "punctuation": 38
+          "tokens": 20,
+          "punctuation": 29
         },
         {
           "start": 263,
@@ -2530,7 +2707,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-components/templates/page-hero-detail.component.html",
@@ -2540,7 +2719,7 @@
         "B": 0,
         "L": 0,
         "C": 48,
-        "excluded": 64
+        "excluded": 68
       },
       "shares": {
         "V": 0,
@@ -2559,11 +2738,67 @@
         },
         {
           "start": 1,
+          "end": 193,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 24,
+          "punctuation": 37
+        },
+        {
+          "start": 193,
+          "end": 197,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 197,
+          "end": 211,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 211,
+          "end": 221,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 6,
+          "punctuation": 0
+        },
+        {
+          "start": 221,
+          "end": 295,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 11,
+          "punctuation": 9
+        },
+        {
+          "start": 295,
+          "end": 296,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 297,
+          "end": 304,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 306,
           "end": 391,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 48,
-          "punctuation": 62
+          "tokens": 11,
+          "punctuation": 10
         },
         {
           "start": 391,
@@ -2574,7 +2809,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-components/templates/page-heroes-item-component.tmpl.html",
@@ -2583,7 +2820,7 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 31,
+        "C": 34,
         "excluded": 38
       },
       "shares": {
@@ -2603,11 +2840,131 @@
         },
         {
           "start": 1,
+          "end": 9,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 9,
+          "end": 10,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 11,
+          "end": 37,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 38,
+          "end": 45,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 45,
+          "end": 127,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 9,
+          "punctuation": 5
+        },
+        {
+          "start": 127,
+          "end": 128,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 129,
+          "end": 134,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 135,
+          "end": 138,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 138,
+          "end": 199,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 8,
+          "punctuation": 14
+        },
+        {
+          "start": 199,
+          "end": 200,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 201,
+          "end": 215,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 217,
+          "end": 265,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 5,
+          "punctuation": 2
+        },
+        {
+          "start": 265,
+          "end": 266,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 267,
+          "end": 278,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 279,
+          "end": 280,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 280,
           "end": 295,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 31,
-          "punctuation": 36
+          "tokens": 3,
+          "punctuation": 5
         },
         {
           "start": 295,
@@ -2618,7 +2975,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-components/templates/page-heroes.component.html",
@@ -2627,7 +2986,7 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 29,
+        "C": 30,
         "excluded": 36
       },
       "shares": {
@@ -2679,11 +3038,67 @@
         },
         {
           "start": 172,
+          "end": 198,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 1
+        },
+        {
+          "start": 198,
+          "end": 199,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 200,
+          "end": 218,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 220,
+          "end": 286,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 8,
+          "punctuation": 9
+        },
+        {
+          "start": 286,
+          "end": 287,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 288,
+          "end": 294,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 295,
+          "end": 300,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 300,
           "end": 302,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 15,
-          "punctuation": 15
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 302,
@@ -2694,22 +3109,24 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/stage-messages-component.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 30,
+        "V": 32,
         "B": 0,
-        "L": 2,
+        "L": 0,
         "C": 0,
         "excluded": 98
       },
       "shares": {
-        "V": 0.9375,
+        "V": 1,
         "B": 0,
-        "L": 0.0625,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -2771,27 +3188,11 @@
         },
         {
           "start": 217,
-          "end": 306,
+          "end": 354,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 8,
-          "punctuation": 9
-        },
-        {
-          "start": 307,
-          "end": 308,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 309,
-          "end": 354,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 2,
-          "punctuation": 1
+          "tokens": 10,
+          "punctuation": 11
         },
         {
           "start": 354,
@@ -2899,11 +3300,43 @@
         },
         {
           "start": 708,
+          "end": 729,
+          "bucket": "V",
+          "rule": "role:ViewStream",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 730,
+          "end": 731,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 732,
+          "end": 760,
+          "bucket": "V",
+          "rule": "dom",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 760,
+          "end": 762,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 769,
           "end": 835,
           "bucket": "V",
           "rule": "role:ViewStream",
-          "tokens": 13,
-          "punctuation": 14
+          "tokens": 6,
+          "punctuation": 6
         },
         {
           "start": 835,
@@ -2914,9 +3347,31 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.0625,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.0625
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.25
     },
     {
       "path": "app/components/stage-view.js",
@@ -3105,8 +3560,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/templates/app.component.html",
@@ -3150,7 +3627,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/templates/messages.component.html",
@@ -3179,11 +3658,43 @@
         },
         {
           "start": 1,
+          "end": 65,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 8,
+          "punctuation": 8
+        },
+        {
+          "start": 65,
+          "end": 66,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 67,
+          "end": 72,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 83,
+          "end": 84,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 84,
           "end": 148,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 17,
-          "punctuation": 21
+          "tokens": 8,
+          "punctuation": 11
         },
         {
           "start": 148,
@@ -3194,7 +3705,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/mock-data.js",
@@ -3238,22 +3751,24 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/traits/toh-channel-traits.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 0,
+        "V": 6,
         "B": 0,
-        "L": 340,
+        "L": 334,
         "C": 0,
         "excluded": 656
       },
       "shares": {
-        "V": 0,
+        "V": 0.01764705882352941,
         "B": 0,
-        "L": 1,
+        "L": 0.9823529411764705,
         "C": 0
       },
       "spans": [
@@ -3395,11 +3910,27 @@
         },
         {
           "start": 363,
+          "end": 414,
+          "bucket": "V",
+          "rule": "dom",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 414,
+          "end": 416,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 416,
           "end": 665,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 26,
-          "punctuation": 41
+          "tokens": 20,
+          "punctuation": 34
         },
         {
           "start": 665,
@@ -3419,11 +3950,43 @@
         },
         {
           "start": 714,
-          "end": 1130,
+          "end": 980,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 37,
-          "punctuation": 47
+          "tokens": 26,
+          "punctuation": 33
+        },
+        {
+          "start": 980,
+          "end": 982,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 988,
+          "end": 1076,
+          "bucket": "L",
+          "rule": "console",
+          "tokens": 7,
+          "punctuation": 7
+        },
+        {
+          "start": 1076,
+          "end": 1078,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1083,
+          "end": 1130,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 1130,
@@ -3451,11 +4014,43 @@
         },
         {
           "start": 1188,
-          "end": 1661,
+          "end": 1507,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 46,
-          "punctuation": 59
+          "tokens": 35,
+          "punctuation": 44
+        },
+        {
+          "start": 1507,
+          "end": 1510,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 1516,
+          "end": 1595,
+          "bucket": "L",
+          "rule": "console",
+          "tokens": 7,
+          "punctuation": 7
+        },
+        {
+          "start": 1595,
+          "end": 1597,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1603,
+          "end": 1661,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 1661,
@@ -3695,7 +4290,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 7,
-          "punctuation": 6
+          "punctuation": 6,
+          "misplaced": true
         },
         {
           "start": 3367,
@@ -3727,7 +4323,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 4,
-          "punctuation": 4
+          "punctuation": 4,
+          "misplaced": true
         },
         {
           "start": 3387,
@@ -3759,7 +4356,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 6,
-          "punctuation": 4
+          "punctuation": 4,
+          "misplaced": true
         },
         {
           "start": 3474,
@@ -3799,7 +4397,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 4,
-          "punctuation": 2
+          "punctuation": 2,
+          "misplaced": true
         },
         {
           "start": 3622,
@@ -3831,7 +4430,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 8,
-          "punctuation": 6
+          "punctuation": 6,
+          "misplaced": true
         },
         {
           "start": 3694,
@@ -3855,7 +4455,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 23,
-          "punctuation": 31
+          "punctuation": 31,
+          "misplaced": true
         },
         {
           "start": 4048,
@@ -3887,7 +4488,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 4,
-          "punctuation": 2
+          "punctuation": 2,
+          "misplaced": true
         },
         {
           "start": 4120,
@@ -3919,7 +4521,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 12,
-          "punctuation": 12
+          "punctuation": 12,
+          "misplaced": true
         },
         {
           "start": 4206,
@@ -3951,7 +4554,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 3,
-          "punctuation": 2
+          "punctuation": 2,
+          "misplaced": true
         },
         {
           "start": 4274,
@@ -3983,7 +4587,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 6,
-          "punctuation": 7
+          "punctuation": 7,
+          "misplaced": true
         },
         {
           "start": 4322,
@@ -4015,7 +4620,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 20,
-          "punctuation": 25
+          "punctuation": 25,
+          "misplaced": true
         },
         {
           "start": 4604,
@@ -4047,7 +4653,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 2,
-          "punctuation": 1
+          "punctuation": 1,
+          "misplaced": true
         },
         {
           "start": 4667,
@@ -4079,7 +4686,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 5,
-          "punctuation": 5
+          "punctuation": 5,
+          "misplaced": true
         },
         {
           "start": 4701,
@@ -4103,7 +4711,8 @@
           "bucket": "L",
           "rule": "role:SpyneTrait",
           "tokens": 14,
-          "punctuation": 14
+          "punctuation": 14,
+          "misplaced": true
         },
         {
           "start": 5126,
@@ -4131,11 +4740,28 @@
         },
         {
           "start": 5167,
+          "end": 5200,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 3,
+          "punctuation": 1,
+          "misplaced": true
+        },
+        {
+          "start": 5200,
+          "end": 5216,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 5221,
           "end": 5242,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 6,
-          "punctuation": 5
+          "tokens": 3,
+          "punctuation": 0
         },
         {
           "start": 5242,
@@ -4146,9 +4772,52 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0,
+      "mixing": 0.01764705882352946,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0.3735294117647059,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "tohChannel$SendBtnClickEvent",
+          "tohChannel$SendRouteChangeEvent",
+          "tohChannel$GetPageData",
+          "tohChannel$GenerateMessage",
+          "tohChannel$CreateHeroDataObj",
+          "constructor",
+          "getHero",
+          "getTopHeroes",
+          "add",
+          "update",
+          "delete",
+          "search",
+          "heroes"
+        ],
+        "extra": [
+          "getHero",
+          "getTopHeroes",
+          "add",
+          "update",
+          "delete",
+          "search",
+          "heroes"
+        ]
+      },
+      "bindings": [
+        {
+          "host": "ChannelToh",
+          "kind": "channel"
+        }
+      ],
+      "mixingByOperation": 0.04117647058823526
     },
     {
       "path": "app/traits/toh-dashboard-traits.js",
@@ -4305,11 +4974,27 @@
         },
         {
           "start": 396,
+          "end": 465,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 6,
+          "punctuation": 7
+        },
+        {
+          "start": 465,
+          "end": 467,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 472,
           "end": 502,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 9,
-          "punctuation": 11
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 502,
@@ -4321,8 +5006,31 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "tohDashboard$OnSearchEvent"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "PageDashboardSearchComponent",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.1875
     },
     {
       "path": "app/traits/toh-messages-traits.js",
@@ -4449,7 +5157,7 @@
           "start": 244,
           "end": 285,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "dom-write",
           "tokens": 6,
           "punctuation": 5
         },
@@ -4479,11 +5187,59 @@
         },
         {
           "start": 337,
-          "end": 437,
+          "end": 360,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 14,
-          "punctuation": 16
+          "tokens": 4,
+          "punctuation": 4
+        },
+        {
+          "start": 360,
+          "end": 361,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 366,
+          "end": 402,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 402,
+          "end": 403,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 403,
+          "end": 428,
+          "bucket": "L",
+          "rule": "new-view",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 428,
+          "end": 431,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 431,
+          "end": 437,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 437,
@@ -4495,8 +5251,36 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "tohMessages$OnClearMsgs",
+          "tohMessages$OnChannelRoute"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "PageDashboardSearchItem",
+          "kind": "view"
+        },
+        {
+          "host": "StageMessagesComponent",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.34782608695652173
     },
     {
       "path": "app/traits/toh-page-traits.js",
@@ -4621,11 +5405,43 @@
         },
         {
           "start": 643,
-          "end": 771,
+          "end": 681,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 16,
-          "punctuation": 20
+          "tokens": 6,
+          "punctuation": 4
+        },
+        {
+          "start": 681,
+          "end": 682,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 687,
+          "end": 712,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 712,
+          "end": 714,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 714,
+          "end": 771,
+          "bucket": "L",
+          "rule": "dom-write",
+          "tokens": 6,
+          "punctuation": 10
         },
         {
           "start": 771,
@@ -4685,11 +5501,43 @@
         },
         {
           "start": 912,
+          "end": 948,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 949,
+          "end": 950,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 951,
+          "end": 982,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 5,
+          "punctuation": 5
+        },
+        {
+          "start": 982,
+          "end": 986,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 986,
           "end": 995,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 13,
-          "punctuation": 16
+          "tokens": 2,
+          "punctuation": 1
         },
         {
           "start": 995,
@@ -4717,11 +5565,27 @@
         },
         {
           "start": 1062,
-          "end": 1159,
+          "end": 1089,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 10,
-          "punctuation": 11
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 1089,
+          "end": 1090,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1095,
+          "end": 1159,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 6,
+          "punctuation": 7
         },
         {
           "start": 1159,
@@ -4813,11 +5677,27 @@
         },
         {
           "start": 1401,
-          "end": 1718,
+          "end": 1660,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 28,
-          "punctuation": 29
+          "tokens": 22,
+          "punctuation": 23
+        },
+        {
+          "start": 1660,
+          "end": 1661,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1667,
+          "end": 1718,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 6,
+          "punctuation": 5
         },
         {
           "start": 1723,
@@ -4829,8 +5709,53 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "tohPage$UpdateDetailsHeroLabel",
+          "tohPage$UpdateSave",
+          "tohPage$DeleteHero",
+          "tohPage$AddHeroItem",
+          "tohPage$AddPageTraits",
+          "tohPage$AddRouteActionListener",
+          "tohPage$OnRouteChangeEvent"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "Page_404View",
+          "kind": "view"
+        },
+        {
+          "host": "PageDashboardView",
+          "kind": "view"
+        },
+        {
+          "host": "PageHeroView",
+          "kind": "view"
+        },
+        {
+          "host": "PageHeroesView",
+          "kind": "view"
+        },
+        {
+          "host": "StageView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.2098765432098766
     },
     {
       "path": "dev-tools.js",
@@ -4954,7 +5879,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "index.js",
@@ -5134,7 +6061,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.06666666666666665
+      "mixing": 0.06666666666666665,
+      "logicInRendering": 0,
+      "mixingByOperation": 0.06666666666666665
     },
     {
       "path": "index.tmpl.html",
@@ -5178,7 +6107,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "scss/01-vendors/normalize.css",
@@ -6494,7 +7425,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/app.scss",
@@ -6554,7 +7486,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/dashboard.scss",
@@ -6662,7 +7595,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/heroes-details.scss",
@@ -6722,7 +7656,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/heroes-search.scss",
@@ -6782,7 +7717,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/heroes.scss",
@@ -6842,7 +7778,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/messages.scss",
@@ -6902,7 +7839,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/main.scss",
@@ -7018,7 +7956,153 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
+    }
+  ],
+  "directories": [
+    {
+      "path": ".",
+      "modules": 35,
+      "tokens": 1940,
+      "shares": {
+        "V": 0.1422680412371134,
+        "B": 0.03556701030927835,
+        "L": 0.29742268041237113,
+        "C": 0.5247422680412371
+      },
+      "meanMixing": 0.0024089635854341747,
+      "consistency": 0.003506988649483454
+    },
+    {
+      "path": "app",
+      "modules": 24,
+      "tokens": 1066,
+      "shares": {
+        "V": 0.25422138836772984,
+        "B": 0.0647279549718574,
+        "L": 0.46153846153846156,
+        "C": 0.21951219512195122
+      },
+      "meanMixing": 0.0007352941176470609,
+      "consistency": 0.001085074344531788
+    },
+    {
+      "path": "app/channels",
+      "modules": 1,
+      "tokens": 69,
+      "shares": {
+        "V": 0,
+        "B": 1,
+        "L": 0,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "app/components",
+      "modules": 17,
+      "tokens": 474,
+      "shares": {
+        "V": 0.5063291139240507,
+        "B": 0,
+        "L": 0,
+        "C": 0.4936708860759494
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/page-components",
+      "modules": 13,
+      "tokens": 377,
+      "shares": {
+        "V": 0.5172413793103449,
+        "B": 0,
+        "L": 0,
+        "C": 0.4827586206896552
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/page-components/templates",
+      "modules": 6,
+      "tokens": 182,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/templates",
+      "modules": 2,
+      "tokens": 52,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/traits",
+      "modules": 4,
+      "tokens": 460,
+      "shares": {
+        "V": 0.013043478260869565,
+        "B": 0,
+        "L": 0.9869565217391304,
+        "C": 0
+      },
+      "meanMixing": 0.004411764705882365,
+      "consistency": 0.006239177481057781
+    },
+    {
+      "path": "scss",
+      "modules": 8,
+      "tokens": 760,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/01-vendors",
+      "modules": 1,
+      "tokens": 204,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "scss/03-components",
+      "modules": 6,
+      "tokens": 398,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
     }
   ],
   "empty": [

@@ -13,6 +13,7 @@
     "tokenizer",
     "scores",
     "modules",
+    "directories",
     "empty",
     "skipped",
     "failed"
@@ -179,6 +180,41 @@
           "minimum": 0,
           "maximum": 0.75,
           "description": "Token-weighted mean of module mixing: every counted token counts once, so large modules dominate."
+        },
+        "codeModules": {
+          "type": "object",
+          "description": "The headline mixing figure: mean module mixing over code modules, everything but stylesheets (.css, .scss, .sass, .less), so the score does not depend on how a framework files its styles (2026-09-29). Null with no code modules.",
+          "required": ["count", "meanMixing"],
+          "additionalProperties": false,
+          "properties": {
+            "count": { "$ref": "#/$defs/count" },
+            "meanMixing": { "anyOf": [{ "type": "number", "minimum": 0, "maximum": 0.75 }, { "type": "null" }] }
+          }
+        },
+        "byOperation": {
+          "type": "object",
+          "description": "The same code modules read by operation alone, every structural ruling off: no sanctioned-member sealing, no trait absorption, no export sealing, no host inheritance for a payload filter or a transmit. Reported beside the headline so a reader can see whether the ranking depends on the rulings (2026-09-29). Null with no code modules.",
+          "required": ["count", "meanMixing"],
+          "additionalProperties": false,
+          "properties": {
+            "count": { "$ref": "#/$defs/count" },
+            "meanMixing": { "anyOf": [{ "type": "number", "minimum": 0, "maximum": 0.75 }, { "type": "null" }] }
+          }
+        },
+        "shape": {
+          "type": "object",
+          "description": "Declared-shape counts (2026-09-27). `declared` modules have a role; `insideShape` keep every token inside what the role expects or permits (drift 0); `withSurface`/`onSurface` count modules whose role sanctions a member set and how many define nothing outside it. `undeclared` modules have no role and cannot be asked either question; `internalModules`/`internalSurfaces` count the ones with a visible internal surface (components) and how many distinct surfaces they show.",
+          "required": ["declared", "insideShape", "withSurface", "onSurface", "undeclared", "internalSurfaces", "internalModules"],
+          "additionalProperties": false,
+          "properties": {
+            "declared": { "$ref": "#/$defs/count" },
+            "insideShape": { "$ref": "#/$defs/count" },
+            "withSurface": { "$ref": "#/$defs/count" },
+            "onSurface": { "$ref": "#/$defs/count" },
+            "undeclared": { "$ref": "#/$defs/count" },
+            "internalSurfaces": { "$ref": "#/$defs/count" },
+            "internalModules": { "$ref": "#/$defs/count" }
+          }
         }
       }
     },
@@ -240,6 +276,13 @@
           }
         }
       }
+    },
+    "directories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/directory"
+      },
+      "description": "Per-directory rollups of the codebase scores, one row per directory holding a module, ancestors included; `.` is the root."
     }
   },
   "$defs": {
@@ -353,6 +396,14 @@
         "punctuation": {
           "$ref": "#/$defs/count",
           "description": "Punctuation tokens absorbed into the span. Always excluded; never in a share."
+        },
+        "permitted": {
+          "type": "boolean",
+          "description": "Every token in the span sits outside the module's expected shape but is permitted there by a rule (a trait call in a Channel, a transmit from a view trait). In place, not drift."
+        },
+        "misplaced": {
+          "type": "boolean",
+          "description": "Every token in the span sits in a member the role does not sanction (a method of its own on a ViewStream): out of place whatever its bucket, and drift (2026-09-29)."
         }
       }
     },
@@ -364,7 +415,8 @@
         "tokens",
         "shares",
         "spans",
-        "mixing"
+        "mixing",
+        "logicInRendering"
       ],
       "additionalProperties": false,
       "properties": {
@@ -402,6 +454,41 @@
         "drift": {
           "$ref": "#/$defs/share",
           "description": "Share of counted tokens outside the role's expected shape, less permitted tokens. Present only when `role` is."
+        },
+        "logicInRendering": {
+          "$ref": "#/$defs/count",
+          "description": "Logic tokens whose innermost rendering range is a JSX element: evaluation inside markup. A template section iterates and evaluates nothing, so a .html module reports 0 by grammar."
+        },
+        "expected": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/bucket" },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "The buckets the declared role expects, host-bound when the role declares hosts. Present only when `role` is."
+        },
+        "base": {
+          "$ref": "#/$defs/bucket",
+          "description": "The role's default bucket: the color the module is, for every token in its place. Present only when `role` is."
+        },
+        "mixingByOperation": {
+          "type": "number", "minimum": 0, "maximum": 0.75,
+          "description": "The module's mixing read by operation alone, the per-module counterpart of `scores.byOperation`. Code modules only (2026-09-29)."
+        },
+        "bindings": {
+          "type": "array",
+          "description": "For a trait: the host classes that bind it through `props.traits`, with their kind, as the adapter read them. Shows why a shared trait absorbs both layers (2026-09-29).",
+          "items": { "type": "object", "required": ["host", "kind"], "additionalProperties": false, "properties": { "host": { "type": "string" }, "kind": { "type": "string" } } }
+        },
+        "surface": {
+          "type": "object",
+          "description": "Members defined against the sanctioned surface. `sanctioned` is null for a module with no role; `members` is then the internal surface the tool could see (hooks called, handlers defined).",
+          "required": ["sanctioned", "members", "extra"],
+          "additionalProperties": false,
+          "properties": {
+            "sanctioned": { "anyOf": [{ "type": "array", "items": { "type": "string" } }, { "type": "null" }] },
+            "members": { "type": "array", "items": { "type": "string" } },
+            "extra": { "type": "array", "items": { "type": "string" } }
+          }
         }
       }
     },
@@ -420,6 +507,41 @@
         "median": {
           "$ref": "#/$defs/shares",
           "description": "Component-wise median shape of those modules."
+        }
+      }
+    },
+    "directory": {
+      "type": "object",
+      "required": [
+        "path",
+        "modules",
+        "tokens",
+        "shares",
+        "meanMixing",
+        "consistency"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "modules": {
+          "$ref": "#/$defs/count"
+        },
+        "tokens": {
+          "$ref": "#/$defs/count"
+        },
+        "shares": {
+          "$ref": "#/$defs/shares"
+        },
+        "meanMixing": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.75
+        },
+        "consistency": {
+          "type": "number",
+          "minimum": 0
         }
       }
     }

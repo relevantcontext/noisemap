@@ -9,6 +9,7 @@
     "packages/cli/tsup.config.ts",
     "vitest.config.ts",
     "packages/configs/*.json",
+    "packages/wiring/schema/*.json",
     "packages/configs/index.ts"
   ],
   "exclude": ["**/dist/**", "**/node_modules/**"]

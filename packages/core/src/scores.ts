@@ -23,12 +23,12 @@ export function mixing(s: Shares): number {
  * Drift = share of counted tokens outside the role's expected buckets, minus tokens the
  * config permits there (e.g. SpyneTrait calls in a Channel).
  */
-export function drift(tokens: TokenCounts, expected: readonly Bucket[], permittedOutside = 0): number {
+export function drift(tokens: TokenCounts, expected: readonly Bucket[], permittedOutside = 0, misplacedInside = 0): number {
   const total = countedTotal(tokens);
   if (total === 0) return 0;
   let outside = 0;
   for (const b of BUCKETS) if (!expected.includes(b)) outside += tokens[b];
-  return Math.max(0, outside - permittedOutside) / total;
+  return Math.min(1, (Math.max(0, outside - permittedOutside) + misplacedInside) / total);
 }
 
 /** Component-wise median of share vectors. */
@@ -66,7 +66,8 @@ export interface Family {
 }
 
 export interface Consistency {
-  consistency: number;
+  /** Null when no family has two or more modules: nothing to be consistent with. */
+  consistency: number | null;
   /** Component-wise median of every module's shape, for reference. Not what consistency measures. */
   median: Shares;
   /** One entry per dominant bucket that has at least one module. */
@@ -78,12 +79,14 @@ export interface Consistency {
  * of its own family, where a module's family is its dominant bucket (ruling 2026-09-23).
  * 0 = every kind of module has one shape, whether that is four clean shapes or one shared
  * mixed shape. High = modules of the same kind do not share a shape. Max is √2.
- * Unweighted: a 40-token module and a 4,000-token module count the same.
+ * Unweighted: a 40-token module and a 4,000-token module count the same. A family of one
+ * module is its own median and would score 0 whatever its shape, so it is left out of the
+ * mean; with no family of two or more, consistency is null (fairness review, 2026-09-27).
  */
 export function consistency(vectors: readonly Shares[]): Consistency {
   const median = medianVector(vectors);
   const families: Partial<Record<Bucket, Family>> = {};
-  if (vectors.length === 0) return { consistency: 0, median, families };
+  if (vectors.length === 0) return { consistency: null, median, families };
   const groups = new Map<Bucket, Shares[]>();
   for (const v of vectors) {
     const d = dominant(v);
@@ -99,6 +102,8 @@ export function consistency(vectors: readonly Shares[]): Consistency {
     centers.set(b, m);
     families[b] = { modules: g.length, median: m };
   }
-  const sum = vectors.reduce((acc, v) => acc + euclidean(v, centers.get(dominant(v)) as Shares), 0);
-  return { consistency: sum / vectors.length, median, families };
+  const scored = vectors.filter((v) => (groups.get(dominant(v))?.length ?? 0) >= 2);
+  if (scored.length === 0) return { consistency: null, median, families };
+  const sum = scored.reduce((acc, v) => acc + euclidean(v, centers.get(dominant(v)) as Shares), 0);
+  return { consistency: sum / scored.length, median, families };
 }

@@ -1,5 +1,6 @@
 import type { Adapter, AdapterOutput, FileInfo, FrameworkConfig, MatchContext } from '@noisemap/core';
 import { analyzeJs } from '@noisemap/js-classify';
+import type { ClassifyExtras } from '@noisemap/js-classify';
 import { analyzeMdx } from './mdx.js';
 
 const DEFAULT_EXTENSIONS = ['.jsx', '.tsx', '.mdx'];
@@ -19,9 +20,9 @@ export const reactAdapter: Adapter = {
     if (!plain.includes(file.ext)) return false;
     return context.override === 'react' || (context.override === null && context.detected.includes('react'));
   },
-  analyze: (file: FileInfo, config: FrameworkConfig | undefined): AdapterOutput => {
+  analyze: (file: FileInfo, config: FrameworkConfig | undefined, prepared?: unknown): AdapterOutput => {
     if (!config) throw new Error('react adapter: no config loaded');
     if (file.ext === '.mdx') return { framework: 'react', tokens: analyzeMdx(file.source, config) };
-    return analyzeJs(file.source, file.ext, config, 'react');
+    return analyzeJs(file.source, file.ext, config, 'react', { ...((prepared as ClassifyExtras | undefined) ?? {}), file: file.path });
   },
 };

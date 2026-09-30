@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.1"
+    "version": "0.2.0"
   },
-  "generatedAt": "2026-09-26T10:39:07.773Z",
+  "generatedAt": "2026-09-29T23:23:35.736Z",
   "root": "/private/tmp/noisemap-samples/fixtures/content",
   "frameworks": {
     "detected": [
@@ -18,7 +18,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0,
+    "consistency": 0.031195887405288867,
     "median": {
       "V": 0,
       "B": 0,
@@ -27,7 +27,7 @@
     },
     "families": {
       "C": {
-        "modules": 6,
+        "modules": 8,
         "median": {
           "V": 0,
           "B": 0,
@@ -38,20 +38,37 @@
     },
     "totals": {
       "V": 0,
-      "B": 0,
+      "B": 6,
       "L": 0,
-      "C": 55,
-      "excluded": 57,
-      "counted": 55
+      "C": 85,
+      "excluded": 123,
+      "counted": 91
     },
     "shares": {
       "V": 0,
-      "B": 0,
+      "B": 0.06593406593406594,
       "L": 0,
-      "C": 1
+      "C": 0.9340659340659341
     },
-    "meanMixing": 0,
-    "meanMixingTokenWeighted": 0
+    "meanMixing": 0.02205882352941177,
+    "meanMixingTokenWeighted": 0.06593406593406595,
+    "codeModules": {
+      "count": 5,
+      "meanMixing": 0.03529411764705883
+    },
+    "byOperation": {
+      "count": 5,
+      "meanMixing": 0.03529411764705883
+    },
+    "shape": {
+      "declared": 0,
+      "insideShape": 0,
+      "withSurface": 0,
+      "onSurface": 0,
+      "undeclared": 8,
+      "internalSurfaces": 0,
+      "internalModules": 0
+    }
   },
   "modules": [
     {
@@ -80,7 +97,55 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
+    },
+    {
+      "path": "data.json",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 2,
+        "excluded": 3
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 1,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1,
+          "end": 11,
+          "bucket": "C",
+          "rule": "content:json",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 11,
+          "end": 12,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "pages/about.md",
@@ -124,7 +189,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "pages/index.html",
@@ -185,14 +252,214 @@
         },
         {
           "start": 34,
+          "end": 43,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 43,
+          "end": 44,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 45,
+          "end": 49,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 50,
+          "end": 52,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 52,
+          "end": 60,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 60,
+          "end": 61,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 62,
+          "end": 67,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 68,
+          "end": 69,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 69,
           "end": 111,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 12,
-          "punctuation": 11
+          "tokens": 6,
+          "punctuation": 6
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
+    },
+    {
+      "path": "pages/inline.html",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 6,
+        "L": 0,
+        "C": 28,
+        "excluded": 63
+      },
+      "shares": {
+        "V": 0,
+        "B": 0.17647058823529413,
+        "L": 0,
+        "C": 0.8235294117647058
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 2,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2,
+          "end": 26,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 2
+        },
+        {
+          "start": 26,
+          "end": 27,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 28,
+          "end": 32,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 34,
+          "end": 41,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 41,
+          "end": 42,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 42,
+          "end": 56,
+          "bucket": "B",
+          "rule": "inline-handler",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 56,
+          "end": 62,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 62,
+          "end": 216,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 21,
+          "punctuation": 43
+        },
+        {
+          "start": 216,
+          "end": 217,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 220,
+          "end": 268,
+          "bucket": "B",
+          "rule": "inline-script",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 268,
+          "end": 275,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 275,
+          "end": 281,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 281,
+          "end": 282,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0.17647058823529416,
+      "logicInRendering": 0,
+      "mixingByOperation": 0.17647058823529416
     },
     {
       "path": "styles/_variables.scss",
@@ -236,7 +503,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "styles/card.scss",
@@ -296,7 +564,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "styles/legacy.css",
@@ -332,16 +601,58 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
+    }
+  ],
+  "directories": [
+    {
+      "path": ".",
+      "modules": 8,
+      "tokens": 91,
+      "shares": {
+        "V": 0,
+        "B": 0.06593406593406594,
+        "L": 0,
+        "C": 0.9340659340659341
+      },
+      "meanMixing": 0.02205882352941177,
+      "consistency": 0.031195887405288867
+    },
+    {
+      "path": "pages",
+      "modules": 3,
+      "tokens": 60,
+      "shares": {
+        "V": 0,
+        "B": 0.1,
+        "L": 0,
+        "C": 0.9
+      },
+      "meanMixing": 0.05882352941176472,
+      "consistency": 0.08318903308077032
+    },
+    {
+      "path": "styles",
+      "modules": 3,
+      "tokens": 23,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
     }
   ],
   "empty": [
     "styles/empty.scss"
   ],
   "skipped": {
-    "count": 2,
+    "count": 1,
     "byExtension": {
-      ".json": 2
+      ".json": 1
     },
     "tests": 0
   },

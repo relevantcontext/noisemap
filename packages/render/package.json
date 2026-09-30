@@ -7,9 +7,11 @@
     ".": "./src/index.ts",
     "./terminal": "./src/terminal.ts",
     "./html": "./src/html.ts",
-    "./explain": "./src/explain.ts"
+    "./explain": "./src/explain.ts",
+    "./wiring": "./src/wiring.ts"
   },
   "dependencies": {
-    "@noisemap/core": "workspace:*"
+    "@noisemap/core": "workspace:*",
+    "@noisemap/wiring": "workspace:*"
   }
 }

@@ -1,0 +1,939 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:36.529Z",
+  "root": "/private/tmp/noisemap-samples/fixtures/spyne/src",
+  "nodes": [
+    {
+      "id": "channels/channel-cards.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "Channel"
+    },
+    {
+      "id": "components/bare-item.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "DomElement"
+    },
+    {
+      "id": "components/menu-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "traits/cards-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "traits/menu-view-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "util.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "channels/channel-cards.js",
+        "start": 24,
+        "end": 31
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "channels/channel-cards.js",
+        "start": 61,
+        "end": 88
+      },
+      "label": "../traits/cards-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "traits/cards-traits.js"
+      }
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "components/bare-item.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 49,
+        "end": 56
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e5",
+      "kind": "import",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 79,
+        "end": 97
+      },
+      "label": "./menu.tmpl.html",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e6",
+      "kind": "import",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 130,
+        "end": 161
+      },
+      "label": "../traits/menu-view-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "traits/menu-view-traits.js"
+      }
+    },
+    {
+      "id": "e7",
+      "kind": "import",
+      "from": {
+        "module": "traits/cards-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e8",
+      "kind": "import",
+      "from": {
+        "module": "traits/menu-view-traits.js",
+        "start": 39,
+        "end": 46
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e9",
+      "kind": "listener-method",
+      "from": {
+        "module": "channels/channel-cards.js",
+        "start": 511,
+        "end": 519
+      },
+      "label": "onLoad",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e10",
+      "kind": "listener-method",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 745,
+        "end": 769
+      },
+      "label": "menuView$SetActiveLink",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "traits/menu-view-traits.js"
+      }
+    },
+    {
+      "id": "e11",
+      "kind": "listener-action",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 715,
+        "end": 743
+      },
+      "label": "CHANNEL_ROUTE_CHANGE_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e12",
+      "kind": "listener-method",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 803,
+        "end": 814
+      },
+      "label": "onUiEvent",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "components/menu-view.js"
+      }
+    },
+    {
+      "id": "e13",
+      "kind": "listener-action",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 787,
+        "end": 801
+      },
+      "label": "CHANNEL_UI_*",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e14",
+      "kind": "channel-binding",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 307,
+        "end": 322
+      },
+      "label": "CHANNEL_ROUTE",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e15",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 864,
+        "end": 867
+      },
+      "label": "a",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e16",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "components/menu-view.js",
+        "start": 880,
+        "end": 888
+      },
+      "label": ".close",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e17",
+      "kind": "action-registration",
+      "from": {
+        "module": "channels/channel-cards.js",
+        "start": 454,
+        "end": 480
+      },
+      "label": "CHANNEL_CARDS_SORT_EVENT",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e18",
+      "kind": "action-registration",
+      "from": {
+        "module": "channels/channel-cards.js",
+        "start": 483,
+        "end": 509
+      },
+      "label": "CHANNEL_CARDS_LOAD_EVENT",
+      "status": "unresolved",
+      "verified": "static"
+    }
+  ],
+  "sites": [
+    {
+      "module": "channels/channel-cards.js",
+      "start": 24,
+      "end": 31,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 61,
+      "end": 88,
+      "kind": "import",
+      "class": "declared",
+      "label": "../traits/cards-traits.js"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 319,
+      "end": 361,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).subscribe"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 319,
+      "end": 334,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getChannel"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 369,
+      "end": 381,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.onRoute"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 391,
+      "end": 406,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.cards$Init"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 454,
+      "end": 480,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_CARDS_SORT_EVENT"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 483,
+      "end": 509,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_CARDS_LOAD_EVENT"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 511,
+      "end": 519,
+      "kind": "listener",
+      "class": "declared",
+      "label": "onLoad"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 562,
+      "end": 577,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.cards$Sort"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 609,
+      "end": 632,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendChannelPayload"
+    },
+    {
+      "module": "channels/channel-cards.js",
+      "start": 633,
+      "end": 659,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "'CHANNEL_CARDS_SORT_EVENT'"
+    },
+    {
+      "module": "components/bare-item.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 49,
+      "end": 56,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 79,
+      "end": 97,
+      "kind": "import",
+      "class": "declared",
+      "label": "./menu.tmpl.html"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 130,
+      "end": 161,
+      "kind": "import",
+      "class": "declared",
+      "label": "../traits/menu-view-traits.js"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 307,
+      "end": 322,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_ROUTE"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 473,
+      "end": 498,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.menuView$DefaultSort"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 541,
+      "end": 558,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.computeTitle"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 633,
+      "end": 653,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 715,
+      "end": 743,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_ROUTE_CHANGE_EVENT"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 745,
+      "end": 769,
+      "kind": "listener",
+      "class": "declared",
+      "label": "menuView$SetActiveLink"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 787,
+      "end": 801,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_UI_*"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 803,
+      "end": 814,
+      "kind": "listener",
+      "class": "declared",
+      "label": "onUiEvent"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 864,
+      "end": 867,
+      "kind": "listener",
+      "class": "declared",
+      "label": "a"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 869,
+      "end": 876,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 880,
+      "end": 888,
+      "kind": "listener",
+      "class": "declared",
+      "label": ".close"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 890,
+      "end": 897,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 927,
+      "end": 942,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 947,
+      "end": 957,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ViewStream"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 1009,
+      "end": 1036,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.menuView$SetActiveLink"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 1114,
+      "end": 1131,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.menuView$Log"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 1188,
+      "end": 1210,
+      "kind": "call",
+      "class": "declared",
+      "label": "e.payload.items.filter"
+    },
+    {
+      "module": "components/menu-view.js",
+      "start": 1240,
+      "end": 1264,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.el.classList.toggle"
+    },
+    {
+      "module": "traits/cards-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "traits/cards-traits.js",
+      "start": 243,
+      "end": 258,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).sort"
+    },
+    {
+      "module": "traits/menu-view-traits.js",
+      "start": 39,
+      "end": 46,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "traits/menu-view-traits.js",
+      "start": 202,
+      "end": 217,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "traits/menu-view-traits.js",
+      "start": 222,
+      "end": 232,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ViewStream"
+    },
+    {
+      "module": "traits/menu-view-traits.js",
+      "start": 314,
+      "end": 325,
+      "kind": "call",
+      "class": "declared",
+      "label": "console.log"
+    },
+    {
+      "module": "util.js",
+      "start": 27,
+      "end": 36,
+      "kind": "call",
+      "class": "declared",
+      "label": "xs.reduce"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "unresolved",
+      "module": "components/menu-view.js",
+      "start": 79,
+      "end": 97,
+      "edge": "e5",
+      "message": "import './menu.tmpl.html' does not resolve to a file or a package"
+    },
+    {
+      "kind": "unresolved",
+      "module": "channels/channel-cards.js",
+      "start": 511,
+      "end": 519,
+      "edge": "e9",
+      "message": "ChannelCards names method 'onLoad' that neither it nor a bound trait defines"
+    },
+    {
+      "kind": "unresolved",
+      "module": "components/menu-view.js",
+      "start": 864,
+      "end": 867,
+      "edge": "e15",
+      "message": "MenuView broadcasts on 'a' but its template has no element matching it (child views may supply one)"
+    },
+    {
+      "kind": "unresolved",
+      "module": "components/menu-view.js",
+      "start": 880,
+      "end": 888,
+      "edge": "e16",
+      "message": "MenuView broadcasts on '.close' but its template has no element matching it (child views may supply one)"
+    },
+    {
+      "kind": "unresolved",
+      "module": "channels/channel-cards.js",
+      "start": 454,
+      "end": 480,
+      "edge": "e17",
+      "message": "'CHANNEL_CARDS_SORT_EVENT' is registered but nothing listens for it or mentions it"
+    },
+    {
+      "kind": "unresolved",
+      "module": "channels/channel-cards.js",
+      "start": 483,
+      "end": 509,
+      "edge": "e18",
+      "message": "'CHANNEL_CARDS_LOAD_EVENT' is registered but nothing listens for it or mentions it"
+    }
+  ],
+  "vocabulary": [
+    {
+      "name": "CHANNEL_CARDS",
+      "kind": "channel",
+      "framework": false,
+      "uses": [
+        {
+          "module": "channels/channel-cards.js",
+          "start": 98,
+          "end": 711,
+          "role": "names"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_CARDS_LOAD_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "channels/channel-cards.js",
+          "start": 483,
+          "end": 509,
+          "role": "registers"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_CARDS_SORT_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "channels/channel-cards.js",
+          "start": 454,
+          "end": 480,
+          "role": "registers"
+        },
+        {
+          "module": "channels/channel-cards.js",
+          "start": 633,
+          "end": 659,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_ROUTE",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "channels/channel-cards.js",
+          "start": 335,
+          "end": 350,
+          "role": "mentions"
+        },
+        {
+          "module": "components/menu-view.js",
+          "start": 307,
+          "end": 322,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_ROUTE_CHANGE_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "components/menu-view.js",
+          "start": 715,
+          "end": 743,
+          "role": "listens"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "channels/channel-cards.js": {
+      "edges": {
+        "out": 5,
+        "in": 0,
+        "unresolved": 3,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 12,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 0.25,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 45,
+        "counterparts": [
+          "traits/cards-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "components/bare-item.js": {
+      "edges": {
+        "out": 1,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 1,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 11,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "components/menu-view.js": {
+      "edges": {
+        "out": 10,
+        "in": 1,
+        "unresolved": 3,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 21,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 0.5,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 105,
+        "counterparts": [
+          "traits/menu-view-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "traits/cards-traits.js": {
+      "edges": {
+        "out": 1,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 2,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 45,
+        "counterparts": [
+          "channels/channel-cards.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "traits/menu-view-traits.js": {
+      "edges": {
+        "out": 1,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 4,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 105,
+        "counterparts": [
+          "components/menu-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "util.js": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 1,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 5,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 2,
+        "unresolved": 1,
+        "ambiguous": 0,
+        "external": 5,
+        "unknown": 0
+      },
+      "listener-method": {
+        "resolved": 2,
+        "unresolved": 1,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "listener-action": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 2,
+        "unknown": 0
+      },
+      "channel-binding": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 1,
+        "unknown": 0
+      },
+      "broadcast-selector": {
+        "resolved": 0,
+        "unresolved": 2,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "action-registration": {
+        "resolved": 0,
+        "unresolved": 2,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 41,
+      "opaque": 0
+    },
+    "discernibility": 1,
+    "resolution": 0.4,
+    "vocabularyShare": 1,
+    "workingSet": {
+      "medianModules": 2,
+      "medianTokens": 45,
+      "tokenWeightedMedianTokens": 105,
+      "unmeasuredCounterparts": 0
+    },
+    "locality": 2,
+    "entries": [],
+    "roots": []
+  }
+}

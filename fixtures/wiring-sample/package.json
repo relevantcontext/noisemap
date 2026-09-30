@@ -1,0 +1,1 @@
+{"name": "wiring-sample", "private": true, "dependencies": {"react": "^19.0.0", "spyne": "^0.26.0", "next": "^16.0.0"}}

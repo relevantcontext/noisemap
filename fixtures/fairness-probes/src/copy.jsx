@@ -1,0 +1,1 @@
+export function Copy(){return <p title="Save this invoice">Save this invoice</p>;}

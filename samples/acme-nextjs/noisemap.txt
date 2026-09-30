@@ -1,67 +1,68 @@
-file                                        tokens  V B L C                  V     B     L     C  mixing
-------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------
-layout.tsx                                      35  VVVVVVVLLLLLLCCCCCCC   34%    0%   31%   34%    0.66
-ui/history-refresh.tsx                          32  VVVVVBBBBBBBBLLLLLLL   25%   38%   38%    0%    0.63
-ui/invoices/editable-table.tsx                1058  VVVVVVVVBBBLLLLLLLLC   38%   17%   38%    6%    0.62
-ui/invoices/status-toggle.tsx                   55  VVVVVVVVBBBLLLLLLCCC   40%   16%   27%   16%    0.60
-ui/quick-search/overlay.tsx                    612  VVVVVVVVBBBLLLLLLLLC   38%   15%   40%    7%    0.60
-ui/invoices/status.tsx                          26  VVVVVVVVVLLLLLLLLLCC   46%    0%   46%    8%    0.54
-ui/live/live-events-provider.tsx               143  VBBBBBBBBBBLLLLLLLLL    6%   48%   46%    0%    0.52
-ui/quick-search/provider.tsx                    59  VVVVVVVBBBLLLLLLLLLL   34%   14%   53%    0%    0.47
-dashboard/invoices/[id]/edit/page.tsx           47  VVVVVVVVVLLLLLLLLLLL   47%    0%   53%    0%    0.47
-dashboard/invoices/error.tsx                    25  VVVVVVVVVVVBBBBBCCCC   56%   24%    0%   20%    0.44
-ui/live/activity-feed.tsx                      157  VVVVVVVVVVVLLLLLLCCC   56%    0%   31%   13%    0.44
-ui/search.tsx                                   71  VVVVVVVBLLLLLLLLLLLL   35%    6%   58%    1%    0.42
-dashboard/customers/page.tsx                    71  VVVVVVVVVVVVLLLLLLLC   61%    0%   35%    4%    0.39
-ui/invoices/sortable-header.tsx                 93  VVVVVVVVLLLLLLLLLLLL   38%    0%   62%    0%    0.38
-ui/dashboard/revenue-chart.tsx                 101  VVVVVVVVVVVVVLLLLCCC   62%    0%   21%   17%    0.38
-ui/invoices/pagination.tsx                     182  VVVVVVVLLLLLLLLLLLLL   37%    0%   63%    0%    0.37
-ui/dashboard/nav-links.tsx                      55  VVVVVVVLLLLLLLLLLLLL   36%    0%   64%    0%    0.36
-ui/invoices/table.tsx                           11  VVVVVVVLLLLLLLLLLLLL   36%    0%   64%    0%    0.36
-ui/dashboard/cards.tsx                          78  VVVVVVVVVVVVVLLLLLLC   64%    0%   28%    8%    0.36
-dashboard/invoices/[id]/edit/not-found.tsx      31  VVVVVVVVVVVVVCCCCCCC   65%    0%    0%   35%    0.35
-dashboard/invoices/page.tsx                    100  VVVVVVVVVVVVVLLLLLLC   65%    0%   32%    3%    0.35
-ui/invoices/breadcrumbs.tsx                     46  VVVVVVVVVVVVVLLLLLLL   65%    0%   33%    2%    0.35
-page.tsx                                       102  VVVVVVVVVVVVVCCCCCCC   66%    0%    0%   34%    0.34
-ui/button.tsx                                    9  VVVVVVVVVVVVVLLLLLLL   67%    0%   33%    0%    0.33
-dashboard/invoices/create/page.tsx              26  VVVVVVVVVVVVVVLLLLLL   69%    0%   31%    0%    0.31
-ui/invoices/save-bar.tsx                       113  VVVVVVVVVVVVVVLLLLCC   72%    0%   19%   10%    0.28
-ui/login-form.tsx                              141  VVVVVVVVVVVVVVVVLLCC   77%    0%   12%   11%    0.23
-ui/dashboard/latest-invoices.tsx                95  VVVVVVVVVVVVVVVVLLCC   80%    0%   12%    8%    0.20
-ui/quick-search/trigger.tsx                     25  VVVVVVVVVVVVVVVVLLCC   80%    0%   12%    8%    0.20
-ui/invoices/buttons.tsx                         54  VVVVVVVVVVVVVVVVLLCC   81%    0%   11%    7%    0.19
-lib/actions.ts                                 423  LLLLLLLLLLLLLLLLCCCC    0%    0%   82%   18%    0.18
-ui/invoices/edit-form.tsx                      297  VVVVVVVVVVVVVVVVVLLC   83%    0%   10%    7%    0.17
-ui/invoices/create-form.tsx                    278  VVVVVVVVVVVVVVVVVLLC   84%    0%    9%    7%    0.16
-ui/customers/table.tsx                         228  VVVVVVVVVVVVVVVVVVLC   89%    0%    4%    7%    0.11
-lib/data.ts                                    511  LLLLLLLLLLLLLLLLLLCC    0%    0%   89%   11%    0.11
-dashboard/(overview)/page.tsx                   41  VVVVVVVVVVVVVVVVVVLC   90%    0%    7%    2%    0.10
-ui/invoices/edits-provider.tsx                 476  VBLLLLLLLLLLLLLLLLLL    3%    3%   92%    1%    0.08
-api/events/stream/route.ts                     145  VLLLLLLLLLLLLLLLLLLL    6%    2%   92%    0%    0.08
-ui/acme-logo.tsx                                15  VVVVVVVVVVVVVVVVVVVC   93%    0%    0%    7%    0.07
-ui/dashboard/sidenav.tsx                        46  VVVVVVVVVVVVVVVVVVVC   96%    0%    0%    4%    0.04
-seed/route.ts                                  225  LLLLLLLLLLLLLLLLLLLC    0%    0%   96%    4%    0.04
-ui/skeletons.tsx                               578  VVVVVVVVVVVVVVVVVVVC   97%    0%    1%    2%    0.03
-lib/placeholder-data.ts                        244  LLLLLLLLLLLLLLLLLLLL    0%    0%   99%    1%    0.01
-api/search/route.ts                             55  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
-dashboard/(overview)/loading.tsx                 2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
-dashboard/customers/loading.tsx                  2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
-dashboard/invoices/[id]/edit/loading.tsx         2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
-dashboard/invoices/create/loading.tsx            2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
-dashboard/invoices/loading.tsx                   2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
-dashboard/layout.tsx                            20  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
+file                                        tokens  V B L C                  V     B     L     C  mixing  role   drift
+------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  -----  -----
+dashboard/customers/page.tsx                    74  VVVVVVVLLLLLLLCCCCCC   38%    0%   34%   28%    0.62  view    0.34
+dashboard/invoices/page.tsx                    111  VVVVVVVLLLLLLCCCCCCC   38%    0%   29%   33%    0.62  view    0.29
+ui/quick-search/overlay.tsx                    710  VVBBBLLLLLLLCCCCCCCC   11%   14%   34%   42%    0.58  view    0.48
+ui/invoices/editable-table.tsx                1161  VVBBBLLLLLLLCCCCCCCC    8%   16%   35%   42%    0.58  view    0.50
+ui/dashboard/cards.tsx                          86  VVVVVVLLLLLCCCCCCCCC   31%    0%   26%   43%    0.57  view    0.26
+ui/invoices/status.tsx                          30  VVVLLLLLLLLCCCCCCCCC   13%    0%   40%   47%    0.53  view    0.40
+ui/search.tsx                                   91  VBLLLLLLLLLCCCCCCCCC    3%    4%   45%   47%    0.53  view    0.49
+ui/live/live-events-provider.tsx               143  VBBBBBBBBBBLLLLLLLLL    5%   48%   46%    1%    0.52  view    0.94
+layout.tsx                                      25  LLLLLLLLLLCCCCCCCCCC    0%    0%   52%   48%    0.48  view    0.52
+lib/data.ts                                    664  BBBBBBBBBBLLLLLLLLLL    0%   52%   48%    0%    0.48
+ui/quick-search/provider.tsx                    59  VVVBBBBBLLLLLLLLLLLC   17%   27%   53%    3%    0.47  view    0.80
+dashboard/invoices/[id]/edit/page.tsx           47  VVVVVVVVLLLLLLLLLLLC   40%    0%   53%    6%    0.47  view    0.53
+ui/invoices/status-toggle.tsx                   62  VBBBLLLLLCCCCCCCCCCC    8%   15%   24%   53%    0.47  view    0.39
+dashboard/invoices/create/page.tsx              26  VVVVVVVVVVVVLLLLLLCC   58%    0%   31%   12%    0.42  view    0.31
+ui/dashboard/nav-links.tsx                      56  VVVVLLLLLLLLLLLLCCCC   21%    0%   59%   20%    0.41  view    0.59
+ui/invoices/sortable-header.tsx                 98  VVVVLLLLLLLLLLLLCCCC   20%    0%   59%   20%    0.41  view    0.59
+dashboard/(overview)/page.tsx                   49  VVVVVVVLCCCCCCCCCCCC   33%    0%    6%   61%    0.39  view    0.06
+ui/invoices/pagination.tsx                     183  VVVVVLLLLLLLLLLLLCCC   24%    0%   62%   14%    0.38  view    0.62
+ui/history-refresh.tsx                          32  BBBBBBBBBBBBBLLLLLLL    0%   63%   38%    0%    0.38
+ui/invoices/breadcrumbs.tsx                     48  VVLLLLLCCCCCCCCCCCCC   10%    0%   27%   63%    0.38  view    0.27
+ui/invoices/table.tsx                           11  VVVVVVVLLLLLLLLLLLLL   36%    0%   64%    0%    0.36  view    0.64
+lib/payment-events.ts                          251  BBBBBBBBBBBBBLLLLLLL    0%   65%   35%    0%    0.35
+ui/invoices/buttons.tsx                         76  VVVVVLLCCCCCCCCCCCCC   26%    0%    8%   66%    0.34  view    0.08
+ui/button.tsx                                    9  LLLLLLLCCCCCCCCCCCCC    0%    0%   33%   67%    0.33  view    0.33
+ui/live/activity-feed.tsx                      190  VLLLLLCCCCCCCCCCCCCC    6%    0%   24%   69%    0.31  view    0.24
+dashboard/layout.tsx                            29  VVVVVCCCCCCCCCCCCCCC   24%    0%    0%   76%    0.24  view    0.00
+ui/invoices/save-bar.tsx                       154  VLLLCCCCCCCCCCCCCCCC    8%    0%   14%   79%    0.21  view    0.14
+lib/actions.ts                                 375  BBBBLLLLLLLLLLLLLLLL    0%   21%   79%    0%    0.21
+dashboard/invoices/error.tsx                    37  BBLLCCCCCCCCCCCCCCCC    3%    8%    8%   81%    0.19  view    0.16
+seed/route.ts                                  369  BBBBBBBBBBBBBBBBLLLL    0%   82%   18%    0%    0.18  route   0.18
+page.tsx                                       148  VVVVCCCCCCCCCCCCCCCC   18%    0%    0%   82%    0.18  view    0.00
+ui/dashboard/latest-invoices.tsx               120  VVLLCCCCCCCCCCCCCCCC   10%    0%    8%   83%    0.18  view    0.07
+query/route.ts                                  41  BBBBBBBBBBBBBBBBBLLL    0%   83%   17%    0%    0.17  route   0.17
+dashboard/invoices/[id]/edit/not-found.tsx      46  VVVCCCCCCCCCCCCCCCCC   15%    0%    0%   85%    0.15  view    0.00
+ui/login-form.tsx                              202  VLLCCCCCCCCCCCCCCCCC    6%    0%    8%   85%    0.15  view    0.08
+ui/dashboard/revenue-chart.tsx                 135  LLLCCCCCCCCCCCCCCCCC    1%    0%   13%   86%    0.14  view    0.13
+ui/quick-search/trigger.tsx                     53  VVLCCCCCCCCCCCCCCCCC    8%    0%    6%   87%    0.13  view    0.06
+ui/acme-logo.tsx                                17  VVCCCCCCCCCCCCCCCCCC   12%    0%    0%   88%    0.12  view    0.00
+ui/invoices/edit-form.tsx                      410  VLCCCCCCCCCCCCCCCCCC    4%    0%    7%   89%    0.11  view    0.07
+ui/dashboard/sidenav.tsx                        92  VVCCCCCCCCCCCCCCCCCC   11%    0%    0%   89%    0.11  view    0.00
+ui/invoices/create-form.tsx                    393  VLCCCCCCCCCCCCCCCCCC    4%    0%    6%   90%    0.10  view    0.06
+login/page.tsx                                  41  VVCCCCCCCCCCCCCCCCCC   10%    0%    0%   90%    0.10  view    0.00
+api/events/stream/route.ts                     145  BBBBBBBBBBBBBBBBBBLL    0%   90%   10%    0%    0.10  route   0.10
+ui/customers/table.tsx                         308  VLCCCCCCCCCCCCCCCCCC    6%    0%    2%   92%    0.08  view    0.02
+ui/invoices/edits-provider.tsx                 471  BLLLLLLLLLLLLLLLLLLL    1%    5%   93%    0%    0.07  view    0.98
+ui/skeletons.tsx                               900  VCCCCCCCCCCCCCCCCCCC    5%    0%    0%   95%    0.05  view    0.00
+api/search/route.ts                             55  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  route   0.00
+dashboard/(overview)/loading.tsx                 2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  view    0.00
+dashboard/customers/loading.tsx                  2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  view    0.00
+dashboard/invoices/[id]/edit/loading.tsx         2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  view    0.00
+dashboard/invoices/create/loading.tsx            2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  view    0.00
+dashboard/invoices/loading.tsx                   2  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  view    0.00
 lib/enterprise-data.ts                         264  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 lib/invoice-edits.ts                            62  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 lib/invoice-sort.ts                             39  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
-lib/payment-events.ts                          189  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
+lib/placeholder-data.ts                        242  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 lib/utils.ts                                   111  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
-login/page.tsx                                  21  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00
-query/route.ts                                  29  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 ui/fonts.ts                                     13  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 ui/global.css                                   29  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  59 modules  8002 tokens  VVVVVVVVBLLLLLLLLLLC  V  39% B   5% L  50% C   7%
-          consistency 0.23  mean mixing 0.23 (by module) 0.26 (by token)  median V  56% B   0% L  32% C   2%
-          families: V 34 ( 79%   0%  11%   7%)  B 2 ( 15%  43%  42%   0%)  L 22 (  0%   0%  92%   0%)  C 1 (  0%   0%   0% 100%)
+codebase  59 modules  9603 tokens  VBBBLLLLLLLCCCCCCCCC  V   7% B  16% L  35% C  42%
+          mean mixing 0.25 (non-stylesheet modules, 58)  0.24 (all modules)  0.28 (by token)  0.26 (by operation: no seals, absorption, or host inheritance)  consistency 0.24  median V   8% B   0% L  24% C  33%
+          families: V 8 (100%   0%   0%   0%)  B 8 (  0%  74%  26%   0%)  L 15 (  0%   0%  79%   0%)  C 28 (  8%   0%   8%  82%)
+          shape: inside declared shape 12/48  on sanctioned surface 0/0  distinct internal surfaces 16 among 48 (none sanctioned; an inventory, not a score)
           detected: react  adapters: content, react  skipped: 2  empty: 1
 

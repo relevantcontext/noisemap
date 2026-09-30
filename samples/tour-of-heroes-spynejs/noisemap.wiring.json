@@ -1,0 +1,4637 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:33.951Z",
+  "root": "/private/tmp/noisemap-samples/tour-of-heroes-spynejs/src",
+  "nodes": [
+    {
+      "id": "app/app-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/channels/channel-toh.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "Channel"
+    },
+    {
+      "id": "app/components/page-components/page-404-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/page-components/page-dashboard-search-component.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/page-components/page-dashboard-search-item.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/page-components/page-dashboard-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/page-components/page-hero-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/page-components/page-heroes-item-component.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/page-components/page-heroes-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/page-components/templates/page-dashboard-search-item.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/page-components/templates/page-dashboard-search.component.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/page-components/templates/page-dashboard.component.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/page-components/templates/page-hero-detail.component.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/page-components/templates/page-heroes-item-component.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/page-components/templates/page-heroes.component.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/stage-messages-component.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/stage-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/templates/app.component.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/templates/messages.component.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/mock-data.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    },
+    {
+      "id": "app/traits/toh-channel-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/toh-dashboard-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/toh-messages-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/toh-page-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "dev-tools.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    },
+    {
+      "id": "index.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": true
+    },
+    {
+      "id": "index.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/01-vendors/normalize.css",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/02-variables/mixins.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/app.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/dashboard.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/heroes-details.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/heroes-search.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/heroes.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/messages.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/main.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 58,
+        "end": 81
+      },
+      "label": "components/stage-view",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/stage-view.js"
+      }
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 120,
+        "end": 157
+      },
+      "label": "components/stage-messages-component",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/stage-messages-component.js"
+      }
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 335,
+        "end": 378
+      },
+      "label": "./components/templates/app.component.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/app.component.html"
+      }
+    },
+    {
+      "id": "e5",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-toh.js",
+        "start": 44,
+        "end": 51
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e6",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-toh.js",
+        "start": 84,
+        "end": 111
+      },
+      "label": "traits/toh-channel-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-channel-traits.js"
+      }
+    },
+    {
+      "id": "e7",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-404-view.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e8",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-404-view.js",
+        "start": 62,
+        "end": 86
+      },
+      "label": "traits/toh-page-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e9",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e10",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 69,
+        "end": 104
+      },
+      "label": "../../traits/toh-dashboard-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-dashboard-traits.js"
+      }
+    },
+    {
+      "id": "e11",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 357,
+        "end": 407
+      },
+      "label": "./templates/page-dashboard-search.component.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/templates/page-dashboard-search.component.html"
+      }
+    },
+    {
+      "id": "e12",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-item.js",
+        "start": 47,
+        "end": 54
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e13",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-item.js",
+        "start": 90,
+        "end": 124
+      },
+      "label": "../../traits/toh-messages-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-messages-traits.js"
+      }
+    },
+    {
+      "id": "e14",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-item.js",
+        "start": 362,
+        "end": 412
+      },
+      "label": "./templates/page-dashboard-search-item.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/templates/page-dashboard-search-item.tmpl.html"
+      }
+    },
+    {
+      "id": "e15",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-view.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e16",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-view.js",
+        "start": 62,
+        "end": 86
+      },
+      "label": "traits/toh-page-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e17",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-view.js",
+        "start": 131,
+        "end": 191
+      },
+      "label": "components/page-components/page-dashboard-search-component",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-dashboard-search-component.js"
+      }
+    },
+    {
+      "id": "e18",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-view.js",
+        "start": 380,
+        "end": 423
+      },
+      "label": "./templates/page-dashboard.component.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/templates/page-dashboard.component.html"
+      }
+    },
+    {
+      "id": "e19",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 47,
+        "end": 54
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e20",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 84,
+        "end": 108
+      },
+      "label": "traits/toh-page-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e21",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 288,
+        "end": 333
+      },
+      "label": "./templates/page-hero-detail.component.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/templates/page-hero-detail.component.html"
+      }
+    },
+    {
+      "id": "e22",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-heroes-item-component.js",
+        "start": 47,
+        "end": 54
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e23",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-heroes-item-component.js",
+        "start": 274,
+        "end": 324
+      },
+      "label": "./templates/page-heroes-item-component.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/templates/page-heroes-item-component.tmpl.html"
+      }
+    },
+    {
+      "id": "e24",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-heroes-view.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e25",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-heroes-view.js",
+        "start": 62,
+        "end": 86
+      },
+      "label": "traits/toh-page-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e26",
+      "kind": "import",
+      "from": {
+        "module": "app/components/page-components/page-heroes-view.js",
+        "start": 269,
+        "end": 309
+      },
+      "label": "./templates/page-heroes.component.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/templates/page-heroes.component.html"
+      }
+    },
+    {
+      "id": "e27",
+      "kind": "import",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 47,
+        "end": 54
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e28",
+      "kind": "import",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 89,
+        "end": 120
+      },
+      "label": "../traits/toh-messages-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-messages-traits.js"
+      }
+    },
+    {
+      "id": "e29",
+      "kind": "import",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 317,
+        "end": 354
+      },
+      "label": "./templates/messages.component.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/messages.component.html"
+      }
+    },
+    {
+      "id": "e30",
+      "kind": "import",
+      "from": {
+        "module": "app/components/stage-view.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e31",
+      "kind": "import",
+      "from": {
+        "module": "app/components/stage-view.js",
+        "start": 62,
+        "end": 86
+      },
+      "label": "traits/toh-page-traits",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e32",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-channel-traits.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e33",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-channel-traits.js",
+        "start": 55,
+        "end": 69
+      },
+      "label": "../mock-data",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/mock-data.js"
+      }
+    },
+    {
+      "id": "e34",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-dashboard-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e35",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-dashboard-traits.js",
+        "start": 74,
+        "end": 129
+      },
+      "label": "components/page-components/page-dashboard-search-item",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-dashboard-search-item.js"
+      }
+    },
+    {
+      "id": "e36",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-messages-traits.js",
+        "start": 39,
+        "end": 46
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e37",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-page-traits.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e38",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-page-traits.js",
+        "start": 66,
+        "end": 114
+      },
+      "label": "components/page-components/page-dashboard-view",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-dashboard-view.js"
+      }
+    },
+    {
+      "id": "e39",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-page-traits.js",
+        "start": 145,
+        "end": 190
+      },
+      "label": "components/page-components/page-heroes-view",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-heroes-view.js"
+      }
+    },
+    {
+      "id": "e40",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-page-traits.js",
+        "start": 230,
+        "end": 285
+      },
+      "label": "components/page-components/page-heroes-item-component",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-heroes-item-component.js"
+      }
+    },
+    {
+      "id": "e41",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-page-traits.js",
+        "start": 314,
+        "end": 357
+      },
+      "label": "components/page-components/page-hero-view",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-hero-view.js"
+      }
+    },
+    {
+      "id": "e42",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/toh-page-traits.js",
+        "start": 386,
+        "end": 428
+      },
+      "label": "components/page-components/page-404-view",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-404-view.js"
+      }
+    },
+    {
+      "id": "e43",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 41,
+        "end": 48
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e44",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 85,
+        "end": 107
+      },
+      "label": "spyne-plugin-console",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e45",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 6,
+        "end": 24
+      },
+      "label": "./scss/main.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/main.scss"
+      }
+    },
+    {
+      "id": "e46",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 49,
+        "end": 56
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e47",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 80,
+        "end": 96
+      },
+      "label": "./app/app-view",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/app-view.js"
+      }
+    },
+    {
+      "id": "e48",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 123,
+        "end": 148
+      },
+      "label": "channels/channel-toh.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js"
+      }
+    },
+    {
+      "id": "e49",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 1024,
+        "end": 1046
+      },
+      "label": "spyne-plugin-console",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e50",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 9,
+        "end": 33
+      },
+      "label": "01-vendors/normalize.css",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/01-vendors/normalize.css"
+      }
+    },
+    {
+      "id": "e51",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 45,
+        "end": 69
+      },
+      "label": "02-variables/mixins.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/02-variables/mixins.scss"
+      }
+    },
+    {
+      "id": "e52",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 81,
+        "end": 98
+      },
+      "label": "03-components/app",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/app.scss"
+      }
+    },
+    {
+      "id": "e53",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 110,
+        "end": 133
+      },
+      "label": "03-components/dashboard",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/dashboard.scss"
+      }
+    },
+    {
+      "id": "e54",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 145,
+        "end": 165
+      },
+      "label": "03-components/heroes",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/heroes.scss"
+      }
+    },
+    {
+      "id": "e55",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 177,
+        "end": 205
+      },
+      "label": "03-components/heroes-details",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/heroes-details.scss"
+      }
+    },
+    {
+      "id": "e56",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 217,
+        "end": 244
+      },
+      "label": "03-components/heroes-search",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/heroes-search.scss"
+      }
+    },
+    {
+      "id": "e57",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 256,
+        "end": 278
+      },
+      "label": "03-components/messages",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/messages.scss"
+      }
+    },
+    {
+      "id": "e58",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 493,
+        "end": 496
+      },
+      "label": "a",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e59",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 522,
+        "end": 550
+      },
+      "label": "tohDashboard$OnSearchEvent",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-dashboard-traits.js"
+      }
+    },
+    {
+      "id": "e60",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 494,
+        "end": 520
+      },
+      "label": "CHANNEL_TOH_SEARCH_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1635,
+        "end": 1661
+      }
+    },
+    {
+      "id": "e61",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 309,
+        "end": 322
+      },
+      "label": "CHANNEL_TOH",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 121,
+        "end": 1677
+      }
+    },
+    {
+      "id": "e62",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 625,
+        "end": 637
+      },
+      "label": ".input-toh",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e63",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-item.js",
+        "start": 710,
+        "end": 729
+      },
+      "label": "disposeViewStream",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e64",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-item.js",
+        "start": 682,
+        "end": 708
+      },
+      "label": "CHANNEL_TOH_SEARCH_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1635,
+        "end": 1661
+      }
+    },
+    {
+      "id": "e65",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-item.js",
+        "start": 314,
+        "end": 327
+      },
+      "label": "CHANNEL_TOH",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 121,
+        "end": 1677
+      }
+    },
+    {
+      "id": "e66",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-search-item.js",
+        "start": 830,
+        "end": 833
+      },
+      "label": "a",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e67",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-dashboard-view.js",
+        "start": 614,
+        "end": 617
+      },
+      "label": "a",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e68",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 442,
+        "end": 462
+      },
+      "label": "tohPage$UpdateSave",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e69",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 416,
+        "end": 440
+      },
+      "label": "CHANNEL_UI_CLICK_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e70",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 512,
+        "end": 544
+      },
+      "label": "tohPage$UpdateDetailsHeroLabel",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e71",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 486,
+        "end": 510
+      },
+      "label": "CHANNEL_UI_INPUT_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e72",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 584,
+        "end": 604
+      },
+      "label": "tohPage$UpdateSave",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e73",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 556,
+        "end": 582
+      },
+      "label": "CHANNEL_TOH_UPDATE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1536,
+        "end": 1562
+      }
+    },
+    {
+      "id": "e74",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 719,
+        "end": 727
+      },
+      "label": "button",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e75",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 748,
+        "end": 760
+      },
+      "label": "#hero-name",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e76",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/page-components/page-heroes-item-component.js",
+        "start": 573,
+        "end": 592
+      },
+      "label": "disposeViewStream",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e77",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/page-components/page-heroes-item-component.js",
+        "start": 545,
+        "end": 571
+      },
+      "label": "CHANNEL_TOH_DELETE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1570,
+        "end": 1596
+      }
+    },
+    {
+      "id": "e78",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-heroes-item-component.js",
+        "start": 681,
+        "end": 684
+      },
+      "label": "a",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e79",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-heroes-item-component.js",
+        "start": 707,
+        "end": 715
+      },
+      "label": "button",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e80",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/page-components/page-heroes-view.js",
+        "start": 417,
+        "end": 438
+      },
+      "label": "tohPage$AddHeroItem",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e81",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/page-components/page-heroes-view.js",
+        "start": 392,
+        "end": 415
+      },
+      "label": "CHANNEL_TOH_ADD_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1604,
+        "end": 1627
+      }
+    },
+    {
+      "id": "e82",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/page-components/page-heroes-view.js",
+        "start": 554,
+        "end": 573
+      },
+      "label": "button.add-button",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e83",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 467,
+        "end": 495
+      },
+      "label": "tohMessages$OnChannelRoute",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-messages-traits.js"
+      }
+    },
+    {
+      "id": "e84",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 443,
+        "end": 465
+      },
+      "label": "CHANNEL_TOH_.*_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1503,
+        "end": 1528
+      }
+    },
+    {
+      "id": "e85",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 537,
+        "end": 562
+      },
+      "label": "tohMessages$OnClearMsgs",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-messages-traits.js"
+      }
+    },
+    {
+      "id": "e86",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 511,
+        "end": 535
+      },
+      "label": "CHANNEL_UI_CLICK_EVENT",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e87",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/stage-messages-component.js",
+        "start": 646,
+        "end": 654
+      },
+      "label": ".clear",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e88",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/stage-view.js",
+        "start": 386,
+        "end": 414
+      },
+      "label": "tohPage$OnRouteChangeEvent",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js"
+      }
+    },
+    {
+      "id": "e89",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/stage-view.js",
+        "start": 359,
+        "end": 384
+      },
+      "label": "CHANNEL_TOH_ROUTE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1503,
+        "end": 1528
+      }
+    },
+    {
+      "id": "e90",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/stage-view.js",
+        "start": 260,
+        "end": 273
+      },
+      "label": "CHANNEL_TOH",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-toh.js",
+        "start": 121,
+        "end": 1677
+      }
+    },
+    {
+      "id": "e91",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1503,
+        "end": 1528
+      },
+      "label": "CHANNEL_TOH_ROUTE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/toh-page-traits.js",
+        "start": 1304,
+        "end": 1329
+      }
+    },
+    {
+      "id": "e92",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1536,
+        "end": 1562
+      },
+      "label": "CHANNEL_TOH_UPDATE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-hero-view.js",
+        "start": 556,
+        "end": 582
+      }
+    },
+    {
+      "id": "e93",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1570,
+        "end": 1596
+      },
+      "label": "CHANNEL_TOH_DELETE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-heroes-item-component.js",
+        "start": 545,
+        "end": 571
+      }
+    },
+    {
+      "id": "e94",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1604,
+        "end": 1627
+      },
+      "label": "CHANNEL_TOH_ADD_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-heroes-view.js",
+        "start": 392,
+        "end": 415
+      }
+    },
+    {
+      "id": "e95",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-toh.js",
+        "start": 1635,
+        "end": 1661
+      },
+      "label": "CHANNEL_TOH_SEARCH_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/page-components/page-dashboard-search-component.js",
+        "start": 494,
+        "end": 520
+      }
+    }
+  ],
+  "sites": [
+    {
+      "module": "app/app-view.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 58,
+      "end": 81,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/stage-view"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 120,
+      "end": 157,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/stage-messages-component"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 335,
+      "end": 378,
+      "kind": "import",
+      "class": "declared",
+      "label": "./components/templates/app.component.html"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 493,
+      "end": 496,
+      "kind": "listener",
+      "class": "declared",
+      "label": "a"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 498,
+      "end": 505,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 540,
+      "end": 555,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 560,
+      "end": 569,
+      "kind": "call",
+      "class": "declared",
+      "label": "new StageView"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 578,
+      "end": 593,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 598,
+      "end": 620,
+      "kind": "call",
+      "class": "declared",
+      "label": "new StageMessagesComponent"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 44,
+      "end": 51,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 84,
+      "end": 111,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/toh-channel-traits"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 299,
+      "end": 344,
+      "kind": "call",
+      "class": "declared",
+      "label": "TohChannelTraits.tohChannel$CreateHeroDataObj"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 422,
+      "end": 442,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 936,
+      "end": 956,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1039,
+      "end": 1045,
+      "kind": "call",
+      "class": "declared",
+      "label": "String"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1070,
+      "end": 1102,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).includes"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1125,
+      "end": 1183,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).subscribe"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1125,
+      "end": 1140,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getChannel"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1184,
+      "end": 1222,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohChannel$SendBtnClickEvent.bind"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1236,
+      "end": 1299,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).subscribe"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1236,
+      "end": 1251,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getChannel"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1300,
+      "end": 1338,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohChannel$SendBtnClickEvent.bind"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1352,
+      "end": 1401,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).subscribe"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1352,
+      "end": 1367,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getChannel"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1402,
+      "end": 1443,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohChannel$SendRouteChangeEvent.bind"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1503,
+      "end": 1528,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_ROUTE_EVENT"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1536,
+      "end": 1562,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_UPDATE_EVENT"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1570,
+      "end": 1596,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_DELETE_EVENT"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1604,
+      "end": 1627,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_ADD_EVENT"
+    },
+    {
+      "module": "app/channels/channel-toh.js",
+      "start": 1635,
+      "end": 1661,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_SEARCH_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-404-view.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/page-components/page-404-view.js",
+      "start": 62,
+      "end": 86,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/toh-page-traits"
+    },
+    {
+      "module": "app/components/page-components/page-404-view.js",
+      "start": 406,
+      "end": 429,
+      "kind": "call",
+      "class": "declared",
+      "label": "actionListenersArr.push"
+    },
+    {
+      "module": "app/components/page-components/page-404-view.js",
+      "start": 430,
+      "end": 465,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddRouteActionListener"
+    },
+    {
+      "module": "app/components/page-components/page-404-view.js",
+      "start": 485,
+      "end": 503,
+      "kind": "listener",
+      "class": "opaque",
+      "label": "table not a literal array"
+    },
+    {
+      "module": "app/components/page-components/page-404-view.js",
+      "start": 587,
+      "end": 613,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddPageTraits"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 69,
+      "end": 104,
+      "kind": "import",
+      "class": "declared",
+      "label": "../../traits/toh-dashboard-traits"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 309,
+      "end": 322,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_TOH"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 357,
+      "end": 407,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/page-dashboard-search.component.html"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 494,
+      "end": 520,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_SEARCH_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 522,
+      "end": 550,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohDashboard$OnSearchEvent"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 625,
+      "end": 637,
+      "kind": "listener",
+      "class": "declared",
+      "label": ".input-toh"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-component.js",
+      "start": 639,
+      "end": 646,
+      "kind": "listener",
+      "class": "declared",
+      "label": "keyup"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 47,
+      "end": 54,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 90,
+      "end": 124,
+      "kind": "import",
+      "class": "declared",
+      "label": "../../traits/toh-messages-traits"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 314,
+      "end": 327,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_TOH"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 362,
+      "end": 412,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/page-dashboard-search-item.tmpl.html"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 517,
+      "end": 537,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 564,
+      "end": 593,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.data.name.includes"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 682,
+      "end": 708,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_SEARCH_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 710,
+      "end": 729,
+      "kind": "listener",
+      "class": "declared",
+      "label": "disposeViewStream"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 830,
+      "end": 833,
+      "kind": "listener",
+      "class": "declared",
+      "label": "a"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-search-item.js",
+      "start": 835,
+      "end": 842,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 62,
+      "end": 86,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/toh-page-traits"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 131,
+      "end": 191,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/page-components/page-dashboard-search-component"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 380,
+      "end": 423,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/page-dashboard.component.html"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 509,
+      "end": 546,
+      "kind": "listener",
+      "class": "opaque",
+      "label": "call result used as a name"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 509,
+      "end": 544,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddRouteActionListener"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 614,
+      "end": 617,
+      "kind": "listener",
+      "class": "declared",
+      "label": "a"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 619,
+      "end": 626,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 669,
+      "end": 695,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddPageTraits"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 705,
+      "end": 720,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 725,
+      "end": 753,
+      "kind": "call",
+      "class": "declared",
+      "label": "new PageDashboardSearchComponent"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 47,
+      "end": 54,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 84,
+      "end": 108,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/toh-page-traits"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 288,
+      "end": 333,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/page-hero-detail.component.html"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 416,
+      "end": 440,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_UI_CLICK_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 442,
+      "end": 462,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohPage$UpdateSave"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 486,
+      "end": 510,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_UI_INPUT_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 512,
+      "end": 544,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohPage$UpdateDetailsHeroLabel"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 556,
+      "end": 582,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_UPDATE_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 584,
+      "end": 604,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohPage$UpdateSave"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 616,
+      "end": 653,
+      "kind": "listener",
+      "class": "opaque",
+      "label": "call result used as a name"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 616,
+      "end": 651,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddRouteActionListener"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 719,
+      "end": 727,
+      "kind": "listener",
+      "class": "declared",
+      "label": "button"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 729,
+      "end": 736,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 748,
+      "end": 760,
+      "kind": "listener",
+      "class": "declared",
+      "label": "#hero-name"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 762,
+      "end": 769,
+      "kind": "listener",
+      "class": "declared",
+      "label": "input"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 812,
+      "end": 838,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddPageTraits"
+    },
+    {
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 848,
+      "end": 863,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.addChannel"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 47,
+      "end": 54,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 274,
+      "end": 324,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/page-heroes-item-component.tmpl.html"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 417,
+      "end": 437,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 460,
+      "end": 468,
+      "kind": "call",
+      "class": "declared",
+      "label": "parseInt"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 479,
+      "end": 487,
+      "kind": "call",
+      "class": "declared",
+      "label": "parseInt"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 545,
+      "end": 571,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_DELETE_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 573,
+      "end": 592,
+      "kind": "listener",
+      "class": "declared",
+      "label": "disposeViewStream"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 681,
+      "end": 684,
+      "kind": "listener",
+      "class": "declared",
+      "label": "a"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 686,
+      "end": 693,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 707,
+      "end": 715,
+      "kind": "listener",
+      "class": "declared",
+      "label": "button"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 717,
+      "end": 724,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-item-component.js",
+      "start": 771,
+      "end": 786,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.addChannel"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 62,
+      "end": 86,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/toh-page-traits"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 269,
+      "end": 309,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/page-heroes.component.html"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 392,
+      "end": 415,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_ADD_EVENT"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 417,
+      "end": 438,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohPage$AddHeroItem"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 450,
+      "end": 487,
+      "kind": "listener",
+      "class": "opaque",
+      "label": "call result used as a name"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 450,
+      "end": 485,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddRouteActionListener"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 554,
+      "end": 573,
+      "kind": "listener",
+      "class": "declared",
+      "label": "button.add-button"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 575,
+      "end": 582,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 625,
+      "end": 651,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddPageTraits"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 661,
+      "end": 694,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.data.heroesArr.forEach"
+    },
+    {
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 695,
+      "end": 724,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohPage$AddHeroItem.bind"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 47,
+      "end": 54,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 89,
+      "end": 120,
+      "kind": "import",
+      "class": "declared",
+      "label": "../traits/toh-messages-traits"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 317,
+      "end": 354,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/messages.component.html"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 443,
+      "end": 465,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_.*_EVENT"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 467,
+      "end": 495,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohMessages$OnChannelRoute"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 511,
+      "end": 535,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_UI_CLICK_EVENT"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 537,
+      "end": 562,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohMessages$OnClearMsgs"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 646,
+      "end": 654,
+      "kind": "listener",
+      "class": "declared",
+      "label": ".clear"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 656,
+      "end": 663,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 732,
+      "end": 746,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 769,
+      "end": 784,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.addChannel"
+    },
+    {
+      "module": "app/components/stage-messages-component.js",
+      "start": 807,
+      "end": 822,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.addChannel"
+    },
+    {
+      "module": "app/components/stage-view.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/stage-view.js",
+      "start": 62,
+      "end": 86,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/toh-page-traits"
+    },
+    {
+      "module": "app/components/stage-view.js",
+      "start": 260,
+      "end": 273,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_TOH"
+    },
+    {
+      "module": "app/components/stage-view.js",
+      "start": 359,
+      "end": 384,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TOH_ROUTE_EVENT"
+    },
+    {
+      "module": "app/components/stage-view.js",
+      "start": 386,
+      "end": 414,
+      "kind": "listener",
+      "class": "declared",
+      "label": "tohPage$OnRouteChangeEvent"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 55,
+      "end": 69,
+      "kind": "import",
+      "class": "declared",
+      "label": "../mock-data"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 363,
+      "end": 406,
+      "kind": "call",
+      "class": "declared",
+      "label": "e.srcElement.el.parentElement.querySelector"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 473,
+      "end": 490,
+      "kind": "call",
+      "class": "declared",
+      "label": "getParentInputVal"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 515,
+      "end": 532,
+      "kind": "call",
+      "class": "declared",
+      "label": "getParentInputVal"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 642,
+      "end": 666,
+      "kind": "call",
+      "class": "opaque",
+      "label": "computed member"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 717,
+      "end": 723,
+      "kind": "call",
+      "class": "declared",
+      "label": "String"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 775,
+      "end": 807,
+      "kind": "call",
+      "class": "opaque",
+      "label": "computed member"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 848,
+      "end": 879,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohChannel$GenerateMessage"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 950,
+      "end": 971,
+      "kind": "call",
+      "class": "declared",
+      "label": "eventType.toUpperCase"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 988,
+      "end": 999,
+      "kind": "call",
+      "class": "declared",
+      "label": "console.log"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1083,
+      "end": 1106,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendChannelPayload"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1107,
+      "end": 1117,
+      "kind": "dispatch",
+      "class": "opaque",
+      "label": "action from a variable"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1300,
+      "end": 1327,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohChannel$GetPageData"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1382,
+      "end": 1413,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.tohChannel$GenerateMessage"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1462,
+      "end": 1475,
+      "kind": "call",
+      "class": "declared",
+      "label": "Object.assign"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1516,
+      "end": 1527,
+      "kind": "call",
+      "class": "declared",
+      "label": "console.log"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1603,
+      "end": 1626,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendChannelPayload"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1627,
+      "end": 1652,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "\"CHANNEL_TOH_ROUTE_EVENT\""
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1890,
+      "end": 1913,
+      "kind": "call",
+      "class": "declared",
+      "label": "heroesData.getTopHeroes"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1955,
+      "end": 1973,
+      "kind": "call",
+      "class": "declared",
+      "label": "heroesData.getHero"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 2008,
+      "end": 2034,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).toUpperCase"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 2008,
+      "end": 2014,
+      "kind": "call",
+      "class": "declared",
+      "label": "String"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 2102,
+      "end": 2122,
+      "kind": "call",
+      "class": "opaque",
+      "label": "computed member"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 2326,
+      "end": 2335,
+      "kind": "call",
+      "class": "declared",
+      "label": "s.replace"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 2783,
+      "end": 2795,
+      "kind": "call",
+      "class": "declared",
+      "label": "searchPrefix"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 2841,
+      "end": 2850,
+      "kind": "call",
+      "class": "declared",
+      "label": "pastTense"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3038,
+      "end": 3053,
+      "kind": "call",
+      "class": "declared",
+      "label": "structuredClone"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3305,
+      "end": 3313,
+      "kind": "call",
+      "class": "declared",
+      "label": "parseInt"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3334,
+      "end": 3349,
+      "kind": "call",
+      "class": "declared",
+      "label": "structuredClone"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3350,
+      "end": 3367,
+      "kind": "call",
+      "class": "declared",
+      "label": "_heroesArr.filter"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3437,
+      "end": 3452,
+      "kind": "call",
+      "class": "declared",
+      "label": "structuredClone"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3453,
+      "end": 3469,
+      "kind": "call",
+      "class": "declared",
+      "label": "_heroesArr.slice"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3608,
+      "end": 3622,
+      "kind": "call",
+      "class": "declared",
+      "label": "_heroesArr.map"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3784,
+      "end": 3810,
+      "kind": "call",
+      "class": "declared",
+      "label": "existingHeroNames.includes"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 3984,
+      "end": 3999,
+      "kind": "call",
+      "class": "declared",
+      "label": "_heroesArr.push"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4025,
+      "end": 4040,
+      "kind": "call",
+      "class": "declared",
+      "label": "structuredClone"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4103,
+      "end": 4120,
+      "kind": "call",
+      "class": "declared",
+      "label": "_heroesArr.filter"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4135,
+      "end": 4143,
+      "kind": "call",
+      "class": "declared",
+      "label": "parseInt"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4191,
+      "end": 4203,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getHero"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4257,
+      "end": 4274,
+      "kind": "call",
+      "class": "declared",
+      "label": "_heroesArr.filter"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4289,
+      "end": 4297,
+      "kind": "call",
+      "class": "declared",
+      "label": "parseInt"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4411,
+      "end": 4437,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).test"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4415,
+      "end": 4421,
+      "kind": "call",
+      "class": "declared",
+      "label": "new RegExp"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4468,
+      "end": 4476,
+      "kind": "call",
+      "class": "declared",
+      "label": "acc.push"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4577,
+      "end": 4594,
+      "kind": "call",
+      "class": "declared",
+      "label": "_heroesArr.reduce"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4643,
+      "end": 4667,
+      "kind": "call",
+      "class": "declared",
+      "label": "_prevSearchedHeroes.find"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4961,
+      "end": 4976,
+      "kind": "call",
+      "class": "declared",
+      "label": "structuredClone"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 4977,
+      "end": 4995,
+      "kind": "call",
+      "class": "declared",
+      "label": "searchItems.filter"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 5174,
+      "end": 5189,
+      "kind": "call",
+      "class": "declared",
+      "label": "structuredClone"
+    },
+    {
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 5232,
+      "end": 5242,
+      "kind": "call",
+      "class": "declared",
+      "label": "new HeroesData"
+    },
+    {
+      "module": "app/traits/toh-dashboard-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/toh-dashboard-traits.js",
+      "start": 74,
+      "end": 129,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/page-components/page-dashboard-search-item"
+    },
+    {
+      "module": "app/traits/toh-dashboard-traits.js",
+      "start": 396,
+      "end": 411,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/toh-dashboard-traits.js",
+      "start": 416,
+      "end": 439,
+      "kind": "call",
+      "class": "declared",
+      "label": "new PageDashboardSearchItem"
+    },
+    {
+      "module": "app/traits/toh-dashboard-traits.js",
+      "start": 472,
+      "end": 494,
+      "kind": "call",
+      "class": "declared",
+      "label": "foundHeroesArr.forEach"
+    },
+    {
+      "module": "app/traits/toh-messages-traits.js",
+      "start": 39,
+      "end": 46,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/toh-messages-traits.js",
+      "start": 366,
+      "end": 402,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.msgHolder$.el.appendChild"
+    },
+    {
+      "module": "app/traits/toh-messages-traits.js",
+      "start": 403,
+      "end": 437,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).render"
+    },
+    {
+      "module": "app/traits/toh-messages-traits.js",
+      "start": 407,
+      "end": 417,
+      "kind": "call",
+      "class": "declared",
+      "label": "new DomElement"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 66,
+      "end": 114,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/page-components/page-dashboard-view"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 145,
+      "end": 190,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/page-components/page-heroes-view"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 230,
+      "end": 285,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/page-components/page-heroes-item-component"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 314,
+      "end": 357,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/page-components/page-hero-view"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 386,
+      "end": 428,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/page-components/page-404-view"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 687,
+      "end": 701,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 732,
+      "end": 760,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).toUpperCase"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 732,
+      "end": 738,
+      "kind": "call",
+      "class": "declared",
+      "label": "String"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 832,
+      "end": 849,
+      "kind": "call",
+      "class": "declared",
+      "label": "window.history.go"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 951,
+      "end": 995,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).el.remove"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 951,
+      "end": 965,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 1095,
+      "end": 1110,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 1115,
+      "end": 1138,
+      "kind": "call",
+      "class": "declared",
+      "label": "new PageHeroesItemComponent"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 1206,
+      "end": 1221,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.addChannel"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 1667,
+      "end": 1682,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/toh-page-traits.js",
+      "start": 1687,
+      "end": 1696,
+      "kind": "call",
+      "class": "declared",
+      "label": "new PageClass"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 41,
+      "end": 48,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 85,
+      "end": 107,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne-plugin-console"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 144,
+      "end": 151,
+      "kind": "call",
+      "class": "declared",
+      "label": "new Promise"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 170,
+      "end": 193,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerPlugin"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 205,
+      "end": 223,
+      "kind": "call",
+      "class": "declared",
+      "label": "new SpynePluginConsole"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 466,
+      "end": 487,
+      "kind": "call",
+      "class": "declared",
+      "label": "requestAnimationFrame"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 500,
+      "end": 507,
+      "kind": "call",
+      "class": "declared",
+      "label": "resolve"
+    },
+    {
+      "module": "index.js",
+      "start": 6,
+      "end": 24,
+      "kind": "import",
+      "class": "declared",
+      "label": "./scss/main.scss"
+    },
+    {
+      "module": "index.js",
+      "start": 49,
+      "end": 56,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "index.js",
+      "start": 80,
+      "end": 96,
+      "kind": "import",
+      "class": "declared",
+      "label": "./app/app-view"
+    },
+    {
+      "module": "index.js",
+      "start": 123,
+      "end": 148,
+      "kind": "import",
+      "class": "declared",
+      "label": "channels/channel-toh.js"
+    },
+    {
+      "module": "index.js",
+      "start": 758,
+      "end": 771,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.init"
+    },
+    {
+      "module": "index.js",
+      "start": 781,
+      "end": 805,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 810,
+      "end": 820,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelToh"
+    },
+    {
+      "module": "index.js",
+      "start": 874,
+      "end": 903,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).then"
+    },
+    {
+      "module": "index.js",
+      "start": 1024,
+      "end": 1046,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne-plugin-console"
+    },
+    {
+      "module": "index.js",
+      "start": 1078,
+      "end": 1096,
+      "kind": "call",
+      "class": "declared",
+      "label": "new SpynePluginConsole"
+    },
+    {
+      "module": "index.js",
+      "start": 1149,
+      "end": 1166,
+      "kind": "call",
+      "class": "declared",
+      "label": "window.setTimeout"
+    },
+    {
+      "module": "index.js",
+      "start": 1189,
+      "end": 1215,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).prependToDom"
+    },
+    {
+      "module": "index.js",
+      "start": 1193,
+      "end": 1200,
+      "kind": "call",
+      "class": "declared",
+      "label": "new AppView"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "opaque",
+      "module": "app/components/page-components/page-404-view.js",
+      "start": 485,
+      "end": 503,
+      "message": "listener cannot be followed statically: table not a literal array"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/components/page-components/page-dashboard-view.js",
+      "start": 509,
+      "end": 546,
+      "message": "listener cannot be followed statically: call result used as a name"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/components/page-components/page-hero-view.js",
+      "start": 616,
+      "end": 653,
+      "message": "listener cannot be followed statically: call result used as a name"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/components/page-components/page-heroes-view.js",
+      "start": 450,
+      "end": 487,
+      "message": "listener cannot be followed statically: call result used as a name"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 642,
+      "end": 666,
+      "message": "call cannot be followed statically: computed member"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 775,
+      "end": 807,
+      "message": "call cannot be followed statically: computed member"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 1107,
+      "end": 1117,
+      "message": "dispatch cannot be followed statically: action from a variable"
+    },
+    {
+      "kind": "opaque",
+      "module": "app/traits/toh-channel-traits.js",
+      "start": 2102,
+      "end": 2122,
+      "message": "call cannot be followed statically: computed member"
+    }
+  ],
+  "vocabulary": [
+    {
+      "name": "CHANNEL_ROUTE",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1368,
+          "end": 1383,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TOH",
+      "kind": "channel",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 121,
+          "end": 1677,
+          "role": "names"
+        },
+        {
+          "module": "app/components/page-components/page-heroes-item-component.js",
+          "start": 787,
+          "end": 800,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 785,
+          "end": 798,
+          "role": "mentions"
+        },
+        {
+          "module": "app/traits/toh-page-traits.js",
+          "start": 1222,
+          "end": 1235,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/page-components/page-dashboard-search-component.js",
+          "start": 309,
+          "end": 322,
+          "role": "binds"
+        },
+        {
+          "module": "app/components/page-components/page-dashboard-search-item.js",
+          "start": 314,
+          "end": 327,
+          "role": "binds"
+        },
+        {
+          "module": "app/components/stage-view.js",
+          "start": 260,
+          "end": 273,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TOH_ADD_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1604,
+          "end": 1627,
+          "role": "registers"
+        },
+        {
+          "module": "app/components/page-components/page-heroes-view.js",
+          "start": 392,
+          "end": 415,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 443,
+          "end": 465,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TOH_DELETE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1570,
+          "end": 1596,
+          "role": "registers"
+        },
+        {
+          "module": "app/components/page-components/page-heroes-item-component.js",
+          "start": 545,
+          "end": 571,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 443,
+          "end": 465,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TOH_ROUTE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1503,
+          "end": 1528,
+          "role": "registers"
+        },
+        {
+          "module": "app/traits/toh-channel-traits.js",
+          "start": 1627,
+          "end": 1652,
+          "role": "emits"
+        },
+        {
+          "module": "app/traits/toh-page-traits.js",
+          "start": 1304,
+          "end": 1329,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 443,
+          "end": 465,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/stage-view.js",
+          "start": 359,
+          "end": 384,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TOH_SEARCH_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1635,
+          "end": 1661,
+          "role": "registers"
+        },
+        {
+          "module": "app/components/page-components/page-dashboard-search-component.js",
+          "start": 494,
+          "end": 520,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/page-components/page-dashboard-search-item.js",
+          "start": 682,
+          "end": 708,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 443,
+          "end": 465,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TOH_UPDATE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1536,
+          "end": 1562,
+          "role": "registers"
+        },
+        {
+          "module": "app/components/page-components/page-hero-view.js",
+          "start": 556,
+          "end": 582,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 443,
+          "end": 465,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1141,
+          "end": 1153,
+          "role": "mentions"
+        },
+        {
+          "module": "app/channels/channel-toh.js",
+          "start": 1252,
+          "end": 1264,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/page-components/page-hero-view.js",
+          "start": 864,
+          "end": 876,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 823,
+          "end": 835,
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI_CLICK_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/components/page-components/page-hero-view.js",
+          "start": 416,
+          "end": 440,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/stage-messages-component.js",
+          "start": 511,
+          "end": 535,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI_INPUT_EVENT",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/components/page-components/page-hero-view.js",
+          "start": 486,
+          "end": 510,
+          "role": "listens"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "app/app-view.js": {
+      "edges": {
+        "out": 5,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 10,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 180,
+        "counterparts": [
+          "app/components/stage-messages-component.js",
+          "app/components/stage-view.js",
+          "app/components/templates/app.component.html",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.25
+    },
+    "app/channels/channel-toh.js": {
+      "edges": {
+        "out": 7,
+        "in": 11,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 21,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 11,
+        "tokens": 759,
+        "counterparts": [
+          "app/components/page-components/page-dashboard-search-component.js",
+          "app/components/page-components/page-dashboard-search-item.js",
+          "app/components/page-components/page-hero-view.js",
+          "app/components/page-components/page-heroes-item-component.js",
+          "app/components/page-components/page-heroes-view.js",
+          "app/components/stage-messages-component.js",
+          "app/components/stage-view.js",
+          "app/traits/toh-channel-traits.js",
+          "app/traits/toh-page-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.5
+    },
+    "app/components/page-components/page-404-view.js": {
+      "edges": {
+        "out": 2,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 1
+      },
+      "discernibility": 0.8333333333333334,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 104,
+        "counterparts": [
+          "app/traits/toh-page-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 3
+    },
+    "app/components/page-components/page-dashboard-search-component.js": {
+      "edges": {
+        "out": 7,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 8,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 157,
+        "counterparts": [
+          "app/channels/channel-toh.js",
+          "app/components/page-components/page-dashboard-view.js",
+          "app/components/page-components/templates/page-dashboard-search.component.html",
+          "app/traits/toh-dashboard-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.75
+    },
+    "app/components/page-components/page-dashboard-search-item.js": {
+      "edges": {
+        "out": 7,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 10,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 157,
+        "counterparts": [
+          "app/channels/channel-toh.js",
+          "app/components/page-components/templates/page-dashboard-search-item.tmpl.html",
+          "app/traits/toh-dashboard-traits.js",
+          "app/traits/toh-messages-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.5
+    },
+    "app/components/page-components/page-dashboard-view.js": {
+      "edges": {
+        "out": 5,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 10,
+        "opaque": 1
+      },
+      "discernibility": 0.9090909090909091,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 150,
+        "counterparts": [
+          "app/components/page-components/page-dashboard-search-component.js",
+          "app/components/page-components/templates/page-dashboard.component.html",
+          "app/traits/toh-page-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.3333333333333333
+    },
+    "app/components/page-components/page-hero-view.js": {
+      "edges": {
+        "out": 11,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 16,
+        "opaque": 1
+      },
+      "discernibility": 0.9411764705882353,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 228,
+        "counterparts": [
+          "app/channels/channel-toh.js",
+          "app/components/page-components/templates/page-hero-detail.component.html",
+          "app/traits/toh-page-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.3333333333333335
+    },
+    "app/components/page-components/page-heroes-item-component.js": {
+      "edges": {
+        "out": 6,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 12,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 219,
+        "counterparts": [
+          "app/channels/channel-toh.js",
+          "app/components/page-components/templates/page-heroes-item-component.tmpl.html",
+          "app/traits/toh-page-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.3333333333333335
+    },
+    "app/components/page-components/page-heroes-view.js": {
+      "edges": {
+        "out": 6,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 11,
+        "opaque": 1
+      },
+      "discernibility": 0.9166666666666666,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 209,
+        "counterparts": [
+          "app/channels/channel-toh.js",
+          "app/components/page-components/templates/page-heroes.component.html",
+          "app/traits/toh-page-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.3333333333333335
+    },
+    "app/components/page-components/templates/page-dashboard-search-item.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 49,
+        "counterparts": [
+          "app/components/page-components/page-dashboard-search-item.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/page-components/templates/page-dashboard-search.component.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 49,
+        "counterparts": [
+          "app/components/page-components/page-dashboard-search-component.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/page-components/templates/page-dashboard.component.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 50,
+        "counterparts": [
+          "app/components/page-components/page-dashboard-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/page-components/templates/page-hero-detail.component.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 78,
+        "counterparts": [
+          "app/components/page-components/page-hero-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/page-components/templates/page-heroes-item-component.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 69,
+        "counterparts": [
+          "app/components/page-components/page-heroes-item-component.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/page-components/templates/page-heroes.component.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 59,
+        "counterparts": [
+          "app/components/page-components/page-heroes-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/stage-messages-component.js": {
+      "edges": {
+        "out": 8,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 12,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 166,
+        "counterparts": [
+          "app/app-view.js",
+          "app/channels/channel-toh.js",
+          "app/components/templates/messages.component.html",
+          "app/traits/toh-messages-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.5
+    },
+    "app/components/stage-view.js": {
+      "edges": {
+        "out": 5,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 188,
+        "counterparts": [
+          "app/app-view.js",
+          "app/channels/channel-toh.js",
+          "app/traits/toh-page-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.6666666666666667
+    },
+    "app/components/templates/app.component.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 60,
+        "counterparts": [
+          "app/app-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/components/templates/messages.component.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 49,
+        "counterparts": [
+          "app/components/stage-messages-component.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/mock-data.js": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 378,
+        "counterparts": [
+          "app/traits/toh-channel-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/traits/toh-channel-traits.js": {
+      "edges": {
+        "out": 2,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 47,
+        "opaque": 4
+      },
+      "discernibility": 0.9215686274509803,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 447,
+        "counterparts": [
+          "app/channels/channel-toh.js",
+          "app/mock-data.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.5
+    },
+    "app/traits/toh-dashboard-traits.js": {
+      "edges": {
+        "out": 2,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 71,
+        "counterparts": [
+          "app/components/page-components/page-dashboard-search-component.js",
+          "app/components/page-components/page-dashboard-search-item.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 3
+    },
+    "app/traits/toh-messages-traits.js": {
+      "edges": {
+        "out": 1,
+        "in": 4,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 4,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 91,
+        "counterparts": [
+          "app/components/page-components/page-dashboard-search-item.js",
+          "app/components/stage-messages-component.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.5
+    },
+    "app/traits/toh-page-traits.js": {
+      "edges": {
+        "out": 6,
+        "in": 11,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 17,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 8,
+        "tokens": 303,
+        "counterparts": [
+          "app/channels/channel-toh.js",
+          "app/components/page-components/page-404-view.js",
+          "app/components/page-components/page-dashboard-view.js",
+          "app/components/page-components/page-hero-view.js",
+          "app/components/page-components/page-heroes-item-component.js",
+          "app/components/page-components/page-heroes-view.js",
+          "app/components/stage-view.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2.7142857142857144
+    },
+    "dev-tools.js": {
+      "edges": {
+        "out": 2,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 7,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 15,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "index.js": {
+      "edges": {
+        "out": 5,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 13,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 327,
+        "counterparts": [
+          "app/app-view.js",
+          "app/channels/channel-toh.js",
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.3333333333333333
+    },
+    "index.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 24,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "scss/01-vendors/normalize.css": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 362,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/02-variables/mixins.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": null,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/app.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 189,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/dashboard.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 235,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/heroes-details.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 194,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/heroes-search.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 236,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/heroes.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 305,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/messages.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 187,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/main.scss": {
+      "edges": {
+        "out": 8,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 10,
+        "tokens": 835,
+        "counterparts": [
+          "index.js",
+          "scss/01-vendors/normalize.css",
+          "scss/02-variables/mixins.scss",
+          "scss/03-components/app.scss",
+          "scss/03-components/dashboard.scss",
+          "scss/03-components/heroes-details.scss",
+          "scss/03-components/heroes-search.scss",
+          "scss/03-components/heroes.scss",
+          "scss/03-components/messages.scss"
+        ],
+        "unmeasured": 1
+      },
+      "locality": 1
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 38,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 19,
+        "unknown": 0
+      },
+      "broadcast-selector": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 10
+      },
+      "listener-method": {
+        "resolved": 8,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 2,
+        "unknown": 0
+      },
+      "listener-action": {
+        "resolved": 7,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 3,
+        "unknown": 0
+      },
+      "channel-binding": {
+        "resolved": 3,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "action-registration": {
+        "resolved": 5,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 213,
+      "opaque": 8
+    },
+    "discernibility": 0.9638009049773756,
+    "resolution": 1,
+    "vocabularyShare": 1,
+    "workingSet": {
+      "medianModules": 2,
+      "medianTokens": 180,
+      "tokenWeightedMedianTokens": 305,
+      "unmeasuredCounterparts": 1
+    },
+    "locality": 1.5455182072829132,
+    "entries": [
+      "index.js"
+    ],
+    "roots": [
+      "app"
+    ]
+  }
+}

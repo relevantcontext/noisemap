@@ -1,0 +1,17 @@
+wiring  2 modules  11 connections  47 sites
+        discernibility 100% (declared 47 / opaque 0)   resolution 100%
+        vocabulary share   0%   working set: median 1 modules, 163 counted tokens (270 by token)   locality —
+        entries: none found
+        roots: (none)
+
+vocabulary: 2 names the app declares (0 more from the framework)
+  name                                               registers  emits  listens  binds
+  onPlay                                                     0      1        1      0
+  onSquareClick                                              0      9        1      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                      0           0          0         1        0
+handler-path               10           0          0         0        0
+
+findings: 0 unresolved/ambiguous, 0 opaque
+

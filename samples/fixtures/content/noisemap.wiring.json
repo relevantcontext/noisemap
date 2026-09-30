@@ -1,0 +1,336 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:35.848Z",
+  "root": "/private/tmp/noisemap-samples/fixtures/content",
+  "nodes": [
+    {
+      "id": "NOTES.txt",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "data.json",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "package.json",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "pages/about.md",
+      "kind": "module",
+      "framework": "content",
+      "entry": true
+    },
+    {
+      "id": "pages/index.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "pages/inline.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "styles/_variables.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "styles/card.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "styles/empty.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "styles/legacy.css",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "styles/card.scss",
+        "start": 6,
+        "end": 15
+      },
+      "label": "variables",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "styles/_variables.scss"
+      }
+    }
+  ],
+  "sites": [],
+  "findings": [],
+  "vocabulary": [],
+  "modules": {
+    "NOTES.txt": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 6,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "data.json": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 2,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "package.json": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "pages/about.md": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 12,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "pages/index.html": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 14,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "pages/inline.html": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 34,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "styles/_variables.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 17,
+        "counterparts": [
+          "styles/card.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0
+    },
+    "styles/card.scss": {
+      "edges": {
+        "out": 1,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 17,
+        "counterparts": [
+          "styles/_variables.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0
+    },
+    "styles/empty.scss": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "styles/legacy.css": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 6,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 0,
+      "opaque": 0
+    },
+    "discernibility": null,
+    "resolution": 1,
+    "vocabularyShare": null,
+    "workingSet": {
+      "medianModules": 1,
+      "medianTokens": 13,
+      "tokenWeightedMedianTokens": 17,
+      "unmeasuredCounterparts": 0
+    },
+    "locality": 0,
+    "entries": [
+      "pages/about.md"
+    ],
+    "roots": []
+  }
+}

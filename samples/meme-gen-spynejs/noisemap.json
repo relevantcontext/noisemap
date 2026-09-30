@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.1"
+    "version": "0.2.0"
   },
-  "generatedAt": "2026-09-26T10:39:07.524Z",
+  "generatedAt": "2026-09-29T23:23:34.918Z",
   "root": "/private/tmp/noisemap-samples/meme-gen-spynejs/src",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.008928115924072569,
+    "consistency": 0.009820927516479826,
     "median": {
       "V": 0,
       "B": 0,
@@ -68,18 +68,35 @@
       "V": 29,
       "B": 12,
       "L": 145,
-      "C": 412,
-      "excluded": 1125,
-      "counted": 598
+      "C": 414,
+      "excluded": 1130,
+      "counted": 600
     },
     "shares": {
-      "V": 0.048494983277591976,
-      "B": 0.020066889632107024,
-      "L": 0.24247491638795987,
-      "C": 0.6889632107023411
+      "V": 0.04833333333333333,
+      "B": 0.02,
+      "L": 0.24166666666666667,
+      "C": 0.69
     },
     "meanMixing": 0.006313131313131311,
-    "meanMixingTokenWeighted": 0.008361204013377923
+    "meanMixingTokenWeighted": 0.00833333333333333,
+    "codeModules": {
+      "count": 8,
+      "meanMixing": 0.008680555555555552
+    },
+    "byOperation": {
+      "count": 8,
+      "meanMixing": 0.03041968599033816
+    },
+    "shape": {
+      "declared": 4,
+      "insideShape": 4,
+      "withSurface": 4,
+      "onSurface": 4,
+      "undeclared": 7,
+      "internalSurfaces": 0,
+      "internalModules": 0
+    }
   },
   "modules": [
     {
@@ -221,8 +238,28 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/channels/channel-meme-generator.js",
@@ -435,8 +472,28 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "Channel",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "B"
+      ],
+      "base": "B",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions",
+          "onViewStreamInfo"
+        ],
+        "members": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/meme-element.js",
@@ -585,8 +642,24 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "DomElement",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor"
+        ],
+        "members": [
+          "constructor"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/templates/meme.tmpl.html",
@@ -595,8 +668,8 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 13,
-        "excluded": 31
+        "C": 15,
+        "excluded": 36
       },
       "shares": {
         "V": 0,
@@ -615,11 +688,43 @@
         },
         {
           "start": 1,
+          "end": 26,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 1
+        },
+        {
+          "start": 26,
+          "end": 27,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 28,
+          "end": 51,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 3,
+          "punctuation": 3
+        },
+        {
+          "start": 51,
+          "end": 59,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 59,
           "end": 161,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 13,
-          "punctuation": 29
+          "tokens": 8,
+          "punctuation": 24
         },
         {
           "start": 161,
@@ -630,7 +735,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/traits/meme-generator-traits.js",
@@ -781,7 +888,7 @@
           "start": 849,
           "end": 975,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "subscribe",
           "tokens": 9,
           "punctuation": 11
         },
@@ -877,7 +984,7 @@
           "start": 1919,
           "end": 2039,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "channel-io",
           "tokens": 7,
           "punctuation": 7
         },
@@ -941,7 +1048,7 @@
           "start": 2589,
           "end": 2630,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "dom",
           "tokens": 6,
           "punctuation": 5
         },
@@ -1067,8 +1174,38 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "memeGenerator$GetTxtAndImg",
+          "memeGenerator$OnTxtAndImgReturned",
+          "memeGenerator$CreateMemeFromTxtAndImg",
+          "memeGenerator$CheckAndReplaceWithThumb"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "AppView",
+          "kind": "view"
+        },
+        {
+          "host": "ChannelMemeGenerator",
+          "kind": "channel"
+        }
+      ],
+      "mixingByOperation": 0.17391304347826086
     },
     {
       "path": "dev-tools.js",
@@ -1128,7 +1265,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "index.js",
@@ -1548,7 +1687,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.06944444444444442
+      "mixing": 0.06944444444444442,
+      "logicInRendering": 0,
+      "mixingByOperation": 0.06944444444444442
     },
     {
       "path": "index.tmpl.html",
@@ -1688,7 +1829,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "scss/01-vendors/normalize.css",
@@ -3004,7 +3147,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/meme-generator.scss",
@@ -3160,7 +3304,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/main.scss",
@@ -3332,7 +3477,127 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
+    }
+  ],
+  "directories": [
+    {
+      "path": ".",
+      "modules": 11,
+      "tokens": 600,
+      "shares": {
+        "V": 0.04833333333333333,
+        "B": 0.02,
+        "L": 0.24166666666666667,
+        "C": 0.69
+      },
+      "meanMixing": 0.006313131313131311,
+      "consistency": 0.009820927516479826
+    },
+    {
+      "path": "app",
+      "modules": 5,
+      "tokens": 120,
+      "shares": {
+        "V": 0.2,
+        "B": 0.1,
+        "L": 0.575,
+        "C": 0.125
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/channels",
+      "modules": 1,
+      "tokens": 12,
+      "shares": {
+        "V": 0,
+        "B": 1,
+        "L": 0,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "app/components",
+      "modules": 2,
+      "tokens": 24,
+      "shares": {
+        "V": 0.375,
+        "B": 0,
+        "L": 0,
+        "C": 0.625
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "app/components/templates",
+      "modules": 1,
+      "tokens": 15,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "app/traits",
+      "modules": 1,
+      "tokens": 69,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 1,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "scss",
+      "modules": 3,
+      "tokens": 355,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/01-vendors",
+      "modules": 1,
+      "tokens": 204,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "scss/03-components",
+      "modules": 1,
+      "tokens": 105,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
     }
   ],
   "empty": [

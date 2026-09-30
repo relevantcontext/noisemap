@@ -1,5 +1,7 @@
 file                    tokens  V B L C                  V     B     L     C  mixing
 ----------------------  ------  --------------------  ----  ----  ----  ----  ------
+pages/inline.html           34  BBBBCCCCCCCCCCCCCCCC    0%   18%    0%   82%    0.18
+data.json                    2  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 NOTES.txt                    6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 pages/about.md              12  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 pages/index.html            14  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
@@ -7,8 +9,8 @@ styles/_variables.scss       4  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    
 styles/card.scss            13  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 styles/legacy.css            6  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  6 modules  55 tokens  CCCCCCCCCCCCCCCCCCCC  V   0% B   0% L   0% C 100%
-          consistency 0.00  mean mixing 0.00 (by module) 0.00 (by token)  median V   0% B   0% L   0% C 100%
-          families: C 6 (  0%   0%   0% 100%)
-          detected: react  adapters: content  skipped: 2  empty: 1
+codebase  8 modules  91 tokens  BCCCCCCCCCCCCCCCCCCC  V   0% B   7% L   0% C  93%
+          mean mixing 0.04 (non-stylesheet modules, 5)  0.02 (all modules)  0.07 (by token)  0.04 (by operation: no seals, absorption, or host inheritance)  consistency 0.03  median V   0% B   0% L   0% C 100%
+          families: C 8 (  0%   0%   0% 100%)
+          detected: react  adapters: content  skipped: 1  empty: 1
 

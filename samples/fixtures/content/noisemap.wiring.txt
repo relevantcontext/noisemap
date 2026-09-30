@@ -1,0 +1,11 @@
+wiring  10 modules  1 connections  0 sites
+        discernibility   — (declared 0 / opaque 0)   resolution 100%
+        vocabulary share   —   working set: median 1 modules, 13 counted tokens (17 by token)   locality 0.0
+        entries: pages/about.md
+        roots: (none)
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                      1           0          0         0        0
+
+findings: 0 unresolved/ambiguous, 0 opaque
+

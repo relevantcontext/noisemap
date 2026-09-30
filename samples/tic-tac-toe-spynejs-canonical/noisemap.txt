@@ -1,20 +1,21 @@
 file                                                     tokens  V B L C                  V     B     L     C  mixing  role        drift
 -------------------------------------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----------  -----
 index.js                                                     23  VVVVLLLLLLLLLLLLLLLL   22%    0%   78%    0%    0.22
-app/components/tic-tac-toe-move-btn.js                       39  VVVVVVVVVVVVVVVVVVLL   92%    0%    8%    0%    0.08  ViewStream   0.00
-app/channels/channel-tic-tac-toe.js                          30  BBBBBBBBBBBBBBBBBBBL    0%   93%    7%    0%    0.07  Channel      0.00
-app/components/templates/tic-tac-toe-game.tmpl.html          99  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
+app/channels/channel-tic-tac-toe.js                          30  BBBBBBBBBBBBBBBBBBBB    0%  100%    0%    0%    0.00  Channel      0.00
+app/components/templates/tic-tac-toe-game.tmpl.html         108  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/templates/tic-tac-toe-move-btn.tmpl.html       9  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 app/components/tic-tac-toe-game.js                           18  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
-app/traits/game-channel-traits.js                           160  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
+app/components/tic-tac-toe-move-btn.js                       39  VVVVVVVVVVVVVVVVVVVV  100%    0%    0%    0%    0.00  ViewStream   0.00
+app/traits/game-channel-traits.js                           160  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.63
 app/traits/game-traits.js                                    62  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00  SpyneTrait   0.00
 dev-tools.js                                                 13  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 index.tmpl.html                                              24  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/01-vendors/normalize.css                               204  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 scss/main.scss                                              123  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
 
-codebase  12 modules  804 tokens  VVBLLLLLLCCCCCCCCCCC  V   7% B   3% L  32% C  57%
-          consistency 0.03  mean mixing 0.03 (by module) 0.01 (by token)  median V   0% B   0% L   3% C   0%
-          families: V 2 ( 96%   0%   4%   0%)  B 1 (  0%  93%   7%   0%)  L 4 (  0%   0% 100%   0%)  C 5 (  0%   0%   0% 100%)
+codebase  12 modules  813 tokens  VVBLLLLLLCCCCCCCCCCC  V   8% B   4% L  31% C  58%
+          mean mixing 0.02 (non-stylesheet modules, 10)  0.02 (all modules)  0.01 (by token)  0.13 (by operation: no seals, absorption, or host inheritance)  consistency 0.03  median V   0% B   0% L   0% C   0%
+          families: V 2 (100%   0%   0%   0%)  B 1 (  0% 100%   0%   0%)  L 4 (  0%   0% 100%   0%)  C 5 (  0%   0%   0% 100%)
+          shape: inside declared shape 4/5  on sanctioned surface 4/5
           detected: spynejs  adapters: content, spynejs  skipped: 0  tests: 2  empty: 1
 

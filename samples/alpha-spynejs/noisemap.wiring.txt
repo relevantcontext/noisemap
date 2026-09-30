@@ -1,0 +1,44 @@
+wiring  175 modules  375 connections  706 sites
+        discernibility  99% (declared 700 / opaque 6)   resolution  99%
+        vocabulary share 100%   working set: median 2 modules, 219 counted tokens (388 by token), 1 counterparts uncounted   locality 2.3
+        entries: index.js
+        roots: app, static
+
+vocabulary: 21 names the app declares (6 more from the framework)
+  name                                               registers  emits  listens  binds
+  CHANNEL_APP                                                0      0        0      6
+  CHANNEL_APP_INIT_EVENT                                     1      0        5      0
+  CHANNEL_APP_PAGE_DATA_EVENT                                1      0        2      0
+  CHANNEL_APP_SETTING_EVENT                                  1      1        2      0
+  CHANNEL_CART                                               0      0        0      4
+  CHANNEL_CART_ERROR_EVENT                                   1      1        2      0
+  CHANNEL_CART_UPDATED_EVENT                                 1      1        4      0
+  CHANNEL_FETCH_MODEL                                        0      0        0      0
+  CHANNEL_FETCH_MODEL_RESPONSE_EVENT                         0      0        0      0
+  CHANNEL_FETCH_SHOPIFY                                      0      0        0      0
+  CHANNEL_LOCAL_STORAGE                                      0      1        0      3
+  CHANNEL_LOCAL_STORAGE_APP_SETTINGS_INITIALIZED_EVENT         1      0        2      0
+  CHANNEL_LOCAL_STORAGE_EMPTY_EVENT                          0      0        0      0
+  CHANNEL_LOCAL_STORAGE_UPDATE_KEY_REQUEST                   1      0        0      0
+  CHANNEL_MENU_DRAWER                                        0      0        0      2
+  CHANNEL_MENU_DRAWER__HIDE_EVENT                            1      0        2      0
+  CHANNEL_MENU_DRAWER__SHOW_EVENT                            1      0        2      0
+  CHANNEL_MENU_DRAWER_INIT_EVENT                             1      2        2      0
+  CHANNEL_SHOPIFY                                            0      0        0      2
+  CHANNEL_SHOPIFY_CATALOG_EVENT                              1      1        2      0
+  CHANNEL_SHOPIFY_ERROR_EVENT                                1      1        0      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                    184           0          0        74        0
+listener-method            26           0          0         2        0
+listener-action            21           0          0         6        0
+channel-binding            17           0          0         9        0
+template-key                0           0          0         0       13
+broadcast-selector          8           1          0         0        2
+action-registration        10           2          0         0        0
+
+findings: 3 unresolved/ambiguous, 6 opaque
+  unresolved app/components/pages/page-view.js:713  PageView broadcasts on 'a' but its template has no element matching it (child views may supply one)
+  unresolved app/channels/channel-local-storage.js:520  'CHANNEL_LOCAL_STORAGE_UPDATE_KEY_REQUEST' is registered but nothing listens for it or mentions it
+  unresolved app/channels/channel-shopify.js:1084  'CHANNEL_SHOPIFY_ERROR_EVENT' is registered but nothing listens for it or mentions it
+

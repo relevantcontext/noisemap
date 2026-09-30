@@ -1,0 +1,1592 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:32.784Z",
+  "root": "/private/tmp/noisemap-samples/tic-tac-toe-spynejs-canonical/src",
+  "nodes": [
+    {
+      "id": "app/channels/channel-tic-tac-toe.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "Channel"
+    },
+    {
+      "id": "app/components/templates/tic-tac-toe-game.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/templates/tic-tac-toe-move-btn.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/components/tic-tac-toe-game.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/components/tic-tac-toe-move-btn.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/traits/game-channel-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "app/traits/game-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "dev-tools.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    },
+    {
+      "id": "index.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": true
+    },
+    {
+      "id": "index.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/01-vendors/normalize.css",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/02-variables/mixins.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/main.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 46,
+        "end": 53
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 89,
+        "end": 120
+      },
+      "label": "traits/game-channel-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/game-channel-traits.js"
+      }
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 63,
+        "end": 86
+      },
+      "label": "traits/game-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/game-traits.js"
+      }
+    },
+    {
+      "id": "e5",
+      "kind": "import",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 109,
+        "end": 149
+      },
+      "label": "./templates/tic-tac-toe-game.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/tic-tac-toe-game.tmpl.html"
+      }
+    },
+    {
+      "id": "e6",
+      "kind": "import",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js",
+        "start": 49,
+        "end": 56
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e7",
+      "kind": "import",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js",
+        "start": 85,
+        "end": 108
+      },
+      "label": "traits/game-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/game-traits.js"
+      }
+    },
+    {
+      "id": "e8",
+      "kind": "import",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js",
+        "start": 134,
+        "end": 178
+      },
+      "label": "./templates/tic-tac-toe-move-btn.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/tic-tac-toe-move-btn.tmpl.html"
+      }
+    },
+    {
+      "id": "e9",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/game-channel-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e10",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/game-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e11",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/game-traits.js",
+        "start": 69,
+        "end": 105
+      },
+      "label": "components/tic-tac-toe-move-btn.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/tic-tac-toe-move-btn.js"
+      }
+    },
+    {
+      "id": "e12",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 41,
+        "end": 48
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e13",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 85,
+        "end": 107
+      },
+      "label": "spyne-plugin-console",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e14",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 7,
+        "end": 25
+      },
+      "label": "./scss/main.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/main.scss"
+      }
+    },
+    {
+      "id": "e15",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 53,
+        "end": 60
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e16",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 92,
+        "end": 124
+      },
+      "label": "components/tic-tac-toe-game.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/tic-tac-toe-game.js"
+      }
+    },
+    {
+      "id": "e17",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 159,
+        "end": 192
+      },
+      "label": "channels/channel-tic-tac-toe.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-tic-tac-toe.js"
+      }
+    },
+    {
+      "id": "e18",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 9,
+        "end": 33
+      },
+      "label": "01-vendors/normalize.css",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/01-vendors/normalize.css"
+      }
+    },
+    {
+      "id": "e19",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 45,
+        "end": 69
+      },
+      "label": "02-variables/mixins.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/02-variables/mixins.scss"
+      }
+    },
+    {
+      "id": "e20",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 463,
+        "end": 481
+      },
+      "label": "game$UpdateBoard",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/game-traits.js"
+      }
+    },
+    {
+      "id": "e21",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 425,
+        "end": 461
+      },
+      "label": "CHANNEL_TIC_TAC_TOE.*_CHANGE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 693,
+        "end": 734
+      }
+    },
+    {
+      "id": "e22",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 276,
+        "end": 297
+      },
+      "label": "CHANNEL_TIC_TAC_TOE",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 130,
+        "end": 795
+      }
+    },
+    {
+      "id": "e23",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 525,
+        "end": 540
+      },
+      "label": "button.square",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/tic-tac-toe-game.tmpl.html"
+      }
+    },
+    {
+      "id": "e24",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/tic-tac-toe-game.js"
+      },
+      "to": {
+        "module": "app/components/templates/tic-tac-toe-game.tmpl.html"
+      },
+      "label": "0 keys, data supplied by the constructor's caller",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e25",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js",
+        "start": 760,
+        "end": 779
+      },
+      "label": "disposeViewStream",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e26",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js",
+        "start": 709,
+        "end": 750
+      },
+      "label": "CHANNEL_TIC_TAC_TOE_SQUARE_CHANGE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 693,
+        "end": 734
+      }
+    },
+    {
+      "id": "e27",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js",
+        "start": 406,
+        "end": 427
+      },
+      "label": "CHANNEL_TIC_TAC_TOE",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 130,
+        "end": 795
+      }
+    },
+    {
+      "id": "e28",
+      "kind": "broadcast-selector",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js",
+        "start": 860,
+        "end": 868
+      },
+      "label": "button",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/tic-tac-toe-move-btn.tmpl.html"
+      }
+    },
+    {
+      "id": "e29",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/tic-tac-toe-move-btn.js"
+      },
+      "to": {
+        "module": "app/components/templates/tic-tac-toe-move-btn.tmpl.html"
+      },
+      "label": "2 keys verified against props.data",
+      "status": "resolved",
+      "verified": "static"
+    },
+    {
+      "id": "e30",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 693,
+        "end": 734
+      },
+      "label": "CHANNEL_TIC_TAC_TOE_SQUARE_CHANGE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/game-channel-traits.js",
+        "start": 648,
+        "end": 689
+      }
+    },
+    {
+      "id": "e31",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-tic-tac-toe.js",
+        "start": 742,
+        "end": 781
+      },
+      "label": "CHANNEL_TIC_TAC_TOE_MOVE_CHANGE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/tic-tac-toe-game.js",
+        "start": 425,
+        "end": 461
+      }
+    }
+  ],
+  "sites": [
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 46,
+      "end": 53,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 89,
+      "end": 120,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/game-channel-traits.js"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 329,
+      "end": 377,
+      "kind": "call",
+      "class": "declared",
+      "label": "GameChannelTraits.gameChannel$CreateStateMachine"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 433,
+      "end": 556,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).subscribe"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 433,
+      "end": 448,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.getChannel"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 480,
+      "end": 500,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 557,
+      "end": 591,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.gameChannel$OnBtnClicked.bind"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 605,
+      "end": 638,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.gameChannel$SendCurrentState"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 693,
+      "end": 734,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TIC_TAC_TOE_SQUARE_CHANGE_EVENT"
+    },
+    {
+      "module": "app/channels/channel-tic-tac-toe.js",
+      "start": 742,
+      "end": 781,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TIC_TAC_TOE_MOVE_CHANGE_EVENT"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 63,
+      "end": 86,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/game-traits.js"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 109,
+      "end": 149,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/tic-tac-toe-game.tmpl.html"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 276,
+      "end": 297,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_TIC_TAC_TOE"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 425,
+      "end": 461,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TIC_TAC_TOE.*_CHANGE_EVENT"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 463,
+      "end": 481,
+      "kind": "listener",
+      "class": "declared",
+      "label": "game$UpdateBoard"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 525,
+      "end": 540,
+      "kind": "listener",
+      "class": "declared",
+      "label": "button.square"
+    },
+    {
+      "module": "app/components/tic-tac-toe-game.js",
+      "start": 542,
+      "end": 549,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 49,
+      "end": 56,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 85,
+      "end": 108,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/game-traits.js"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 134,
+      "end": 178,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/tic-tac-toe-move-btn.tmpl.html"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 315,
+      "end": 345,
+      "kind": "call",
+      "class": "declared",
+      "label": "GameTraits.game$GetMoveBtnText"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 406,
+      "end": 427,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_TIC_TAC_TOE"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 594,
+      "end": 614,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelPayloadFilter"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 709,
+      "end": 750,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_TIC_TAC_TOE_SQUARE_CHANGE_EVENT"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 760,
+      "end": 779,
+      "kind": "listener",
+      "class": "declared",
+      "label": "disposeViewStream"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 860,
+      "end": 868,
+      "kind": "listener",
+      "class": "declared",
+      "label": "button"
+    },
+    {
+      "module": "app/components/tic-tac-toe-move-btn.js",
+      "start": 870,
+      "end": 877,
+      "kind": "listener",
+      "class": "declared",
+      "label": "click"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 362,
+      "end": 378,
+      "kind": "call",
+      "class": "declared",
+      "label": "type.toUpperCase"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 403,
+      "end": 436,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.gameChannel$SendCurrentState"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 567,
+      "end": 578,
+      "kind": "call",
+      "class": "declared",
+      "label": "updateBoard"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 825,
+      "end": 848,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendChannelPayload"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 849,
+      "end": 855,
+      "kind": "dispatch",
+      "class": "opaque",
+      "label": "action from a variable"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 1106,
+      "end": 1122,
+      "kind": "call",
+      "class": "declared",
+      "label": "_movesArr.splice"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 1247,
+      "end": 1255,
+      "kind": "call",
+      "class": "declared",
+      "label": "parseInt"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 1358,
+      "end": 1362,
+      "kind": "call",
+      "class": "declared",
+      "label": "xoFn"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 1416,
+      "end": 1493,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).reduce"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 1416,
+      "end": 1446,
+      "kind": "call",
+      "class": "declared",
+      "label": "_movesArr.toSpliced"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 1632,
+      "end": 1652,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.calculateWinner"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 1733,
+      "end": 1737,
+      "kind": "call",
+      "class": "declared",
+      "label": "xoFn"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 2115,
+      "end": 2148,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).join"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 2115,
+      "end": 2122,
+      "kind": "call",
+      "class": "declared",
+      "label": "arr.map"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 2245,
+      "end": 2265,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).test"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 2266,
+      "end": 2276,
+      "kind": "call",
+      "class": "declared",
+      "label": "getXOMatch"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 2300,
+      "end": 2310,
+      "kind": "call",
+      "class": "declared",
+      "label": "getXOMatch"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 2390,
+      "end": 2402,
+      "kind": "call",
+      "class": "declared",
+      "label": "lines.reduce"
+    },
+    {
+      "module": "app/traits/game-channel-traits.js",
+      "start": 2454,
+      "end": 2463,
+      "kind": "call",
+      "class": "declared",
+      "label": "new GameState"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 69,
+      "end": 105,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/tic-tac-toe-move-btn.js"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 500,
+      "end": 514,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 647,
+      "end": 662,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.appendView"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 667,
+      "end": 683,
+      "kind": "call",
+      "class": "declared",
+      "label": "new TicTacToeMoveBtn"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 840,
+      "end": 859,
+      "kind": "call",
+      "class": "declared",
+      "label": "el.classList.toggle"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 963,
+      "end": 1000,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).arr.forEach"
+    },
+    {
+      "module": "app/traits/game-traits.js",
+      "start": 963,
+      "end": 977,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el$"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 41,
+      "end": 48,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 85,
+      "end": 107,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne-plugin-console"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 143,
+      "end": 150,
+      "kind": "call",
+      "class": "declared",
+      "label": "new Promise"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 161,
+      "end": 184,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerPlugin"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 194,
+      "end": 212,
+      "kind": "call",
+      "class": "declared",
+      "label": "new SpynePluginConsole"
+    },
+    {
+      "module": "index.js",
+      "start": 7,
+      "end": 25,
+      "kind": "import",
+      "class": "declared",
+      "label": "./scss/main.scss"
+    },
+    {
+      "module": "index.js",
+      "start": 53,
+      "end": 60,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "index.js",
+      "start": 92,
+      "end": 124,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/tic-tac-toe-game.js"
+    },
+    {
+      "module": "index.js",
+      "start": 159,
+      "end": 192,
+      "kind": "import",
+      "class": "declared",
+      "label": "channels/channel-tic-tac-toe.js"
+    },
+    {
+      "module": "index.js",
+      "start": 228,
+      "end": 241,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.init"
+    },
+    {
+      "module": "index.js",
+      "start": 251,
+      "end": 275,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 280,
+      "end": 296,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelTicTacToe"
+    },
+    {
+      "module": "index.js",
+      "start": 379,
+      "end": 410,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).appendToDom"
+    },
+    {
+      "module": "index.js",
+      "start": 383,
+      "end": 396,
+      "kind": "call",
+      "class": "declared",
+      "label": "new TicTacToeGame"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "opaque",
+      "module": "app/traits/game-channel-traits.js",
+      "start": 849,
+      "end": 855,
+      "message": "dispatch cannot be followed statically: action from a variable"
+    }
+  ],
+  "vocabulary": [
+    {
+      "name": "CHANNEL_TIC_TAC_TOE",
+      "kind": "channel",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-tic-tac-toe.js",
+          "start": 130,
+          "end": 795,
+          "role": "names"
+        },
+        {
+          "module": "app/components/tic-tac-toe-game.js",
+          "start": 276,
+          "end": 297,
+          "role": "binds"
+        },
+        {
+          "module": "app/components/tic-tac-toe-move-btn.js",
+          "start": 406,
+          "end": 427,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TIC_TAC_TOE_MOVE_CHANGE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-tic-tac-toe.js",
+          "start": 742,
+          "end": 781,
+          "role": "registers"
+        },
+        {
+          "module": "app/components/tic-tac-toe-game.js",
+          "start": 425,
+          "end": 461,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_TIC_TAC_TOE_SQUARE_CHANGE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-tic-tac-toe.js",
+          "start": 693,
+          "end": 734,
+          "role": "registers"
+        },
+        {
+          "module": "app/traits/game-channel-traits.js",
+          "start": 648,
+          "end": 689,
+          "role": "mentions"
+        },
+        {
+          "module": "app/traits/game-channel-traits.js",
+          "start": 778,
+          "end": 819,
+          "role": "mentions"
+        },
+        {
+          "module": "app/components/tic-tac-toe-game.js",
+          "start": 425,
+          "end": 461,
+          "role": "listens"
+        },
+        {
+          "module": "app/components/tic-tac-toe-move-btn.js",
+          "start": 709,
+          "end": 750,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_UI",
+      "kind": "action",
+      "framework": true,
+      "uses": [
+        {
+          "module": "app/channels/channel-tic-tac-toe.js",
+          "start": 456,
+          "end": 468,
+          "role": "mentions"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "app/channels/channel-tic-tac-toe.js": {
+      "edges": {
+        "out": 4,
+        "in": 5,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 10,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 270,
+        "counterparts": [
+          "app/components/tic-tac-toe-game.js",
+          "app/components/tic-tac-toe-move-btn.js",
+          "app/traits/game-channel-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/components/templates/tic-tac-toe-game.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 126,
+        "counterparts": [
+          "app/components/tic-tac-toe-game.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/templates/tic-tac-toe-move-btn.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 3,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 48,
+        "counterparts": [
+          "app/components/tic-tac-toe-move-btn.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/components/tic-tac-toe-game.js": {
+      "edges": {
+        "out": 8,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 8,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 241,
+        "counterparts": [
+          "app/channels/channel-tic-tac-toe.js",
+          "app/components/templates/tic-tac-toe-game.tmpl.html",
+          "app/traits/game-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.75
+    },
+    "app/components/tic-tac-toe-move-btn.js": {
+      "edges": {
+        "out": 8,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 10,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 140,
+        "counterparts": [
+          "app/channels/channel-tic-tac-toe.js",
+          "app/components/templates/tic-tac-toe-move-btn.tmpl.html",
+          "app/traits/game-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.6666666666666667
+    },
+    "app/traits/game-channel-traits.js": {
+      "edges": {
+        "out": 1,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 19,
+        "opaque": 1
+      },
+      "discernibility": 0.95,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 190,
+        "counterparts": [
+          "app/channels/channel-tic-tac-toe.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "app/traits/game-traits.js": {
+      "edges": {
+        "out": 2,
+        "in": 3,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 8,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 119,
+        "counterparts": [
+          "app/components/tic-tac-toe-game.js",
+          "app/components/tic-tac-toe-move-btn.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 2
+    },
+    "dev-tools.js": {
+      "edges": {
+        "out": 2,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 13,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "index.js": {
+      "edges": {
+        "out": 4,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 9,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 194,
+        "counterparts": [
+          "app/channels/channel-tic-tac-toe.js",
+          "app/components/tic-tac-toe-game.js",
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.6666666666666667
+    },
+    "index.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 24,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "scss/01-vendors/normalize.css": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 327,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/02-variables/mixins.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": null,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/main.scss": {
+      "edges": {
+        "out": 2,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 350,
+        "counterparts": [
+          "index.js",
+          "scss/01-vendors/normalize.css",
+          "scss/02-variables/mixins.scss"
+        ],
+        "unmeasured": 1
+      },
+      "locality": 1
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 11,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 8,
+        "unknown": 0
+      },
+      "listener-method": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 1,
+        "unknown": 0
+      },
+      "listener-action": {
+        "resolved": 2,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "channel-binding": {
+        "resolved": 2,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "broadcast-selector": {
+        "resolved": 2,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "template-key": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 1
+      },
+      "action-registration": {
+        "resolved": 2,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 69,
+      "opaque": 1
+    },
+    "discernibility": 0.9857142857142858,
+    "resolution": 1,
+    "vocabularyShare": 1,
+    "workingSet": {
+      "medianModules": 2,
+      "medianTokens": 165,
+      "tokenWeightedMedianTokens": 190,
+      "unmeasuredCounterparts": 1
+    },
+    "locality": 1.4621212121212124,
+    "entries": [
+      "index.js"
+    ],
+    "roots": [
+      "app"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@noisemap/wiring",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Wiring: module resolution, the connection-site census, import and contract edges, findings.",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@babel/types": "^7.29.0",
+    "@noisemap/core": "workspace:*",
+    "@noisemap/js-classify": "workspace:*"
+  }
+}

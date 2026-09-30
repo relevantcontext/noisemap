@@ -1,0 +1,2064 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:33.123Z",
+  "root": "/private/tmp/noisemap-samples/todos-react/src",
+  "nodes": [
+    {
+      "id": "index.js",
+      "kind": "module",
+      "framework": "react",
+      "entry": true,
+      "role": "view"
+    },
+    {
+      "id": "todo/app.css",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "todo/app.jsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "todo/components/footer.jsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "todo/components/header.jsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "todo/components/input.jsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "todo/components/item.jsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "todo/components/main.jsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "todo/constants.js",
+      "kind": "module",
+      "framework": "react",
+      "entry": false
+    },
+    {
+      "id": "todo/reducer.js",
+      "kind": "module",
+      "framework": "react",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 27,
+        "end": 45
+      },
+      "label": "react-dom/client",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 89,
+        "end": 107
+      },
+      "label": "react-router-dom",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 130,
+        "end": 142
+      },
+      "label": "./todo/app",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/app.jsx"
+      }
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 151,
+        "end": 178
+      },
+      "label": "todomvc-app-css/index.css",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e5",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 187,
+        "end": 212
+      },
+      "label": "todomvc-common/base.css",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e6",
+      "kind": "import",
+      "from": {
+        "module": "todo/app.jsx",
+        "start": 27,
+        "end": 34
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e7",
+      "kind": "import",
+      "from": {
+        "module": "todo/app.jsx",
+        "start": 59,
+        "end": 80
+      },
+      "label": "./components/header",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/components/header.jsx"
+      }
+    },
+    {
+      "id": "e8",
+      "kind": "import",
+      "from": {
+        "module": "todo/app.jsx",
+        "start": 103,
+        "end": 122
+      },
+      "label": "./components/main",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/components/main.jsx"
+      }
+    },
+    {
+      "id": "e9",
+      "kind": "import",
+      "from": {
+        "module": "todo/app.jsx",
+        "start": 147,
+        "end": 168
+      },
+      "label": "./components/footer",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/components/footer.jsx"
+      }
+    },
+    {
+      "id": "e10",
+      "kind": "import",
+      "from": {
+        "module": "todo/app.jsx",
+        "start": 199,
+        "end": 210
+      },
+      "label": "./reducer",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/reducer.js"
+      }
+    },
+    {
+      "id": "e11",
+      "kind": "import",
+      "from": {
+        "module": "todo/app.jsx",
+        "start": 220,
+        "end": 231
+      },
+      "label": "./app.css",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/app.css"
+      }
+    },
+    {
+      "id": "e12",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/footer.jsx",
+        "start": 37,
+        "end": 44
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e13",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/footer.jsx",
+        "start": 74,
+        "end": 92
+      },
+      "label": "react-router-dom",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e14",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/footer.jsx",
+        "start": 117,
+        "end": 129
+      },
+      "label": "classnames",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e15",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/footer.jsx",
+        "start": 171,
+        "end": 185
+      },
+      "label": "../constants",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/constants.js"
+      }
+    },
+    {
+      "id": "e16",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/header.jsx",
+        "start": 28,
+        "end": 35
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e17",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/header.jsx",
+        "start": 59,
+        "end": 68
+      },
+      "label": "./input",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/components/input.jsx"
+      }
+    },
+    {
+      "id": "e18",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/header.jsx",
+        "start": 96,
+        "end": 110
+      },
+      "label": "../constants",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/constants.js"
+      }
+    },
+    {
+      "id": "e19",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/input.jsx",
+        "start": 28,
+        "end": 35
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e20",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 44,
+        "end": 51
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e21",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 76,
+        "end": 88
+      },
+      "label": "classnames",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e22",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 113,
+        "end": 122
+      },
+      "label": "./input",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/components/input.jsx"
+      }
+    },
+    {
+      "id": "e23",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 179,
+        "end": 193
+      },
+      "label": "../constants",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/constants.js"
+      }
+    },
+    {
+      "id": "e24",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/main.jsx",
+        "start": 37,
+        "end": 44
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e25",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/main.jsx",
+        "start": 74,
+        "end": 92
+      },
+      "label": "react-router-dom",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e26",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/main.jsx",
+        "start": 116,
+        "end": 124
+      },
+      "label": "./item",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/components/item.jsx"
+      }
+    },
+    {
+      "id": "e27",
+      "kind": "import",
+      "from": {
+        "module": "todo/components/main.jsx",
+        "start": 154,
+        "end": 168
+      },
+      "label": "../constants",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/constants.js"
+      }
+    },
+    {
+      "id": "e28",
+      "kind": "import",
+      "from": {
+        "module": "todo/reducer.js",
+        "start": 118,
+        "end": 131
+      },
+      "label": "./constants",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/constants.js"
+      }
+    },
+    {
+      "id": "e29",
+      "kind": "handler-path",
+      "from": {
+        "module": "todo/components/footer.jsx",
+        "start": 1423,
+        "end": 1448
+      },
+      "label": "onClick=removeCompleted",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "todo/components/footer.jsx",
+        "start": 444,
+        "end": 535
+      }
+    },
+    {
+      "id": "e30",
+      "kind": "handler-path",
+      "from": {
+        "module": "todo/components/input.jsx",
+        "start": 1213,
+        "end": 1232
+      },
+      "label": "onBlur=handleBlur",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "todo/components/input.jsx",
+        "start": 145,
+        "end": 330
+      }
+    },
+    {
+      "id": "e31",
+      "kind": "handler-path",
+      "from": {
+        "module": "todo/components/input.jsx",
+        "start": 1245,
+        "end": 1270
+      },
+      "label": "onKeyDown=handleKeyDown",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "todo/components/input.jsx",
+        "start": 343,
+        "end": 924
+      }
+    },
+    {
+      "id": "e32",
+      "kind": "handler-path",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 1556,
+        "end": 1577
+      },
+      "label": "onChange=toggleItem",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "todo/components/item.jsx",
+        "start": 368,
+        "end": 464
+      }
+    },
+    {
+      "id": "e33",
+      "kind": "handler-path",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 1650,
+        "end": 1683
+      },
+      "label": "onDoubleClick=handleDoubleClick",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "todo/components/item.jsx",
+        "start": 740,
+        "end": 802
+      }
+    },
+    {
+      "id": "e34",
+      "kind": "handler-path",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 1918,
+        "end": 1938
+      },
+      "label": "onClick=removeItem",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "todo/components/item.jsx",
+        "start": 476,
+        "end": 572
+      }
+    },
+    {
+      "id": "e35",
+      "kind": "handler-path",
+      "from": {
+        "module": "todo/components/main.jsx",
+        "start": 1175,
+        "end": 1195
+      },
+      "label": "onChange=toggleAll",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "todo/components/main.jsx",
+        "start": 608,
+        "end": 724
+      }
+    },
+    {
+      "id": "e36",
+      "kind": "action-type",
+      "from": {
+        "module": "todo/components/footer.jsx",
+        "start": 497,
+        "end": 519
+      },
+      "label": "REMOVE_COMPLETED_ITEMS",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/reducer.js",
+        "start": 2867,
+        "end": 2889
+      }
+    },
+    {
+      "id": "e37",
+      "kind": "action-type",
+      "from": {
+        "module": "todo/components/header.jsx",
+        "start": 212,
+        "end": 220
+      },
+      "label": "ADD_ITEM",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/reducer.js",
+        "start": 2125,
+        "end": 2133
+      }
+    },
+    {
+      "id": "e38",
+      "kind": "action-type",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 416,
+        "end": 427
+      },
+      "label": "TOGGLE_ITEM",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/reducer.js",
+        "start": 2495,
+        "end": 2506
+      }
+    },
+    {
+      "id": "e39",
+      "kind": "action-type",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 524,
+        "end": 535
+      },
+      "label": "REMOVE_ITEM",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/reducer.js",
+        "start": 2395,
+        "end": 2406
+      }
+    },
+    {
+      "id": "e40",
+      "kind": "action-type",
+      "from": {
+        "module": "todo/components/item.jsx",
+        "start": 649,
+        "end": 660
+      },
+      "label": "UPDATE_ITEM",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/reducer.js",
+        "start": 2246,
+        "end": 2257
+      }
+    },
+    {
+      "id": "e41",
+      "kind": "action-type",
+      "from": {
+        "module": "todo/components/main.jsx",
+        "start": 656,
+        "end": 666
+      },
+      "label": "TOGGLE_ALL",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "todo/reducer.js",
+        "start": 2697,
+        "end": 2707
+      }
+    },
+    {
+      "id": "e42",
+      "kind": "action-type",
+      "from": {
+        "module": "todo/reducer.js",
+        "start": 2643,
+        "end": 2659
+      },
+      "label": "REMOVE_ALL_ITEMS",
+      "status": "unresolved",
+      "verified": "static"
+    }
+  ],
+  "sites": [
+    {
+      "module": "index.js",
+      "start": 27,
+      "end": 45,
+      "kind": "import",
+      "class": "declared",
+      "label": "react-dom/client"
+    },
+    {
+      "module": "index.js",
+      "start": 89,
+      "end": 107,
+      "kind": "import",
+      "class": "declared",
+      "label": "react-router-dom"
+    },
+    {
+      "module": "index.js",
+      "start": 130,
+      "end": 142,
+      "kind": "import",
+      "class": "declared",
+      "label": "./todo/app"
+    },
+    {
+      "module": "index.js",
+      "start": 151,
+      "end": 178,
+      "kind": "import",
+      "class": "declared",
+      "label": "todomvc-app-css/index.css"
+    },
+    {
+      "module": "index.js",
+      "start": 187,
+      "end": 212,
+      "kind": "import",
+      "class": "declared",
+      "label": "todomvc-common/base.css"
+    },
+    {
+      "module": "index.js",
+      "start": 215,
+      "end": 265,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).render"
+    },
+    {
+      "module": "index.js",
+      "start": 215,
+      "end": 225,
+      "kind": "call",
+      "class": "declared",
+      "label": "createRoot"
+    },
+    {
+      "module": "index.js",
+      "start": 226,
+      "end": 249,
+      "kind": "call",
+      "class": "declared",
+      "label": "document.getElementById"
+    },
+    {
+      "module": "index.js",
+      "start": 320,
+      "end": 328,
+      "kind": "prop",
+      "class": "declared",
+      "label": "path"
+    },
+    {
+      "module": "index.js",
+      "start": 329,
+      "end": 346,
+      "kind": "prop",
+      "class": "declared",
+      "label": "element"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 59,
+      "end": 80,
+      "kind": "import",
+      "class": "declared",
+      "label": "./components/header"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 103,
+      "end": 122,
+      "kind": "import",
+      "class": "declared",
+      "label": "./components/main"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 147,
+      "end": 168,
+      "kind": "import",
+      "class": "declared",
+      "label": "./components/footer"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 199,
+      "end": 210,
+      "kind": "import",
+      "class": "declared",
+      "label": "./reducer"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 220,
+      "end": 231,
+      "kind": "import",
+      "class": "declared",
+      "label": "./app.css"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 288,
+      "end": 298,
+      "kind": "call",
+      "class": "declared",
+      "label": "useReducer"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 362,
+      "end": 381,
+      "kind": "prop",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 403,
+      "end": 416,
+      "kind": "prop",
+      "class": "declared",
+      "label": "todos"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 417,
+      "end": 436,
+      "kind": "prop",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 460,
+      "end": 473,
+      "kind": "prop",
+      "class": "declared",
+      "label": "todos"
+    },
+    {
+      "module": "todo/app.jsx",
+      "start": 474,
+      "end": 493,
+      "kind": "prop",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 37,
+      "end": 44,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 74,
+      "end": 92,
+      "kind": "import",
+      "class": "declared",
+      "label": "react-router-dom"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 117,
+      "end": 129,
+      "kind": "import",
+      "class": "declared",
+      "label": "classnames"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 171,
+      "end": 185,
+      "kind": "import",
+      "class": "declared",
+      "label": "../constants"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 266,
+      "end": 277,
+      "kind": "call",
+      "class": "declared",
+      "label": "useLocation"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 306,
+      "end": 313,
+      "kind": "call",
+      "class": "declared",
+      "label": "useMemo"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 320,
+      "end": 332,
+      "kind": "call",
+      "class": "declared",
+      "label": "todos.filter"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 462,
+      "end": 473,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 480,
+      "end": 488,
+      "kind": "call",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 489,
+      "end": 521,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "REMOVE_COMPLETED_ITEMS"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 887,
+      "end": 897,
+      "kind": "call",
+      "class": "declared",
+      "label": "classnames"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 1023,
+      "end": 1033,
+      "kind": "call",
+      "class": "declared",
+      "label": "classnames"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 1174,
+      "end": 1184,
+      "kind": "call",
+      "class": "declared",
+      "label": "classnames"
+    },
+    {
+      "module": "todo/components/footer.jsx",
+      "start": 1423,
+      "end": 1448,
+      "kind": "handler",
+      "class": "declared",
+      "label": "removeCompleted"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 28,
+      "end": 35,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 59,
+      "end": 68,
+      "kind": "import",
+      "class": "declared",
+      "label": "./input"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 96,
+      "end": 110,
+      "kind": "import",
+      "class": "declared",
+      "label": "../constants"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 172,
+      "end": 183,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 195,
+      "end": 203,
+      "kind": "call",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 204,
+      "end": 242,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "ADD_ITEM"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 375,
+      "end": 393,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSubmit=addItem"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 394,
+      "end": 416,
+      "kind": "prop",
+      "class": "declared",
+      "label": "label"
+    },
+    {
+      "module": "todo/components/header.jsx",
+      "start": 417,
+      "end": 453,
+      "kind": "prop",
+      "class": "declared",
+      "label": "placeholder"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 28,
+      "end": 35,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 158,
+      "end": 169,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 247,
+      "end": 266,
+      "kind": "call",
+      "class": "declared",
+      "label": "e.target.value.trim"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 282,
+      "end": 288,
+      "kind": "call",
+      "class": "declared",
+      "label": "onBlur"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 359,
+      "end": 370,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 458,
+      "end": 477,
+      "kind": "call",
+      "class": "declared",
+      "label": "e.target.value.trim"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 691,
+      "end": 699,
+      "kind": "call",
+      "class": "declared",
+      "label": "onSubmit"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 1213,
+      "end": 1232,
+      "kind": "handler",
+      "class": "declared",
+      "label": "handleBlur"
+    },
+    {
+      "module": "todo/components/input.jsx",
+      "start": 1245,
+      "end": 1270,
+      "kind": "handler",
+      "class": "declared",
+      "label": "handleKeyDown"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 44,
+      "end": 51,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 76,
+      "end": 88,
+      "kind": "import",
+      "class": "declared",
+      "label": "classnames"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 113,
+      "end": 122,
+      "kind": "import",
+      "class": "declared",
+      "label": "./input"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 179,
+      "end": 193,
+      "kind": "import",
+      "class": "declared",
+      "label": "../constants"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 216,
+      "end": 220,
+      "kind": "call",
+      "class": "declared",
+      "label": "memo"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 297,
+      "end": 305,
+      "kind": "call",
+      "class": "declared",
+      "label": "useState"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 381,
+      "end": 392,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 399,
+      "end": 407,
+      "kind": "call",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 408,
+      "end": 446,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "TOGGLE_ITEM"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 489,
+      "end": 500,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 507,
+      "end": 515,
+      "kind": "call",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 516,
+      "end": 554,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "REMOVE_ITEM"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 597,
+      "end": 608,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 632,
+      "end": 640,
+      "kind": "call",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 641,
+      "end": 696,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "UPDATE_ITEM"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 760,
+      "end": 771,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 778,
+      "end": 791,
+      "kind": "call",
+      "class": "declared",
+      "label": "setIsWritable"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 828,
+      "end": 839,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 1025,
+      "end": 1038,
+      "kind": "call",
+      "class": "declared",
+      "label": "setIsWritable"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 1086,
+      "end": 1096,
+      "kind": "call",
+      "class": "declared",
+      "label": "removeItem"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 1117,
+      "end": 1127,
+      "kind": "call",
+      "class": "declared",
+      "label": "updateItem"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 1239,
+      "end": 1249,
+      "kind": "call",
+      "class": "declared",
+      "label": "classnames"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 1556,
+      "end": 1577,
+      "kind": "handler",
+      "class": "declared",
+      "label": "toggleItem"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 1650,
+      "end": 1683,
+      "kind": "handler",
+      "class": "declared",
+      "label": "handleDoubleClick"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 1918,
+      "end": 1938,
+      "kind": "handler",
+      "class": "declared",
+      "label": "removeItem"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 2049,
+      "end": 2056,
+      "kind": "prop",
+      "class": "declared",
+      "label": "editing"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 2077,
+      "end": 2098,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onSubmit=commitEdit"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 2119,
+      "end": 2138,
+      "kind": "handler",
+      "class": "declared",
+      "label": "onBlur=commitEdit"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 2159,
+      "end": 2176,
+      "kind": "prop",
+      "class": "declared",
+      "label": "label"
+    },
+    {
+      "module": "todo/components/item.jsx",
+      "start": 2197,
+      "end": 2217,
+      "kind": "prop",
+      "class": "declared",
+      "label": "defaultValue"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 37,
+      "end": 44,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 74,
+      "end": 92,
+      "kind": "import",
+      "class": "declared",
+      "label": "react-router-dom"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 116,
+      "end": 124,
+      "kind": "import",
+      "class": "declared",
+      "label": "./item"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 154,
+      "end": 168,
+      "kind": "import",
+      "class": "declared",
+      "label": "../constants"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 247,
+      "end": 258,
+      "kind": "call",
+      "class": "declared",
+      "label": "useLocation"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 288,
+      "end": 295,
+      "kind": "call",
+      "class": "declared",
+      "label": "useMemo"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 323,
+      "end": 335,
+      "kind": "call",
+      "class": "declared",
+      "label": "todos.filter"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 620,
+      "end": 631,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 639,
+      "end": 647,
+      "kind": "call",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 648,
+      "end": 710,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "TOGGLE_ALL"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 1109,
+      "end": 1127,
+      "kind": "call",
+      "class": "declared",
+      "label": "visibleTodos.every"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 1175,
+      "end": 1195,
+      "kind": "handler",
+      "class": "declared",
+      "label": "toggleAll"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 1450,
+      "end": 1466,
+      "kind": "call",
+      "class": "declared",
+      "label": "visibleTodos.map"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 1505,
+      "end": 1516,
+      "kind": "prop",
+      "class": "declared",
+      "label": "todo"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 1517,
+      "end": 1530,
+      "kind": "prop",
+      "class": "declared",
+      "label": "key"
+    },
+    {
+      "module": "todo/components/main.jsx",
+      "start": 1531,
+      "end": 1550,
+      "kind": "prop",
+      "class": "declared",
+      "label": "dispatch"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 118,
+      "end": 131,
+      "kind": "import",
+      "class": "declared",
+      "label": "./constants"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 1987,
+      "end": 1998,
+      "kind": "call",
+      "class": "declared",
+      "label": "Math.random"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2154,
+      "end": 2166,
+      "kind": "call",
+      "class": "declared",
+      "label": "state.concat"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2173,
+      "end": 2179,
+      "kind": "call",
+      "class": "declared",
+      "label": "nanoid"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2278,
+      "end": 2287,
+      "kind": "call",
+      "class": "declared",
+      "label": "state.map"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2427,
+      "end": 2439,
+      "kind": "call",
+      "class": "declared",
+      "label": "state.filter"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2527,
+      "end": 2536,
+      "kind": "call",
+      "class": "declared",
+      "label": "state.map"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2728,
+      "end": 2737,
+      "kind": "call",
+      "class": "declared",
+      "label": "state.map"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2910,
+      "end": 2922,
+      "kind": "call",
+      "class": "declared",
+      "label": "state.filter"
+    },
+    {
+      "module": "todo/reducer.js",
+      "start": 2968,
+      "end": 2973,
+      "kind": "call",
+      "class": "declared",
+      "label": "Error"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "unresolved",
+      "module": "todo/reducer.js",
+      "start": 2643,
+      "end": 2659,
+      "edge": "e42",
+      "message": "reducer handles 'REMOVE_ALL_ITEMS' but nothing dispatches it"
+    }
+  ],
+  "vocabulary": [
+    {
+      "name": "ADD_ITEM",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/reducer.js",
+          "start": 2125,
+          "end": 2133,
+          "role": "registers"
+        },
+        {
+          "module": "todo/components/header.jsx",
+          "start": 212,
+          "end": 220,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "REMOVE_ALL_ITEMS",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/reducer.js",
+          "start": 2643,
+          "end": 2659,
+          "role": "registers"
+        }
+      ]
+    },
+    {
+      "name": "REMOVE_COMPLETED_ITEMS",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/reducer.js",
+          "start": 2867,
+          "end": 2889,
+          "role": "registers"
+        },
+        {
+          "module": "todo/components/footer.jsx",
+          "start": 497,
+          "end": 519,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "REMOVE_ITEM",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/reducer.js",
+          "start": 2395,
+          "end": 2406,
+          "role": "registers"
+        },
+        {
+          "module": "todo/components/item.jsx",
+          "start": 524,
+          "end": 535,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "TOGGLE_ALL",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/reducer.js",
+          "start": 2697,
+          "end": 2707,
+          "role": "registers"
+        },
+        {
+          "module": "todo/components/main.jsx",
+          "start": 656,
+          "end": 666,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "TOGGLE_ITEM",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/reducer.js",
+          "start": 2495,
+          "end": 2506,
+          "role": "registers"
+        },
+        {
+          "module": "todo/components/item.jsx",
+          "start": 416,
+          "end": 427,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "UPDATE_ITEM",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/reducer.js",
+          "start": 2246,
+          "end": 2257,
+          "role": "registers"
+        },
+        {
+          "module": "todo/components/item.jsx",
+          "start": 649,
+          "end": 660,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "onBlur",
+      "kind": "handler",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/components/input.jsx",
+          "start": 45,
+          "end": 1290,
+          "role": "listens"
+        },
+        {
+          "module": "todo/components/item.jsx",
+          "start": 2119,
+          "end": 2138,
+          "role": "emits"
+        }
+      ]
+    },
+    {
+      "name": "onSubmit",
+      "kind": "handler",
+      "framework": false,
+      "uses": [
+        {
+          "module": "todo/components/header.jsx",
+          "start": 375,
+          "end": 393,
+          "role": "emits"
+        },
+        {
+          "module": "todo/components/input.jsx",
+          "start": 45,
+          "end": 1290,
+          "role": "listens"
+        },
+        {
+          "module": "todo/components/item.jsx",
+          "start": 2077,
+          "end": 2098,
+          "role": "emits"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "index.js": {
+      "edges": {
+        "out": 5,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 10,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 33,
+        "counterparts": [
+          "todo/app.jsx"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "todo/app.css": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 58,
+        "counterparts": [
+          "todo/app.jsx"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0
+    },
+    "todo/app.jsx": {
+      "edges": {
+        "out": 6,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 12,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 7,
+        "tokens": 402,
+        "counterparts": [
+          "index.js",
+          "todo/app.css",
+          "todo/components/footer.jsx",
+          "todo/components/header.jsx",
+          "todo/components/main.jsx",
+          "todo/reducer.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0.6666666666666666
+    },
+    "todo/components/footer.jsx": {
+      "edges": {
+        "out": 6,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 14,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 246,
+        "counterparts": [
+          "todo/app.jsx",
+          "todo/constants.js",
+          "todo/reducer.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "todo/components/header.jsx": {
+      "edges": {
+        "out": 4,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 9,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 239,
+        "counterparts": [
+          "todo/app.jsx",
+          "todo/components/input.jsx",
+          "todo/constants.js",
+          "todo/reducer.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0.75
+    },
+    "todo/components/input.jsx": {
+      "edges": {
+        "out": 3,
+        "in": 4,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 9,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 202,
+        "counterparts": [
+          "todo/components/header.jsx",
+          "todo/components/item.jsx"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0
+    },
+    "todo/components/item.jsx": {
+      "edges": {
+        "out": 10,
+        "in": 4,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 30,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 394,
+        "counterparts": [
+          "todo/components/input.jsx",
+          "todo/components/main.jsx",
+          "todo/constants.js",
+          "todo/reducer.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0.5
+    },
+    "todo/components/main.jsx": {
+      "edges": {
+        "out": 6,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 16,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 351,
+        "counterparts": [
+          "todo/app.jsx",
+          "todo/components/item.jsx",
+          "todo/constants.js",
+          "todo/reducer.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0.75
+    },
+    "todo/constants.js": {
+      "edges": {
+        "out": 0,
+        "in": 5,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 6,
+        "tokens": 461,
+        "counterparts": [
+          "todo/components/footer.jsx",
+          "todo/components/header.jsx",
+          "todo/components/item.jsx",
+          "todo/components/main.jsx",
+          "todo/reducer.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0.8
+    },
+    "todo/reducer.js": {
+      "edges": {
+        "out": 2,
+        "in": 7,
+        "unresolved": 1,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 10,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 0.5,
+      "workingSet": {
+        "modules": 7,
+        "tokens": 480,
+        "counterparts": [
+          "todo/app.jsx",
+          "todo/components/footer.jsx",
+          "todo/components/header.jsx",
+          "todo/components/item.jsx",
+          "todo/components/main.jsx",
+          "todo/constants.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 0.6666666666666666
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 14,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 14,
+        "unknown": 0
+      },
+      "handler-path": {
+        "resolved": 7,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "action-type": {
+        "resolved": 6,
+        "unresolved": 1,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 110,
+      "opaque": 0
+    },
+    "discernibility": 1,
+    "resolution": 0.9642857142857143,
+    "vocabularyShare": 0.375,
+    "workingSet": {
+      "medianModules": 5,
+      "medianTokens": 298.5,
+      "tokenWeightedMedianTokens": 351,
+      "unmeasuredCounterparts": 0
+    },
+    "locality": 0.6133333333333333,
+    "entries": [
+      "index.js"
+    ],
+    "roots": []
+  }
+}

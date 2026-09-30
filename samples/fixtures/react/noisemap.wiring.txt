@@ -1,0 +1,14 @@
+wiring  6 modules  8 connections  24 sites
+        discernibility 100% (declared 24 / opaque 0)   resolution  60%
+        vocabulary share   0%   working set: median 1 modules, 26 counted tokens (36 by token)   locality —
+        entries: none found
+        roots: (none)
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                      0           1          0         3        0
+handler-path                3           1          0         0        0
+
+findings: 2 unresolved/ambiguous, 0 opaque
+  unresolved components/Styled.tsx:19  import 'styled-components' does not resolve to a file or a package
+  unresolved components/Legacy.jsx:464  onClick on <button>: member 'this.toggle' is not a prop or a local
+

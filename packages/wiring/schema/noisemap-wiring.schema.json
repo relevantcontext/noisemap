@@ -1,0 +1,623 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/relevantcontext/noisemap/packages/wiring/schema/noisemap-wiring.schema.json",
+  "title": "noisemap wiring, version 1",
+  "description": "The JSON written by `noisemap wiring <dir>`: every connection site the code contains, classified declared or opaque; every edge from a declared reference to a declared definition with its status; and the findings. Separate from noisemap.json (Shape), which stays at its own version.",
+  "type": "object",
+  "required": [
+    "version",
+    "tool",
+    "generatedAt",
+    "root",
+    "nodes",
+    "edges",
+    "sites",
+    "findings",
+    "vocabulary",
+    "modules",
+    "summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "tool": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "const": "noisemap"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "root": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/site"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/finding"
+      }
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/moduleWiring"
+      },
+      "description": "Per module path: counts and the two ratios, kept apart."
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "byKind",
+        "sites",
+        "discernibility",
+        "resolution",
+        "entries",
+        "roots",
+        "vocabularyShare",
+        "workingSet",
+        "locality"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "byKind": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "resolved",
+              "unresolved",
+              "ambiguous",
+              "external",
+              "unknown"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "resolved": {
+                "$ref": "#/$defs/count"
+              },
+              "unresolved": {
+                "$ref": "#/$defs/count"
+              },
+              "ambiguous": {
+                "$ref": "#/$defs/count"
+              },
+              "external": {
+                "$ref": "#/$defs/count"
+              },
+              "unknown": {
+                "$ref": "#/$defs/count",
+                "description": "Internal wiring the analyzer cannot model (elements supplied by child views, data supplied by a caller). Not a package boundary and not a failure; outside the resolution ratio."
+              }
+            }
+          }
+        },
+        "sites": {
+          "$ref": "#/$defs/siteCounts"
+        },
+        "discernibility": {
+          "$ref": "#/$defs/ratioOrNull",
+          "description": "declared / (declared + opaque) over every site: how much of the wiring the code lets a reader see."
+        },
+        "resolution": {
+          "$ref": "#/$defs/ratioOrNull",
+          "description": "resolved / (resolved + unresolved + ambiguous) over every edge: how much of what the code declares agrees with its counterpart. Never multiplied with discernibility."
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Entry modules by boot call or framework file convention."
+        },
+        "roots": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Resolution roots, configured and discovered by trial, relative to root."
+        },
+        "vocabularyShare": {
+          "$ref": "#/$defs/ratioOrNull",
+          "description": "Named connection sites (listener, channel, dispatch, template-key, context, store) over those plus handler sites: how much of the app's behavior flows through declared names rather than functions passed by hand."
+        },
+        "workingSet": {
+          "type": "object",
+          "required": [
+            "medianModules",
+            "medianTokens",
+            "tokenWeightedMedianTokens",
+            "unmeasuredCounterparts"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "medianModules": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "unmeasuredCounterparts": {
+              "$ref": "#/$defs/count",
+              "description": "Counterpart links that point at files Shape did not count; their tokens are absent from every working-set figure."
+            },
+            "medianTokens": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "tokenWeightedMedianTokens": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        "locality": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "vocabulary": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/vocabularyEntry"
+      },
+      "description": "Every action and channel name the app speaks, with who registers, emits, listens, binds, or names it. Read as a glossary it is the app's behavior written down."
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ratioOrNull": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "endpoint": {
+      "type": "object",
+      "required": [
+        "module"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "module": {
+          "type": "string"
+        },
+        "start": {
+          "$ref": "#/$defs/count"
+        },
+        "end": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "framework",
+        "entry"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "module"
+        },
+        "framework": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "entry": {
+          "type": "boolean"
+        }
+      }
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "module",
+        "start",
+        "end",
+        "kind",
+        "class",
+        "label"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "module": {
+          "type": "string"
+        },
+        "start": {
+          "$ref": "#/$defs/count"
+        },
+        "end": {
+          "$ref": "#/$defs/count"
+        },
+        "kind": {
+          "enum": [
+            "import",
+            "call",
+            "handler",
+            "prop",
+            "dispatch",
+            "channel",
+            "listener",
+            "template-key",
+            "context",
+            "store"
+          ]
+        },
+        "class": {
+          "enum": [
+            "declared",
+            "opaque"
+          ],
+          "description": "declared: a literal or a plain identifier chain the wiring can try to resolve. opaque: computed, and cannot be followed statically."
+        },
+        "label": {
+          "type": "string",
+          "description": "What the code names when declared; why it is opaque otherwise."
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "from",
+        "label",
+        "status",
+        "verified"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "import",
+            "listener-method",
+            "listener-action",
+            "action-registration",
+            "channel-binding",
+            "broadcast-selector",
+            "template-key",
+            "handler-path",
+            "action-type",
+            "context",
+            "route"
+          ]
+        },
+        "from": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "to": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "label": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "resolved",
+            "unresolved",
+            "ambiguous",
+            "external",
+            "unknown"
+          ]
+        },
+        "verified": {
+          "enum": [
+            "static",
+            "inferred"
+          ]
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason": {
+          "type": "string",
+          "description": "Why an edge is unknown: what the analyzer could not follow (a hook result, a computed name). Unsupported tracing, not a finding (2026-09-29)."
+        },
+        "hops": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/endpoint"
+          }
+        }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "required": [
+        "kind",
+        "module",
+        "start",
+        "end",
+        "message"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "unresolved",
+            "ambiguous",
+            "opaque",
+            "unreachable"
+          ]
+        },
+        "module": {
+          "type": "string"
+        },
+        "start": {
+          "$ref": "#/$defs/count"
+        },
+        "end": {
+          "$ref": "#/$defs/count"
+        },
+        "edge": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "siteCounts": {
+      "type": "object",
+      "required": [
+        "declared",
+        "opaque"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "declared": {
+          "$ref": "#/$defs/count"
+        },
+        "opaque": {
+          "$ref": "#/$defs/count"
+        }
+      }
+    },
+    "moduleWiring": {
+      "type": "object",
+      "required": [
+        "edges",
+        "sites",
+        "discernibility",
+        "resolution",
+        "workingSet",
+        "locality"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "edges": {
+          "type": "object",
+          "required": [
+            "out",
+            "in",
+            "unresolved",
+            "ambiguous"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "out": {
+              "$ref": "#/$defs/count"
+            },
+            "in": {
+              "$ref": "#/$defs/count"
+            },
+            "unresolved": {
+              "$ref": "#/$defs/count"
+            },
+            "ambiguous": {
+              "$ref": "#/$defs/count"
+            }
+          }
+        },
+        "sites": {
+          "$ref": "#/$defs/siteCounts"
+        },
+        "discernibility": {
+          "$ref": "#/$defs/ratioOrNull"
+        },
+        "resolution": {
+          "$ref": "#/$defs/ratioOrNull"
+        },
+        "workingSet": {
+          "type": "object",
+          "required": [
+            "modules",
+            "tokens",
+            "counterparts",
+            "unmeasured"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "modules": {
+              "$ref": "#/$defs/count",
+              "description": "The module plus every module a resolved edge connects it to, either direction."
+            },
+            "unmeasured": {
+              "$ref": "#/$defs/count",
+              "description": "Counterparts Shape did not count; their tokens are not in `tokens`."
+            },
+            "tokens": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/count"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Counted tokens across the working set; null when Shape counts were not supplied."
+            },
+            "counterparts": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "What must be read to change this module safely."
+        },
+        "locality": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Mean directory distance (differing path segments) to the counterparts; null when none."
+        }
+      }
+    },
+    "vocabularyEntry": {
+      "type": "object",
+      "required": [
+        "name",
+        "kind",
+        "framework",
+        "uses"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "action",
+            "channel",
+            "context",
+            "route",
+            "handler"
+          ],
+          "description": "action: a dispatched/registered event name (SpyneJS channel actions, React reducer action types). channel: a SpyneJS channel. context: a React context. route: a path the app navigates to. handler: a handler prop a component declares and parents pass."
+        },
+        "framework": {
+          "type": "boolean",
+          "description": "Supplied by the framework (CHANNEL_ROUTE, CHANNEL_UI_*, CHANNEL_WINDOW_*, CHANNEL_LIFECYCLE_*)."
+        },
+        "uses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "module",
+              "start",
+              "end",
+              "role"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "module": {
+                "type": "string"
+              },
+              "start": {
+                "$ref": "#/$defs/count"
+              },
+              "end": {
+                "$ref": "#/$defs/count"
+              },
+              "role": {
+                "enum": [
+                  "registers",
+                  "emits",
+                  "listens",
+                  "binds",
+                  "names",
+                  "mentions"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

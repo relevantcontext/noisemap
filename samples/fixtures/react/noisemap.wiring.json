@@ -1,0 +1,542 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:36.162Z",
+  "root": "/private/tmp/noisemap-samples/fixtures/react/src",
+  "nodes": [
+    {
+      "id": "Guide.mdx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false
+    },
+    {
+      "id": "broken.tsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false
+    },
+    {
+      "id": "components/Counter.tsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "components/Legacy.jsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "components/Styled.tsx",
+      "kind": "module",
+      "framework": "react",
+      "entry": false,
+      "role": "view"
+    },
+    {
+      "id": "lib/api.ts",
+      "kind": "module",
+      "framework": "react",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "components/Counter.tsx",
+        "start": 49,
+        "end": 56
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "components/Counter.tsx",
+        "start": 82,
+        "end": 89
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "components/Legacy.jsx",
+        "start": 18,
+        "end": 25
+      },
+      "label": "react",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "components/Styled.tsx",
+        "start": 19,
+        "end": 38
+      },
+      "label": "styled-components",
+      "status": "unresolved",
+      "verified": "static"
+    },
+    {
+      "id": "e5",
+      "kind": "handler-path",
+      "from": {
+        "module": "components/Counter.tsx",
+        "start": 674,
+        "end": 695
+      },
+      "label": "onKeyDown=handleKey",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "components/Counter.tsx",
+        "start": 513,
+        "end": 609
+      }
+    },
+    {
+      "id": "e6",
+      "kind": "handler-path",
+      "from": {
+        "module": "components/Counter.tsx",
+        "start": 894,
+        "end": 932
+      },
+      "label": "onClick=inline",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "components/Counter.tsx",
+        "start": 894,
+        "end": 932
+      }
+    },
+    {
+      "id": "e7",
+      "kind": "handler-path",
+      "from": {
+        "module": "components/Counter.tsx",
+        "start": 964,
+        "end": 985
+      },
+      "label": "onClick=handleReset",
+      "status": "resolved",
+      "verified": "static",
+      "hops": [],
+      "to": {
+        "module": "components/Counter.tsx",
+        "start": 436,
+        "end": 508
+      }
+    },
+    {
+      "id": "e8",
+      "kind": "handler-path",
+      "from": {
+        "module": "components/Legacy.jsx",
+        "start": 464,
+        "end": 485
+      },
+      "label": "onClick=this.toggle",
+      "status": "unresolved",
+      "verified": "static",
+      "hops": []
+    }
+  ],
+  "sites": [
+    {
+      "module": "components/Counter.tsx",
+      "start": 49,
+      "end": 56,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 82,
+      "end": 89,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 269,
+      "end": 277,
+      "kind": "call",
+      "class": "declared",
+      "label": "useState"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 306,
+      "end": 313,
+      "kind": "call",
+      "class": "declared",
+      "label": "useMemo"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 344,
+      "end": 353,
+      "kind": "call",
+      "class": "declared",
+      "label": "useEffect"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 450,
+      "end": 461,
+      "kind": "call",
+      "class": "declared",
+      "label": "useCallback"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 474,
+      "end": 482,
+      "kind": "call",
+      "class": "declared",
+      "label": "setCount"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 585,
+      "end": 593,
+      "kind": "call",
+      "class": "declared",
+      "label": "setCount"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 674,
+      "end": 695,
+      "kind": "handler",
+      "class": "declared",
+      "label": "handleKey"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 894,
+      "end": 932,
+      "kind": "handler",
+      "class": "declared",
+      "label": "inline"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 909,
+      "end": 917,
+      "kind": "call",
+      "class": "declared",
+      "label": "setCount"
+    },
+    {
+      "module": "components/Counter.tsx",
+      "start": 964,
+      "end": 985,
+      "kind": "handler",
+      "class": "declared",
+      "label": "handleReset"
+    },
+    {
+      "module": "components/Legacy.jsx",
+      "start": 18,
+      "end": 25,
+      "kind": "import",
+      "class": "declared",
+      "label": "react"
+    },
+    {
+      "module": "components/Legacy.jsx",
+      "start": 190,
+      "end": 213,
+      "kind": "call",
+      "class": "declared",
+      "label": "window.addEventListener"
+    },
+    {
+      "module": "components/Legacy.jsx",
+      "start": 270,
+      "end": 283,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.setState"
+    },
+    {
+      "module": "components/Legacy.jsx",
+      "start": 325,
+      "end": 338,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.setState"
+    },
+    {
+      "module": "components/Legacy.jsx",
+      "start": 464,
+      "end": 485,
+      "kind": "handler",
+      "class": "declared",
+      "label": "this.toggle"
+    },
+    {
+      "module": "components/Styled.tsx",
+      "start": 19,
+      "end": 38,
+      "kind": "import",
+      "class": "declared",
+      "label": "styled-components"
+    },
+    {
+      "module": "components/Styled.tsx",
+      "start": 211,
+      "end": 253,
+      "kind": "prop",
+      "class": "declared",
+      "label": "dangerouslySetInnerHTML"
+    },
+    {
+      "module": "lib/api.ts",
+      "start": 130,
+      "end": 135,
+      "kind": "call",
+      "class": "declared",
+      "label": "fetch"
+    },
+    {
+      "module": "lib/api.ts",
+      "start": 173,
+      "end": 181,
+      "kind": "call",
+      "class": "declared",
+      "label": "res.json"
+    },
+    {
+      "module": "lib/api.ts",
+      "start": 205,
+      "end": 246,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).map"
+    },
+    {
+      "module": "lib/api.ts",
+      "start": 205,
+      "end": 216,
+      "kind": "call",
+      "class": "declared",
+      "label": "data.filter"
+    },
+    {
+      "module": "lib/api.ts",
+      "start": 269,
+      "end": 280,
+      "kind": "call",
+      "class": "declared",
+      "label": "u.name.trim"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "unresolved",
+      "module": "components/Styled.tsx",
+      "start": 19,
+      "end": 38,
+      "edge": "e4",
+      "message": "import 'styled-components' does not resolve to a file or a package"
+    },
+    {
+      "kind": "unresolved",
+      "module": "components/Legacy.jsx",
+      "start": 464,
+      "end": 485,
+      "edge": "e8",
+      "message": "onClick on <button>: member 'this.toggle' is not a prop or a local"
+    }
+  ],
+  "vocabulary": [],
+  "modules": {
+    "Guide.mdx": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 16,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "broken.tsx": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "components/Counter.tsx": {
+      "edges": {
+        "out": 5,
+        "in": 3,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 12,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 82,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "components/Legacy.jsx": {
+      "edges": {
+        "out": 2,
+        "in": 0,
+        "unresolved": 1,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 0,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 36,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "components/Styled.tsx": {
+      "edges": {
+        "out": 1,
+        "in": 0,
+        "unresolved": 1,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 2,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 0,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 21,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "lib/api.ts": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 26,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 0,
+        "unresolved": 1,
+        "ambiguous": 0,
+        "external": 3,
+        "unknown": 0
+      },
+      "handler-path": {
+        "resolved": 3,
+        "unresolved": 1,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 24,
+      "opaque": 0
+    },
+    "discernibility": 1,
+    "resolution": 0.6,
+    "vocabularyShare": 0,
+    "workingSet": {
+      "medianModules": 1,
+      "medianTokens": 26,
+      "tokenWeightedMedianTokens": 36,
+      "unmeasuredCounterparts": 0
+    },
+    "locality": null,
+    "entries": [],
+    "roots": []
+  }
+}

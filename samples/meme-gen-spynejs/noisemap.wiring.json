@@ -1,0 +1,1233 @@
+{
+  "version": 1,
+  "tool": {
+    "name": "noisemap",
+    "version": "0.2.0"
+  },
+  "generatedAt": "2026-09-29T23:23:35.065Z",
+  "root": "/private/tmp/noisemap-samples/meme-gen-spynejs/src",
+  "nodes": [
+    {
+      "id": "app/app-view.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "ViewStream"
+    },
+    {
+      "id": "app/channels/channel-meme-generator.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "Channel"
+    },
+    {
+      "id": "app/components/meme-element.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "DomElement"
+    },
+    {
+      "id": "app/components/templates/meme.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "app/traits/meme-generator-traits.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false,
+      "role": "SpyneTrait"
+    },
+    {
+      "id": "dev-tools.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": false
+    },
+    {
+      "id": "index.js",
+      "kind": "module",
+      "framework": "spynejs",
+      "entry": true
+    },
+    {
+      "id": "index.tmpl.html",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/01-vendors/normalize.css",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/02-variables/mixins.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/03-components/meme-generator.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "scss/main.scss",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    },
+    {
+      "id": "static/imgs/noun-robot.png",
+      "kind": "module",
+      "framework": "content",
+      "entry": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e2",
+      "kind": "import",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 72,
+        "end": 105
+      },
+      "label": "traits/meme-generator-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/meme-generator-traits.js"
+      }
+    },
+    {
+      "id": "e3",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-meme-generator.js",
+        "start": 24,
+        "end": 31
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e4",
+      "kind": "import",
+      "from": {
+        "module": "app/channels/channel-meme-generator.js",
+        "start": 69,
+        "end": 102
+      },
+      "label": "traits/meme-generator-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/meme-generator-traits.js"
+      }
+    },
+    {
+      "id": "e5",
+      "kind": "import",
+      "from": {
+        "module": "app/components/meme-element.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e6",
+      "kind": "import",
+      "from": {
+        "module": "app/components/meme-element.js",
+        "start": 57,
+        "end": 85
+      },
+      "label": "./templates/meme.tmpl.html",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/templates/meme.tmpl.html"
+      }
+    },
+    {
+      "id": "e7",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/meme-generator-traits.js",
+        "start": 27,
+        "end": 34
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e8",
+      "kind": "import",
+      "from": {
+        "module": "app/traits/meme-generator-traits.js",
+        "start": 64,
+        "end": 92
+      },
+      "label": "components/meme-element.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/components/meme-element.js"
+      }
+    },
+    {
+      "id": "e9",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 25,
+        "end": 32
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e10",
+      "kind": "import",
+      "from": {
+        "module": "dev-tools.js",
+        "start": 69,
+        "end": 91
+      },
+      "label": "spyne-plugin-console",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e11",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 36,
+        "end": 54
+      },
+      "label": "./scss/main.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/main.scss"
+      }
+    },
+    {
+      "id": "e12",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 120,
+        "end": 127
+      },
+      "label": "spyne",
+      "status": "external",
+      "verified": "static"
+    },
+    {
+      "id": "e13",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 175,
+        "end": 194
+      },
+      "label": "./app/app-view.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/app-view.js"
+      }
+    },
+    {
+      "id": "e14",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 293,
+        "end": 329
+      },
+      "label": "channels/channel-meme-generator.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-meme-generator.js"
+      }
+    },
+    {
+      "id": "e15",
+      "kind": "import",
+      "from": {
+        "module": "index.js",
+        "start": 366,
+        "end": 399
+      },
+      "label": "traits/meme-generator-traits.js",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/meme-generator-traits.js"
+      }
+    },
+    {
+      "id": "e16",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 6,
+        "end": 30
+      },
+      "label": "01-vendors/normalize.css",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/01-vendors/normalize.css"
+      }
+    },
+    {
+      "id": "e17",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 39,
+        "end": 63
+      },
+      "label": "02-variables/mixins.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/02-variables/mixins.scss"
+      }
+    },
+    {
+      "id": "e18",
+      "kind": "import",
+      "from": {
+        "module": "scss/main.scss",
+        "start": 72,
+        "end": 105
+      },
+      "label": "03-components/meme-generator.scss",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "scss/03-components/meme-generator.scss"
+      }
+    },
+    {
+      "id": "e19",
+      "kind": "listener-method",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 444,
+        "end": 483
+      },
+      "label": "memeGenerator$CreateMemeFromTxtAndImg",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/traits/meme-generator-traits.js"
+      }
+    },
+    {
+      "id": "e20",
+      "kind": "listener-action",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 397,
+        "end": 434
+      },
+      "label": "CHANNEL_MEME_GENERATOR_UPDATE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-meme-generator.js",
+        "start": 711,
+        "end": 748
+      }
+    },
+    {
+      "id": "e21",
+      "kind": "channel-binding",
+      "from": {
+        "module": "app/app-view.js",
+        "start": 293,
+        "end": 317
+      },
+      "label": "CHANNEL_MEME_GENERATOR",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/channels/channel-meme-generator.js",
+        "start": 112,
+        "end": 756
+      }
+    },
+    {
+      "id": "e22",
+      "kind": "template-key",
+      "from": {
+        "module": "app/components/meme-element.js"
+      },
+      "to": {
+        "module": "app/components/templates/meme.tmpl.html"
+      },
+      "label": "3 keys, data supplied by the constructor's caller",
+      "status": "unknown",
+      "verified": "static"
+    },
+    {
+      "id": "e23",
+      "kind": "action-registration",
+      "from": {
+        "module": "app/channels/channel-meme-generator.js",
+        "start": 711,
+        "end": 748
+      },
+      "label": "CHANNEL_MEME_GENERATOR_UPDATE_EVENT",
+      "status": "resolved",
+      "verified": "static",
+      "to": {
+        "module": "app/app-view.js",
+        "start": 397,
+        "end": 434
+      }
+    }
+  ],
+  "sites": [
+    {
+      "module": "app/app-view.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 72,
+      "end": 105,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/meme-generator-traits.js"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 293,
+      "end": 317,
+      "kind": "channel",
+      "class": "declared",
+      "label": "CHANNEL_MEME_GENERATOR"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 397,
+      "end": 434,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_MEME_GENERATOR_UPDATE_EVENT"
+    },
+    {
+      "module": "app/app-view.js",
+      "start": 444,
+      "end": 483,
+      "kind": "listener",
+      "class": "declared",
+      "label": "memeGenerator$CreateMemeFromTxtAndImg"
+    },
+    {
+      "module": "app/channels/channel-meme-generator.js",
+      "start": 24,
+      "end": 31,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/channels/channel-meme-generator.js",
+      "start": 69,
+      "end": 102,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/meme-generator-traits.js"
+    },
+    {
+      "module": "app/channels/channel-meme-generator.js",
+      "start": 561,
+      "end": 592,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.memeGenerator$GetTxtAndImg"
+    },
+    {
+      "module": "app/channels/channel-meme-generator.js",
+      "start": 711,
+      "end": 748,
+      "kind": "listener",
+      "class": "declared",
+      "label": "CHANNEL_MEME_GENERATOR_UPDATE_EVENT"
+    },
+    {
+      "module": "app/components/meme-element.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/components/meme-element.js",
+      "start": 57,
+      "end": 85,
+      "kind": "import",
+      "class": "declared",
+      "label": "./templates/meme.tmpl.html"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 27,
+      "end": 34,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 64,
+      "end": 92,
+      "kind": "import",
+      "class": "declared",
+      "label": "components/meme-element.js"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 849,
+      "end": 919,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).subscribe"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 849,
+      "end": 867,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.mergeChannels"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 927,
+      "end": 970,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.memeGenerator$OnTxtAndImgReturned.bind"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 1919,
+      "end": 1942,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.sendChannelPayload"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 1943,
+      "end": 1980,
+      "kind": "dispatch",
+      "class": "declared",
+      "label": "'CHANNEL_MEME_GENERATOR_UPDATE_EVENT'"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 2407,
+      "end": 2418,
+      "kind": "call",
+      "class": "declared",
+      "label": "new MemeElement"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 2589,
+      "end": 2614,
+      "kind": "call",
+      "class": "declared",
+      "label": "this.props.el.appendChild"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 2615,
+      "end": 2630,
+      "kind": "call",
+      "class": "declared",
+      "label": "memeHTML.render"
+    },
+    {
+      "module": "app/traits/meme-generator-traits.js",
+      "start": 2873,
+      "end": 2888,
+      "kind": "call",
+      "class": "declared",
+      "label": "urlString.match"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 25,
+      "end": 32,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 69,
+      "end": 91,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne-plugin-console"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 121,
+      "end": 144,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerPlugin"
+    },
+    {
+      "module": "dev-tools.js",
+      "start": 152,
+      "end": 170,
+      "kind": "call",
+      "class": "declared",
+      "label": "new SpynePluginConsole"
+    },
+    {
+      "module": "index.js",
+      "start": 36,
+      "end": 54,
+      "kind": "import",
+      "class": "declared",
+      "label": "./scss/main.scss"
+    },
+    {
+      "module": "index.js",
+      "start": 120,
+      "end": 127,
+      "kind": "import",
+      "class": "declared",
+      "label": "spyne"
+    },
+    {
+      "module": "index.js",
+      "start": 175,
+      "end": 194,
+      "kind": "import",
+      "class": "declared",
+      "label": "./app/app-view.js"
+    },
+    {
+      "module": "index.js",
+      "start": 293,
+      "end": 329,
+      "kind": "import",
+      "class": "declared",
+      "label": "channels/channel-meme-generator.js"
+    },
+    {
+      "module": "index.js",
+      "start": 366,
+      "end": 399,
+      "kind": "import",
+      "class": "declared",
+      "label": "traits/meme-generator-traits.js"
+    },
+    {
+      "module": "index.js",
+      "start": 506,
+      "end": 519,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.init"
+    },
+    {
+      "module": "index.js",
+      "start": 575,
+      "end": 599,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 604,
+      "end": 624,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelMemeGenerator"
+    },
+    {
+      "module": "index.js",
+      "start": 1072,
+      "end": 1096,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 1104,
+      "end": 1116,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelFetch"
+    },
+    {
+      "module": "index.js",
+      "start": 1185,
+      "end": 1198,
+      "kind": "call",
+      "class": "declared",
+      "label": "Array.isArray"
+    },
+    {
+      "module": "index.js",
+      "start": 1283,
+      "end": 1341,
+      "kind": "call",
+      "class": "declared",
+      "label": "MemeGeneratorTraits.memeGenerator$CheckAndReplaceWithThumb"
+    },
+    {
+      "module": "index.js",
+      "start": 1466,
+      "end": 1490,
+      "kind": "call",
+      "class": "declared",
+      "label": "SpyneApp.registerChannel"
+    },
+    {
+      "module": "index.js",
+      "start": 1498,
+      "end": 1510,
+      "kind": "call",
+      "class": "declared",
+      "label": "new ChannelFetch"
+    },
+    {
+      "module": "index.js",
+      "start": 1752,
+      "end": 1777,
+      "kind": "call",
+      "class": "declared",
+      "label": "(…).appendToDom"
+    },
+    {
+      "module": "index.js",
+      "start": 1756,
+      "end": 1763,
+      "kind": "call",
+      "class": "declared",
+      "label": "new AppView"
+    }
+  ],
+  "findings": [],
+  "vocabulary": [
+    {
+      "name": "CHANNEL_MEME_GENERATOR",
+      "kind": "channel",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-meme-generator.js",
+          "start": 112,
+          "end": 756,
+          "role": "names"
+        },
+        {
+          "module": "app/app-view.js",
+          "start": 293,
+          "end": 317,
+          "role": "binds"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_MEME_GENERATOR_UPDATE_EVENT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/channels/channel-meme-generator.js",
+          "start": 711,
+          "end": 748,
+          "role": "registers"
+        },
+        {
+          "module": "app/traits/meme-generator-traits.js",
+          "start": 1943,
+          "end": 1980,
+          "role": "emits"
+        },
+        {
+          "module": "app/app-view.js",
+          "start": 397,
+          "end": 434,
+          "role": "listens"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_MEME_IMG",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/traits/meme-generator-traits.js",
+          "start": 869,
+          "end": 887,
+          "role": "mentions"
+        },
+        {
+          "module": "app/traits/meme-generator-traits.js",
+          "start": 1618,
+          "end": 1636,
+          "role": "mentions"
+        },
+        {
+          "module": "index.js",
+          "start": 1117,
+          "end": 1135,
+          "role": "names"
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL_MEME_TXT",
+      "kind": "action",
+      "framework": false,
+      "uses": [
+        {
+          "module": "app/traits/meme-generator-traits.js",
+          "start": 889,
+          "end": 907,
+          "role": "mentions"
+        },
+        {
+          "module": "app/traits/meme-generator-traits.js",
+          "start": 1752,
+          "end": 1770,
+          "role": "mentions"
+        },
+        {
+          "module": "index.js",
+          "start": 1511,
+          "end": 1529,
+          "role": "names"
+        }
+      ]
+    }
+  ],
+  "modules": {
+    "app/app-view.js": {
+      "edges": {
+        "out": 5,
+        "in": 2,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 5,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 168,
+        "counterparts": [
+          "app/channels/channel-meme-generator.js",
+          "app/traits/meme-generator-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/channels/channel-meme-generator.js": {
+      "edges": {
+        "out": 3,
+        "in": 3,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 4,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 4,
+        "tokens": 168,
+        "counterparts": [
+          "app/app-view.js",
+          "app/traits/meme-generator-traits.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.6666666666666667
+    },
+    "app/components/meme-element.js": {
+      "edges": {
+        "out": 3,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 2,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 3,
+        "tokens": 93,
+        "counterparts": [
+          "app/components/templates/meme.tmpl.html",
+          "app/traits/meme-generator-traits.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.5
+    },
+    "app/components/templates/meme.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 24,
+        "counterparts": [
+          "app/components/meme-element.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "app/traits/meme-generator-traits.js": {
+      "edges": {
+        "out": 2,
+        "in": 4,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 11,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 177,
+        "counterparts": [
+          "app/app-view.js",
+          "app/channels/channel-meme-generator.js",
+          "app/components/meme-element.js",
+          "index.js"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.75
+    },
+    "dev-tools.js": {
+      "edges": {
+        "out": 2,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 4,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 9,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "index.js": {
+      "edges": {
+        "out": 5,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 16,
+        "opaque": 0
+      },
+      "discernibility": 1,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 214,
+        "counterparts": [
+          "app/app-view.js",
+          "app/channels/channel-meme-generator.js",
+          "app/traits/meme-generator-traits.js",
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1.5
+    },
+    "index.tmpl.html": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": 44,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    },
+    "scss/01-vendors/normalize.css": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 250,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/02-variables/mixins.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": null,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/03-components/meme-generator.scss": {
+      "edges": {
+        "out": 0,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 2,
+        "tokens": 151,
+        "counterparts": [
+          "scss/main.scss"
+        ],
+        "unmeasured": 0
+      },
+      "locality": 1
+    },
+    "scss/main.scss": {
+      "edges": {
+        "out": 3,
+        "in": 1,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": 1,
+      "workingSet": {
+        "modules": 5,
+        "tokens": 427,
+        "counterparts": [
+          "index.js",
+          "scss/01-vendors/normalize.css",
+          "scss/02-variables/mixins.scss",
+          "scss/03-components/meme-generator.scss"
+        ],
+        "unmeasured": 1
+      },
+      "locality": 1
+    },
+    "static/imgs/noun-robot.png": {
+      "edges": {
+        "out": 0,
+        "in": 0,
+        "unresolved": 0,
+        "ambiguous": 0
+      },
+      "sites": {
+        "declared": 0,
+        "opaque": 0
+      },
+      "discernibility": null,
+      "resolution": null,
+      "workingSet": {
+        "modules": 1,
+        "tokens": null,
+        "counterparts": [],
+        "unmeasured": 0
+      },
+      "locality": null
+    }
+  },
+  "summary": {
+    "byKind": {
+      "import": {
+        "resolved": 11,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 7,
+        "unknown": 0
+      },
+      "listener-method": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "listener-action": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "channel-binding": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      },
+      "template-key": {
+        "resolved": 0,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 1
+      },
+      "action-registration": {
+        "resolved": 1,
+        "unresolved": 0,
+        "ambiguous": 0,
+        "external": 0,
+        "unknown": 0
+      }
+    },
+    "sites": {
+      "declared": 42,
+      "opaque": 0
+    },
+    "discernibility": 1,
+    "resolution": 1,
+    "vocabularyShare": 1,
+    "workingSet": {
+      "medianModules": 2,
+      "medianTokens": 168,
+      "tokenWeightedMedianTokens": 214,
+      "unmeasuredCounterparts": 1
+    },
+    "locality": 1.2416666666666667,
+    "entries": [
+      "index.js"
+    ],
+    "roots": [
+      "app"
+    ]
+  }
+}

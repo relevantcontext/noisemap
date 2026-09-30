@@ -1,0 +1,9 @@
+<!doctype html>
+<div class="card" onclick="toggle(this)">
+  {{#if isOpen}}<p>Open now</p>{{/if}}
+  {{#loop items}}<li>{{name}}</li>{{/loop}}
+</div>
+<script type="application/json">{"not": "behavior"}</script>
+<script>
+  function toggle(el) { el.classList.toggle('open'); }
+</script>

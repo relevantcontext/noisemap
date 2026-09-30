@@ -1,18 +1,19 @@
-file                        tokens  V B L C                  V     B     L     C  mixing
---------------------------  ------  --------------------  ----  ----  ----  ----  ------
-todo/components/input.jsx       62  VVVVVVVBBBBBBBLLLLLL   32%   37%   31%    0%    0.63
-todo/components/item.jsx       110  VVVVVVVVBBBLLLLLLLLC   41%   16%   39%    4%    0.59
-todo/components/header.jsx      30  VVVVVVVVVVBBBLCCCCCC   47%   17%    7%   30%    0.53
-todo/components/footer.jsx      99  VVVVVVVVVVBLLLLLLLCC   52%    3%   35%   10%    0.48
-todo/components/main.jsx        94  VVVVVVVVVVVBBLLLLLLL   54%    9%   34%    3%    0.46
-todo/app.jsx                    19  VVVVVVVVVVVVVVVLLLLL   74%    0%   26%    0%    0.26
-index.js                        14  VVVVVVVVVVVVVVVVVLLL   86%    0%   14%    0%    0.14
+file                        tokens  V B L C                  V     B     L     C  mixing  role  drift
+--------------------------  ------  --------------------  ----  ----  ----  ----  ------  ----  -----
+todo/components/input.jsx       62  VBBBBBBBBLLLLLLCCCCC    6%   37%   31%   26%    0.63  view   0.68
+todo/components/item.jsx       110  VVVBBBLLLLLLLLCCCCCC   14%   16%   39%   31%    0.61  view   0.55
+todo/components/main.jsx        94  VVBBLLLLLLCCCCCCCCCC   11%    9%   32%   49%    0.51  view   0.40
+todo/components/footer.jsx      99  BLLLLLLLCCCCCCCCCCCC    2%    3%   35%   60%    0.40  view   0.38
+todo/components/header.jsx      30  VVVBBBLLCCCCCCCCCCCC   17%   17%    7%   60%    0.40  view   0.23
+todo/constants.js               21  BBBBBBBBBBBBBLLLLLLL    0%   67%   33%    0%    0.33
+todo/app.jsx                    19  VVVVVVVVVVVVVVVLLLLL   74%    0%   26%    0%    0.26  view   0.26
+index.js                        14  VVVVVVVVVVVVVVVVVLLL   86%    0%   14%    0%    0.14  view   0.14
 todo/app.css                    39  CCCCCCCCCCCCCCCCCCCC    0%    0%    0%  100%    0.00
-todo/constants.js               21  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 todo/reducer.js                107  LLLLLLLLLLLLLLLLLLLL    0%    0%  100%    0%    0.00
 
-codebase  10 modules  595 tokens  VVVVVVVBBLLLLLLLLLCC  V  35% B  10% L  45% C  11%
-          consistency 0.13  mean mixing 0.31 (by module) 0.37 (by token)  median V  44% B   2% L  32% C   2%
-          families: V 6 ( 53%   6%  30%   3%)  B 1 ( 32%  37%  31%   0%)  L 2 (  0%   0% 100%   0%)  C 1 (  0%   0%   0% 100%)
+codebase  10 modules  595 tokens  VVBBLLLLLLLLLCCCCCCC  V  10% B  12% L  42% C  36%
+          mean mixing 0.37 (non-stylesheet modules, 9)  0.33 (all modules)  0.37 (by token)  0.37 (by operation: no seals, absorption, or host inheritance)  consistency 0.23  median V   9% B   6% L  31% C  28%
+          families: V 2 ( 80%   0%  20%   0%)  B 2 (  3%  52%  32%  13%)  L 2 (  7%   8%  70%  15%)  C 4 (  6%   6%  19%  60%)
+          shape: inside declared shape 0/7  on sanctioned surface 0/0  distinct internal surfaces 6 among 7 (none sanctioned; an inventory, not a score)
           detected: react  adapters: content, react  skipped: 0
 

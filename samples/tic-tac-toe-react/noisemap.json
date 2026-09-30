@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.1"
+    "version": "0.2.0"
   },
-  "generatedAt": "2026-09-26T10:39:06.485Z",
+  "generatedAt": "2026-09-29T23:23:32.243Z",
   "root": "/private/tmp/noisemap-samples/tic-tac-toe-react/src",
   "frameworks": {
     "detected": [
@@ -19,21 +19,21 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0,
+    "consistency": null,
     "median": {
-      "V": 0.18727272727272729,
-      "B": 0.06181818181818182,
-      "L": 0.2381818181818182,
-      "C": 0.5127272727272727
+      "V": 0.10185185185185185,
+      "B": 0.06296296296296296,
+      "L": 0.2462962962962963,
+      "C": 0.5888888888888889
     },
     "families": {
       "L": {
         "modules": 1,
         "median": {
-          "V": 0.37454545454545457,
-          "B": 0.12363636363636364,
-          "L": 0.4763636363636364,
-          "C": 0.025454545454545455
+          "V": 0.2037037037037037,
+          "B": 0.1259259259259259,
+          "L": 0.4925925925925926,
+          "C": 0.17777777777777778
         }
       },
       "C": {
@@ -47,38 +47,55 @@
       }
     },
     "totals": {
-      "V": 103,
+      "V": 55,
       "B": 34,
-      "L": 131,
-      "C": 62,
-      "excluded": 602,
-      "counted": 330
+      "L": 133,
+      "C": 103,
+      "excluded": 601,
+      "counted": 325
     },
     "shares": {
-      "V": 0.31212121212121213,
-      "B": 0.10303030303030303,
-      "L": 0.396969696969697,
-      "C": 0.18787878787878787
+      "V": 0.16923076923076924,
+      "B": 0.10461538461538461,
+      "L": 0.40923076923076923,
+      "C": 0.3169230769230769
     },
-    "meanMixing": 0.26181818181818184,
-    "meanMixingTokenWeighted": 0.43636363636363634
+    "meanMixing": 0.2537037037037037,
+    "meanMixingTokenWeighted": 0.42153846153846153,
+    "codeModules": {
+      "count": 1,
+      "meanMixing": 0.5074074074074074
+    },
+    "byOperation": {
+      "count": 1,
+      "meanMixing": 0.5074074074074074
+    },
+    "shape": {
+      "declared": 1,
+      "insideShape": 0,
+      "withSurface": 0,
+      "onSurface": 0,
+      "undeclared": 1,
+      "internalSurfaces": 1,
+      "internalModules": 1
+    }
   },
   "modules": [
     {
       "path": "App.js",
       "framework": "react",
       "tokens": {
-        "V": 103,
+        "V": 55,
         "B": 34,
-        "L": 131,
-        "C": 7,
-        "excluded": 540
+        "L": 133,
+        "C": 48,
+        "excluded": 539
       },
       "shares": {
-        "V": 0.37454545454545457,
-        "B": 0.12363636363636364,
-        "L": 0.4763636363636364,
-        "C": 0.025454545454545455
+        "V": 0.2037037037037037,
+        "B": 0.1259259259259259,
+        "L": 0.4925925925925926,
+        "C": 0.17777777777777778
       },
       "spans": [
         {
@@ -115,11 +132,27 @@
         },
         {
           "start": 81,
-          "end": 120,
-          "bucket": "V",
+          "end": 111,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 4,
-          "punctuation": 3
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 111,
+          "end": 112,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 113,
+          "end": 119,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 121,
@@ -140,7 +173,7 @@
         {
           "start": 153,
           "end": 172,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 2,
           "punctuation": 3
@@ -363,11 +396,75 @@
         },
         {
           "start": 671,
+          "end": 707,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 3,
+          "punctuation": 4
+        },
+        {
+          "start": 707,
+          "end": 708,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 709,
+          "end": 715,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 716,
+          "end": 718,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 718,
+          "end": 752,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 4,
+          "punctuation": 5
+        },
+        {
+          "start": 752,
+          "end": 753,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 754,
+          "end": 763,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 764,
+          "end": 775,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 775,
           "end": 798,
           "bucket": "V",
-          "rule": "jsx",
-          "tokens": 13,
-          "punctuation": 18
+          "rule": "compose-component",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 798,
@@ -413,7 +510,7 @@
           "start": 850,
           "end": 873,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 4,
           "punctuation": 3
         },
@@ -461,7 +558,7 @@
           "start": 925,
           "end": 948,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 4,
           "punctuation": 3
         },
@@ -507,11 +604,43 @@
         },
         {
           "start": 999,
+          "end": 1024,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 1024,
+          "end": 1025,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1026,
+          "end": 1035,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1036,
+          "end": 1047,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1047,
           "end": 1070,
           "bucket": "V",
-          "rule": "jsx",
-          "tokens": 8,
-          "punctuation": 8
+          "rule": "compose-component",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 1070,
@@ -557,7 +686,7 @@
           "start": 1122,
           "end": 1145,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 4,
           "punctuation": 3
         },
@@ -605,7 +734,7 @@
           "start": 1197,
           "end": 1220,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 4,
           "punctuation": 3
         },
@@ -651,11 +780,43 @@
         },
         {
           "start": 1271,
+          "end": 1296,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 1296,
+          "end": 1297,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1298,
+          "end": 1307,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1308,
+          "end": 1319,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1319,
           "end": 1342,
           "bucket": "V",
-          "rule": "jsx",
-          "tokens": 8,
-          "punctuation": 8
+          "rule": "compose-component",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 1342,
@@ -701,7 +862,7 @@
           "start": 1394,
           "end": 1417,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 4,
           "punctuation": 3
         },
@@ -749,7 +910,7 @@
           "start": 1469,
           "end": 1492,
           "bucket": "V",
-          "rule": "jsx",
+          "rule": "compose-component",
           "tokens": 4,
           "punctuation": 3
         },
@@ -796,7 +957,7 @@
         {
           "start": 1543,
           "end": 1546,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 1,
           "punctuation": 0
@@ -963,43 +1124,11 @@
         },
         {
           "start": 2157,
-          "end": 2168,
-          "bucket": "L",
-          "rule": "default",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 2169,
-          "end": 2170,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 2172,
-          "end": 2182,
-          "bucket": "C",
-          "rule": "copy-string",
-          "tokens": 3,
-          "punctuation": 0
-        },
-        {
-          "start": 2183,
-          "end": 2187,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 2188,
           "end": 2192,
           "bucket": "L",
           "rule": "default",
-          "tokens": 1,
-          "punctuation": 0
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 2192,
@@ -1027,27 +1156,11 @@
         },
         {
           "start": 2213,
-          "end": 2224,
+          "end": 2245,
           "bucket": "L",
           "rule": "default",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 2225,
-          "end": 2226,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 2228,
-          "end": 2244,
-          "bucket": "C",
-          "rule": "copy-string",
-          "tokens": 4,
-          "punctuation": 0
+          "tokens": 2,
+          "punctuation": 1
         },
         {
           "start": 2245,
@@ -1060,7 +1173,7 @@
         {
           "start": 2257,
           "end": 2303,
-          "bucket": "V",
+          "bucket": "C",
           "rule": "jsx",
           "tokens": 5,
           "punctuation": 7
@@ -1099,11 +1212,75 @@
         },
         {
           "start": 2334,
+          "end": 2411,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 6,
+          "punctuation": 14
+        },
+        {
+          "start": 2411,
+          "end": 2412,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2413,
+          "end": 2417,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2418,
+          "end": 2427,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2427,
+          "end": 2440,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2440,
+          "end": 2441,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2442,
+          "end": 2452,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2453,
+          "end": 2464,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2464,
           "end": 2511,
           "bucket": "V",
-          "rule": "jsx",
-          "tokens": 15,
-          "punctuation": 25
+          "rule": "compose-component",
+          "tokens": 5,
+          "punctuation": 5
         },
         {
           "start": 2511,
@@ -1131,11 +1308,43 @@
         },
         {
           "start": 2544,
-          "end": 2630,
-          "bucket": "V",
+          "end": 2569,
+          "bucket": "C",
           "rule": "jsx",
-          "tokens": 9,
-          "punctuation": 16
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 2569,
+          "end": 2570,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2571,
+          "end": 2580,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2581,
+          "end": 2592,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2592,
+          "end": 2630,
+          "bucket": "C",
+          "rule": "jsx",
+          "tokens": 5,
+          "punctuation": 11
         },
         {
           "start": 2630,
@@ -1210,7 +1419,24 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.5236363636363637
+      "mixing": 0.5074074074074074,
+      "logicInRendering": 0,
+      "role": "view",
+      "drift": 0.6185185185185185,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": null,
+        "members": [
+          "2 handlers",
+          "useState"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.5074074074074074
     },
     {
       "path": "styles.css",
@@ -1254,7 +1480,23 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
+    }
+  ],
+  "directories": [
+    {
+      "path": ".",
+      "modules": 2,
+      "tokens": 325,
+      "shares": {
+        "V": 0.16923076923076924,
+        "B": 0.10461538461538461,
+        "L": 0.40923076923076923,
+        "C": 0.3169230769230769
+      },
+      "meanMixing": 0.2537037037037037,
+      "consistency": null
     }
   ],
   "empty": [],

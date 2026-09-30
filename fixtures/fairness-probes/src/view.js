@@ -1,0 +1,1 @@
+import {ViewStream} from 'spyne';import template from './missing.html';export class View extends ViewStream {constructor(props={}){props.template=template;props.data={present:'yes'};super(props);}broadcastEvents(){return [['.parent .child','click']];}}

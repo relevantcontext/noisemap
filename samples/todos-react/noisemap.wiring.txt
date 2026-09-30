@@ -1,0 +1,26 @@
+wiring  10 modules  42 connections  110 sites
+        discernibility 100% (declared 110 / opaque 0)   resolution  96%
+        vocabulary share  38%   working set: median 5 modules, 299 counted tokens (351 by token)   locality 0.6
+        entries: index.js
+        roots: (none)
+
+vocabulary: 9 names the app declares (0 more from the framework)
+  name                                               registers  emits  listens  binds
+  ADD_ITEM                                                   1      1        0      0
+  REMOVE_ALL_ITEMS                                           1      0        0      0
+  REMOVE_COMPLETED_ITEMS                                     1      1        0      0
+  REMOVE_ITEM                                                1      1        0      0
+  TOGGLE_ALL                                                 1      1        0      0
+  TOGGLE_ITEM                                                1      1        0      0
+  UPDATE_ITEM                                                1      1        0      0
+  onBlur                                                     0      1        1      0
+  onSubmit                                                   0      2        1      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                     14           0          0        14        0
+handler-path                7           0          0         0        0
+action-type                 6           1          0         0        0
+
+findings: 1 unresolved/ambiguous, 0 opaque
+  unresolved todo/reducer.js:2643  reducer handles 'REMOVE_ALL_ITEMS' but nothing dispatches it
+

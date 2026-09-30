@@ -2,9 +2,9 @@
   "version": 2,
   "tool": {
     "name": "noisemap",
-    "version": "0.1.1"
+    "version": "0.2.0"
   },
-  "generatedAt": "2026-09-26T10:39:07.397Z",
+  "generatedAt": "2026-09-29T23:23:34.311Z",
   "root": "/private/tmp/noisemap-samples/canonical-app-spynejs/src",
   "frameworks": {
     "detected": [
@@ -19,7 +19,7 @@
   },
   "tokenizer": "Lexical tokens: identifiers, keywords, literals, and words of prose. Whitespace is never a token. Punctuation, comments, and scaffolding are tokens attributed to `excluded` and enter no score, so a formatter run cannot move a score.",
   "scores": {
-    "consistency": 0.0029474572378390836,
+    "consistency": 0.00642057355879516,
     "median": {
       "V": 0,
       "B": 0,
@@ -55,7 +55,7 @@
         }
       },
       "C": {
-        "modules": 79,
+        "modules": 80,
         "median": {
           "V": 0,
           "B": 0,
@@ -65,21 +65,38 @@
       }
     },
     "totals": {
-      "V": 333,
+      "V": 339,
       "B": 52,
-      "L": 1710,
-      "C": 8073,
-      "excluded": 15903,
-      "counted": 10168
+      "L": 1700,
+      "C": 8587,
+      "excluded": 16573,
+      "counted": 10678
     },
     "shares": {
-      "V": 0.03274980330448466,
-      "B": 0.0051140833988985055,
-      "L": 0.16817466561762393,
-      "C": 0.7939614476789929
+      "V": 0.03174751826184679,
+      "B": 0.004869825810076793,
+      "L": 0.15920584379097208,
+      "C": 0.8041768121371043
     },
-    "meanMixing": 0.002084167000133387,
-    "meanMixingTokenWeighted": 0.0012785208497246266
+    "meanMixing": 0.004540031102531103,
+    "meanMixingTokenWeighted": 0.001966660423300245,
+    "codeModules": {
+      "count": 58,
+      "meanMixing": 0.009393167798340213
+    },
+    "byOperation": {
+      "count": 58,
+      "meanMixing": 0.07188507879908992
+    },
+    "shape": {
+      "declared": 37,
+      "insideShape": 35,
+      "withSurface": 37,
+      "onSurface": 37,
+      "undeclared": 83,
+      "internalSurfaces": 0,
+      "internalModules": 0
+    }
   },
   "modules": [
     {
@@ -253,8 +270,29 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/channels/channel-app.js",
@@ -443,8 +481,29 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "Channel",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "B"
+      ],
+      "base": "B",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions",
+          "onViewStreamInfo"
+        ],
+        "members": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions",
+          "onViewStreamInfo"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/channels/channel-local-storage.js",
@@ -649,8 +708,29 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "Channel",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "B"
+      ],
+      "base": "B",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions",
+          "onViewStreamInfo"
+        ],
+        "members": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions",
+          "onViewStreamInfo"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/channels/channel-menu-drawer.js",
@@ -839,8 +919,28 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "Channel",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "B"
+      ],
+      "base": "B",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions",
+          "onViewStreamInfo"
+        ],
+        "members": [
+          "constructor",
+          "onRegistered",
+          "addRegisteredActions"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/nav-breadcrumb-container.js",
@@ -1029,8 +1129,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/nav-breadcrumb-view.js",
@@ -1235,8 +1357,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/nav-header-hamburger-item.js",
@@ -1425,8 +1569,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/nav-menu-drawer-view.js",
@@ -1615,8 +1781,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/nav-primary-view.js",
@@ -1813,8 +2001,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/templates/nav-breadcrumb-item.tmpl.html",
@@ -1843,11 +2053,35 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 27,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 31,
           "end": 197,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 17,
-          "punctuation": 14
+          "tokens": 14,
+          "punctuation": 13
         },
         {
           "start": 198,
@@ -1858,7 +2092,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/templates/nav-breadcrumb-view.tmpl.html",
@@ -1887,11 +2123,75 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 30,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 31,
+          "end": 36,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 36,
+          "end": 44,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 44,
+          "end": 45,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 46,
+          "end": 62,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 63,
+          "end": 66,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 66,
           "end": 75,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 8,
-          "punctuation": 10
+          "tokens": 2,
+          "punctuation": 3
         },
         {
           "start": 75,
@@ -1902,7 +2202,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/templates/nav-header-hamburger-item.tmpl.html",
@@ -1931,11 +2233,43 @@
         },
         {
           "start": 1,
+          "end": 24,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 5
+        },
+        {
+          "start": 24,
+          "end": 25,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 26,
+          "end": 30,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 31,
+          "end": 34,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 34,
           "end": 37,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 6,
-          "punctuation": 9
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 37,
@@ -1946,7 +2280,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/templates/nav-menu-drawer-content.tmpl.html",
@@ -1955,7 +2291,7 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 19,
+        "C": 23,
         "excluded": 27
       },
       "shares": {
@@ -1975,11 +2311,35 @@
         },
         {
           "start": 7,
+          "end": 196,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 14,
+          "punctuation": 6
+        },
+        {
+          "start": 196,
+          "end": 197,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 198,
+          "end": 254,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 258,
           "end": 289,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 19,
-          "punctuation": 15
+          "tokens": 4,
+          "punctuation": 8
         },
         {
           "start": 290,
@@ -1990,7 +2350,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/nav/templates/nav-primary-view.tmpl.html",
@@ -1999,7 +2361,7 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 63,
+        "C": 65,
         "excluded": 78
       },
       "shares": {
@@ -2019,11 +2381,35 @@
         },
         {
           "start": 7,
+          "end": 16,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 16,
+          "end": 17,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 18,
+          "end": 21,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 25,
           "end": 191,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 17,
-          "punctuation": 14
+          "tokens": 14,
+          "punctuation": 13
         },
         {
           "start": 192,
@@ -2051,11 +2437,67 @@
         },
         {
           "start": 229,
+          "end": 350,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 10,
+          "punctuation": 4
+        },
+        {
+          "start": 350,
+          "end": 351,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 352,
+          "end": 368,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 372,
+          "end": 382,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 382,
+          "end": 383,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 384,
+          "end": 396,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 398,
+          "end": 404,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 404,
           "end": 491,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 22,
-          "punctuation": 12
+          "tokens": 9,
+          "punctuation": 4
         },
         {
           "start": 491,
@@ -2083,11 +2525,59 @@
         },
         {
           "start": 600,
+          "end": 820,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 14,
+          "punctuation": 20
+        },
+        {
+          "start": 820,
+          "end": 821,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 822,
+          "end": 830,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 832,
+          "end": 1128,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 4
+        },
+        {
+          "start": 1128,
+          "end": 1129,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1130,
+          "end": 1138,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1140,
           "end": 1523,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 24,
-          "punctuation": 34
+          "tokens": 4,
+          "punctuation": 8
         },
         {
           "start": 1523,
@@ -2098,7 +2588,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-items/cards-container-view.js",
@@ -2287,8 +2779,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-items/form-contact-us-view.js",
@@ -2477,8 +2991,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-items/hero-view.js",
@@ -2667,8 +3203,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.125
     },
     {
       "path": "app/components/page-items/templates/cards-container-view.tmpl.html",
@@ -2677,8 +3235,8 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 48,
-        "excluded": 75
+        "C": 49,
+        "excluded": 79
       },
       "shares": {
         "V": 0,
@@ -2697,11 +3255,299 @@
         },
         {
           "start": 7,
+          "end": 15,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 15,
+          "end": 16,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 17,
+          "end": 21,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 22,
+          "end": 27,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 27,
+          "end": 183,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 12,
+          "punctuation": 5
+        },
+        {
+          "start": 183,
+          "end": 184,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 185,
+          "end": 194,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 198,
+          "end": 205,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 205,
+          "end": 214,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 214,
+          "end": 215,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 216,
+          "end": 235,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 236,
+          "end": 245,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 245,
+          "end": 252,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 252,
+          "end": 256,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 256,
+          "end": 268,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 268,
+          "end": 270,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 272,
+          "end": 300,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 3,
+          "punctuation": 1
+        },
+        {
+          "start": 300,
+          "end": 301,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 302,
+          "end": 313,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 315,
+          "end": 324,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 324,
+          "end": 343,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 343,
+          "end": 344,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 345,
+          "end": 358,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 359,
+          "end": 368,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 368,
+          "end": 376,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 376,
+          "end": 377,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 378,
+          "end": 389,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 390,
+          "end": 393,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 393,
+          "end": 420,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 420,
+          "end": 421,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 422,
+          "end": 432,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 433,
+          "end": 436,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 436,
+          "end": 461,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 461,
+          "end": 462,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 463,
+          "end": 489,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 490,
+          "end": 493,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 493,
           "end": 529,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 48,
-          "punctuation": 63
+          "tokens": 5,
+          "punctuation": 13
         },
         {
           "start": 529,
@@ -2712,7 +3558,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-items/templates/contact-us.tmpl.html",
@@ -2721,8 +3569,8 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 68,
-        "excluded": 95
+        "C": 69,
+        "excluded": 103
       },
       "shares": {
         "V": 0,
@@ -2741,11 +3589,251 @@
         },
         {
           "start": 1,
+          "end": 28,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 5,
+          "punctuation": 9
+        },
+        {
+          "start": 28,
+          "end": 29,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 30,
+          "end": 46,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 47,
+          "end": 52,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 52,
+          "end": 79,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 79,
+          "end": 80,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 81,
+          "end": 93,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 95,
+          "end": 161,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 5,
+          "punctuation": 7
+        },
+        {
+          "start": 161,
+          "end": 162,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 163,
+          "end": 173,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 174,
+          "end": 181,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 181,
+          "end": 324,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 13,
+          "punctuation": 13
+        },
+        {
+          "start": 324,
+          "end": 328,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 328,
+          "end": 343,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 343,
+          "end": 345,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 353,
+          "end": 420,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 6,
+          "punctuation": 10
+        },
+        {
+          "start": 420,
+          "end": 421,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 422,
+          "end": 432,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 433,
+          "end": 440,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 440,
+          "end": 587,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 13,
+          "punctuation": 13
+        },
+        {
+          "start": 587,
+          "end": 591,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 591,
+          "end": 613,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 613,
+          "end": 615,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 623,
+          "end": 671,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 5,
+          "punctuation": 8
+        },
+        {
+          "start": 671,
+          "end": 672,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 673,
+          "end": 685,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 686,
+          "end": 693,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 693,
+          "end": 705,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 705,
+          "end": 706,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 707,
+          "end": 722,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 725,
           "end": 788,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 68,
-          "punctuation": 93
+          "tokens": 7,
+          "punctuation": 10
         },
         {
           "start": 788,
@@ -2756,7 +3844,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-items/templates/hero.tmpl.html",
@@ -2765,8 +3855,8 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 39,
-        "excluded": 64
+        "C": 42,
+        "excluded": 68
       },
       "shares": {
         "V": 0,
@@ -2785,11 +3875,259 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 24,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 25,
+          "end": 30,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 30,
+          "end": 39,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 39,
+          "end": 40,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 41,
+          "end": 54,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 55,
+          "end": 62,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 62,
+          "end": 72,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 72,
+          "end": 73,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 74,
+          "end": 87,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 88,
+          "end": 91,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 91,
+          "end": 121,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 121,
+          "end": 122,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 123,
+          "end": 137,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 138,
+          "end": 141,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 141,
+          "end": 171,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 171,
+          "end": 172,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 173,
+          "end": 190,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 191,
+          "end": 194,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 194,
+          "end": 226,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 226,
+          "end": 227,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 228,
+          "end": 258,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 260,
+          "end": 332,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 7,
+          "punctuation": 13
+        },
+        {
+          "start": 332,
+          "end": 333,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 334,
+          "end": 345,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 346,
+          "end": 353,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 353,
+          "end": 383,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 1
+        },
+        {
+          "start": 383,
+          "end": 387,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 387,
+          "end": 399,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 399,
+          "end": 410,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 6,
+          "punctuation": 0
+        },
+        {
+          "start": 410,
           "end": 420,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 39,
-          "punctuation": 62
+          "tokens": 2,
+          "punctuation": 3
         },
         {
           "start": 420,
@@ -2800,7 +4138,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/page-items/templates/where-we-are.tmpl.html",
@@ -2810,7 +4150,7 @@
         "B": 0,
         "L": 0,
         "C": 35,
-        "excluded": 51
+        "excluded": 55
       },
       "shares": {
         "V": 0,
@@ -2829,11 +4169,267 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 25,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 26,
+          "end": 31,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 31,
+          "end": 39,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 39,
+          "end": 40,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 41,
+          "end": 55,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 56,
+          "end": 59,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 59,
+          "end": 82,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 82,
+          "end": 83,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 84,
+          "end": 101,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 102,
+          "end": 105,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 105,
+          "end": 132,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 6
+        },
+        {
+          "start": 132,
+          "end": 133,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 134,
+          "end": 153,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 154,
+          "end": 161,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 161,
+          "end": 168,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 168,
+          "end": 172,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 172,
+          "end": 184,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 184,
+          "end": 186,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 188,
+          "end": 216,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 3,
+          "punctuation": 1
+        },
+        {
+          "start": 216,
+          "end": 217,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 218,
+          "end": 232,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 234,
+          "end": 241,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 241,
+          "end": 263,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 5
+        },
+        {
+          "start": 263,
+          "end": 264,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 265,
+          "end": 282,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 283,
+          "end": 288,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 288,
+          "end": 321,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 4,
+          "punctuation": 1
+        },
+        {
+          "start": 321,
+          "end": 322,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 323,
+          "end": 342,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 343,
+          "end": 346,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 346,
           "end": 359,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 35,
-          "punctuation": 49
+          "tokens": 2,
+          "punctuation": 3
         },
         {
           "start": 359,
@@ -2844,7 +4440,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/pages/page-404-view.js",
@@ -3033,23 +4631,45 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/pages/page-view.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 29,
+        "V": 36,
         "B": 0,
-        "L": 7,
+        "L": 0,
         "C": 0,
         "excluded": 114
       },
       "shares": {
-        "V": 0.8055555555555556,
+        "V": 1,
         "B": 0,
-        "L": 0.19444444444444445,
+        "L": 0,
         "C": 0
       },
       "spans": [
@@ -3111,75 +4731,11 @@
         },
         {
           "start": 269,
-          "end": 432,
-          "bucket": "V",
-          "rule": "method:constructor",
-          "tokens": 15,
-          "punctuation": 23
-        },
-        {
-          "start": 433,
-          "end": 434,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 435,
-          "end": 455,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 3,
-          "punctuation": 2
-        },
-        {
-          "start": 455,
-          "end": 457,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 462,
-          "end": 477,
-          "bucket": "V",
-          "rule": "method:constructor",
-          "tokens": 3,
-          "punctuation": 2
-        },
-        {
-          "start": 478,
-          "end": 479,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 1,
-          "punctuation": 0
-        },
-        {
-          "start": 480,
-          "end": 525,
-          "bucket": "L",
-          "rule": "call:composed",
-          "tokens": 4,
-          "punctuation": 3
-        },
-        {
-          "start": 525,
-          "end": 527,
-          "bucket": "excluded",
-          "rule": "punctuation",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 532,
           "end": 557,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 3,
-          "punctuation": 2
+          "tokens": 28,
+          "punctuation": 38
         },
         {
           "start": 557,
@@ -3302,9 +4858,31 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.19444444444444442,
+      "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0.19444444444444445
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.19444444444444442
     },
     {
       "path": "app/components/pages/templates/page-404.tmpl.html",
@@ -3333,11 +4911,43 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 28,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 29,
+          "end": 34,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 34,
           "end": 2438,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 31,
-          "punctuation": 24
+          "tokens": 28,
+          "punctuation": 21
         },
         {
           "start": 2438,
@@ -3348,7 +4958,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/pages/templates/page-home.tmpl.html",
@@ -3357,7 +4969,7 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 12,
+        "C": 13,
         "excluded": 20
       },
       "shares": {
@@ -3377,11 +4989,27 @@
         },
         {
           "start": 1,
-          "end": 36,
+          "end": 14,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 3,
-          "punctuation": 1
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 14,
+          "end": 15,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 16,
+          "end": 35,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 36,
@@ -3409,11 +5037,59 @@
         },
         {
           "start": 283,
-          "end": 364,
+          "end": 307,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 7,
-          "punctuation": 6
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 307,
+          "end": 308,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 309,
+          "end": 334,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 335,
+          "end": 340,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 340,
+          "end": 353,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 353,
+          "end": 354,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 355,
+          "end": 363,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 364,
@@ -3456,7 +5132,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/pages/templates/page-view.tmpl.html",
@@ -3485,11 +5163,43 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 21,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 22,
+          "end": 27,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 27,
           "end": 68,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 10,
-          "punctuation": 22
+          "tokens": 7,
+          "punctuation": 19
         },
         {
           "start": 68,
@@ -3500,7 +5210,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/pages/templates/page.tmpl.html",
@@ -3509,7 +5221,7 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 12,
+        "C": 13,
         "excluded": 18
       },
       "shares": {
@@ -3529,11 +5241,107 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 24,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 25,
+          "end": 30,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 30,
+          "end": 43,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 43,
+          "end": 44,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 45,
+          "end": 57,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 58,
+          "end": 61,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 61,
+          "end": 87,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 87,
+          "end": 88,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 89,
+          "end": 114,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 115,
+          "end": 118,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 118,
           "end": 132,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 12,
-          "punctuation": 16
+          "tokens": 2,
+          "punctuation": 3
         },
         {
           "start": 132,
@@ -3544,23 +5352,25 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/stage-container.js",
       "framework": "spynejs",
       "tokens": {
-        "V": 21,
+        "V": 20,
         "B": 0,
         "L": 0,
-        "C": 0,
-        "excluded": 87
+        "C": 8,
+        "excluded": 99
       },
       "shares": {
-        "V": 1,
+        "V": 0.7142857142857143,
         "B": 0,
         "L": 0,
-        "C": 0
+        "C": 0.2857142857142857
       },
       "spans": [
         {
@@ -3621,18 +5431,34 @@
         },
         {
           "start": 195,
-          "end": 446,
+          "end": 336,
           "bucket": "V",
           "rule": "method:constructor",
-          "tokens": 13,
-          "punctuation": 17
+          "tokens": 12,
+          "punctuation": 15
         },
         {
-          "start": 446,
+          "start": 337,
+          "end": 341,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 341,
+          "end": 445,
+          "bucket": "C",
+          "rule": "markup-template",
+          "tokens": 8,
+          "punctuation": 10
+        },
+        {
+          "start": 445,
           "end": 448,
           "bucket": "excluded",
           "rule": "punctuation",
-          "tokens": 2,
+          "tokens": 3,
           "punctuation": 0
         },
         {
@@ -3748,9 +5574,31 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0,
+      "mixing": 0.2857142857142857,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.2857142857142857
     },
     {
       "path": "app/components/ui-elements/null-views/local-storage-null-view.js",
@@ -3955,8 +5803,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/ui-elements/templates/ui-button-theme.html",
@@ -3965,7 +5835,7 @@
         "V": 0,
         "B": 0,
         "L": 0,
-        "C": 8,
+        "C": 10,
         "excluded": 12
       },
       "shares": {
@@ -3985,11 +5855,75 @@
         },
         {
           "start": 1,
+          "end": 8,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 8,
+          "end": 9,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 27,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 28,
+          "end": 31,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 31,
+          "end": 42,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 42,
+          "end": 43,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 44,
+          "end": 62,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 63,
+          "end": 66,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 66,
           "end": 67,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 8,
-          "punctuation": 10
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 67,
@@ -4000,7 +5934,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/ui-elements/templates/ui-footer-view.tmpl.html",
@@ -4029,11 +5965,43 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 26,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 27,
+          "end": 32,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 32,
           "end": 66,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 10,
-          "punctuation": 8
+          "tokens": 7,
+          "punctuation": 5
         },
         {
           "start": 66,
@@ -4076,7 +6044,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/ui-elements/templates/ui-header-view.tmpl.html",
@@ -4105,11 +6075,155 @@
         },
         {
           "start": 1,
+          "end": 10,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 10,
+          "end": 11,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 12,
+          "end": 26,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 27,
+          "end": 32,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 32,
+          "end": 41,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 41,
+          "end": 42,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 43,
+          "end": 51,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 52,
+          "end": 59,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 59,
+          "end": 68,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 68,
+          "end": 69,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 70,
+          "end": 80,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 81,
+          "end": 90,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 90,
+          "end": 144,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 5,
+          "punctuation": 3
+        },
+        {
+          "start": 144,
+          "end": 145,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 146,
+          "end": 150,
+          "bucket": "C",
+          "rule": "copy-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 162,
+          "end": 167,
+          "bucket": "C",
+          "rule": "content:html",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 167,
+          "end": 168,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 169,
+          "end": 178,
+          "bucket": "C",
+          "rule": "class-attribute",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 190,
           "end": 383,
           "bucket": "C",
           "rule": "content:html",
-          "tokens": 30,
-          "punctuation": 32
+          "tokens": 13,
+          "punctuation": 18
         },
         {
           "start": 383,
@@ -4152,7 +6266,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/ui-elements/ui-footer-view.js",
@@ -4341,8 +6457,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/ui-elements/ui-header-view.js",
@@ -4547,8 +6685,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/components/ui-elements/ui-menu-drawer-view.js",
@@ -4737,8 +6897,30 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "ViewStream",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "V",
+        "C"
+      ],
+      "base": "V",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "broadcastEvents",
+          "addActionListeners",
+          "onRendered"
+        ],
+        "members": [
+          "constructor",
+          "addActionListeners",
+          "broadcastEvents",
+          "onRendered"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/traits/app/app-container-traits.js",
@@ -4865,7 +7047,7 @@
           "start": 640,
           "end": 670,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "dom-write",
           "tokens": 5,
           "punctuation": 4
         },
@@ -4927,11 +7109,27 @@
         },
         {
           "start": 821,
-          "end": 1012,
+          "end": 939,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 22,
-          "punctuation": 24
+          "tokens": 13,
+          "punctuation": 15
+        },
+        {
+          "start": 939,
+          "end": 940,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 947,
+          "end": 1012,
+          "bucket": "L",
+          "rule": "dom-write",
+          "tokens": 9,
+          "punctuation": 8
         },
         {
           "start": 1012,
@@ -4961,7 +7159,7 @@
           "start": 1064,
           "end": 1273,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "compose-view",
           "tokens": 19,
           "punctuation": 27
         },
@@ -4975,8 +7173,34 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "app$SetTheme",
+          "app$OnLocalStorageEvent",
+          "app$OnSettingsEvent",
+          "app$OnAppViewRendered"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "AppContainer",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.375
     },
     {
       "path": "app/traits/app/app-local-storage-traits.js",
@@ -5213,11 +7437,43 @@
         },
         {
           "start": 835,
+          "end": 987,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 17,
+          "punctuation": 21
+        },
+        {
+          "start": 987,
+          "end": 990,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 997,
+          "end": 1057,
+          "bucket": "L",
+          "rule": "console",
+          "tokens": 6,
+          "punctuation": 7
+        },
+        {
+          "start": 1057,
+          "end": 1059,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1066,
           "end": 1072,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 24,
-          "punctuation": 32
+          "tokens": 1,
+          "punctuation": 0
         },
         {
           "start": 1073,
@@ -5245,11 +7501,27 @@
         },
         {
           "start": 1130,
-          "end": 1323,
+          "end": 1250,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 19,
-          "punctuation": 25
+          "tokens": 13,
+          "punctuation": 16
+        },
+        {
+          "start": 1250,
+          "end": 1253,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1260,
+          "end": 1323,
+          "bucket": "L",
+          "rule": "console",
+          "tokens": 6,
+          "punctuation": 7
         },
         {
           "start": 1323,
@@ -5277,11 +7549,75 @@
         },
         {
           "start": 1383,
+          "end": 1709,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 27,
+          "punctuation": 41
+        },
+        {
+          "start": 1709,
+          "end": 1712,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 1721,
+          "end": 1815,
+          "bucket": "L",
+          "rule": "console",
+          "tokens": 5,
+          "punctuation": 5
+        },
+        {
+          "start": 1815,
+          "end": 1836,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 1837,
+          "end": 2039,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 17,
+          "punctuation": 24
+        },
+        {
+          "start": 2039,
+          "end": 2042,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2049,
+          "end": 2141,
+          "bucket": "L",
+          "rule": "console",
+          "tokens": 6,
+          "punctuation": 7
+        },
+        {
+          "start": 2141,
+          "end": 2151,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 2158,
           "end": 2364,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 63,
-          "punctuation": 102
+          "tokens": 8,
+          "punctuation": 12
         },
         {
           "start": 2364,
@@ -5311,7 +7647,7 @@
           "start": 2504,
           "end": 2567,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "transmit",
           "tokens": 5,
           "punctuation": 4
         },
@@ -5389,11 +7725,59 @@
         },
         {
           "start": 2856,
-          "end": 3094,
+          "end": 2882,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 15,
-          "punctuation": 17
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2883,
+          "end": 2884,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2885,
+          "end": 2953,
+          "bucket": "L",
+          "rule": "payload-filter",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 2953,
+          "end": 2962,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 2968,
+          "end": 3019,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 3019,
+          "end": 3021,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 3021,
+          "end": 3094,
+          "bucket": "L",
+          "rule": "subscribe",
+          "tokens": 5,
+          "punctuation": 4
         },
         {
           "start": 3094,
@@ -5453,11 +7837,27 @@
         },
         {
           "start": 3341,
-          "end": 3415,
+          "end": 3370,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 8,
-          "punctuation": 8
+          "tokens": 4,
+          "punctuation": 4
+        },
+        {
+          "start": 3370,
+          "end": 3371,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 3376,
+          "end": 3415,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 3415,
@@ -5469,8 +7869,46 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "localStorage$GetKey",
+          "localStorage$GetItem",
+          "localStorage$SetItem",
+          "localStorage$GetStore",
+          "localStorage$SetStore",
+          "localStorage$InitAppSettings",
+          "localStorage$SendInfoTo_LocalStorage_Channel",
+          "localStorage$Clear",
+          "localStorage$onChannelUpdateKeyRequest",
+          "localStorage$ChannelOnRegistered",
+          "localStorage$ChannelOnStatusSettingsEvent",
+          "localStorage$ChannelOnViewStreamInfo"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "ChannelLocalStorage",
+          "kind": "channel"
+        },
+        {
+          "host": "LocalStorageNullView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.07999999999999996
     },
     {
       "path": "app/traits/app/app-settings-traits.js",
@@ -5595,11 +8033,27 @@
         },
         {
           "start": 257,
-          "end": 488,
+          "end": 420,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 18,
-          "punctuation": 18
+          "tokens": 13,
+          "punctuation": 12
+        },
+        {
+          "start": 420,
+          "end": 421,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 427,
+          "end": 488,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 5,
+          "punctuation": 5
         },
         {
           "start": 489,
@@ -5627,11 +8081,59 @@
         },
         {
           "start": 545,
-          "end": 786,
+          "end": 568,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 17,
-          "punctuation": 19
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 569,
+          "end": 570,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 571,
+          "end": 664,
+          "bucket": "L",
+          "rule": "payload-filter",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 664,
+          "end": 673,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 679,
+          "end": 726,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 726,
+          "end": 728,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 728,
+          "end": 786,
+          "bucket": "L",
+          "rule": "subscribe",
+          "tokens": 5,
+          "punctuation": 4
         },
         {
           "start": 786,
@@ -5643,8 +8145,32 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "appSettings$OnSettingEvent",
+          "appSettings$InitSettingEvents"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "ChannelApp",
+          "kind": "channel"
+        }
+      ],
+      "mixingByOperation": 0.26315789473684215
     },
     {
       "path": "app/traits/app/app-status-traits.js",
@@ -5769,11 +8295,75 @@
         },
         {
           "start": 360,
-          "end": 710,
+          "end": 477,
+          "bucket": "L",
+          "rule": "subscribe",
+          "tokens": 9,
+          "punctuation": 11
+        },
+        {
+          "start": 477,
+          "end": 486,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 492,
+          "end": 516,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 24,
-          "punctuation": 32
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 517,
+          "end": 518,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 519,
+          "end": 588,
+          "bucket": "L",
+          "rule": "payload-filter",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 588,
+          "end": 597,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 603,
+          "end": 654,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 654,
+          "end": 656,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 656,
+          "end": 710,
+          "bucket": "L",
+          "rule": "subscribe",
+          "tokens": 5,
+          "punctuation": 4
         },
         {
           "start": 710,
@@ -5801,11 +8391,59 @@
         },
         {
           "start": 768,
-          "end": 1213,
+          "end": 787,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 46,
-          "punctuation": 55
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 787,
+          "end": 788,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 788,
+          "end": 809,
+          "bucket": "L",
+          "rule": "config-data",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 809,
+          "end": 811,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 811,
+          "end": 1171,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 37,
+          "punctuation": 44
+        },
+        {
+          "start": 1171,
+          "end": 1174,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1181,
+          "end": 1213,
+          "bucket": "L",
+          "rule": "console",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 1213,
@@ -5969,11 +8607,27 @@
         },
         {
           "start": 2415,
-          "end": 2561,
+          "end": 2515,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 14,
-          "punctuation": 13
+          "tokens": 10,
+          "punctuation": 9
+        },
+        {
+          "start": 2515,
+          "end": 2516,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2522,
+          "end": 2561,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 2561,
@@ -6121,8 +8775,35 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "appStatus$GetChannels",
+          "appStatus$OnDataReturned",
+          "appStatus$OnRouteEvent",
+          "appStatus$SendDataEvent",
+          "appStatus$GetCurrentPageData"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "ChannelApp",
+          "kind": "channel"
+        }
+      ],
+      "mixingByOperation": 0.07189542483660127
     },
     {
       "path": "app/traits/app/stage-container-traits.js",
@@ -6247,11 +8928,27 @@
         },
         {
           "start": 452,
-          "end": 764,
+          "end": 688,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 29,
-          "punctuation": 34
+          "tokens": 22,
+          "punctuation": 25
+        },
+        {
+          "start": 688,
+          "end": 689,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 694,
+          "end": 764,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 7,
+          "punctuation": 8
         },
         {
           "start": 764,
@@ -6313,7 +9010,7 @@
           "start": 884,
           "end": 942,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "compose-view",
           "tokens": 5,
           "punctuation": 5
         },
@@ -6327,8 +9024,33 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "stage$OnRouteEvent",
+          "stage$OnAppInitEvent",
+          "stage$OnRendered"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "StageContainer",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.14634146341463417
     },
     {
       "path": "app/traits/channel/channel-menu-drawer-traits.js",
@@ -6453,11 +9175,187 @@
         },
         {
           "start": 302,
-          "end": 975,
+          "end": 324,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 45,
-          "punctuation": 59
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 325,
+          "end": 326,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 327,
+          "end": 392,
+          "bucket": "L",
+          "rule": "payload-filter",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 392,
+          "end": 401,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 407,
+          "end": 432,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 433,
+          "end": 434,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 435,
+          "end": 491,
+          "bucket": "L",
+          "rule": "payload-filter",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 491,
+          "end": 500,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 506,
+          "end": 525,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 526,
+          "end": 527,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 528,
+          "end": 593,
+          "bucket": "L",
+          "rule": "payload-filter",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 593,
+          "end": 602,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 608,
+          "end": 658,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 658,
+          "end": 660,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 660,
+          "end": 723,
+          "bucket": "L",
+          "rule": "subscribe",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 723,
+          "end": 732,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 738,
+          "end": 787,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 787,
+          "end": 789,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 789,
+          "end": 848,
+          "bucket": "L",
+          "rule": "subscribe",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 848,
+          "end": 857,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 863,
+          "end": 907,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 907,
+          "end": 909,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 909,
+          "end": 975,
+          "bucket": "L",
+          "rule": "subscribe",
+          "tokens": 5,
+          "punctuation": 4
         },
         {
           "start": 975,
@@ -6485,11 +9383,27 @@
         },
         {
           "start": 1043,
-          "end": 1264,
+          "end": 1174,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 17,
-          "punctuation": 18
+          "tokens": 11,
+          "punctuation": 11
+        },
+        {
+          "start": 1174,
+          "end": 1175,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1181,
+          "end": 1264,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 6,
+          "punctuation": 6
         },
         {
           "start": 1264,
@@ -6549,11 +9463,27 @@
         },
         {
           "start": 1807,
-          "end": 1972,
+          "end": 1926,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 10,
-          "punctuation": 9
+          "tokens": 6,
+          "punctuation": 4
+        },
+        {
+          "start": 1926,
+          "end": 1927,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1932,
+          "end": 1972,
+          "bucket": "L",
+          "rule": "channel-io",
+          "tokens": 4,
+          "punctuation": 4
         },
         {
           "start": 1973,
@@ -6597,8 +9527,35 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "channelMenuDrawer$OnRegistered",
+          "channelMenuDrawer$OnMenuDrawerInit",
+          "channelMenuDrawer$OnUiClick",
+          "channelMenuDrawer$SendMenuDrawerEvent",
+          "channelMenuDrawer$OnWindowEvent"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "ChannelMenuDrawer",
+          "kind": "channel"
+        }
+      ],
+      "mixingByOperation": 0.22935779816513757
     },
     {
       "path": "app/traits/form/form-contact-us-traits.js",
@@ -6835,8 +9792,35 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "contactUs$SendFormData",
+          "contactUs$SendFormViaEmail",
+          "contactUs$SendFormViaApi",
+          "contactUs$OnSuccess",
+          "contactUs$HelloWorld"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "FormContactUsView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0
     },
     {
       "path": "app/traits/nav/nav-breadcrumb-container-traits.js",
@@ -7313,11 +10297,43 @@
         },
         {
           "start": 1955,
+          "end": 1990,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 4,
+          "punctuation": 4
+        },
+        {
+          "start": 1990,
+          "end": 1991,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1998,
+          "end": 2200,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 12,
+          "punctuation": 14
+        },
+        {
+          "start": 2200,
+          "end": 2217,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 5,
+          "punctuation": 0
+        },
+        {
+          "start": 2223,
           "end": 2260,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 19,
-          "punctuation": 26
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 2260,
@@ -7329,8 +10345,33 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "navBreadcrumb$OnAppInitEvent",
+          "navBreadcrumb$getBreadcrumbObjs",
+          "navBreadcrumb$initBreadcrumbs"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "NavBreadcrumbContainer",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.025210084033613467
     },
     {
       "path": "app/traits/nav/nav-breadcrumb-view-traits.js",
@@ -7575,11 +10616,27 @@
         },
         {
           "start": 1394,
-          "end": 1765,
+          "end": 1522,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 25,
-          "punctuation": 32
+          "tokens": 11,
+          "punctuation": 12
+        },
+        {
+          "start": 1522,
+          "end": 1524,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1530,
+          "end": 1765,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 14,
+          "punctuation": 18
         },
         {
           "start": 1765,
@@ -7599,11 +10656,139 @@
         },
         {
           "start": 1867,
+          "end": 1881,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 1881,
+          "end": 1884,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1891,
+          "end": 1940,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 1940,
+          "end": 1948,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 1949,
+          "end": 1953,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1954,
+          "end": 1955,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1962,
+          "end": 2006,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 2006,
+          "end": 2014,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 2019,
+          "end": 2123,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 12,
+          "punctuation": 14
+        },
+        {
+          "start": 2123,
+          "end": 2126,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2133,
+          "end": 2167,
+          "bucket": "L",
+          "rule": "dom-write",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 2167,
+          "end": 2168,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2175,
+          "end": 2181,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2181,
+          "end": 2188,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2194,
+          "end": 2239,
+          "bucket": "L",
+          "rule": "dom-write",
+          "tokens": 7,
+          "punctuation": 6
+        },
+        {
+          "start": 2239,
+          "end": 2240,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2245,
           "end": 2284,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 47,
-          "punctuation": 56
+          "tokens": 7,
+          "punctuation": 6
         },
         {
           "start": 2284,
@@ -7655,11 +10840,43 @@
         },
         {
           "start": 2650,
+          "end": 2666,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 2667,
+          "end": 2668,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2669,
+          "end": 2687,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 2687,
+          "end": 2689,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2694,
           "end": 2797,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 17,
-          "punctuation": 19
+          "tokens": 10,
+          "punctuation": 11
         },
         {
           "start": 2798,
@@ -7671,8 +10888,33 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "navBreadcrumbView$DeriveState",
+          "navBreadcrumbView$UpdateLink",
+          "navBreadcrumbView$UIBreadcrumbOnRendered"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "NavBreadcrumbView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.18934911242603547
     },
     {
       "path": "app/traits/nav/nav-header-hamburger-item-traits.js",
@@ -7797,11 +11039,27 @@
         },
         {
           "start": 275,
-          "end": 423,
+          "end": 368,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 13,
-          "punctuation": 12
+          "tokens": 7,
+          "punctuation": 6
+        },
+        {
+          "start": 368,
+          "end": 369,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 374,
+          "end": 423,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 6,
+          "punctuation": 5
         },
         {
           "start": 423,
@@ -7813,8 +11071,31 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "navHeaderHamburgerItem$OnShowMenuDrawerEvent"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "NavHeaderHamburgerItem",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.375
     },
     {
       "path": "app/traits/nav/nav-menu-drawer-view-traits.js",
@@ -7939,11 +11220,27 @@
         },
         {
           "start": 252,
-          "end": 481,
+          "end": 415,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 23,
-          "punctuation": 26
+          "tokens": 16,
+          "punctuation": 17
+        },
+        {
+          "start": 415,
+          "end": 417,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 422,
+          "end": 481,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 7,
+          "punctuation": 7
         },
         {
           "start": 481,
@@ -7955,8 +11252,31 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "navMenuDrawerView$SetActiveLink"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "NavMenuDrawerView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.2692307692307693
     },
     {
       "path": "app/traits/nav/nav-primary-view-traits.js",
@@ -8081,11 +11401,27 @@
         },
         {
           "start": 251,
+          "end": 297,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 6,
+          "punctuation": 6
+        },
+        {
+          "start": 297,
+          "end": 300,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 300,
           "end": 338,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
-          "tokens": 10,
-          "punctuation": 12
+          "rule": "dom-write",
+          "tokens": 4,
+          "punctuation": 3
         },
         {
           "start": 338,
@@ -8177,11 +11513,27 @@
         },
         {
           "start": 735,
-          "end": 885,
+          "end": 819,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 16,
-          "punctuation": 18
+          "tokens": 9,
+          "punctuation": 9
+        },
+        {
+          "start": 819,
+          "end": 821,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 826,
+          "end": 885,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 7,
+          "punctuation": 7
         },
         {
           "start": 885,
@@ -8193,8 +11545,34 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "nav$UIHeaderNavViewUpdateSettingsBtn",
+          "nav$UIHeaderNavViewOnSettingsInit",
+          "nav$UIHeaderNavViewOnSettingsEvent",
+          "nav$UIHeaderNavViewOnRouteChangeEvent"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "NavPrimaryView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.3695652173913043
     },
     {
       "path": "app/traits/page/page-item-core-traits.js",
@@ -8202,15 +11580,15 @@
       "tokens": {
         "V": 0,
         "B": 0,
-        "L": 219,
-        "C": 0,
-        "excluded": 438
+        "L": 218,
+        "C": 4,
+        "excluded": 443
       },
       "shares": {
         "V": 0,
         "B": 0,
-        "L": 1,
-        "C": 0
+        "L": 0.9819819819819819,
+        "C": 0.018018018018018018
       },
       "spans": [
         {
@@ -8343,11 +11721,123 @@
         },
         {
           "start": 655,
-          "end": 1017,
+          "end": 669,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 26,
-          "punctuation": 29
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 670,
+          "end": 671,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 672,
+          "end": 740,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 740,
+          "end": 748,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 753,
+          "end": 765,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 765,
+          "end": 768,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 775,
+          "end": 807,
+          "bucket": "L",
+          "rule": "dom-write",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 807,
+          "end": 808,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 815,
+          "end": 848,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 849,
+          "end": 850,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 851,
+          "end": 943,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 7,
+          "punctuation": 7
+        },
+        {
+          "start": 943,
+          "end": 945,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 950,
+          "end": 982,
+          "bucket": "L",
+          "rule": "dom-write",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 982,
+          "end": 983,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 989,
+          "end": 1017,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 1017,
@@ -8503,11 +11993,59 @@
         },
         {
           "start": 2218,
+          "end": 2533,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 25,
+          "punctuation": 36
+        },
+        {
+          "start": 2534,
+          "end": 2535,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 2536,
+          "end": 2556,
+          "bucket": "L",
+          "rule": "new-view",
+          "tokens": 3,
+          "punctuation": 1
+        },
+        {
+          "start": 2556,
+          "end": 2558,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2565,
+          "end": 2597,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 2597,
+          "end": 2599,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 2606,
           "end": 2657,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 38,
-          "punctuation": 49
+          "tokens": 6,
+          "punctuation": 4
         },
         {
           "start": 2657,
@@ -8535,11 +12073,43 @@
         },
         {
           "start": 2782,
+          "end": 3120,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 27,
+          "punctuation": 26
+        },
+        {
+          "start": 3120,
+          "end": 3122,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 3130,
+          "end": 3168,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 3168,
+          "end": 3170,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 3178,
           "end": 3329,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 44,
-          "punctuation": 50
+          "tokens": 13,
+          "punctuation": 17
         },
         {
           "start": 3329,
@@ -8567,11 +12137,75 @@
         },
         {
           "start": 3396,
+          "end": 3468,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 9,
+          "punctuation": 9
+        },
+        {
+          "start": 3468,
+          "end": 3471,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 3478,
+          "end": 3549,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 8,
+          "punctuation": 9
+        },
+        {
+          "start": 3549,
+          "end": 3557,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 3563,
+          "end": 3574,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 2,
+          "punctuation": 1
+        },
+        {
+          "start": 3574,
+          "end": 3577,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 3584,
+          "end": 3682,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 8,
+          "punctuation": 9
+        },
+        {
+          "start": 3682,
+          "end": 3698,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 3704,
           "end": 3757,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 31,
-          "punctuation": 43
+          "tokens": 4,
+          "punctuation": 4
         },
         {
           "start": 3757,
@@ -8599,11 +12233,43 @@
         },
         {
           "start": 3879,
+          "end": 4128,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 19,
+          "punctuation": 20
+        },
+        {
+          "start": 4128,
+          "end": 4135,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 4135,
+          "end": 4158,
+          "bucket": "C",
+          "rule": "markup-template",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 4158,
+          "end": 4167,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 3,
+          "punctuation": 0
+        },
+        {
+          "start": 4172,
           "end": 4187,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 22,
-          "punctuation": 24
+          "tokens": 2,
+          "punctuation": 0
         },
         {
           "start": 4187,
@@ -8646,9 +12312,37 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0,
+      "mixing": 0.018018018018018056,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0.018018018018018018,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "pageItemCore$AddStyles",
+          "pageItemCore$CheckToAddPageTraitContainer",
+          "pageItemCore$AddPageItems",
+          "pageItemCore$onRendered",
+          "pageItemCore$GetTemplate",
+          "pageItemCore$GetViewClass"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "PageView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.18018018018018023
     },
     {
       "path": "app/traits/page/page-item-custom-traits.js",
@@ -8821,8 +12515,26 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "pageItem$HelloWorld",
+          "pageItem$GetViewClass"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0
     },
     {
       "path": "app/traits/ui/ui-footer-view-traits.js",
@@ -8830,15 +12542,15 @@
       "tokens": {
         "V": 0,
         "B": 0,
-        "L": 14,
-        "C": 0,
-        "excluded": 54
+        "L": 13,
+        "C": 3,
+        "excluded": 63
       },
       "shares": {
         "V": 0,
         "B": 0,
-        "L": 1,
-        "C": 0
+        "L": 0.8125,
+        "C": 0.1875
       },
       "spans": [
         {
@@ -8947,24 +12659,79 @@
         },
         {
           "start": 242,
-          "end": 386,
+          "end": 257,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
-          "tokens": 11,
-          "punctuation": 10
+          "rule": "compose-view",
+          "tokens": 2,
+          "punctuation": 1
         },
         {
-          "start": 386,
+          "start": 257,
+          "end": 258,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 265,
+          "end": 356,
+          "bucket": "L",
+          "rule": "new-view",
+          "tokens": 8,
+          "punctuation": 7
+        },
+        {
+          "start": 356,
+          "end": 360,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 360,
+          "end": 384,
+          "bucket": "C",
+          "rule": "markup-template",
+          "tokens": 3,
+          "punctuation": 7
+        },
+        {
+          "start": 384,
           "end": 410,
           "bucket": "excluded",
           "rule": "punctuation",
-          "tokens": 8,
+          "tokens": 9,
           "punctuation": 0
         }
       ],
-      "mixing": 0,
+      "mixing": 0.1875,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0.1875,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "uiFooter$OnAppDataEvent"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "UIFooterView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.375
     },
     {
       "path": "app/traits/ui/ui-header-view-traits.js",
@@ -9121,11 +12888,27 @@
         },
         {
           "start": 431,
-          "end": 517,
+          "end": 447,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 9,
-          "punctuation": 11
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 447,
+          "end": 449,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 454,
+          "end": 517,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 6,
+          "punctuation": 7
         },
         {
           "start": 517,
@@ -9153,11 +12936,27 @@
         },
         {
           "start": 578,
+          "end": 612,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 4,
+          "punctuation": 3
+        },
+        {
+          "start": 612,
+          "end": 614,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 614,
           "end": 636,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
-          "tokens": 7,
-          "punctuation": 7
+          "rule": "dom-write",
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 636,
@@ -9219,7 +13018,7 @@
           "start": 909,
           "end": 951,
           "bucket": "L",
-          "rule": "role:SpyneTrait",
+          "rule": "compose-view",
           "tokens": 4,
           "punctuation": 2
         },
@@ -9233,8 +13032,34 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "uiHeader$AddNavLinks",
+          "uiHeader$OnAppDataEvent",
+          "uiHeader$UIHeaderViewOnAppInitEvent",
+          "uiHeader$UIHeaderViewOnRendered"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "UIHeaderView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.29268292682926833
     },
     {
       "path": "app/traits/ui/ui-menu-drawer-view-traits.js",
@@ -9359,11 +13184,43 @@
         },
         {
           "start": 314,
+          "end": 354,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 6,
+          "punctuation": 4
+        },
+        {
+          "start": 354,
+          "end": 355,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 360,
+          "end": 404,
+          "bucket": "L",
+          "rule": "compose-view",
+          "tokens": 5,
+          "punctuation": 4
+        },
+        {
+          "start": 405,
+          "end": 409,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 4,
+          "punctuation": 0
+        },
+        {
+          "start": 414,
           "end": 447,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 14,
-          "punctuation": 15
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 447,
@@ -9391,11 +13248,43 @@
         },
         {
           "start": 508,
+          "end": 597,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 7,
+          "punctuation": 6
+        },
+        {
+          "start": 597,
+          "end": 598,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 603,
+          "end": 648,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 6,
+          "punctuation": 5
+        },
+        {
+          "start": 648,
+          "end": 650,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 655,
           "end": 688,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 16,
-          "punctuation": 16
+          "tokens": 3,
+          "punctuation": 2
         },
         {
           "start": 688,
@@ -9423,11 +13312,27 @@
         },
         {
           "start": 741,
-          "end": 1026,
+          "end": 960,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 27,
-          "punctuation": 32
+          "tokens": 20,
+          "punctuation": 23
+        },
+        {
+          "start": 960,
+          "end": 962,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 967,
+          "end": 1026,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 7,
+          "punctuation": 7
         },
         {
           "start": 1026,
@@ -9439,8 +13344,33 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "uiMenuDrawer$addContent",
+          "uiMenuDrawer$onShowMenuDrawerEvent",
+          "uiMenuDrawer$SetActiveLink"
+        ],
+        "extra": []
+      },
+      "bindings": [
+        {
+          "host": "UIMenuDrawerView",
+          "kind": "view"
+        }
+      ],
+      "mixingByOperation": 0.25
     },
     {
       "path": "app/traits/utils/page-item-template-lookup.js",
@@ -9448,9 +13378,9 @@
       "tokens": {
         "V": 0,
         "B": 0,
-        "L": 26,
+        "L": 25,
         "C": 0,
-        "excluded": 46
+        "excluded": 47
       },
       "shares": {
         "V": 0,
@@ -9517,18 +13447,10 @@
         },
         {
           "start": 338,
-          "end": 352,
+          "end": 375,
           "bucket": "excluded",
           "rule": "scaffolding:exportKeywords",
-          "tokens": 2,
-          "punctuation": 0
-        },
-        {
-          "start": 353,
-          "end": 375,
-          "bucket": "L",
-          "rule": "default",
-          "tokens": 1,
+          "tokens": 3,
           "punctuation": 0
         },
         {
@@ -9540,7 +13462,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "app/traits/utils/util-traits.js",
@@ -9969,11 +13893,43 @@
         },
         {
           "start": 1754,
+          "end": 1773,
+          "bucket": "L",
+          "rule": "role:SpyneTrait",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1774,
+          "end": 1775,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1776,
+          "end": 1821,
+          "bucket": "L",
+          "rule": "dom",
+          "tokens": 3,
+          "punctuation": 2
+        },
+        {
+          "start": 1821,
+          "end": 1823,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        },
+        {
+          "start": 1828,
           "end": 1936,
           "bucket": "L",
           "rule": "role:SpyneTrait",
-          "tokens": 17,
-          "punctuation": 14
+          "tokens": 12,
+          "punctuation": 9
         },
         {
           "start": 1936,
@@ -10177,8 +14133,35 @@
         }
       ],
       "mixing": 0,
+      "logicInRendering": 0,
       "role": "SpyneTrait",
-      "drift": 0
+      "drift": 0,
+      "expected": [
+        "L"
+      ],
+      "base": "L",
+      "surface": {
+        "sanctioned": [
+          "constructor",
+          "^[A-Za-z_$][\\w$]*\\$[A-Za-z_$][\\w$]*$"
+        ],
+        "members": [
+          "constructor",
+          "util$ToKebabCase",
+          "util$KebabToCamelCase",
+          "util$GetRandInt",
+          "util$SelectRandFromArr",
+          "util$ScrollLock",
+          "util$checkForDeeplink",
+          "util$GetOffsetTop",
+          "util$GetTemplate",
+          "util$Exists",
+          "util$Boolean",
+          "util$Negate"
+        ],
+        "extra": []
+      },
+      "mixingByOperation": 0.018633540372670843
     },
     {
       "path": "dev-tools.js",
@@ -10318,7 +14301,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "index.js",
@@ -10674,7 +14659,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0.0535714285714286
+      "mixing": 0.0535714285714286,
+      "logicInRendering": 0,
+      "mixingByOperation": 0.0535714285714286
     },
     {
       "path": "index.tmpl.html",
@@ -10814,7 +14801,9 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
     },
     {
       "path": "scss/00-spynejs-design-system/_index.scss",
@@ -11018,7 +15007,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/core/_base.scss",
@@ -11206,7 +15196,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/core/_globals.scss",
@@ -11330,7 +15321,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/core/_reset.scss",
@@ -11406,7 +15398,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/elements/_buttons.scss",
@@ -11658,7 +15651,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/elements/_forms.scss",
@@ -11742,7 +15736,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/elements/_links.scss",
@@ -11834,7 +15829,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/elements/_lists.scss",
@@ -11894,7 +15890,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/elements/_tables.scss",
@@ -11954,7 +15951,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/elements/_typography.scss",
@@ -12038,7 +16036,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/theme/_dark.scss",
@@ -12218,7 +16217,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/theme/_index.scss",
@@ -12270,7 +16270,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/theme/_light.scss",
@@ -12546,7 +16547,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/theme/theme-utils.scss",
@@ -12638,7 +16640,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_colors.scss",
@@ -13234,7 +17237,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_elevation.scss",
@@ -13302,7 +17306,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_index.scss",
@@ -13362,7 +17367,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_inject-css-vars.scss",
@@ -13422,7 +17428,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_motion.scss",
@@ -13490,7 +17497,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_radius.scss",
@@ -13534,7 +17542,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_spacing.scss",
@@ -14434,7 +18443,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/tokens/_typography.scss",
@@ -14670,7 +18680,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/utilities/_containers.scss",
@@ -14882,7 +18893,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/utilities/_flex-utils.scss",
@@ -15094,7 +19106,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/utilities/_grid-utils.scss",
@@ -15290,7 +19303,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/utilities/_responsive.scss",
@@ -15478,7 +19492,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/00-spynejs-design-system/utilities/_spacing-utils.scss",
@@ -15586,7 +19601,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/01-vendors/normalize.css",
@@ -16902,7 +20918,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/_base.scss",
@@ -17082,7 +21099,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/_grid.scss",
@@ -17518,7 +21536,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/_palette-vars.scss",
@@ -17586,7 +21605,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/_palette.scss",
@@ -17670,7 +21690,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/_theme-semantic.scss",
@@ -17778,7 +21799,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/_type.scss",
@@ -17918,7 +21940,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/_variables.scss",
@@ -18722,7 +22745,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/fonts.scss",
@@ -18766,7 +22790,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/globals.scss",
@@ -18802,7 +22827,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/02-variables/mixins.scss",
@@ -18958,7 +22984,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/cards/_cards-grid.scss",
@@ -18994,7 +23021,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/cards/_cards.scss",
@@ -19102,7 +23130,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/cards/cards-features.scss",
@@ -19234,7 +23263,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/core-components/forms/_checkboxes.scss",
@@ -19430,7 +23460,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/core-components/forms/_inputs.scss",
@@ -19674,7 +23705,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/core-components/forms/_radio.scss",
@@ -19758,7 +23790,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/core-components/forms/_select.scss",
@@ -19850,7 +23883,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/core-components/forms/_textarea.scss",
@@ -19910,7 +23944,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/core-components/sections/_hero.scss",
@@ -19994,7 +24029,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/pages/page-404.scss",
@@ -20078,7 +24114,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/pages/page-items/_cards.scss",
@@ -20114,7 +24151,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/pages/page-items/_gallery.scss",
@@ -20150,7 +24188,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/pages/page-items/_hero.scss",
@@ -20378,7 +24417,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/pages/page-items/_page-item.scss",
@@ -20662,7 +24702,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/pages/page-items/_section-title.scss",
@@ -20698,7 +24739,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/pages/pages.scss",
@@ -20790,7 +24832,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/ui/_codeblock.scss",
@@ -20882,7 +24925,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/ui/_containers.scss",
@@ -21206,7 +25250,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/ui/breadcrumbs.scss",
@@ -21578,7 +25623,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/ui/footer.scss",
@@ -21638,7 +25684,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/ui/header.scss",
@@ -21914,7 +25961,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/ui/menu-drawer.scss",
@@ -22006,7 +26054,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/03-components/ui/menu-hamburger.scss",
@@ -22066,7 +26115,8 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
     },
     {
       "path": "scss/app.scss",
@@ -22270,16 +26320,584 @@
           "punctuation": 0
         }
       ],
-      "mixing": 0
+      "mixing": 0,
+      "logicInRendering": 0
+    },
+    {
+      "path": "static/data/app.model.json",
+      "framework": "content",
+      "tokens": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 484,
+        "excluded": 623
+      },
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "spans": [
+        {
+          "start": 0,
+          "end": 1,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 1,
+          "punctuation": 0
+        },
+        {
+          "start": 1,
+          "end": 14926,
+          "bucket": "C",
+          "rule": "content:json",
+          "tokens": 484,
+          "punctuation": 620
+        },
+        {
+          "start": 14926,
+          "end": 14928,
+          "bucket": "excluded",
+          "rule": "punctuation",
+          "tokens": 2,
+          "punctuation": 0
+        }
+      ],
+      "mixing": 0,
+      "logicInRendering": 0,
+      "mixingByOperation": 0
+    }
+  ],
+  "directories": [
+    {
+      "path": ".",
+      "modules": 120,
+      "tokens": 10678,
+      "shares": {
+        "V": 0.03174751826184679,
+        "B": 0.004869825810076793,
+        "L": 0.15920584379097208,
+        "C": 0.8041768121371043
+      },
+      "meanMixing": 0.004540031102531103,
+      "consistency": 0.00642057355879516
+    },
+    {
+      "path": "app",
+      "modules": 54,
+      "tokens": 2394,
+      "shares": {
+        "V": 0.13909774436090225,
+        "B": 0.02172096908939014,
+        "L": 0.6516290726817042,
+        "C": 0.18755221386800333
+      },
+      "meanMixing": 0.009096894513561181,
+      "consistency": 0.012864951596555619
+    },
+    {
+      "path": "app/channels",
+      "modules": 3,
+      "tokens": 52,
+      "shares": {
+        "V": 0,
+        "B": 1,
+        "L": 0,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components",
+      "modules": 31,
+      "tokens": 753,
+      "shares": {
+        "V": 0.41301460823373176,
+        "B": 0,
+        "L": 0,
+        "C": 0.5869853917662683
+      },
+      "meanMixing": 0.009216589861751152,
+      "consistency": 0.013034226381318847
+    },
+    {
+      "path": "app/components/nav",
+      "modules": 10,
+      "tokens": 242,
+      "shares": {
+        "V": 0.5082644628099173,
+        "B": 0,
+        "L": 0,
+        "C": 0.49173553719008267
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/nav/templates",
+      "modules": 5,
+      "tokens": 119,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/page-items",
+      "modules": 7,
+      "tokens": 243,
+      "shares": {
+        "V": 0.19753086419753085,
+        "B": 0,
+        "L": 0,
+        "C": 0.8024691358024691
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/page-items/templates",
+      "modules": 4,
+      "tokens": 195,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/pages",
+      "modules": 6,
+      "tokens": 117,
+      "shares": {
+        "V": 0.42735042735042733,
+        "B": 0,
+        "L": 0,
+        "C": 0.5726495726495726
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/pages/templates",
+      "modules": 4,
+      "tokens": 67,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/ui-elements",
+      "modules": 7,
+      "tokens": 123,
+      "shares": {
+        "V": 0.5691056910569106,
+        "B": 0,
+        "L": 0,
+        "C": 0.43089430894308944
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/components/ui-elements/null-views",
+      "modules": 1,
+      "tokens": 10,
+      "shares": {
+        "V": 1,
+        "B": 0,
+        "L": 0,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "app/components/ui-elements/templates",
+      "modules": 3,
+      "tokens": 53,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/traits",
+      "modules": 19,
+      "tokens": 1567,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0.9955328653477984,
+        "C": 0.004467134652201659
+      },
+      "meanMixing": 0.010816737790422004,
+      "consistency": 0.01529717728384838
+    },
+    {
+      "path": "app/traits/app",
+      "modules": 5,
+      "tokens": 463,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 1,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/traits/channel",
+      "modules": 1,
+      "tokens": 109,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 1,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "app/traits/form",
+      "modules": 1,
+      "tokens": 81,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 1,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "app/traits/nav",
+      "modules": 5,
+      "tokens": 376,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 1,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "app/traits/page",
+      "modules": 2,
+      "tokens": 235,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0.9829787234042553,
+        "C": 0.01702127659574468
+      },
+      "meanMixing": 0.009009009009009028,
+      "consistency": 0.01274066272408195
+    },
+    {
+      "path": "app/traits/ui",
+      "modules": 3,
+      "tokens": 117,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0.9743589743589743,
+        "C": 0.02564102564102564
+      },
+      "meanMixing": 0.0625,
+      "consistency": 0.08838834764831843
+    },
+    {
+      "path": "app/traits/utils",
+      "modules": 2,
+      "tokens": 186,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 1,
+        "C": 0
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss",
+      "modules": 62,
+      "tokens": 7592,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/00-spynejs-design-system",
+      "modules": 27,
+      "tokens": 2845,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/00-spynejs-design-system/core",
+      "modules": 3,
+      "tokens": 112,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/00-spynejs-design-system/elements",
+      "modules": 6,
+      "tokens": 866,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/00-spynejs-design-system/theme",
+      "modules": 4,
+      "tokens": 130,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/00-spynejs-design-system/tokens",
+      "modules": 8,
+      "tokens": 1045,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/00-spynejs-design-system/utilities",
+      "modules": 5,
+      "tokens": 579,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/01-vendors",
+      "modules": 1,
+      "tokens": 204,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "scss/02-variables",
+      "modules": 10,
+      "tokens": 1274,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/03-components",
+      "modules": 23,
+      "tokens": 3148,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/03-components/cards",
+      "modules": 3,
+      "tokens": 287,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/03-components/core-components",
+      "modules": 6,
+      "tokens": 1378,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/03-components/core-components/forms",
+      "modules": 5,
+      "tokens": 1163,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/03-components/core-components/sections",
+      "modules": 1,
+      "tokens": 215,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "scss/03-components/pages",
+      "modules": 7,
+      "tokens": 494,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/03-components/pages/page-items",
+      "modules": 5,
+      "tokens": 290,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "scss/03-components/ui",
+      "modules": 7,
+      "tokens": 989,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": 0
+    },
+    {
+      "path": "static",
+      "modules": 1,
+      "tokens": 484,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
+    },
+    {
+      "path": "static/data",
+      "modules": 1,
+      "tokens": 484,
+      "shares": {
+        "V": 0,
+        "B": 0,
+        "L": 0,
+        "C": 1
+      },
+      "meanMixing": 0,
+      "consistency": null
     }
   ],
   "empty": [
     "app/components/ui-elements/templates/ui-menu-drawer.tmpl.html"
   ],
   "skipped": {
-    "count": 12,
+    "count": 11,
     "byExtension": {
-      ".json": 1,
       ".jpg": 3,
       ".png": 2,
       ".jpeg": 6

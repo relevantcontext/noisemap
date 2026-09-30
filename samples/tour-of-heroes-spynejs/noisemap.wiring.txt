@@ -1,0 +1,25 @@
+wiring  36 modules  95 connections  221 sites
+        discernibility  96% (declared 213 / opaque 8)   resolution 100%
+        vocabulary share 100%   working set: median 2 modules, 180 counted tokens (305 by token), 1 counterparts uncounted   locality 1.5
+        entries: index.js
+        roots: app
+
+vocabulary: 6 names the app declares (4 more from the framework)
+  name                                               registers  emits  listens  binds
+  CHANNEL_TOH                                                0      0        0      3
+  CHANNEL_TOH_ADD_EVENT                                      1      0        2      0
+  CHANNEL_TOH_DELETE_EVENT                                   1      0        2      0
+  CHANNEL_TOH_ROUTE_EVENT                                    1      1        2      0
+  CHANNEL_TOH_SEARCH_EVENT                                   1      0        3      0
+  CHANNEL_TOH_UPDATE_EVENT                                   1      0        2      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                     38           0          0        19        0
+broadcast-selector          0           0          0         0       10
+listener-method             8           0          0         2        0
+listener-action             7           0          0         3        0
+channel-binding             3           0          0         0        0
+action-registration         5           0          0         0        0
+
+findings: 0 unresolved/ambiguous, 8 opaque
+

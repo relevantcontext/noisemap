@@ -1,0 +1,4 @@
+{
+  // comments and trailing commas are allowed here
+  "compilerOptions": { "baseUrl": ".", "paths": { "@/*": ["./src/*"], } },
+}

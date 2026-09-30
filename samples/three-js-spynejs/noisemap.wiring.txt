@@ -1,0 +1,29 @@
+wiring  24 modules  59 connections  167 sites
+        discernibility  99% (declared 165 / opaque 2)   resolution  86%
+        vocabulary share 100%   working set: median 2 modules, 104 counted tokens (228 by token)   locality 1.7
+        entries: index.js
+        roots: app
+
+vocabulary: 4 names the app declares (8 more from the framework)
+  name                                               registers  emits  listens  binds
+  CHANNEL_THREEJS                                            0      1        0      3
+  CHANNEL_THREEJS_ANGLE_CHANGE_EVENT                         1      0        2      0
+  CHANNEL_THREEJS_END_ANIMATION_EVENT                        1      0        1      0
+  CHANNEL_THREEJS_START_ANIMATION_EVENT                      1      0        1      0
+
+kind                 resolved  unresolved  ambiguous  external  unknown
+import                     15           2          0        18        0
+listener-method             1           0          3         1        0
+listener-action             4           0          0         1        0
+channel-binding             3           0          0         1        0
+template-key                0           0          0         0        3
+broadcast-selector          4           0          0         0        0
+action-registration         3           0          0         0        0
+
+findings: 5 unresolved/ambiguous, 2 opaque
+  unresolved app/traits/threejs-channel-traits.js:137  import 'rxjs' does not resolve to a file or a package
+  unresolved app/traits/utils/angle-utils.js:31  import 'ramda' does not resolve to a file or a package
+  ambiguous  app/components/threejs-view.js:489  ThreejsView names method 'threejs$OnStartAnimation' defined in a trait it does not bind  [app/traits/threejs-traits.js]
+  ambiguous  app/components/threejs-view.js:564  ThreejsView names method 'threejs$OnEndAnimation' defined in a trait it does not bind  [app/traits/threejs-traits.js]
+  ambiguous  app/components/threejs-view.js:629  ThreejsView names method 'threejs$onWindowResize' defined in a trait it does not bind  [app/traits/threejs-traits.js]
+
